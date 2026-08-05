@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上陸台風観測雨風マップ | 1975-2025年 上陸台風</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{
+  --ink:#0b1622;
+  --panel:#101f30;
+  --panel-2:#16283d;
+  --line:#25405c;
+  --paper:#e9e4d6;
+  --amber:#e0913a;
+  --amber-bright:#f4b45c;
+  --red:#c1503f;
+  --teal:#5fa3a3;
+  --rain:#6f8fe0;
+  --text:#e9e4d6;
+  --text-dim:#9db2c4;
+  --mono: "JetBrains Mono","SFMono-Regular",Consolas,monospace;
+  --serif: "Shippori Mincho","Noto Serif JP",serif;
+  --sans: "Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+}
+* { box-sizing:border-box; }
+html,body{
+  margin:0; padding:0; height:100%;
+  background:var(--ink); color:var(--text);
+  font-family:var(--sans);
+  overflow:hidden;
+}
+@font-face{ }
+#app{ display:flex; flex-direction:column; height:100vh; }
+
+/* ===== Header ===== */
+header{
+  display:flex; align-items:baseline; gap:18px;
+  padding:14px 22px 10px 22px;
+  background:linear-gradient(180deg,var(--panel),var(--ink));
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
+}
+header h1{
+  font-family:var(--serif);
+  font-size:20px; font-weight:600; letter-spacing:.04em;
+  margin:0; color:var(--paper);
+}
+header .sub{
+  font-family:var(--mono); font-size:11px; color:var(--text-dim);
+  letter-spacing:.03em;
+}
+header .spacer{ flex:1; }
+.badge{
+  font-family:var(--mono); font-size:10px; color:var(--text-dim);
+  border:1px solid var(--line); padding:3px 8px; border-radius:2px;
+  letter-spacing:.05em;
+}
+
+/* ===== Storm tabs ===== */
+#storm-tabs-row{
+  display:flex; align-items:stretch; background:var(--ink);
+  border-bottom:1px solid var(--line); flex-shrink:0;
+}
+#storm-tabs{
+  display:flex; gap:2px; padding:0 10px; flex:1; min-width:0;
+  overflow-x:auto; overflow-y:hidden;
+  scrollbar-width:thin; scrollbar-color:var(--line) transparent;
+}
+#storm-tabs::-webkit-scrollbar{ height:5px; }
+#storm-tabs::-webkit-scrollbar-thumb{ background:var(--line); border-radius:3px; }
+#storm-tabs::-webkit-scrollbar-track{ background:transparent; }
+.storm-tab{
+  font-family:var(--mono); font-size:12px; letter-spacing:.03em;
+  padding:9px 14px 8px 14px; cursor:pointer; color:var(--text-dim);
+  border-bottom:2px solid transparent; background:none; border-top:none; border-left:none; border-right:none;
+  transition:color .15s ease, border-color .15s ease;
+  white-space:nowrap; flex-shrink:0;
+}
+.storm-tab .en{ color:inherit; font-weight:600; }
+.storm-tab .yr{ opacity:.6; margin-left:6px; }
+.storm-tab:hover{ color:var(--amber-bright); }
+.storm-tab.active{ color:var(--amber-bright); border-bottom-color:var(--amber); }
+
+#storm-toolbar{
+  display:flex; align-items:center; gap:6px; padding:0 14px; flex-shrink:0;
+  border-left:1px solid var(--line);
+}
+.storm-nav-btn{
+  background:none; border:1px solid var(--line); color:var(--text-dim);
+  width:24px; height:24px; border-radius:2px; cursor:pointer;
+  font-family:var(--mono); font-size:12px; line-height:1; flex-shrink:0;
+}
+.storm-nav-btn:hover{ color:var(--amber-bright); border-color:var(--amber); }
+#storm-select{
+  font-family:var(--mono); font-size:11px; background:var(--panel); color:var(--text-dim);
+  border:1px solid var(--line); padding:4px 6px; border-radius:2px; max-width:230px;
+}
+#filter-toggle{
+  background:none; border:1px solid var(--line); color:var(--text-dim);
+  padding:4px 10px; border-radius:2px; cursor:pointer;
+  font-family:var(--mono); font-size:11px; letter-spacing:.03em; margin-left:6px;
+}
+#filter-toggle:hover, #filter-toggle.active{ color:var(--amber-bright); border-color:var(--amber); }
+#filter-panel{
+  display:none; align-items:center; flex-wrap:wrap; gap:14px;
+  padding:8px 22px; background:var(--panel-2); border-bottom:1px solid var(--line);
+  font-family:var(--mono); font-size:11px; color:var(--text-dim); flex-shrink:0;
+}
+#filter-panel.open{ display:flex; }
+#filter-panel .grp{ display:flex; align-items:center; gap:6px; }
+#filter-panel label{ display:flex; align-items:center; gap:4px; cursor:pointer; }
+#filter-panel input[type="number"]{
+  width:60px; background:var(--panel); color:var(--text); border:1px solid var(--line);
+  border-radius:2px; padding:3px 5px; font-family:var(--mono); font-size:11px;
+}
+#filter-panel input[type="text"]{
+  width:120px; background:var(--panel); color:var(--text); border:1px solid var(--line);
+  border-radius:2px; padding:3px 5px; font-family:var(--mono); font-size:11px;
+}
+#filter-panel .sep{ color:var(--text-dim); opacity:.5; }
+#filter-count{ color:var(--amber-bright); }
+#filter-reset{
+  background:none; border:1px solid var(--line); color:var(--text-dim);
+  padding:3px 8px; border-radius:2px; cursor:pointer; font-family:var(--mono); font-size:11px;
+}
+#filter-reset:hover{ color:var(--amber-bright); border-color:var(--amber); }
+
+/* ===== Body layout ===== */
+#body{ flex:1; display:flex; min-height:0; }
+#map{ flex:1; min-width:0; background:#0a1420; position:relative; }
+.leaflet-container{ background:#0a1420; }
+/* Dark map look matched to reference (typhoon_track_finder.html):
+   invert the light GSI "pale" tiles and re-tint them. */
+.leaflet-tile-pane{ transition: filter .2s; }
+#map.dark-tiles .leaflet-tile-pane{
+  filter: invert(92%) hue-rotate(180deg) brightness(0.92) contrast(0.92) saturate(0.9);
+}
+
+/* Side info panel */
+#side{
+  width:280px; flex-shrink:0; background:var(--panel);
+  border-left:1px solid var(--line);
+  display:flex; flex-direction:column; overflow-y:auto;
+  padding:16px 18px 18px 18px;
+}
+
+/* Narrow screens: #map has a hard floor below which it becomes unusable, so
+   below that width stack the map above the side panel instead of squeezing
+   them side-by-side (which used to push #side, and its mode-toggle button,
+   partly or fully out of view). */
+@media (max-width: 860px){
+  #body{ flex-direction:column; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+  #map{ flex:none; width:100%; height:46vh; min-height:260px; }
+  #side{
+    width:100%; flex-shrink:0; overflow-y:visible;
+    border-left:none; border-top:1px solid var(--line);
+  }
+}
+#side h2{
+  font-family:var(--serif); font-size:15px; margin:0 0 2px 0; color:var(--paper);
+  letter-spacing:.02em;
+}
+#side .storm-en{ font-family:var(--mono); font-size:11px; color:var(--text-dim); margin-bottom:14px; }
+
+.readout{
+  display:grid; grid-template-columns:auto auto; gap:3px 10px;
+  font-family:var(--mono); font-size:12px; margin-bottom:16px;
+}
+.readout .k{ color:var(--text-dim); }
+.readout .v{ color:var(--paper); text-align:right; font-weight:600; }
+.readout .v.big{ font-size:22px; color:var(--amber-bright); }
+
+hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
+
+#legend-wind{ font-size:11px; color:var(--text-dim); line-height:1.7; }
+#legend-wind .row{ display:flex; align-items:center; gap:8px; margin-bottom:3px;}
+#legend-wind svg{ flex-shrink:0; }
+
+.section-label{
+  font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--teal); margin:0 0 8px 0;
+}
+
+/* ===== Bottom timeline ===== */
+#timebar{
+  flex-shrink:0; background:var(--panel-2); border-top:1px solid var(--line);
+  padding:10px 22px 14px 22px;
+}
+#timebar .row1{ display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+#play-btn{
+  width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+  background:var(--panel); color:var(--amber-bright); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:14px;
+  flex-shrink:0;
+}
+#play-btn:hover{ border-color:var(--amber); }
+#play-btn:disabled, #slider:disabled{ opacity:.35; cursor:not-allowed; }
+#time-label{
+  font-family:var(--mono); font-size:13px; color:var(--paper); min-width:170px;
+}
+#speed-select{
+  font-family:var(--mono); font-size:11px; background:var(--panel); color:var(--text-dim);
+  border:1px solid var(--line); padding:4px 6px; border-radius:2px;
+}
+#slider{
+  flex:1; -webkit-appearance:none; appearance:none; height:3px; background:var(--line);
+  border-radius:2px; outline:none;
+}
+#slider::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:12px; height:12px; border-radius:50%;
+  background:var(--amber-bright); cursor:pointer; border:2px solid var(--ink);
+}
+#slider::-moz-range-thumb{
+  width:12px; height:12px; border-radius:50%; background:var(--amber-bright); cursor:pointer; border:2px solid var(--ink);
+}
+#ticklabels{
+  display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px; color:var(--text-dim);
+  padding-left:48px;
+}
+
+/* Wind arrow marker */
+.wind-arrow{ pointer-events:none; }
+
+.mode-toggle{
+  display:flex; gap:0; margin:10px 0 4px 0; border:1px solid var(--line);
+  border-radius:3px; overflow:hidden;
+}
+.mode-btn{
+  flex:1; font-family:var(--mono); font-size:11px; letter-spacing:.03em;
+  padding:7px 6px; background:var(--panel-2); color:var(--text-dim);
+  border:none; cursor:pointer; transition:background .15s,color .15s;
+}
+.mode-btn + .mode-btn{ border-left:1px solid var(--line); }
+.mode-btn:hover{ color:var(--text); }
+.mode-btn.active[data-mode="wind"]{ background:var(--amber); color:var(--ink); }
+.mode-btn.active[data-mode="rain"]{ background:var(--rain); color:var(--ink); }
+
+.ty-mark-wrap{ pointer-events:none; }
+.ty-mark{
+  display:flex; flex-direction:column; align-items:center; line-height:1.15;
+  white-space:nowrap; font-family:var(--mono);
+}
+.ty-mark .ty-pres{
+  font-size:10px; font-weight:700; color:#fff;
+  text-shadow:0 0 3px #000, 0 0 3px #000, 0 0 3px #000, 0 1px 1px #000;
+}
+.ty-mark .ty-code{
+  font-size:16px; font-weight:900; color:#e5342a; letter-spacing:.02em;
+  text-shadow:0 0 3px #000, 0 0 3px #000, 0 0 3px #000, 0 1px 1px #000;
+}
+.typhoon-eye{ pointer-events:none; }
+
+.leaflet-tooltip{
+  background:var(--panel); color:var(--text); border:1px solid var(--line);
+  border-radius:3px; font-family:var(--mono); font-size:11px; line-height:1.5;
+  padding:4px 7px; box-shadow:none;
+}
+.leaflet-tooltip-top:before{ border-top-color:var(--line); }
+
+.leaflet-popup-content-wrapper{
+  background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:3px;
+}
+.leaflet-popup-tip{ background:var(--panel); }
+.leaflet-popup-content{ font-family:var(--mono); font-size:11px; margin:8px 10px; }
+.leaflet-control-zoom a{ background:var(--panel) !important; color:var(--text) !important; border-color:var(--line) !important; }
+.leaflet-control-attribution{
+  background:rgba(15,23,32,.85) !important; color:var(--text-dim) !important;
+  font-size:10px !important;
+}
+.leaflet-control-attribution a{ color:var(--teal) !important; }
+
+#credit{
+  position:absolute; bottom:6px; left:6px; z-index:500;
+  font-family:var(--mono); font-size:9px; color:rgba(233,228,214,.35);
+  background:rgba(11,22,34,.55); padding:2px 6px; border-radius:2px; pointer-events:none;
+}
+
+#loading-overlay{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ink); color:var(--text-dim);
+  font-family:var(--mono); font-size:13px; letter-spacing:.05em;
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header>
+    <h1>上陸台風観測雨風マップ</h1>
+    <div class="sub" id="header-sub">上陸台風 &mdash; 地上風観測データ</div>
+    <div class="spacer"></div>
+    <div class="badge">国土地理院地図</div>
+  </header>
+
+  <div id="storm-tabs-row">
+    <div id="storm-tabs"></div>
+    <div id="storm-toolbar">
+      <button id="storm-prev" class="storm-nav-btn" title="前の台風">&#8249;</button>
+      <select id="storm-select"></select>
+      <button id="storm-next" class="storm-nav-btn" title="次の台風">&#8250;</button>
+      <button id="filter-toggle" title="絞り込み">絞り込み &#9662;</button>
+    </div>
+  </div>
+
+  <div id="filter-panel">
+    <div class="grp">
+      <span>年</span>
+      <input id="f-year-min" type="number" placeholder="最小">
+      <span class="sep">&ndash;</span>
+      <input id="f-year-max" type="number" placeholder="最大">
+    </div>
+    <div class="grp">
+      <span>階級</span>
+      <label><input type="checkbox" class="f-grade" value="5" checked>台風(強)</label>
+      <label><input type="checkbox" class="f-grade" value="4" checked>STS</label>
+      <label><input type="checkbox" class="f-grade" value="3" checked>TS</label>
+      <label><input type="checkbox" class="f-grade" value="6" checked>温帯低気圧</label>
+      <label><input type="checkbox" class="f-grade" value="other" checked>その他/熱低</label>
+    </div>
+    <div class="grp">
+      <span>月</span>
+      <div id="f-month-boxes"></div>
+    </div>
+    <div class="grp">
+      <span>名称</span>
+      <input id="f-name" type="text" placeholder="台風名で検索">
+    </div>
+    <div class="grp">
+      <button id="filter-reset">リセット</button>
+      <span id="filter-count"></span>
+    </div>
+  </div>
+
+  <div id="body">
+    <div id="map"></div>
+    <div id="side">
+      <h2 id="side-name-ja">&nbsp;</h2>
+      <div class="storm-en" id="side-name-en">&nbsp;</div>
+
+      <div class="mode-toggle" id="mode-toggle">
+        <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
+        <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
+      </div>
+
+      <div class="readout" id="readout">
+        <div class="k">日時</div><div class="v" id="v-time">&mdash;</div>
+        <div class="k">中心気圧</div><div class="v big" id="v-pres">&mdash;</div>
+        <div class="k">階級</div><div class="v" id="v-grade">&mdash;</div>
+        <div class="k">位置</div><div class="v" id="v-pos">&mdash;</div>
+      </div>
+
+      <hr class="rule">
+      <div class="section-label" id="legend-title">Wind Legend / 風の凡例</div>
+      <div id="legend-wind"></div>
+
+      <hr class="rule">
+      <div class="section-label">About</div>
+      <div style="font-size:11px; line-height:1.7; color:var(--text-dim);">
+        「風」表示では矢印が風の吹いていく方向、長さと色が風速(m/s)を表します。「雨」表示では丸の大きさと色が1時間降水量(mm)を表します。台風の中心（赤文字のTD/TS/STS/T/L）は気象庁ベストトラックに基づき、上に中心気圧を表示します。経路線は、実線（オレンジ）が通過済み、破線（水色）がこの後進む経路です。
+      </div>
+    </div>
+  </div>
+
+  <div id="timebar">
+    <div class="row1">
+      <button id="play-btn">&#9654;</button>
+      <div id="time-label">&mdash;</div>
+      <input id="slider" type="range" min="0" max="0" value="0" step="1">
+      <select id="speed-select">
+        <option value="300">速い</option>
+        <option value="600" selected>標準</option>
+        <option value="1000">遅い</option>
+      </select>
+    </div>
+    <div id="ticklabels"></div>
+  </div>
+  <div id="loading-overlay">データ読み込み中 &hellip;</div>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+const DATA = { stationNames: [], stationCoords: [], storms: {} };
+let STORM_META = {};   // code -> {name, year}, from data/index.json (tiny, loaded up front)
+let STORM_ORDER = [];
+// JMA best-track "階級" (grade) codes:
+//   2, 9 = 熱帯低気圧 (Tropical Depression)
+//   3    = 台風 (Tropical Storm)
+//   4    = 台風 (Severe Tropical Storm)
+//   5    = 台風 (Typhoon)
+//   6    = 温帯低気圧 (extratropical low)
+//   7    = RSMC東京の監視区域に入ったことを示すコード（強度分類ではない）
+//   1, 8 = 通常使用しない
+const GRADE_LABEL = {
+  "2":"Tropical Depression(熱帯低気圧)",
+  "9":"Tropical Depression(熱帯低気圧)",
+  "3":"Tropical Storm(台風)",
+  "4":"Severe Tropical Storm(台風)",
+  "5":"Typhoon(台風)",
+  "6":"温帯低気圧",
+  "7":"熱帯低気圧"
+};
+
+function gradeCode(grade){
+  // Short red label drawn at the storm center on the map.
+  switch(grade){
+    case '2': case '9': return 'TD';
+    case '3': return 'TS';
+    case '4': return 'STS';
+    case '5': return 'T';
+    case '6': return 'L';
+    default: return grade; // rare/unused codes (1, 7, 8): show the raw code rather than guessing
+  }
+}
+
+let map, tyMarker, trackLine, trackPastLine, trackHitLine;
+let windLayer = []; // array of {marker, station index}
+let displayMode = 'wind'; // 'wind' | 'rain'
+let currentStormCode = null;
+let currentIdx = 0;
+let playing = false;
+let playTimer = null;
+let selectToken = 0; // guards against out-of-order async storm loads (fast tab clicking)
+
+function computeStormOrder(){
+  // Sort by year, then by storm number (the last 2 digits of the code),
+  // not by track start time: some storms' track data begins a day or two
+  // before their nominal number would suggest (e.g. 7506's track starts
+  // before 7505's), which would otherwise show a later-numbered storm
+  // ahead of an earlier one.
+  return Object.keys(STORM_META).sort(function(a,b){
+    const sa = STORM_META[a], sb = STORM_META[b];
+    const ya = parseInt(sa.year, 10), yb = parseInt(sb.year, 10);
+    if (ya !== yb) return ya - yb;
+    const na = parseInt(a.slice(2), 10), nb = parseInt(b.slice(2), 10);
+    return na - nb;
+  });
+}
+
+async function loadStations(){
+  // Station list/coords: tiny (~4KB), needed before the map can be built.
+  const res = await fetch('data/stations.json');
+  if (!res.ok) throw new Error('stations.json: ' + res.status);
+  const j = await res.json();
+  DATA.stationNames = j.stationNames;
+  DATA.stationCoords = j.stationCoords;
+}
+
+async function loadIndex(){
+  // Lightweight per-storm metadata (name/year only, ~5KB total) so tabs and
+  // the dropdown can be built without downloading every storm's full track
+  // and wind data up front.
+  const res = await fetch('data/index.json');
+  if (!res.ok) throw new Error('index.json: ' + res.status);
+  STORM_META = await res.json();
+}
+
+async function loadStorm(code){
+  // Full track + wind payload for one storm, fetched on demand (only when
+  // that storm is actually selected) and cached in DATA.storms thereafter.
+  if (DATA.storms[code]) return DATA.storms[code];
+  const res = await fetch('data/storms/' + code + '.json');
+  if (!res.ok) throw new Error('storms/' + code + '.json: ' + res.status);
+  const s = await res.json();
+  DATA.storms[code] = s;
+  return s;
+}
+
+function initMap(){
+  map = L.map('map', { zoomControl:true, attributionControl:true }).setView([36.2, 138.0], 5);
+  L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院</a>',
+    maxZoom: 18, minZoom: 4
+  }).addTo(map);
+  document.getElementById('map').classList.add('dark-tiles');
+
+  trackPastLine = L.polyline([], {color:'#f4b45c', weight:2, opacity:.9}).addTo(map);
+  trackLine = L.polyline([], {color:'#7fe0ea', weight:2.4, opacity:.9, dashArray:'2,6'}).addTo(map);
+
+  // Wide, invisible line laid over the whole track (past+future) purely to make
+  // clicking-to-seek easy — the visible track lines are only 2px wide.
+  trackHitLine = L.polyline([], {weight:16, opacity:0, interactive:true}).addTo(map);
+  trackHitLine.on('click', onTrackClick);
+  trackHitLine.on('mouseover', function(){ map.getContainer().style.cursor = 'pointer'; });
+  trackHitLine.on('mouseout', function(){ map.getContainer().style.cursor = ''; });
+
+  // Station wind arrow markers, pre-created, hidden until data arrives
+  DATA.stationNames.forEach(function(name, i){
+    const coord = DATA.stationCoords[i];
+    const icon = L.divIcon({
+      className:'wind-arrow',
+      html: arrowSVG(0, 0, '#666'),
+      iconSize:[ARROW_SIZE,ARROW_SIZE],
+      iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]
+    });
+    const m = L.marker([coord[0], coord[1]], {icon:icon, interactive:true, opacity:0});
+    m.addTo(map);
+    m.bindTooltip('', {direction:'top', offset:[0,-ARROW_HALF], sticky:true});
+    m.on('mouseover', function(){
+      // With 156 closely-spaced arrow markers, fast cursor movement can
+      // occasionally leave a previous marker's tooltip open when the
+      // browser coalesces mousemove events and Leaflet's own mouseout
+      // doesn't fire cleanly. Defensively close any other open tooltip
+      // before this one is shown.
+      windLayer.forEach(function(entry){
+        if (entry.marker !== m) entry.marker.closeTooltip();
+      });
+    });
+    windLayer.push({marker:m, name:name});
+  });
+
+  // Extra safety net: if the cursor leaves the map entirely, make sure no
+  // wind tooltip is left stuck open.
+  map.getContainer().addEventListener('mouseleave', function(){
+    windLayer.forEach(function(entry){ entry.marker.closeTooltip(); });
+  });
+
+  tyMarker = L.marker([0,0], {
+    icon: L.divIcon({className:'ty-mark-wrap', html:'', iconSize:[70,32], iconAnchor:[35,24]}),
+    interactive:true, opacity:0
+  }).addTo(map);
+  tyMarker.bindTooltip('', {permanent:false, direction:'top'});
+}
+
+const ARROW_SIZE = 42; // px, marker bounding box (was 26)
+const ARROW_HALF = ARROW_SIZE/2;
+
+function arrowSVG(deg, speed, color){
+  // deg: direction the wind blows TOWARD (0 = up/north)
+  const len = 12 + Math.min(speed, 30) * 0.85;
+  return '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '" style="overflow:visible;transform:rotate(' + deg + 'deg);">' +
+    '<line x1="0" y1="' + (len/2) + '" x2="0" y2="' + (-len/2) + '" stroke="' + color + '" stroke-width="3.4" stroke-linecap="round"/>' +
+    '<path d="M -6.2,' + (-len/2+7.2) + ' L 0,' + (-len/2-3.2) + ' L 6.2,' + (-len/2+7.2) + ' Z" fill="' + color + '"/>' +
+    '</svg>';
+}
+
+function speedColor(spd){
+  if (spd < 5) return '#5fa3a3';
+  if (spd < 10) return '#8fae5f';
+  if (spd < 15) return '#e0c23a';
+  if (spd < 20) return '#e0913a';
+  if (spd < 25) return '#d9612f';
+  return '#c1503f';
+}
+
+function rainColor(mm){
+  // Blue -> purple -> magenta scale, deliberately distinct from the
+  // teal/yellow/orange/red wind scale so the two modes are never confused
+  // at a glance. Exactly-zero (measured, no rain) gets a dim neutral color
+  // separate from the lightest rain bucket, mirroring how calm wind is
+  // shown as a small dim dot rather than blending into the speed scale.
+  if (mm <= 0) return '#3a4a5a';
+  if (mm < 1) return '#5f7fa3';
+  if (mm < 5) return '#5a7fd0';
+  if (mm < 10) return '#6f5fd0';
+  if (mm < 20) return '#9c4fd0';
+  if (mm < 30) return '#c23fa8';
+  if (mm < 50) return '#c23f6a';
+  return '#8f1f3f';
+}
+
+function rainCircleSVG(mm, color){
+  const r = mm > 0 ? Math.min(3 + mm * 0.32, 17) : 2.4;
+  return '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '">' +
+    '<circle cx="0" cy="0" r="' + r + '" fill="' + color + '" fill-opacity="0.8" stroke="' + color + '" stroke-width="1"/>' +
+    '</svg>';
+}
+
+function buildLegend(){
+  const el = document.getElementById('legend-wind');
+  const title = document.getElementById('legend-title');
+  let html = '';
+  if (displayMode === 'rain'){
+    title.textContent = 'Rain Legend / 雨の凡例（1時間降水量）';
+    const stops = [
+      [0, '0mm'], [3, '1-5'], [8, '5-10'], [15,'10-20'], [25,'20-30'], [40,'30-50'], [60,'50+']
+    ];
+    stops.forEach(function(s){
+      html += '<div class="row">' + rainCircleSVG(s[0], rainColor(s[0])) + '<span>' + s[1] + ' mm/h</span></div>';
+    });
+  } else {
+    title.textContent = 'Wind Legend / 風の凡例';
+    const stops = [
+      [3, '0-5 m/s'], [8, '5-10'], [13,'10-15'], [18,'15-20'], [23,'20-25'], [28,'25+']
+    ];
+    stops.forEach(function(s){
+      html += '<div class="row">' + arrowSVG(0, s[0], speedColor(s[0])) + '<span>' + s[1] + '</span></div>';
+    });
+  }
+  el.innerHTML = html;
+}
+
+let ACTIVE_ORDER = []; // STORM_ORDER filtered down by the current filter panel state
+
+function gradeBucket(g){
+  return (g === '5' || g === '4' || g === '3' || g === '6') ? g : 'other';
+}
+
+function currentFilters(){
+  const yMinEl = document.getElementById('f-year-min');
+  const yMaxEl = document.getElementById('f-year-max');
+  const grades = Array.from(document.querySelectorAll('.f-grade:checked')).map(function(el){ return el.value; });
+  const months = Array.from(document.querySelectorAll('.f-month:checked')).map(function(el){ return parseInt(el.value, 10); });
+  const name = document.getElementById('f-name').value.trim().toUpperCase();
+  return {
+    yMin: yMinEl.value ? parseInt(yMinEl.value, 10) : null,
+    yMax: yMaxEl.value ? parseInt(yMaxEl.value, 10) : null,
+    grades: grades,
+    months: months,
+    name: name
+  };
+}
+
+function applyFilters(){
+  const f = currentFilters();
+  ACTIVE_ORDER = STORM_ORDER.filter(function(code){
+    const s = STORM_META[code];
+    const yr = parseInt(s.year, 10);
+    if (f.yMin !== null && yr < f.yMin) return false;
+    if (f.yMax !== null && yr > f.yMax) return false;
+    if (f.grades.length < 5 && !f.grades.includes(gradeBucket(s.maxGrade))) return false;
+    if (f.months.length && !(s.months || []).some(function(m){ return f.months.includes(m); })) return false;
+    if (f.name && !((s.name || '').toUpperCase().includes(f.name))) return false;
+    return true;
+  });
+  document.getElementById('filter-count').textContent = ACTIVE_ORDER.length + ' / ' + STORM_ORDER.length + ' 件';
+  buildTabs();
+  buildSelect();
+  if (ACTIVE_ORDER.length && !ACTIVE_ORDER.includes(currentStormCode)){
+    selectStorm(ACTIVE_ORDER[0]);
+  } else if (!ACTIVE_ORDER.length) {
+    document.getElementById('side-name-ja').textContent = '該当する台風がありません';
+    document.getElementById('side-name-en').textContent = '';
+  }
+}
+
+function buildMonthBoxes(){
+  const box = document.getElementById('f-month-boxes');
+  box.innerHTML = '';
+  for (let m = 1; m <= 12; m++){
+    const label = document.createElement('label');
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.className = 'f-month';
+    cb.value = String(m);
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(m + '月'));
+    box.appendChild(label);
+  }
+}
+
+function wireFilterPanel(){
+  buildMonthBoxes();
+  document.getElementById('filter-toggle').addEventListener('click', function(){
+    const panel = document.getElementById('filter-panel');
+    const open = panel.classList.toggle('open');
+    this.classList.toggle('active', open);
+  });
+  document.querySelectorAll('#filter-panel input, #filter-panel select').forEach(function(el){
+    el.addEventListener('change', applyFilters);
+  });
+  document.getElementById('f-name').addEventListener('input', applyFilters);
+  document.getElementById('filter-reset').addEventListener('click', function(){
+    document.getElementById('f-year-min').value = '';
+    document.getElementById('f-year-max').value = '';
+    document.getElementById('f-name').value = '';
+    document.querySelectorAll('.f-grade').forEach(function(el){ el.checked = true; });
+    document.querySelectorAll('.f-month').forEach(function(el){ el.checked = false; });
+    applyFilters();
+  });
+}
+
+function buildTabs(){
+  const wrap = document.getElementById('storm-tabs');
+  wrap.innerHTML = '';
+  ACTIVE_ORDER.forEach(function(code){
+    const s = STORM_META[code];
+    const btn = document.createElement('button');
+    btn.className = 'storm-tab';
+    btn.dataset.code = code;
+    const label = s.name || '(NONAME)';
+    btn.innerHTML = '<span class="en">' + label + '</span><span class="yr">' + s.year + ' ' + parseInt(code.slice(2), 10) + '\u53f7</span>';
+    btn.addEventListener('click', function(){ selectStorm(code); });
+    wrap.appendChild(btn);
+  });
+
+  const yrs = ACTIVE_ORDER.length;
+  const first = STORM_ORDER.length ? STORM_META[STORM_ORDER[0]].year : '';
+  const last = STORM_ORDER.length ? STORM_META[STORM_ORDER[STORM_ORDER.length-1]].year : '';
+  document.getElementById('header-sub').textContent =
+    first + '\u2013' + last + '\u5e74 \u4e0a\u9678\u53f0\u98a8(' + yrs + '/' + STORM_ORDER.length + '\u500b\u8868\u793a\u4e2d) \u2014 \u5730\u4e0a\u98a8\u89b3\u6e2c\u30c7\u30fc\u30bf';
+}
+
+function buildSelect(){
+  const sel = document.getElementById('storm-select');
+  sel.innerHTML = '';
+  let curGroup = null, curYear = null;
+  ACTIVE_ORDER.forEach(function(code){
+    const s = STORM_META[code];
+    if (s.year !== curYear){
+      curYear = s.year;
+      curGroup = document.createElement('optgroup');
+      curGroup.label = curYear + '\u5e74';
+      sel.appendChild(curGroup);
+    }
+    const opt = document.createElement('option');
+    opt.value = code;
+    opt.textContent = parseInt(code.slice(2), 10) + '\u53f7 ' + (s.name || '(NONAME)');
+    curGroup.appendChild(opt);
+  });
+  sel.addEventListener('change', function(){ selectStorm(sel.value); });
+}
+
+function stepStorm(delta){
+  const i = ACTIVE_ORDER.indexOf(currentStormCode);
+  const next = i + delta;
+  if (next < 0 || next >= ACTIVE_ORDER.length) return;
+  selectStorm(ACTIVE_ORDER[next]);
+}
+
+async function selectStorm(code){
+  const myToken = ++selectToken;
+  currentStormCode = code;
+  currentIdx = 0;
+  if (playing) pause();
+
+  document.querySelectorAll('.storm-tab').forEach(function(el){
+    const active = el.dataset.code === code;
+    el.classList.toggle('active', active);
+    if (active) el.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  });
+  const sel = document.getElementById('storm-select');
+  if (sel.value !== code) sel.value = code;
+
+  // Lightweight loading state while this storm's track/wind payload is
+  // fetched (name/year are already known from the index, so show those
+  // immediately rather than leaving the panel blank).
+  const meta = STORM_META[code] || {};
+  document.getElementById('side-name-ja').textContent = '\u53f0\u98a8 ' + (meta.name || '(\u540d\u79f0\u4e0d\u660e)') + ' \u8aad\u307f\u8fbc\u307f\u4e2d\u2026';
+  document.getElementById('side-name-en').textContent = code;
+  document.getElementById('slider').disabled = true;
+  document.getElementById('play-btn').disabled = true;
+
+  let s;
+  try {
+    s = await loadStorm(code);
+  } catch (err) {
+    if (myToken !== selectToken) return;
+    document.getElementById('side-name-ja').textContent = '\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f';
+    document.getElementById('side-name-en').textContent = String(err.message || err);
+    return;
+  }
+  if (myToken !== selectToken) return; // a newer selection has since started; drop this stale result
+
+  document.getElementById('slider').disabled = false;
+  document.getElementById('play-btn').disabled = false;
+
+  const obsIdx = getPlayableIndices(s);
+  document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)');
+  document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points, ' + obsIdx.length + ' 3-hourly steps';
+
+  const slider = document.getElementById('slider');
+  slider.max = obsIdx.length - 1;
+  slider.value = 0;
+
+  buildTicks(obsIdx.map(function(i){ return s.times[i]; }));
+
+  // Fit map to track bounds
+  const bounds = s.track.map(function(p){ return [p.lat, p.lon]; });
+  if (bounds.length) map.fitBounds(bounds, {padding:[40,40]});
+  trackHitLine.setLatLngs(bounds);
+
+  updateFrame(0);
+}
+
+function buildTicks(times){
+  const el = document.getElementById('ticklabels');
+  el.innerHTML = '';
+  const n = times.length;
+  const marks = 6;
+  for (let i=0;i<marks;i++){
+    const idx = Math.round(i*(n-1)/(marks-1));
+    const d = new Date(times[idx]);
+    const span = document.createElement('span');
+    span.textContent = (d.getMonth()+1) + '/' + d.getDate();
+    el.appendChild(span);
+  }
+}
+
+function trackTimeMs(iso){
+  // bst_landfall_only.txt (best track) timestamps are recorded in UTC
+  // ("Z time"), while the wind observation timestamps (s.times) are JST
+  // ("I time"). Rather than rewriting the source data, convert here at the
+  // point of use: +9h puts track times on the same JST axis as s.times.
+  return Date.parse(iso) + 9*3600*1000;
+}
+
+function getObsIndices(s){
+  // Wind observations normally exist every 3 hours even though `times` is hourly.
+  // Find every time-index that has a real multi-station reading, so playback/
+  // slider steps land on the storm's actual observation cadence.
+  //
+  // Some storms (e.g. 1989) have one or a few stations (伊吹山 etc.) that report
+  // hourly during landfall while most other stations still report 3-hourly.
+  // Counting "any station has data" would then wrongly treat every hour as an
+  // observation step. Instead we count how many stations report at each
+  // time-index and only keep indices where at least half of that storm's peak
+  // station count reported, since a real synoptic observation time is reported
+  // by (nearly) all stations at once, whereas a handful of off-cadence stations
+  // only ever contribute a small fraction of the peak count.
+  if (s._obsIdx) return s._obsIdx;
+  const n = s.times.length;
+  const counts = new Array(n).fill(0);
+  for (let si=0; si<s.wind.length; si++){
+    const arr = s.wind[si];
+    for (let i=0;i<n;i++){
+      if (arr[i] !== null && arr[i] !== undefined) counts[i]++;
+    }
+  }
+  const maxCount = Math.max.apply(null, counts);
+  const threshold = Math.max(2, Math.round(maxCount * 0.5));
+  const idxs = [];
+  for (let i=0;i<n;i++) if (counts[i] >= threshold) idxs.push(i);
+  s._obsIdx = idxs.length ? idxs : [0];
+  return s._obsIdx;
+}
+
+function getIntervalHours(s){
+  // Median gap (in hours) between consecutive playable observation steps.
+  // Used to scale playback speed so 1-hourly storms don't feel sluggish next
+  // to 3-hourly ones (see play()).
+  if (s._intervalHours) return s._intervalHours;
+  const obsIdx = getPlayableIndices(s);
+  if (obsIdx.length < 2){ s._intervalHours = 3; return s._intervalHours; }
+  const gaps = [];
+  for (let i=1;i<obsIdx.length;i++){
+    const dt = (Date.parse(s.times[obsIdx[i]]) - Date.parse(s.times[obsIdx[i-1]])) / 3600000;
+    if (dt > 0) gaps.push(dt);
+  }
+  gaps.sort(function(a,b){ return a-b; });
+  s._intervalHours = gaps.length ? gaps[Math.floor(gaps.length/2)] : 3;
+  return s._intervalHours;
+}
+
+function getPlayableIndices(s){
+  // Trim the 3-hourly observation indices to the storm's track lifetime,
+  // so the timeline's left edge lines up with the track's first point and
+  // the right edge lines up with the track's last point (wind observations
+  // exist before the storm has formed and keep coming every 3h after it has
+  // dissipated/left the track data, but we don't want to play through those).
+  if (s._playIdx) return s._playIdx;
+  const obsIdx = getObsIndices(s);
+  const trackStartMs = trackTimeMs(s.track[0].time);
+  const trackEndMs = trackTimeMs(s.track[s.track.length-1].time);
+  const playable = obsIdx.filter(function(i){
+    const t = Date.parse(s.times[i]);
+    return t >= trackStartMs && t <= trackEndMs;
+  });
+  s._playIdx = playable.length ? playable : obsIdx.slice(0,1);
+  return s._playIdx;
+}
+
+function findTrackAt(track, timeMs){
+  // linear interpolation between bracketing points
+  let before=null, after=null;
+  for (let i=0;i<track.length;i++){
+    const t = trackTimeMs(track[i].time);
+    if (t<=timeMs) before = track[i];
+    if (t>=timeMs && !after) after = track[i];
+  }
+  if (!before) return after;
+  if (!after) return before;
+  if (before===after) return before;
+  const t0 = trackTimeMs(before.time), t1 = trackTimeMs(after.time);
+  const f = t1===t0 ? 0 : (timeMs - t0)/(t1 - t0);
+  return {
+    lat: before.lat + (after.lat-before.lat)*f,
+    lon: before.lon + (after.lon-before.lon)*f,
+    pres: Math.round(before.pres + (after.pres-before.pres)*f),
+    grade: f < 0.5 ? before.grade : after.grade,
+    time: new Date(timeMs).toISOString()
+  };
+}
+
+function findNearestTrackPoint(s, latlng){
+  // Nearest track vertex to a clicked map point (simple planar distance,
+  // good enough at map scale for picking a seek target).
+  let best = s.track[0], bestDist = Infinity;
+  s.track.forEach(function(p){
+    const dLat = p.lat - latlng.lat, dLon = p.lon - latlng.lng;
+    const d = dLat*dLat + dLon*dLon;
+    if (d < bestDist){ bestDist = d; best = p; }
+  });
+  return best;
+}
+
+function findNearestPlayableIndex(s, timeMs){
+  // Map an arbitrary time to the closest index within the playable
+  // (slider) index list.
+  const obsIdx = getPlayableIndices(s);
+  let bestPos = 0, bestDiff = Infinity;
+  obsIdx.forEach(function(idx, pos){
+    const diff = Math.abs(Date.parse(s.times[idx]) - timeMs);
+    if (diff < bestDiff){ bestDiff = diff; bestPos = pos; }
+  });
+  return bestPos;
+}
+
+function onTrackClick(e){
+  const s = DATA.storms[currentStormCode];
+  const tp = findNearestTrackPoint(s, e.latlng);
+  const pos = findNearestPlayableIndex(s, trackTimeMs(tp.time));
+  if (playing) pause();
+  updateFrame(pos);
+}
+
+function updateFrame(pos){
+  currentIdx = pos;
+  const s = DATA.storms[currentStormCode];
+  const obsIdx = getPlayableIndices(s);
+  const idx = obsIdx[pos];
+  const t = s.times[idx];
+  const timeMs = Date.parse(t);
+  document.getElementById('slider').value = pos;
+
+  const d = new Date(t);
+  const label = d.getFullYear()+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getDate()).padStart(2,'0')+
+    ' ' + String(d.getHours()).padStart(2,'0') + ':00 JST';
+  document.getElementById('time-label').textContent = label;
+  document.getElementById('v-time').textContent = label;
+
+  // typhoon center (interpolated)
+  const tp = findTrackAt(s.track, timeMs);
+  if (tp && tp.lat != null){
+    const code = gradeCode(tp.grade);
+    const presTxt = Number.isFinite(tp.pres) ? Math.round(tp.pres) + 'hPa' : '';
+    tyMarker.setLatLng([tp.lat, tp.lon]);
+    tyMarker.setIcon(L.divIcon({
+      className:'ty-mark-wrap',
+      html:'<div class="ty-mark"><span class="ty-pres">' + presTxt + '</span><span class="ty-code">' + code + '</span></div>',
+      iconSize:[70,32], iconAnchor:[35,24]
+    }));
+    tyMarker.setOpacity(1);
+    tyMarker.setTooltipContent(s.name + ' ' + presTxt);
+    document.getElementById('v-pres').textContent = presTxt || '—';
+    document.getElementById('v-grade').textContent = GRADE_LABEL[tp.grade] || tp.grade;
+    document.getElementById('v-pos').textContent = tp.lat.toFixed(1) + '°N, ' + tp.lon.toFixed(1) + '°E';
+  } else {
+    tyMarker.setOpacity(0);
+    document.getElementById('v-pres').textContent = '—';
+    document.getElementById('v-grade').textContent = '—';
+    document.getElementById('v-pos').textContent = '台風域外';
+  }
+
+  // track lines: past (solid amber) vs future (dashed gray)
+  const pastPts = [], futPts = [];
+  s.track.forEach(function(p){
+    const pt = [p.lat, p.lon];
+    if (trackTimeMs(p.time) <= timeMs) pastPts.push(pt); else futPts.push(pt);
+  });
+  if (tp && tp.lat!=null) pastPts.push([tp.lat, tp.lon]);
+  trackPastLine.setLatLngs(pastPts);
+  trackLine.setLatLngs(futPts.length ? [pastPts[pastPts.length-1]].concat(futPts) : []);
+
+  // wind arrows / rain circles at each station
+  const wind = s.wind;
+  const rain = s.rain;
+  for (let i=0;i<windLayer.length;i++){
+    const entry = windLayer[i];
+
+    if (displayMode === 'rain'){
+      const mm = rain ? rain[i][idx] : null;
+      if (mm === null || mm === undefined){
+        entry.marker.setOpacity(0);
+        continue;
+      }
+      entry.marker.setOpacity(1);
+      const color = rainColor(mm);
+      const html = rainCircleSVG(mm, color);
+      const tip = entry.name + '<br>' + mm.toFixed(1) + ' mm/h';
+      entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:html, iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
+      entry.marker.setTooltipContent(tip);
+      continue;
+    }
+
+    const w = wind[i][idx];
+    if (!w){
+      entry.marker.setOpacity(0);
+      continue;
+    }
+    const spd = w[0], dirFrom = w[1];
+    entry.marker.setOpacity(1);
+    let html, tip;
+    if (dirFrom === null){
+      // calm
+      html = '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '"><circle cx="0" cy="0" r="5" fill="#5fa3a3"/></svg>';
+      tip = entry.name + '<br>' + spd.toFixed(1) + ' m/s (\u9759\u7a4f)';
+    } else {
+      const toward = (dirFrom + 180) % 360;
+      html = arrowSVG(toward, spd, speedColor(spd));
+      tip = entry.name + '<br>' + spd.toFixed(1) + ' m/s';
+    }
+    entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:html, iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
+    entry.marker.setTooltipContent(tip);
+  }
+}
+
+function step(){
+  const s = DATA.storms[currentStormCode];
+  const obsIdx = getPlayableIndices(s);
+  const next = currentIdx + 1;
+  if (next >= obsIdx.length){
+    pause();
+    return;
+  }
+  updateFrame(next);
+}
+
+function play(){
+  playing = true;
+  document.getElementById('play-btn').innerHTML = '&#10074;&#10074;';
+  const s = DATA.storms[currentStormCode];
+  let speed = parseInt(document.getElementById('speed-select').value, 10);
+  // Each step of a 1-hourly storm advances the typhoon 1/3 as much real time as
+  // a step of a 3-hourly storm, so at the same frame delay it looks 3x slower.
+  // Play 1-hourly storms at 3x the frame rate to match the apparent pace.
+  if (getIntervalHours(s) <= 1.5) speed = speed / 3;
+  playTimer = setInterval(step, speed);
+}
+function pause(){
+  playing = false;
+  document.getElementById('play-btn').innerHTML = '&#9654;';
+  clearInterval(playTimer);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  Promise.all([loadStations(), loadIndex()]).then(function(){
+    STORM_ORDER = computeStormOrder();
+    ACTIVE_ORDER = STORM_ORDER.slice();
+    currentStormCode = STORM_ORDER[0];
+
+    initMap();
+    buildLegend();
+    wireFilterPanel();
+    buildTabs();
+    buildSelect();
+    document.getElementById('filter-count').textContent = ACTIVE_ORDER.length + ' / ' + STORM_ORDER.length + ' 件';
+
+    document.getElementById('storm-prev').addEventListener('click', function(){ stepStorm(-1); });
+    document.getElementById('storm-next').addEventListener('click', function(){ stepStorm(1); });
+
+    document.querySelectorAll('.mode-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const mode = btn.dataset.mode;
+        if (mode === displayMode) return;
+        displayMode = mode;
+        document.querySelectorAll('.mode-btn').forEach(function(b){
+          b.classList.toggle('active', b.dataset.mode === mode);
+        });
+        buildLegend();
+        if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
+      });
+    });
+
+    document.getElementById('slider').addEventListener('input', function(e){
+      if (playing) pause();
+      updateFrame(parseInt(e.target.value,10));
+    });
+    document.getElementById('play-btn').addEventListener('click', function(){
+      if (playing) pause(); else play();
+    });
+    document.getElementById('speed-select').addEventListener('change', function(){
+      if (playing){ pause(); play(); }
+    });
+
+    document.getElementById('loading-overlay').style.display = 'none';
+
+    selectStorm(currentStormCode);
+  }).catch(function(err){
+    const el = document.getElementById('loading-overlay');
+    el.textContent = 'データの読み込みに失敗しました。ページを再読み込みしてください。(' + err.message + ')';
+  });
+});
+})();
+</script>
+</body>
+</html>
