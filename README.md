@@ -46,6 +46,28 @@ python3 -m http.server 8000
   `bst_all.txt`）から `data/storms/*.json`・`data/index.json` を再生成するスクリプト。
   既存の観測風・雨データは上書きせず保持したまま経路のみ同期します。
   `python3 scripts/build_all_storms.py <bst_all.txtのパス>`
+- `data/raw/stations_wind.csv` / `stations_rain.csv` … 観測網の元データ（風・雨それぞれの
+  観測地点一覧。気象台等＋アメダス、計2802地点）
+- `scripts/build_station_network.py` … 上記2つのCSVから `data/stations_network.json`
+  （地点名・座標・`prec_no`/`block_no` を風/雨別に整理したもの）を生成するスクリプト。
+  `python3 scripts/build_station_network.py`
+- `scripts/fetch_amedas_obsdl.py` … 台風ごとの発生〜消滅日（JST）に合わせて、気象庁
+  「[過去の気象データ・ダウンロード](https://www.data.jma.go.jp/gmd/risk/obsdl/index.php)」
+  （obsdl）から風・雨の時別値をまとめて取得するスクリプト。地点をバッチ化して
+  リクエスト数を抑えており（全130台風・全地点で約2,600リクエスト）、1地点1日ずつ
+  取得する方式（数百万リクエスト）より大幅に高速です。POST形式・地点バッチ化ロジック
+  は動作実績のある
+  [weather-station-finder の Colab ノートブック](https://github.com/awg-yk/weather-station-finder/blob/main/notebooks/jma_bulk_download.ipynb)
+  を移植しています。
+  ```bash
+  pip install requests
+  python3 scripts/fetch_amedas_obsdl.py --landfall-only --kind wind,rain
+  # 特定の台風だけ: --codes 1912,1915
+  # 実際に取得せずリクエスト数だけ確認: --dry-run
+  ```
+  取得結果は `data/raw_amedas/<台風コード>_<wind|rain>.csv`（気象庁の生CSV形式）に
+  保存されます。このCSVを既存の `data/storms/*.json` の `wind`/`rain` 形式に変換する
+  処理は未実装です（実際のCSVの列構成を確認してから実装する必要があるため）。
 
 ## 絞り込み機能
 
