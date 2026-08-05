@@ -174,15 +174,30 @@ def fetch_storm_kind(session, code: str, kind: str, stations: List[dict], dry_ru
         print(f"{code} [{kind}]: already downloaded, skipping ({out_path})")
         return
 
+    # Cache each batch response individually under a per-storm/kind temp dir, so a
+    # network drop partway through (e.g. batch 6/14) doesn't waste the batches that
+    # already succeeded -- rerunning the same command resumes from the next one.
+    batch_dir = RAW_DIR / "_batches" / f"{code}_{kind}"
+    batch_dir.mkdir(parents=True, exist_ok=True)
+
     batch_lines = []
     for bi, batch in enumerate(batches):
+        batch_path = batch_dir / f"{bi:03d}.csv"
+        if batch_path.exists():
+            batch_lines.append(batch_path.read_text(encoding="utf-8-sig").splitlines())
+            print(f"{code} [{kind}]: batch {bi + 1}/{len(batches)} ({len(batch)} stations) cached")
+            continue
         content = fetch_data(session, batch, ymd, ELEMENT_CODE[kind])
+        batch_path.write_text(content.decode("cp932"), encoding="utf-8-sig", newline="")
         batch_lines.append(_read_lines(content))
         print(f"{code} [{kind}]: batch {bi + 1}/{len(batches)} ({len(batch)} stations) ok")
         time.sleep(SLEEP_SEC)
 
     merged = merge_columns(batch_lines)
     write_lines(merged, out_path)
+    for p in batch_dir.glob("*.csv"):
+        p.unlink()
+    batch_dir.rmdir()
     print(f"{code} [{kind}]: wrote {out_path}")
 
 
@@ -212,9 +227,20 @@ def main():
     if not args.dry_run:
         session.get(ROOT_URL, timeout=30)  # establishes the session cookie obsdl expects
 
+    failures = []
     for code in codes:
         for kind in kinds:
-            fetch_storm_kind(session, code, kind, network[kind], args.dry_run)
+            try:
+                fetch_storm_kind(session, code, kind, network[kind], args.dry_run)
+            except Exception as e:  # noqa: BLE001 - keep going through the rest of the run
+                print(f"{code} [{kind}]: FAILED ({e}) -- will retry on the next run "
+                      f"(completed batches are cached)")
+                failures.append(f"{code} [{kind}]")
+
+    if failures and not args.dry_run:
+        print()
+        print(f"{len(failures)} failed: {', '.join(failures)}")
+        print("Re-run the same command to retry just these (everything else is skipped as already done).")
 
 
 if __name__ == "__main__":
