@@ -66,8 +66,25 @@ python3 -m http.server 8000
   # 実際に取得せずリクエスト数だけ確認: --dry-run
   ```
   取得結果は `data/raw_amedas/<台風コード>_<wind|rain>.csv`（気象庁の生CSV形式）に
-  保存されます。このCSVを既存の `data/storms/*.json` の `wind`/`rain` 形式に変換する
-  処理は未実装です（実際のCSVの列構成を確認してから実装する必要があるため）。
+  保存されます。`data/raw_amedas/` と次に説明する `data/storms_obs/` はデータ量が
+  大きい（全台風分で数百MB）ため `.gitignore` に入れてあり、リポジトリには含めて
+  いません。両スクリプトを手元で実行すれば再生成できます。
+- `scripts/convert_amedas_csv.py` … `data/raw_amedas/*.csv` を `data/storms_obs/
+  <台風コード>_<wind|rain>.json`（`{times:[...], values:[...]}`。`values` は
+  `data/stations_network.json` の地点順に対応する配列。風は `[風速m/s, 風向(度)]`、
+  雨は降水量mmの配列）に変換するスクリプト。obsdlのCSVは地点によって列幅が違ったり
+  （雨は「現象なし情報」列の有無で3列/4列）、別地点なのに同じ地点名が複数あったり
+  する（例: 筑波山・白浜）ため、列名ではなく各列の見出し行の並び（空欄/風向/品質情報/
+  均質番号など）のパターンから地点の区切りを判定しています。1台風分（風976地点・
+  雨1669地点・216時間）で実データ検証済みです。
+  ```bash
+  python3 scripts/convert_amedas_csv.py --codes 1912,1915
+  python3 scripts/convert_amedas_csv.py --all   # data/raw_amedas/ にある分すべて
+  ```
+  `data/storms_obs/*.json` を既存の `data/storms/*.json`（`wind`/`rain`キー、旧
+  156地点網）に統合してフロントエンドに表示する処理はまだ未実装です。風と雨で
+  地点網が異なる（`data/stations.json` は共通1リストの前提）ため、`index.html` 側の
+  表示ロジックも合わせて変更が必要です。
 
 ## 絞り込み機能
 
