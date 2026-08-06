@@ -46,6 +46,16 @@ python3 -m http.server 8000
   `bst_all.txt`）から `data/storms/*.json`・`data/index.json` を再生成するスクリプト。
   既存の観測風・雨データは上書きせず保持したまま経路のみ同期します。
   `python3 scripts/build_all_storms.py <bst_all.txtのパス>`
+- `data/raw/digitaltyphoon_landfall.csv` … 国立情報学研究所「デジタル台風」の
+  [台風の上陸](https://agora.ex.nii.ac.jp/digital-typhoon/disaster/landfall-full/)
+  一覧（1951〜2025年、上陸/再上陸/通過の記録）
+- `scripts/apply_digitaltyphoon_landfall.py` … 上記CSVを正とし、全台風の
+  `landfallJP`（日本に上陸・通過したか）を確定するスクリプト。気象庁ベストトラック
+  の上陸マーカーは1991年以降にしか記録がなく、それ以前は
+  `scripts/estimate_pre1991_landfall.py`（観測地点への近接で推定）で代用していたが、
+  こちらのほうが正確なため優先して上書きする。実際の上陸日時・都道府県・地点も
+  `data/storms/*.json` の `landfallEvents` に保存する。
+  `python3 scripts/apply_digitaltyphoon_landfall.py`
 - `data/raw/stations_wind.csv` / `stations_rain.csv` … 観測網の元データ（風・雨それぞれの
   観測地点一覧。気象台等＋アメダス、計2802地点）
 - `scripts/build_station_network.py` … 上記2つのCSVから `data/stations_network.json`
