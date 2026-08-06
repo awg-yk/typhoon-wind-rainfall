@@ -108,14 +108,18 @@ python3 -m http.server 8000
   サーバーが提供するNetCDF Subset Service (NCSS) 経由で、日本周辺（既定: 北緯
   15〜50度・東経115〜155度、`--north`/`--south`/`--west`/`--east`で変更可）だけを
   サーバー側で切り出しているため、全球そのままより約94%小さく済みます（実測
-  1ファイル84MB→5MB）。ただしNCSSは月によって不安定で、まれに応答が空だったり
-  タイムアウトしたりします（1回失敗したら即座にその月は失敗として次に進み、全体
-  が長時間止まらないようにしています）。失敗した月は最後に一覧表示されるので、
-  再実行すれば（既にあるファイルはスキップして）そこだけ再取得を試みます。
+  1ファイル84MB→5MB）。ただしNCSSは、サーバー側に切り出し済みデータが無い月だと
+  その場で生成するため時間がかかり、タイムアウトすることがあります。そのため
+  **8並列**でリクエストし（待ち時間の大半がサーバーの処理待ちなので並列化が効く）、
+  失敗した月は**最大3周**まで再試行します（1周目でタイムアウトしても、その間に
+  サーバー側で生成が終わっていることが多く、次のパスで成功しやすい）。それでも
+  失敗した月は最後に一覧表示されるので、再実行すれば（成功済みファイルはスキップ
+  して）そこだけ再取得を試みます。
   ```bash
   python3 scripts/download_jra3q_pressure.py --dry-run   # 対象月・件数だけ確認
   python3 scripts/download_jra3q_pressure.py             # 海面更正気圧のみ取得（日本域）
   python3 scripts/download_jra3q_pressure.py --include-surface-pressure  # 地上気圧も
+  python3 scripts/download_jra3q_pressure.py --workers 12 --passes 5     # 並列数・パス数変更
   python3 scripts/download_jra3q_pressure.py --allow-full-fallback  # NCSS失敗時に全球
                                                                       # ダウンロード+ローカル
                                                                       # 切り出しにフォール

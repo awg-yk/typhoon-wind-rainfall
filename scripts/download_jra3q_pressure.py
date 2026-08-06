@@ -57,6 +57,7 @@ Usage:
 """
 import argparse
 import calendar
+import concurrent.futures
 import json
 import sys
 import time
@@ -84,10 +85,18 @@ SURFACE_PRESSURE = ("0_3_0", "pres-sfc")
 # real request (see module docstring) to shrink files ~94% vs. the full globe.
 DEFAULT_BBOX = {"north": 50, "south": 15, "west": 115, "east": 155}
 
-NCSS_TIMEOUT_SEC = 60
-NCSS_RETRIES = 1  # a hung/slow month is unlikely to suddenly speed up on an
-# immediate retry, and this script doesn't want to burn many minutes per bad
-# month -- fail fast and move on, don't stall the whole run on one file.
+# Observed NCSS behavior: months the server already has a cutout cached for
+# return almost immediately, while the rest hang well past a minute --
+# consistent with the subset being generated on demand. That means the wall
+# time is server-side work, not bandwidth, so (a) requests parallelize well,
+# and (b) a month that timed out has likely finished generating server-side
+# by the time a later pass asks for it again, making the retry fast.
+NCSS_TIMEOUT_SEC = 120
+NCSS_RETRIES = 1  # within a pass; whole-run passes below do the real retrying
+NCSS_WORKERS = 8  # concurrent requests; keep modest to stay polite to GDEX
+NCSS_PASSES = 3   # re-request months that failed, giving on-demand
+# generation time to complete between passes
+PASS_SLEEP_SEC = 30  # breather between passes
 FULL_TIMEOUT_SEC = 180
 FULL_RETRIES = 3
 RETRY_SLEEP_SEC = 5
@@ -230,6 +239,12 @@ def main():
     ap.add_argument("--south", type=float, default=DEFAULT_BBOX["south"])
     ap.add_argument("--west", type=float, default=DEFAULT_BBOX["west"])
     ap.add_argument("--east", type=float, default=DEFAULT_BBOX["east"])
+    ap.add_argument("--workers", type=int, default=NCSS_WORKERS,
+                     help=f"concurrent downloads (default {NCSS_WORKERS}). NCSS wall time is mostly "
+                          "server-side subset generation, so this speeds up a run roughly linearly.")
+    ap.add_argument("--passes", type=int, default=NCSS_PASSES,
+                     help=f"how many times to re-request months that failed (default {NCSS_PASSES}). "
+                          "A timed-out month has often finished generating server-side by the next pass.")
     ap.add_argument("--allow-full-fallback", action="store_true",
                      help="if NCSS fails for a month, fall back to downloading the whole-globe file "
                           "(~84MB vs ~5MB) and cropping it locally. Off by default since a run with "
@@ -254,35 +269,58 @@ def main():
         return
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    failed = []
-    done = 0
-    for y, m in months:
-        for var_code, var_name in variables:
-            out_path = out_dir / output_filename(var_code, var_name, y, m)
-            if out_path.exists() and out_path.stat().st_size > 0:
-                ok = True
-            else:
-                ok = False
-                for dataset in DATASETS:
-                    if dataset == "d640001" and (y, m) < D640001_STARTS:
-                        continue
-                    if try_ncss(dataset, var_code, var_name, y, m, bbox, out_path):
-                        ok = True
-                        break
-                    if args.allow_full_fallback and try_full_and_crop(dataset, var_code, var_name, y, m, bbox, out_path):
-                        ok = True
-                        break
-            done += 1
-            status = "ok" if ok else "FAILED (not found in any dataset)"
-            print(f"[{done}/{total_files}] {y:04d}-{m:02d} {var_name}: {status}")
-            if not ok:
-                failed.append(f"{y:04d}-{m:02d} {var_name}")
+
+    def fetch_job(job):
+        """Fetch one (month, variable). Returns (job, ok). Runs in a worker
+        thread -- prints only a single line at the end so concurrent jobs
+        don't interleave mid-message."""
+        y, m, var_code, var_name = job
+        out_path = out_dir / output_filename(var_code, var_name, y, m)
+        if out_path.exists() and out_path.stat().st_size > 0:
+            return job, True
+        for dataset in DATASETS:
+            if dataset == "d640001" and (y, m) < D640001_STARTS:
+                continue
+            if try_ncss(dataset, var_code, var_name, y, m, bbox, out_path):
+                return job, True
+            if args.allow_full_fallback and try_full_and_crop(dataset, var_code, var_name, y, m, bbox, out_path):
+                return job, True
+        return job, False
+
+    pending = [(y, m, var_code, var_name)
+               for (y, m) in months
+               for var_code, var_name in variables]
+
+    for pass_no in range(1, args.passes + 1):
+        if not pending:
+            break
+        if pass_no > 1:
+            print(f"\n--- pass {pass_no}/{args.passes}: retrying {len(pending)} failed "
+                  f"(waiting {PASS_SLEEP_SEC}s first -- on-demand subsets the server "
+                  f"started generating during the last pass may be ready now) ---")
+            time.sleep(PASS_SLEEP_SEC)
+        else:
+            print(f"\n--- pass {pass_no}/{args.passes}: {len(pending)} files, "
+                  f"{args.workers} at a time ---")
+
+        still_failed = []
+        done_in_pass = 0
+        total_in_pass = len(pending)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
+            for job, ok in pool.map(fetch_job, pending):
+                y, m, var_code, var_name = job
+                done_in_pass += 1
+                status = "ok" if ok else "failed"
+                print(f"[{done_in_pass}/{total_in_pass}] {y:04d}-{m:02d} {var_name}: {status}")
+                if not ok:
+                    still_failed.append(job)
+        pending = still_failed
 
     print()
-    if failed:
-        print(f"{len(failed)} failed:")
-        for f in failed:
-            print(f"  {f}")
+    if pending:
+        print(f"{len(pending)} failed after {args.passes} pass(es):")
+        for y, m, var_code, var_name in pending:
+            print(f"  {y:04d}-{m:02d} {var_name}")
         print("Re-run the same command to retry just these (files already downloaded are skipped).")
     else:
         print("All files downloaded.")
