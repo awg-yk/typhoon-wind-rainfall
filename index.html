@@ -479,8 +479,24 @@ async function loadStorm(code){
     // axis from the track itself (JST, matching the +9h convention used for
     // storms that do have observations) so the shared playback code can
     // treat it like any other storm, just with empty wind/rain arrays.
+    //
+    // IMPORTANT: format with isoLocal (local Date getters), not
+    // toISOString() (UTC getters). Every timestamp string in this file is
+    // parsed elsewhere via Date.parse()/`new Date(str)`, which -- per the
+    // ES2015 Date Time String spec -- treats a string with no timezone
+    // designator as the *browser's local time*, not UTC. trackTimeMs()
+    // relies on that: it does Date.parse(track.time) + 9h, and everything
+    // downstream (getPlayableIndices, the past/future track split, etc.)
+    // re-parses these synthesized s.times the same way, so the round trip
+    // only reproduces the intended epoch if the string's digits are also
+    // local-getter digits. toISOString() emits UTC-getter digits instead,
+    // which silently disagrees with trackTimeMs() by the viewer's UTC
+    // offset -- for JST viewers that made the last few hours of every
+    // track-only storm fail the getPlayableIndices() bounds check, so
+    // playback (and the past/future track line split) stopped short of
+    // the storm's actual last track point.
     s.times = s.track.map(function(p){
-      return new Date(Date.parse(p.time) + 9*3600*1000).toISOString().slice(0,19);
+      return isoLocal(new Date(Date.parse(p.time) + 9*3600*1000));
     });
     s.wind = [];
     s.rain = [];
@@ -828,6 +844,18 @@ function trackTimeMs(iso){
   return Date.parse(iso) + 9*3600*1000;
 }
 
+function isoLocal(d){
+  // Format a Date using LOCAL getters (not toISOString(), which uses UTC
+  // getters). Every timestamp string elsewhere in this file has no timezone
+  // designator and is parsed as the browser's local time (see the long
+  // comment in loadStorm()), so any string built from a Date must use local
+  // getters too or it'll silently disagree with everything else by the
+  // viewer's UTC offset.
+  function p2(n){ return String(n).padStart(2, '0'); }
+  return d.getFullYear() + '-' + p2(d.getMonth()+1) + '-' + p2(d.getDate()) +
+    'T' + p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds());
+}
+
 function getObsIndices(s){
   // Wind observations normally exist every 3 hours even though `times` is hourly.
   // Find every time-index that has a real multi-station reading, so playback/
@@ -916,7 +944,7 @@ function findTrackAt(track, timeMs){
     lon: before.lon + (after.lon-before.lon)*f,
     pres: Math.round(before.pres + (after.pres-before.pres)*f),
     grade: f < 0.5 ? before.grade : after.grade,
-    time: new Date(timeMs).toISOString()
+    time: isoLocal(new Date(timeMs))
   };
 }
 
