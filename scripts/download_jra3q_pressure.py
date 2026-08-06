@@ -109,10 +109,25 @@ def output_filename(var_code, var_name, year, month):
 
 
 def download_one(url, out_path):
+    # A plain urllib.request.urlopen() call (no User-Agent header -- urllib's
+    # default is "Python-urllib/x.y") got silent 200-with-empty-body
+    # responses from this server in practice, even though the exact same URL
+    # worked fine through requests.get() (which sends a browser-like default
+    # User-Agent). Sending one here avoids that. Also explicitly treat an
+    # empty body as a failure instead of writing a 0-byte "successful" file,
+    # since that's exactly the failure mode that slipped through silently
+    # before -- every file downloaded, every one empty.
+    req_headers = {"User-Agent": "Mozilla/5.0 (compatible; typhoon-wind-rainfall/1.0)"}
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            with urllib.request.urlopen(url, timeout=120) as resp:
+            req = urllib.request.Request(url, headers=req_headers)
+            with urllib.request.urlopen(req, timeout=120) as resp:
                 data = resp.read()
+            if not data:
+                print(f"    (empty response body, attempt {attempt}/{MAX_RETRIES})")
+                if attempt < MAX_RETRIES:
+                    time.sleep(RETRY_SLEEP_SEC)
+                continue
             out_path.write_bytes(data)
             return True
         except urllib.error.HTTPError as e:
@@ -120,7 +135,8 @@ def download_one(url, out_path):
                 return False  # not in this dataset -- caller tries the next one
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_SLEEP_SEC)
-        except Exception:
+        except Exception as e:
+            print(f"    ({type(e).__name__}: {e}, attempt {attempt}/{MAX_RETRIES})")
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_SLEEP_SEC)
     return False
@@ -161,7 +177,7 @@ def main():
     for y, m in months:
         for var_code, var_name in variables:
             out_path = out_dir / output_filename(var_code, var_name, y, m)
-            if out_path.exists():
+            if out_path.exists() and out_path.stat().st_size > 0:
                 ok = True
             else:
                 ok = False
