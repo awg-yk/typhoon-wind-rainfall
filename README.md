@@ -95,6 +95,25 @@ python3 -m http.server 8000
   156地点網）に統合してフロントエンドに表示する処理はまだ未実装です。風と雨で
   地点網が異なる（`data/stations.json` は共通1リストの前提）ため、`index.html` 側の
   表示ロジックも合わせて変更が必要です。
+- `scripts/download_jra3q_pressure.py` … ERA5との精度比較のため、気象庁
+  第3次長期再解析
+  [JRA-3Q](https://jra.kishou.go.jp/JRA-3Q/index_ja.html) の海面更正気圧
+  （気圧配置。`anl_surf` の `prmsl-msl-an-gauss`）を、上陸・通過台風
+  （`landfallJP=true`、221台風）の経路がかかる月ぶんまとめて
+  [NCAR/UCAR GDEX](https://gdex.ucar.edu/datasets/d640000/) からダウンロードする
+  スクリプト。必要な月（185ヶ月）は本リポジトリの `data/index.json`・
+  `data/storms/*.json` から自動計算します。GDEXは過去分(`d640000`)と近似リアル
+  タイム分(`d640001`)の2データセットに分かれており、月ごとにまず`d640000`を試し、
+  404なら`d640001`にフォールバックします。
+  ```bash
+  python3 scripts/download_jra3q_pressure.py --dry-run   # 対象月・件数だけ確認
+  python3 scripts/download_jra3q_pressure.py             # 海面更正気圧のみ取得
+  python3 scripts/download_jra3q_pressure.py --include-surface-pressure  # 地上気圧も
+  ```
+  1ファイル約80〜85MB、全185ヶ月で15GB超になります。`data/raw_jra3q/` に保存され、
+  既存ファイルはスキップされる（途中で止まっても再実行で再開可能）ので、時間を
+  分けて実行しても問題ありません。ダウンロードしたnetCDFファイルを台風ごとに
+  切り出す・ERA5と比較する処理はまだ未実装です。
 
 ## 絞り込み機能
 
