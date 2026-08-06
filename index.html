@@ -58,53 +58,24 @@ header .spacer{ flex:1; }
   letter-spacing:.05em;
 }
 
-/* ===== Storm picker (year -> storm list) ===== */
+/* ===== Storm picker (year dropdown -> storm dropdown) ===== */
 #picker{ margin-bottom:14px; }
-#picker-toolbar{ display:flex; gap:6px; justify-content:flex-end; margin-bottom:6px; }
-.storm-nav-btn{
-  background:none; border:1px solid var(--line); color:var(--text-dim);
-  width:24px; height:24px; border-radius:2px; cursor:pointer;
-  font-family:var(--mono); font-size:12px; line-height:1; flex-shrink:0;
-}
-.storm-nav-btn:hover{ color:var(--amber-bright); border-color:var(--amber); }
-
 #picker-cols{ display:flex; gap:6px; }
-#year-col, #storm-col{
-  border:1px solid var(--line); border-radius:3px; background:var(--panel-2);
-  max-height:260px; overflow-y:auto;
-  scrollbar-width:thin; scrollbar-color:var(--line) transparent;
+#year-select, #storm-select{
+  font-family:var(--mono); font-size:12px; background:var(--panel-2); color:var(--text-dim);
+  border:1px solid var(--line); border-radius:3px; padding:6px 8px;
 }
-#year-col{ width:68px; flex-shrink:0; }
-#storm-col{ flex:1; min-width:0; }
-#storm-col-placeholder{
-  font-family:var(--mono); font-size:11px; color:var(--text-dim);
-  padding:10px 8px;
-}
-.year-btn{
-  display:block; width:100%; text-align:left; background:none; border:none;
-  border-bottom:1px solid var(--line); cursor:pointer;
-  font-family:var(--mono); font-size:11px; color:var(--text-dim); padding:5px 8px;
-}
-.year-btn:last-child{ border-bottom:none; }
-.year-btn:hover{ color:var(--amber-bright); }
-.year-btn.active{ color:var(--amber-bright); background:var(--panel); font-weight:700; }
-.year-btn.empty{ opacity:.35; cursor:default; }
-.year-btn.empty:hover{ color:var(--text-dim); }
-
-.storm-item{
-  display:block; width:100%; text-align:left; background:none; border:none;
-  border-bottom:1px solid var(--line); cursor:pointer;
-  font-family:var(--mono); font-size:12px; color:var(--text-dim); padding:6px 8px;
-}
-.storm-item:last-child{ border-bottom:none; }
-.storm-item:hover{ color:var(--amber-bright); }
-.storm-item.active{ color:var(--amber-bright); background:var(--panel); font-weight:700; }
-.storm-item .no{ opacity:.6; margin-right:6px; }
+#year-select{ width:90px; flex-shrink:0; }
+#storm-select{ flex:1; min-width:0; }
 
 /* ===== Filter ===== */
 #filter-section{
   font-family:var(--mono); font-size:11px; color:var(--text-dim);
 }
+#filter-toggle{ color:var(--teal); }
+#filter-toggle:hover{ color:var(--amber-bright); }
+#filter-body{ margin-top:8px; }
+#filter-body.hidden{ display:none; }
 #filter-section .grp{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
 #filter-section label{ display:flex; align-items:center; gap:4px; cursor:pointer; }
 #filter-section select{
@@ -297,35 +268,33 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   <div id="body">
     <div id="leftpanel">
       <div id="picker">
-        <div id="picker-toolbar">
-          <button id="storm-prev" class="storm-nav-btn" title="前の台風">&#8249;</button>
-          <button id="storm-next" class="storm-nav-btn" title="次の台風">&#8250;</button>
-        </div>
         <div id="picker-cols">
-          <div id="year-col"></div>
-          <div id="storm-col"><div id="storm-col-placeholder">年を選んでください</div></div>
+          <select id="year-select"><option value="">年を選択</option></select>
+          <select id="storm-select" style="display:none"></select>
         </div>
       </div>
 
       <div id="filter-section">
-        <div class="section-label">絞り込み</div>
-        <div class="grp">
-          <label><input type="checkbox" id="f-landfall" checked>上陸・通過(日本)</label>
-          <label><input type="checkbox" id="f-other-track">その他(遠方含む全て)</label>
-        </div>
-        <div class="grp">
-          <span>月</span>
-          <select id="f-month"><option value="">すべて</option></select>
-        </div>
-        <div class="grp">
-          <button id="filter-reset">リセット</button>
-          <span id="filter-count"></span>
+        <button type="button" id="filter-toggle" class="section-label" style="cursor:pointer; background:none; border:none; padding:0;">絞り込み &#9662;</button>
+        <div id="filter-body" class="hidden">
+          <div class="grp">
+            <label><input type="checkbox" id="f-landfall" checked>上陸・通過(日本)</label>
+            <label><input type="checkbox" id="f-other-track" checked>その他(遠方含む全て)</label>
+          </div>
+          <div class="grp">
+            <span>月</span>
+            <select id="f-month"><option value="">すべて</option></select>
+          </div>
+          <div class="grp">
+            <button id="filter-reset">リセット</button>
+            <span id="filter-count"></span>
+          </div>
         </div>
       </div>
 
       <hr class="rule">
 
-      <h2 id="side-name-ja">&nbsp;</h2>
+      <h2 id="side-name-ja">年と台風を選択してください</h2>
       <div class="storm-en" id="side-name-en">&nbsp;</div>
 
       <div class="mode-toggle" id="mode-toggle">
@@ -354,9 +323,9 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   </div>
 
   <div id="timebar">
-    <button id="play-btn">&#9654;</button>
+    <button id="play-btn" disabled>&#9654;</button>
     <div id="time-label">&mdash;</div>
-    <input id="slider" type="range" min="0" max="0" value="0" step="1">
+    <input id="slider" type="range" min="0" max="0" value="0" step="1" disabled>
     <select id="speed-select">
       <option value="300">速い</option>
       <option value="600" selected>標準</option>
@@ -610,7 +579,7 @@ function buildLegend(){
 }
 
 let ACTIVE_ORDER = []; // STORM_ORDER filtered down by the current filter panel state
-let selectedYear = null; // year currently expanded in the picker's year column
+let selectedYear = null; // year currently chosen in the year dropdown
 
 function currentFilters(){
   const monthVal = document.getElementById('f-month').value;
@@ -631,9 +600,13 @@ function applyFilters(){
   });
   document.getElementById('filter-count').textContent = ACTIVE_ORDER.length + ' / ' + STORM_ORDER.length + ' 件';
   updateHeaderSub();
-  buildYearList();
-  if (selectedYear) buildStormColumn(selectedYear);
-  if (ACTIVE_ORDER.length && !ACTIVE_ORDER.includes(currentStormCode)){
+  buildYearSelect();
+  if (selectedYear) buildStormSelect(selectedYear);
+  // Only auto-reselect when a storm was already showing and the filter
+  // change dropped it (e.g. narrowing to a month it doesn't fall in) --
+  // never auto-pick one on first load, since nothing should be shown until
+  // the year/storm dropdowns are used.
+  if (currentStormCode && ACTIVE_ORDER.length && !ACTIVE_ORDER.includes(currentStormCode)){
     selectStorm(ACTIVE_ORDER[0]);
   } else if (!ACTIVE_ORDER.length) {
     document.getElementById('side-name-ja').textContent = '該当する台風がありません';
@@ -653,13 +626,16 @@ function buildMonthOptions(){
 
 function wireFilterPanel(){
   buildMonthOptions();
+  document.getElementById('filter-toggle').addEventListener('click', function(){
+    document.getElementById('filter-body').classList.toggle('hidden');
+  });
   document.querySelectorAll('#filter-section input, #filter-section select').forEach(function(el){
     el.addEventListener('change', applyFilters);
   });
   document.getElementById('filter-reset').addEventListener('click', function(){
     document.getElementById('f-month').value = '';
     document.getElementById('f-landfall').checked = true;
-    document.getElementById('f-other-track').checked = false;
+    document.getElementById('f-other-track').checked = true;
     applyFilters();
   });
 }
@@ -672,9 +648,8 @@ function updateHeaderSub(){
     first + '–' + last + '年 上陸台風(' + yrs + '/' + STORM_ORDER.length + '個表示中) — 地上風観測データ';
 }
 
-function buildYearList(){
-  const wrap = document.getElementById('year-col');
-  wrap.innerHTML = '';
+function buildYearSelect(){
+  const sel = document.getElementById('year-select');
   const activeSet = new Set(ACTIVE_ORDER);
   const years = [];
   const seen = new Set();
@@ -683,56 +658,58 @@ function buildYearList(){
     if (!seen.has(y)){ seen.add(y); years.push(y); }
   });
   years.sort();
+
+  sel.innerHTML = '';
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = '年を選択';
+  sel.appendChild(placeholder);
   years.forEach(function(y){
     const hasActive = STORM_ORDER.some(function(code){
       return STORM_META[code].year === y && activeSet.has(code);
     });
-    const btn = document.createElement('button');
-    btn.className = 'year-btn' + (hasActive ? '' : ' empty') + (y === selectedYear ? ' active' : '');
-    btn.textContent = y;
-    btn.dataset.year = y;
-    if (hasActive) btn.addEventListener('click', function(){ selectYear(y); });
-    wrap.appendChild(btn);
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y + '年';
+    opt.disabled = !hasActive;
+    sel.appendChild(opt);
   });
+  sel.value = (selectedYear && years.includes(selectedYear)) ? selectedYear : '';
 }
 
 function selectYear(y){
   selectedYear = y;
-  document.querySelectorAll('.year-btn').forEach(function(el){
-    el.classList.toggle('active', el.dataset.year === y);
-  });
-  buildStormColumn(y);
+  document.getElementById('year-select').value = y || '';
+  if (y) buildStormSelect(y);
+  else {
+    const stormSel = document.getElementById('storm-select');
+    stormSel.style.display = 'none';
+    stormSel.innerHTML = '';
+  }
 }
 
-function buildStormColumn(y){
-  const wrap = document.getElementById('storm-col');
-  wrap.innerHTML = '';
+function buildStormSelect(y){
+  const sel = document.getElementById('storm-select');
+  sel.innerHTML = '';
   const codes = ACTIVE_ORDER.filter(function(code){ return STORM_META[code].year === y; });
   if (!codes.length){
-    const ph = document.createElement('div');
-    ph.id = 'storm-col-placeholder';
-    ph.textContent = 'この年に該当する台風がありません';
-    wrap.appendChild(ph);
+    const opt = document.createElement('option');
+    opt.textContent = 'この年に該当する台風がありません';
+    sel.appendChild(opt);
+    sel.style.display = '';
     return;
   }
   codes.forEach(function(code){
     const s = STORM_META[code];
-    const btn = document.createElement('button');
-    btn.className = 'storm-item' + (code === currentStormCode ? ' active' : '');
-    btn.dataset.code = code;
-    const label = s.name || '(NONAME)';
-    btn.innerHTML = '<span class="no">' + parseInt(code.slice(2), 10) + '号</span><span class="en">' + label + '</span>';
-    btn.addEventListener('click', function(){ selectStorm(code); });
-    wrap.appendChild(btn);
+    const opt = document.createElement('option');
+    opt.value = code;
+    opt.textContent = parseInt(code.slice(2), 10) + '号 ' + (s.name || '(NONAME)');
+    sel.appendChild(opt);
   });
+  sel.value = codes.includes(currentStormCode) ? currentStormCode : codes[0];
+  sel.style.display = '';
 }
 
-function stepStorm(delta){
-  const i = ACTIVE_ORDER.indexOf(currentStormCode);
-  const next = i + delta;
-  if (next < 0 || next >= ACTIVE_ORDER.length) return;
-  selectStorm(ACTIVE_ORDER[next]);
-}
 
 async function selectStorm(code){
   const myToken = ++selectToken;
@@ -740,19 +717,14 @@ async function selectStorm(code){
   currentIdx = 0;
   if (playing) pause();
 
-  // Keep the year/storm picker in sync (covers picker clicks, the prev/next
-  // buttons, filter changes that jump to a different storm, and the initial
+  // Keep the year/storm dropdowns in sync (covers dropdown selections,
+  // filter changes that jump to a different storm, and the initial
   // auto-selected storm on page load).
   const meta0 = STORM_META[code] || {};
   if (meta0.year !== selectedYear){
     selectYear(meta0.year);
-  } else {
-    document.querySelectorAll('.storm-item').forEach(function(el){
-      const active = el.dataset.code === code;
-      el.classList.toggle('active', active);
-      if (active) el.scrollIntoView({behavior:'smooth', block:'nearest'});
-    });
   }
+  document.getElementById('storm-select').value = code;
 
   // Lightweight loading state while this storm's track/wind payload is
   // fetched (name/year are already known from the index, so show those
@@ -1082,8 +1054,14 @@ document.addEventListener('DOMContentLoaded', function(){
     wireFilterPanel();
     applyFilters(); // builds ACTIVE_ORDER/year list from the default filter state and selects the first match
 
-    document.getElementById('storm-prev').addEventListener('click', function(){ stepStorm(-1); });
-    document.getElementById('storm-next').addEventListener('click', function(){ stepStorm(1); });
+    document.getElementById('year-select').addEventListener('change', function(e){
+      selectYear(e.target.value || null);
+      const codes = ACTIVE_ORDER.filter(function(code){ return STORM_META[code].year === selectedYear; });
+      if (codes.length) selectStorm(codes[0]);
+    });
+    document.getElementById('storm-select').addEventListener('change', function(e){
+      if (e.target.value) selectStorm(e.target.value);
+    });
 
     document.querySelectorAll('.mode-btn').forEach(function(btn){
       btn.addEventListener('click', function(){
