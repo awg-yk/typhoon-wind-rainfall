@@ -13,7 +13,7 @@ before switching to NCSS.
 
 NCSS endpoint (one per month, same file this dataset's plain download link
 points at, just with query params added):
-  https://tds.gdex.ucar.edu/thredds/ncss/grid/files/<dataset>/anl_surf/<YYYYMM>/
+  https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/<dataset>/anl_surf/<YYYYMM>/
     jra3q.anl_surf.<var_code>.<var_name>-an-gauss.<YYYYMM>0100_<YYYYMM><lastday>18.nc
     ?var=<var_name>-an-gauss&north=..&south=..&east=..&west=..
     &time_start=..&time_end=..&accept=netcdf3
@@ -21,6 +21,14 @@ where <dataset> is d640000 (historical, Sep 1947 onward) or d640001
 (near-real-time, recent months). This script tries d640000 first for every
 month and falls back to d640001 on a 404, since the exact month where
 d640000's coverage currently ends isn't fixed (JRA-3Q keeps extending it).
+
+IMPORTANT: the "files/g/<dataset>/..." path segment is not optional -- an
+otherwise-identical URL without "g/" (files/<dataset>/...) also resolves
+and looks fine for some months (it's presumably an alias of some kind) but
+silently returns HTTP 200 with an EMPTY body for others, with no error to
+signal it. Confirmed month-by-month: 1951-12 succeeded without "g/", but
+1951-06 came back empty without it and only worked once "g/" was added.
+Always use the "g/" path.
 
 Which months are needed is computed straight from this repo's own data
 (data/index.json's landfallJP storms + their data/storms/<code>.json track
@@ -48,7 +56,7 @@ STORMS_DIR = ROOT / "data" / "storms"
 INDEX_PATH = ROOT / "data" / "index.json"
 OUT_DIR = ROOT / "data" / "raw_jra3q"
 
-NCSS_BASE = "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/{dataset}/anl_surf/{yyyymm}/jra3q.anl_surf.{var_code}.{var_name}-an-gauss.{yyyymm}0100_{yyyymm}{lastday}18.nc"
+NCSS_BASE = "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/{dataset}/anl_surf/{yyyymm}/jra3q.anl_surf.{var_code}.{var_name}-an-gauss.{yyyymm}0100_{yyyymm}{lastday}18.nc"
 DATASETS = ["d640000", "d640001"]  # try historical first, then near-real-time
 VARIABLES = [("0_3_1", "prmsl-msl")]  # sea-level pressure ("pressure pattern")
 SURFACE_PRESSURE = ("0_3_0", "pres-sfc")
