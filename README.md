@@ -104,15 +104,23 @@ python3 -m http.server 8000
   スクリプト。必要な月（185ヶ月）は本リポジトリの `data/index.json`・
   `data/storms/*.json` から自動計算します。GDEXは過去分(`d640000`)と近似リアル
   タイム分(`d640001`)の2データセットに分かれており、月ごとにまず`d640000`を試し、
-  404なら`d640001`にフォールバックします。GDEXのTHREDDSサーバーが提供する
-  NetCDF Subset Service (NCSS) 経由で、日本周辺（既定: 北緯15〜50度・東経115〜
-  155度、`--north`/`--south`/`--west`/`--east`で変更可）だけをサーバー側で
-  切り出しているため、全球そのままより約94%小さく済みます（実測 1ファイル
-  84MB→5MB）。
+  d640001が対象の月（2023年12月以降）だけフォールバックします。GDEXのTHREDDS
+  サーバーが提供するNetCDF Subset Service (NCSS) 経由で、日本周辺（既定: 北緯
+  15〜50度・東経115〜155度、`--north`/`--south`/`--west`/`--east`で変更可）だけを
+  サーバー側で切り出しているため、全球そのままより約94%小さく済みます（実測
+  1ファイル84MB→5MB）。ただしNCSSは月によって不安定で、まれに応答が空だったり
+  タイムアウトしたりします（1回失敗したら即座にその月は失敗として次に進み、全体
+  が長時間止まらないようにしています）。失敗した月は最後に一覧表示されるので、
+  再実行すれば（既にあるファイルはスキップして）そこだけ再取得を試みます。
   ```bash
   python3 scripts/download_jra3q_pressure.py --dry-run   # 対象月・件数だけ確認
   python3 scripts/download_jra3q_pressure.py             # 海面更正気圧のみ取得（日本域）
   python3 scripts/download_jra3q_pressure.py --include-surface-pressure  # 地上気圧も
+  python3 scripts/download_jra3q_pressure.py --allow-full-fallback  # NCSS失敗時に全球
+                                                                      # ダウンロード+ローカル
+                                                                      # 切り出しにフォール
+                                                                      # バック（時間がかかる
+                                                                      # ため既定オフ）
   ```
   全185ヶ月・日本域切り出し済みで合計1GB弱。`data/raw_jra3q/` に保存され、既存
   ファイルはスキップされる（途中で止まっても再実行で再開可能）ので、時間を分けて
