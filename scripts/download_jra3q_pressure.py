@@ -18,6 +18,10 @@ materializing a subset server-side, and has been reliable.
 
 Requires: pip install xarray netCDF4
 
+Parallelism uses processes, not threads: netCDF4/HDF5 is not thread-safe, and
+a threaded run deadlocked (each worker created a ~48-byte temp file and then
+hung forever with no error). Use --workers 1 for a plain serial run.
+
 Dataset is d640000 (historical, Sep 1947 onward) or d640001 (near-real-time,
 from Dec 2023 onward). This script tries d640000 first for every month and
 falls back to d640001 only for months d640001 can actually cover, since the
@@ -64,7 +68,10 @@ SURFACE_PRESSURE = ("0_3_0", "pres-sfc")
 # Default bounding box: covers Japan and its approach paths.
 DEFAULT_BBOX = {"north": 50, "south": 15, "west": 115, "east": 155}
 
-WORKERS = 4      # concurrent OPeNDAP reads; modest to stay polite to GDEX
+WORKERS = 4      # concurrent OPeNDAP reads, run as separate PROCESSES (see
+# the executor choice in main(): netCDF4/HDF5 is not thread-safe and threads
+# deadlocked here). Modest to stay polite to GDEX. --workers 1 runs serially
+# in-process, which is the safest fallback if parallelism misbehaves.
 PASSES = 3       # whole-list retry passes for anything that failed
 PASS_SLEEP_SEC = 15
 RETRIES = 2      # attempts within one pass
@@ -112,7 +119,7 @@ def fetch_subset(url, var_key, bbox, out_path):
 
     Writes to a temp path first and renames on success, so an interrupted
     run can't leave a half-written file that a later pass would mistake for
-    a completed download.
+    a completed download. The temp file is removed if anything fails.
     """
     import xarray as xr
 
@@ -129,6 +136,9 @@ def fetch_subset(url, var_key, bbox, out_path):
         if subset[var_key].size == 0:
             raise ValueError(f"empty selection for bbox {bbox}")
         subset.to_netcdf(tmp_path)
+    except BaseException:
+        tmp_path.unlink(missing_ok=True)
+        raise
     finally:
         if ds is not None:
             ds.close()
@@ -145,10 +155,29 @@ def try_month(dataset, var_code, var_name, y, m, bbox, out_path):
         except Exception as e:
             msg = str(e).replace("\n", " ")[:160]
             print(f"    {y:04d}-{m:02d} {dataset}: {type(e).__name__}: {msg} "
-                  f"(attempt {attempt}/{RETRIES})")
+                  f"(attempt {attempt}/{RETRIES})", flush=True)
             if attempt < RETRIES:
                 time.sleep(RETRY_SLEEP_SEC)
     return False
+
+
+def fetch_job(job):
+    """Worker entry point: fetch one (month, variable).
+
+    Module-level (not a closure) so it can be pickled for ProcessPoolExecutor,
+    and takes its config in the job tuple for the same reason.
+    """
+    y, m, var_code, var_name, out_dir_str, bbox = job
+    out_dir = Path(out_dir_str)
+    out_path = out_dir / output_filename(var_code, var_name, y, m)
+    if out_path.exists() and out_path.stat().st_size > 0:
+        return job, True
+    for dataset in DATASETS:
+        if dataset == "d640001" and (y, m) < D640001_STARTS:
+            continue
+        if try_month(dataset, var_code, var_name, y, m, bbox, out_path):
+            return job, True
+    return job, False
 
 
 def main():
@@ -191,19 +220,12 @@ def main():
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    def fetch_job(job):
-        y, m, var_code, var_name = job
-        out_path = out_dir / output_filename(var_code, var_name, y, m)
-        if out_path.exists() and out_path.stat().st_size > 0:
-            return job, True
-        for dataset in DATASETS:
-            if dataset == "d640001" and (y, m) < D640001_STARTS:
-                continue
-            if try_month(dataset, var_code, var_name, y, m, bbox, out_path):
-                return job, True
-        return job, False
+    # Clear temp files left behind by an interrupted earlier run, so they
+    # can't end up in a zip of the output directory looking like results.
+    for stale in out_dir.glob("*.tmp.nc"):
+        stale.unlink()
 
-    pending = [(y, m, var_code, var_name)
+    pending = [(y, m, var_code, var_name, str(out_dir), bbox)
                for (y, m) in months
                for var_code, var_name in variables]
 
@@ -213,31 +235,50 @@ def main():
             break
         if pass_no > 1:
             print(f"\n--- pass {pass_no}/{args.passes}: retrying {len(pending)} failed "
-                  f"(waiting {PASS_SLEEP_SEC}s first) ---")
+                  f"(waiting {PASS_SLEEP_SEC}s first) ---", flush=True)
             time.sleep(PASS_SLEEP_SEC)
         else:
             print(f"\n--- pass {pass_no}/{args.passes}: {len(pending)} files, "
-                  f"{args.workers} at a time ---")
+                  f"{args.workers} at a time ---", flush=True)
 
         still_failed = []
         done_in_pass = 0
         total_in_pass = len(pending)
-        with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-            for job, ok in pool.map(fetch_job, pending):
-                y, m, var_code, var_name = job
+        # Processes, not threads: netCDF4/HDF5 is not thread-safe, and running
+        # concurrent OPeNDAP reads in threads deadlocked in practice (workers
+        # each created a ~48-byte temp file and then hung indefinitely). Each
+        # process gets its own library state, so they don't contend.
+        executor = (concurrent.futures.ProcessPoolExecutor if args.workers > 1
+                    else None)
+        if executor is None:
+            results = (fetch_job(job) for job in pending)
+            for job, ok in results:
+                y, m, var_code, var_name = job[:4]
                 done_in_pass += 1
                 elapsed = time.time() - started
                 status = "ok" if ok else "failed"
                 print(f"[{done_in_pass}/{total_in_pass}] {y:04d}-{m:02d} {var_name}: {status} "
-                      f"({elapsed/60:.1f} min elapsed)")
+                      f"({elapsed/60:.1f} min elapsed)", flush=True)
                 if not ok:
                     still_failed.append(job)
+        else:
+            with executor(max_workers=args.workers) as pool:
+                for job, ok in pool.map(fetch_job, pending):
+                    y, m, var_code, var_name = job[:4]
+                    done_in_pass += 1
+                    elapsed = time.time() - started
+                    status = "ok" if ok else "failed"
+                    print(f"[{done_in_pass}/{total_in_pass}] {y:04d}-{m:02d} {var_name}: {status} "
+                          f"({elapsed/60:.1f} min elapsed)", flush=True)
+                    if not ok:
+                        still_failed.append(job)
         pending = still_failed
 
     print()
     if pending:
         print(f"{len(pending)} failed after {args.passes} pass(es):")
-        for y, m, var_code, var_name in pending:
+        for job in pending:
+            y, m, _var_code, var_name = job[:4]
             print(f"  {y:04d}-{m:02d} {var_name}")
         print("Re-run the same command to retry just these (files already downloaded are skipped).")
     else:
