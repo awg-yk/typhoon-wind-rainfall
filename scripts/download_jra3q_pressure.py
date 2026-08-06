@@ -58,6 +58,9 @@ OUT_DIR = ROOT / "data" / "raw_jra3q"
 
 NCSS_BASE = "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/{dataset}/anl_surf/{yyyymm}/jra3q.anl_surf.{var_code}.{var_name}-an-gauss.{yyyymm}0100_{yyyymm}{lastday}18.nc"
 DATASETS = ["d640000", "d640001"]  # try historical first, then near-real-time
+D640001_STARTS = (2023, 12)  # d640001 only covers Dec 2023 onward -- skip it
+# entirely for earlier months instead of wasting 3 timed-out retries on a
+# request that can only ever come back empty.
 VARIABLES = [("0_3_1", "prmsl-msl")]  # sea-level pressure ("pressure pattern")
 SURFACE_PRESSURE = ("0_3_0", "pres-sfc")
 
@@ -129,7 +132,7 @@ def download_one(url, out_path):
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             req = urllib.request.Request(url, headers=req_headers)
-            with urllib.request.urlopen(req, timeout=120) as resp:
+            with urllib.request.urlopen(req, timeout=300) as resp:
                 data = resp.read()
             if not data:
                 print(f"    (empty response body, attempt {attempt}/{MAX_RETRIES})")
@@ -190,6 +193,8 @@ def main():
             else:
                 ok = False
                 for dataset in DATASETS:
+                    if dataset == "d640001" and (y, m) < D640001_STARTS:
+                        continue
                     url = build_url(dataset, var_code, var_name, y, m, bbox)
                     if download_one(url, out_path):
                         ok = True
