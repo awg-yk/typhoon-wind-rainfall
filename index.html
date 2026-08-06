@@ -184,11 +184,19 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 }
 
 /* ===== Bottom timeline ===== */
+/* Grid (not two independently-flexed rows) so the tick labels line up under
+   the slider's actual left/right edges instead of guessing their offset
+   with a fixed padding-left -- the play button and time label don't have a
+   fixed combined width (time-label's is a min-width, not a width), so any
+   fixed-offset approach drifts out of alignment. */
 #timebar{
   flex-shrink:0; background:var(--panel-2); border-top:1px solid var(--line);
   padding:10px 22px 14px 22px;
+  display:grid;
+  grid-template-columns: auto auto 1fr auto;
+  column-gap:14px; row-gap:8px;
+  align-items:center;
 }
-#timebar .row1{ display:flex; align-items:center; gap:14px; margin-bottom:8px; }
 #play-btn{
   width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
   background:var(--panel); color:var(--amber-bright); cursor:pointer;
@@ -205,7 +213,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   border:1px solid var(--line); padding:4px 6px; border-radius:2px;
 }
 #slider{
-  flex:1; -webkit-appearance:none; appearance:none; height:3px; background:var(--line);
+  width:100%; -webkit-appearance:none; appearance:none; height:3px; background:var(--line);
   border-radius:2px; outline:none;
 }
 #slider::-webkit-slider-thumb{
@@ -216,8 +224,8 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   width:12px; height:12px; border-radius:50%; background:var(--amber-bright); cursor:pointer; border:2px solid var(--ink);
 }
 #ticklabels{
+  grid-column: 3; grid-row: 2;
   display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px; color:var(--text-dim);
-  padding-left:48px;
 }
 
 /* Wind arrow marker */
@@ -373,16 +381,14 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   </div>
 
   <div id="timebar">
-    <div class="row1">
-      <button id="play-btn">&#9654;</button>
-      <div id="time-label">&mdash;</div>
-      <input id="slider" type="range" min="0" max="0" value="0" step="1">
-      <select id="speed-select">
-        <option value="300">速い</option>
-        <option value="600" selected>標準</option>
-        <option value="1000">遅い</option>
-      </select>
-    </div>
+    <button id="play-btn">&#9654;</button>
+    <div id="time-label">&mdash;</div>
+    <input id="slider" type="range" min="0" max="0" value="0" step="1">
+    <select id="speed-select">
+      <option value="300">速い</option>
+      <option value="600" selected>標準</option>
+      <option value="1000">遅い</option>
+    </select>
     <div id="ticklabels"></div>
   </div>
   <div id="loading-overlay">データ読み込み中 &hellip;</div>
