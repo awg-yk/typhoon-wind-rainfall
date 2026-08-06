@@ -97,7 +97,11 @@ def main():
     ap.add_argument("--include-surface-pressure", action="store_true",
                      help="also download pres-sfc (surface pressure) alongside prmsl-msl (sea-level pressure)")
     ap.add_argument("--dry-run", action="store_true", help="print the month/file plan without downloading")
+    ap.add_argument("--out-dir", default=str(OUT_DIR),
+                     help="where to save downloaded files (e.g. a Google Drive path in Colab, so files "
+                          "survive a session disconnect/reset and a rerun resumes instead of restarting)")
     args = ap.parse_args()
+    out_dir = Path(args.out_dir)
 
     variables = list(VARIABLES)
     if args.include_surface_pressure:
@@ -106,12 +110,13 @@ def main():
     months = needed_year_months()
     total_files = len(months) * len(variables)
     print(f"{len(months)} months needed, {len(variables)} variable(s) -> {total_files} files")
+    print(f"saving to: {out_dir}")
     if args.dry_run:
         for y, m in months:
             print(f"  {y:04d}-{m:02d}")
         return
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     failed = []
     done = 0
     for y, m in months:
@@ -121,7 +126,7 @@ def main():
             for dataset in DATASETS:
                 url = build_url(dataset, var_code, var_name, y, m)
                 filename = url.rsplit("/", 1)[-1]
-                out_path = OUT_DIR / filename
+                out_path = out_dir / filename
                 if out_path.exists():
                     ok = True
                     break
