@@ -83,11 +83,6 @@ header .spacer{ flex:1; }
   border:1px solid var(--line); padding:3px 5px; border-radius:2px;
 }
 #filter-count{ color:var(--amber-bright); }
-#filter-reset{
-  background:none; border:1px solid var(--line); color:var(--text-dim);
-  padding:3px 8px; border-radius:2px; cursor:pointer; font-family:var(--mono); font-size:11px;
-}
-#filter-reset:hover{ color:var(--amber-bright); border-color:var(--amber); }
 
 /* ===== Body layout ===== */
 #body{ flex:1; display:flex; min-height:0; }
@@ -278,15 +273,13 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
         <button type="button" id="filter-toggle" class="section-label" style="cursor:pointer; background:none; border:none; padding:0;">絞り込み &#9662;</button>
         <div id="filter-body" class="hidden">
           <div class="grp">
-            <label><input type="checkbox" id="f-landfall" checked>上陸・通過(日本)</label>
-            <label><input type="checkbox" id="f-other-track" checked>その他(遠方含む全て)</label>
+            <label><input type="checkbox" id="f-landfall">上陸・通過(日本)のみ</label>
           </div>
           <div class="grp">
             <span>月</span>
             <select id="f-month"><option value="">すべて</option></select>
           </div>
           <div class="grp">
-            <button id="filter-reset">リセット</button>
             <span id="filter-count"></span>
           </div>
         </div>
@@ -585,8 +578,7 @@ function currentFilters(){
   const monthVal = document.getElementById('f-month').value;
   return {
     months: monthVal ? [parseInt(monthVal, 10)] : [],
-    landfall: document.getElementById('f-landfall').checked,
-    otherTrack: document.getElementById('f-other-track').checked
+    landfallOnly: document.getElementById('f-landfall').checked
   };
 }
 
@@ -595,7 +587,7 @@ function applyFilters(){
   ACTIVE_ORDER = STORM_ORDER.filter(function(code){
     const s = STORM_META[code];
     if (f.months.length && !(s.months || []).some(function(m){ return f.months.includes(m); })) return false;
-    if (s.landfallJP ? !f.landfall : !f.otherTrack) return false;
+    if (f.landfallOnly && !s.landfallJP) return false;
     return true;
   });
   document.getElementById('filter-count').textContent = ACTIVE_ORDER.length + ' / ' + STORM_ORDER.length + ' 件';
@@ -631,12 +623,6 @@ function wireFilterPanel(){
   });
   document.querySelectorAll('#filter-section input, #filter-section select').forEach(function(el){
     el.addEventListener('change', applyFilters);
-  });
-  document.getElementById('filter-reset').addEventListener('click', function(){
-    document.getElementById('f-month').value = '';
-    document.getElementById('f-landfall').checked = true;
-    document.getElementById('f-other-track').checked = true;
-    applyFilters();
   });
 }
 
