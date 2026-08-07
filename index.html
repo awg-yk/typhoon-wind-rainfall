@@ -127,6 +127,7 @@ header .spacer{ flex:1; }
 .ranking-table tr:first-child td{ border-top:none; }
 .ranking-table .rank{ color:var(--amber-bright); font-weight:700; width:1.4em; }
 .ranking-table .name{ color:var(--paper); width:100%; overflow:hidden; text-overflow:ellipsis; }
+.ranking-table .pref{ display:block; color:var(--text-dim); font-size:9px; font-weight:400; }
 .ranking-table .val{ text-align:right; font-weight:600; color:var(--paper); }
 .ranking-table .time{ text-align:right; color:var(--text-dim); font-size:10px; }
 .leaflet-container{ background:#0a1420; }
@@ -337,12 +338,6 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       <h2 id="side-name-ja">年と台風を選択してください</h2>
       <div class="storm-en" id="side-name-en">&nbsp;</div>
 
-      <div class="mode-toggle" id="mode-toggle">
-        <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
-        <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
-      </div>
-      <div id="mode-nodata-note" style="display:none;"></div>
-
       <div class="readout" id="readout">
         <div class="k">日時</div><div class="v" id="v-time">&mdash;</div>
         <div class="k">中心気圧</div><div class="v big" id="v-pres">&mdash;</div>
@@ -351,6 +346,12 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       </div>
 
       <hr class="rule">
+      <div class="mode-toggle" id="mode-toggle">
+        <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
+        <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
+      </div>
+      <div id="mode-nodata-note" style="display:none;"></div>
+
       <div class="section-label" id="threshold-title">Min Value Filter / 最小値フィルタ</div>
       <div id="threshold-control">
         <input type="range" id="threshold-slider" min="0" max="30" step="1" value="0">
@@ -564,10 +565,12 @@ function setEntryVisible(entry, visible){
   if (el) el.style.pointerEvents = visible ? '' : 'none';
 }
 
-function buildStationLayer(names, coords, layerArr){
+function buildStationLayer(names, coords, layerArr, prefs){
   // Shared setup for a set of pre-created, initially-hidden station markers
   // (arrow/circle icon swapped per-frame in updateFrame). Used for all three
-  // station networks (legacy + AMeDAS wind + AMeDAS rain).
+  // station networks (legacy + AMeDAS wind + AMeDAS rain). prefs (都道府県)
+  // is only available for the AMeDAS networks -- the legacy 156-station
+  // list has no prefecture data, so it's omitted there.
   names.forEach(function(name, i){
     const coord = coords[i];
     const icon = L.divIcon({
@@ -589,7 +592,7 @@ function buildStationLayer(names, coords, layerArr){
         if (entry.marker !== m) entry.marker.closeTooltip();
       });
     });
-    layerArr.push({marker:m, name:name});
+    layerArr.push({marker:m, name:name, pref: prefs ? prefs[i] : ''});
   });
 
   // Extra safety net: if the cursor leaves the map entirely, make sure no
@@ -626,12 +629,14 @@ function initMap(){
   buildStationLayer(
     DATA.network.wind.map(function(s){ return s.name; }),
     DATA.network.wind.map(function(s){ return [s.lat, s.lon]; }),
-    netWindLayer
+    netWindLayer,
+    DATA.network.wind.map(function(s){ return s.pref; })
   );
   buildStationLayer(
     DATA.network.rain.map(function(s){ return s.name; }),
     DATA.network.rain.map(function(s){ return [s.lat, s.lon]; }),
-    netRainLayer
+    netRainLayer,
+    DATA.network.rain.map(function(s){ return s.pref; })
   );
 
   tyMarker = L.marker([0,0], {
@@ -1390,7 +1395,7 @@ function computeRanking(layer, data, mode){
       if (top.length < 10 || v > top[top.length-1].value){
         let idx = top.length;
         while (idx > 0 && top[idx-1].value < v) idx--;
-        top.splice(idx, 0, { name: layer[i].name, time: data.times[t], value: v });
+        top.splice(idx, 0, { name: layer[i].name, pref: layer[i].pref || '', time: data.times[t], value: v });
         if (top.length > 10) top.length = 10;
       }
     }
@@ -1410,7 +1415,8 @@ function updateRankingPanel(){
   const title = displayMode === 'rain' ? '雨量ランキング TOP10' : '風速ランキング TOP10';
   let html = '<div class="section-label">' + title + '</div><table class="ranking-table"><tbody>';
   list.forEach(function(row, i){
-    html += '<tr><td class="rank">' + (i+1) + '</td><td class="name">' + row.name + '</td>' +
+    html += '<tr><td class="rank">' + (i+1) + '</td>' +
+      '<td class="name">' + row.name + (row.pref ? '<span class="pref">' + row.pref + '</span>' : '') + '</td>' +
       '<td class="val">' + row.value.toFixed(1) + ' ' + unit + '</td>' +
       '<td class="time">' + formatDateTime(row.time) + '</td></tr>';
   });
