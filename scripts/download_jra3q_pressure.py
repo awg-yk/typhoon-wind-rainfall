@@ -18,9 +18,13 @@ materializing a subset server-side, and has been reliable.
 
 Requires: pip install xarray netCDF4
 
-Parallelism uses processes, not threads: netCDF4/HDF5 is not thread-safe, and
-a threaded run deadlocked (each worker created a ~48-byte temp file and then
-hung forever with no error). Use --workers 1 for a plain serial run.
+Runs SERIALLY by default (--workers 1), and a full 185-month run therefore
+takes roughly 42 minutes. That is not an oversight: GDEX's THREDDS backend
+could not handle concurrency here. Four parallel processes made nginx return
+"504 Gateway Time-out" for nearly every request, while one-at-a-time reads
+succeed consistently at ~13.5s each. (Threads are worse still -- netCDF4/HDF5
+isn't thread-safe and a threaded run deadlocked outright, which is why
+--workers > 1 uses processes rather than threads.)
 
 Dataset is d640000 (historical, Sep 1947 onward) or d640001 (near-real-time,
 from Dec 2023 onward). This script tries d640000 first for every month and
@@ -41,7 +45,7 @@ Usage:
   python3 scripts/download_jra3q_pressure.py                # sea-level pressure only
   python3 scripts/download_jra3q_pressure.py --include-surface-pressure
   python3 scripts/download_jra3q_pressure.py --north 55 --south 10 --west 110 --east 165
-  python3 scripts/download_jra3q_pressure.py --workers 6    # tune concurrency
+  python3 scripts/download_jra3q_pressure.py --workers 2    # only if GDEX can take it
   python3 scripts/download_jra3q_pressure.py --dry-run      # just print the month list/count
 """
 import argparse
@@ -68,14 +72,19 @@ SURFACE_PRESSURE = ("0_3_0", "pres-sfc")
 # Default bounding box: covers Japan and its approach paths.
 DEFAULT_BBOX = {"north": 50, "south": 15, "west": 115, "east": 155}
 
-WORKERS = 4      # concurrent OPeNDAP reads, run as separate PROCESSES (see
-# the executor choice in main(): netCDF4/HDF5 is not thread-safe and threads
-# deadlocked here). Modest to stay polite to GDEX. --workers 1 runs serially
-# in-process, which is the safest fallback if parallelism misbehaves.
+WORKERS = 1      # SERIAL by default, deliberately. A single OPeNDAP read
+# takes ~13.5s and works reliably, but 4 concurrent processes made the
+# THREDDS backend fall over -- nginx returned "504 Gateway Time-out" for
+# nearly every request. The server can't take the concurrency, so a full run
+# is ~185 x 13.5s ~= 42 min and that's simply what it costs. (Threads are
+# worse still: netCDF4/HDF5 isn't thread-safe and deadlocked outright, hence
+# the process-pool machinery that remains for --workers > 1. Raise it only
+# if GDEX's capacity changes.)
 PASSES = 3       # whole-list retry passes for anything that failed
 PASS_SLEEP_SEC = 15
 RETRIES = 2      # attempts within one pass
 RETRY_SLEEP_SEC = 5
+REQUEST_SPACING_SEC = 0.5  # small gap between reads, to stay polite
 
 
 def needed_year_months():
@@ -145,6 +154,21 @@ def fetch_subset(url, var_key, bbox, out_path):
     tmp_path.replace(out_path)
 
 
+def summarize_error(e):
+    """One-line, human-readable reason. The raw OSError from netCDF4 embeds
+    the whole URL and the server's HTML error page, which is unreadable in a
+    log; the actual cause is usually just the HTTP status."""
+    text = str(e)
+    for code, label in (("504", "server timeout (504)"),
+                        ("503", "server unavailable (503)"),
+                        ("502", "bad gateway (502)"),
+                        ("500", "server error (500)"),
+                        ("404", "not found (404)")):
+        if code in text:
+            return label
+    return f"{type(e).__name__}: {text.replace(chr(10), ' ')[:100]}"
+
+
 def try_month(dataset, var_code, var_name, y, m, bbox, out_path):
     url = build_opendap_url(dataset, var_code, var_name, y, m)
     var_key = f"{var_name}-an-gauss"
@@ -153,8 +177,7 @@ def try_month(dataset, var_code, var_name, y, m, bbox, out_path):
             fetch_subset(url, var_key, bbox, out_path)
             return True
         except Exception as e:
-            msg = str(e).replace("\n", " ")[:160]
-            print(f"    {y:04d}-{m:02d} {dataset}: {type(e).__name__}: {msg} "
+            print(f"    {y:04d}-{m:02d} {dataset}: {summarize_error(e)} "
                   f"(attempt {attempt}/{RETRIES})", flush=True)
             if attempt < RETRIES:
                 time.sleep(RETRY_SLEEP_SEC)
@@ -251,16 +274,19 @@ def main():
         executor = (concurrent.futures.ProcessPoolExecutor if args.workers > 1
                     else None)
         if executor is None:
-            results = (fetch_job(job) for job in pending)
-            for job, ok in results:
+            for job in pending:
+                job, ok = fetch_job(job)
                 y, m, var_code, var_name = job[:4]
                 done_in_pass += 1
                 elapsed = time.time() - started
+                rate = elapsed / done_in_pass
+                eta = rate * (total_in_pass - done_in_pass) / 60
                 status = "ok" if ok else "failed"
                 print(f"[{done_in_pass}/{total_in_pass}] {y:04d}-{m:02d} {var_name}: {status} "
-                      f"({elapsed/60:.1f} min elapsed)", flush=True)
+                      f"({elapsed/60:.1f} min elapsed, ~{eta:.0f} min left)", flush=True)
                 if not ok:
                     still_failed.append(job)
+                time.sleep(REQUEST_SPACING_SEC)
         else:
             with executor(max_workers=args.workers) as pool:
                 for job, ok in pool.map(fetch_job, pending):

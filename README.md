@@ -108,8 +108,13 @@ python3 -m http.server 8000
   サーバーに **OPeNDAP** で接続し、月ごとのファイルから日本周辺（既定: 北緯
   15〜50度・東経115〜155度、`--north`/`--south`/`--west`/`--east`で変更可）の
   範囲だけを読み取って保存するため、全球そのままより約94%小さく済みます（実測
-  1ヶ月あたり約13.5秒・約4.8MB、全球なら84MB）。4並列で全185ヶ月15分程度。
-  `pip install xarray netCDF4` が必要です。
+  1ヶ月あたり約13.5秒・約4.8MB、全球なら84MB）。`pip install xarray netCDF4` が
+  必要です。
+
+  **逐次実行（1件ずつ）が既定で、全185ヶ月で約42分かかります。** これは仕様です:
+  GDEXのサーバーは同時アクセスに耐えられず、4並列にすると大半のリクエストが
+  nginxの「504 Gateway Time-out」で失敗しました（1件ずつなら安定して約13.5秒で
+  成功します）。`--workers` で並列数を上げられますが、上記の理由から推奨しません。
 
   同じくサーバー側で切り出せるNetCDF Subset Service (NCSS) も試しましたが、
   ほとんどの月でタイムアウトし成功率が1割以下だった（切り出しをその場で生成
@@ -119,7 +124,6 @@ python3 -m http.server 8000
   python3 scripts/download_jra3q_pressure.py --dry-run   # 対象月・件数だけ確認
   python3 scripts/download_jra3q_pressure.py             # 海面更正気圧のみ取得（日本域）
   python3 scripts/download_jra3q_pressure.py --include-surface-pressure  # 地上気圧も
-  python3 scripts/download_jra3q_pressure.py --workers 6 --passes 5      # 並列数・パス数変更
   ```
   全185ヶ月・日本域切り出し済みで合計1GB弱。`data/raw_jra3q/` に保存され、既存
   ファイルはスキップされる（途中で止まっても再実行で再開可能）ので、時間を分けて
