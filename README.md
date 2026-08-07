@@ -232,17 +232,29 @@ python3 -m http.server 8000
 （うち上陸・通過台風`landfallJP=true`の221台風中106台風分）のみpush済み。
 **残り115台風分は未変換・未pushです。**
 
-対応方法（このセッション内で確立済みの手順）:
-1. 手元PCで `python3 scripts/fetch_amedas_obsdl.py --landfall-only --kind wind,rain`
-   を実行し、まだ取得していない台風のCSVを `data/raw_amedas/` に取得
-   （既存ファイルはスキップされるので再実行で差分だけ取れます）
-2. `data/raw_amedas/` の中身をGoogle Driveにアップロード
-3. `notebooks/convert_amedas_csv_colab.ipynb` をColabで実行し、変換・push
-   （GitHubへのpushには手元の`git`操作ではなくColab上でPersonal Access
-   Tokenを使う方式を確立済み。**Colabの `getpass` は稀にマスク表示の
-   ドット文字列をそのまま値として拾ってしまう不具合があったため、
-   `google.colab.userdata`（Colabの「シークレット」機能）でトークンを
-   渡す方式を推奨**）
+対応方法（Colabだけで完結する手順を確立済み）:
+
+- `notebooks/fetch_and_convert_amedas_colab.ipynb` をColabで開いて上から
+  実行すれば、**取得（気象庁obsdl API）→ 変換 → GitHubへpush** まで
+  すべてColab上だけで完結します。手元PCでの実行やGoogle Driveへの手動
+  アップロードは不要です（`scripts/fetch_amedas_obsdl.py` は`requests`
+  だけで完結するスクリプトで、Colabの実行環境からも気象庁サイトへ到達
+  できることを確認済み）。
+  - 取得キャッシュ（`data/raw_amedas/`）はシンボリックリンクでGoogle
+    Drive上に置く構成にしてあるので、Colabのセッションが切断されても
+    ノートブックを再実行するだけで完了済み分はスキップされ、続きから
+    再開できます。
+  - 全115台風分の取得には数時間かかる可能性があります。1回のセッションで
+    終わらなければ、④（取得）→⑤（変換）→⑥（push）のセルを繰り返し
+    実行してください。
+- 従来の `notebooks/convert_amedas_csv_colab.ipynb`（手元PCで取得した
+  CSVをGoogle Drive経由でColabに渡して変換・pushするだけの版）も引き続き
+  利用可能です。
+- どちらのノートブックも、GitHubへのpushには`git`操作ではなくColab上で
+  Personal Access Tokenを使う方式です。**Colabの `getpass` は稀にマスク
+  表示のドット文字列をそのまま値として拾ってしまう不具合があったため、
+  うまくいかない場合は `google.colab.userdata`（Colabの「シークレット」
+  機能）でトークンを渡す方式に切り替えてください。**
 
 ### 2. JRA-3Q気圧データ（`data/pressure/`）は220/221台風分で完了
 
