@@ -140,12 +140,6 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 #threshold-control input[type="range"]{ flex:1; accent-color:var(--amber); }
 .threshold-value{ font-size:11px; color:var(--text-dim); white-space:nowrap; min-width:88px; text-align:right; }
 
-.overlay-toggle{
-  display:flex; align-items:center; gap:6px; margin-top:8px;
-  font-size:11px; color:var(--text-dim); cursor:pointer; user-select:none;
-}
-.overlay-toggle input{ accent-color:var(--amber); cursor:pointer; }
-
 .section-label{
   font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
   color:var(--teal); margin:0 0 8px 0;
@@ -212,7 +206,6 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 .mode-btn:hover{ color:var(--text); }
 .mode-btn.active[data-mode="wind"]{ background:var(--amber); color:var(--ink); }
 .mode-btn.active[data-mode="rain"]{ background:var(--rain); color:var(--ink); }
-.mode-btn.active[data-mode="pressure"]{ background:#9c8fd0; color:var(--ink); }
 
 .ty-mark-wrap{ pointer-events:none; }
 .ty-mark{
@@ -311,13 +304,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       <div class="mode-toggle" id="mode-toggle">
         <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
         <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
-        <button type="button" class="mode-btn" data-mode="pressure">気圧 Pressure</button>
       </div>
-
-      <label class="overlay-toggle" id="pressure-overlay-label" style="display:none;">
-        <input type="checkbox" id="pressure-overlay-toggle">
-        気圧配置を重ねて表示
-      </label>
 
       <div class="readout" id="readout">
         <div class="k">日時</div><div class="v" id="v-time">&mdash;</div>
@@ -401,14 +388,11 @@ let map, tyMarker, trackLine, trackPastLine, trackHitLine, isobarLayer;
 let windLayer = []; // array of {marker, station index} -- legacy 156-station network
 let netWindLayer = []; // AMeDAS network (976 stations), shown when a storm has data/storms_obs/<code>_wind.json
 let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has data/storms_obs/<code>_rain.json
-let displayMode = 'wind'; // 'wind' | 'rain' | 'pressure'
+let displayMode = 'wind'; // 'wind' | 'rain'
 // Per-mode minimum-value filter (m/s for wind, mm/h for rain): markers below
 // this are skipped entirely (no icon rebuilt) to keep frame updates cheap
 // when a storm's AMeDAS network data has hundreds of near-zero stations.
 const displayThreshold = { wind: 0, rain: 0 };
-// Whether isobar lines are drawn alongside wind/rain markers (only offered
-// when this storm has JRA-3Q pressure data).
-let pressureOverlay = false;
 let currentStormCode = null;
 let currentIdx = 0;
 let playing = false;
@@ -516,10 +500,10 @@ async function loadStorm(code){
 }
 
 async function loadPressureData(code){
-  // JRA-3Q sea-level pressure grid for isobar drawing, fetched only when
-  // the pressure display mode is actually used. Not every storm has this
-  // (only landfallJP storms were downloaded, and a few months' source data
-  // may be missing) -- a missing file is cached as null so we don't refetch.
+  // JRA-3Q sea-level pressure grid for isobar drawing, overlaid on the
+  // wind/rain markers whenever available. Not every storm has this (only
+  // landfallJP storms were downloaded, and a few months' source data may
+  // be missing) -- a missing file is cached as null so we don't refetch.
   if (Object.prototype.hasOwnProperty.call(DATA.pressure, code)) return DATA.pressure[code];
   try {
     const res = await fetch('data/pressure/' + code + '.json');
@@ -623,29 +607,28 @@ function arrowSVG(deg, speed, color){
 }
 
 function speedColor(spd){
-  if (spd < 5) return '#5fa3a3';
-  if (spd < 10) return '#8fae5f';
-  if (spd < 15) return '#e0c23a';
-  if (spd < 20) return '#e0913a';
-  if (spd < 25) return '#d9612f';
-  return '#c1503f';
+  // JMA official wind-speed color scale.
+  if (spd < 5) return '#f2f2ff';
+  if (spd < 10) return '#0041ff';
+  if (spd < 15) return '#faf500';
+  if (spd < 20) return '#ff9900';
+  if (spd < 25) return '#ff2800';
+  return '#b40068';
 }
 
 function rainColor(mm){
-  // Blue -> purple -> magenta scale, deliberately distinct from the
-  // teal/yellow/orange/red wind scale so the two modes are never confused
-  // at a glance. Exactly-zero (measured, no rain) gets a dim neutral color
-  // separate from the lightest rain bucket, mirroring how calm wind is
-  // shown as a small dim dot rather than blending into the speed scale.
+  // JMA official precipitation-intensity color scale. Exactly-zero
+  // (measured, no rain) gets a dim neutral color -- markers at 0mm/h are
+  // never actually shown (see renderObsLayer), but the color is kept
+  // around as a harmless fallback.
   if (mm <= 0) return '#3a4a5a';
-  if (mm < 1) return '#5f7fa3';
-  if (mm < 5) return '#5a7fd0';
-  if (mm < 10) return '#6f5fd0';
-  if (mm < 20) return '#9c4fd0';
-  if (mm < 30) return '#c23fa8';
-  if (mm < 50) return '#c23f6a';
-  if (mm < 80) return '#8f1f3f';
-  return '#5c1029';
+  if (mm < 5) return '#a0d2ff';
+  if (mm < 10) return '#218cff';
+  if (mm < 20) return '#0041ff';
+  if (mm < 30) return '#faf500';
+  if (mm < 50) return '#ff9900';
+  if (mm < 80) return '#ff2800';
+  return '#b40068';
 }
 
 function rainCircleSVG(mm, color){
@@ -807,14 +790,6 @@ function buildLegend(){
       const jma = s[2] ? '<span class="jma-label">' + s[2] + '</span>' : '';
       html += '<div class="row">' + rainCircleSVG(s[0], rainColor(s[0])) + '<span>' + s[1] + ' mm/h</span>' + jma + '</div>';
     });
-  } else if (displayMode === 'pressure'){
-    title.textContent = 'Pressure Legend / 気圧配置（JRA-3Q海面更正気圧）';
-    const swatch = function(color, weight){
-      return '<svg width="' + ARROW_SIZE + '" height="16"><line x1="2" y1="8" x2="' + (ARROW_SIZE-2) + '" y2="8" stroke="' + color + '" stroke-width="' + weight + '"/></svg>';
-    };
-    html += '<div class="row">' + swatch('#ffffff', 2) + '<span>20hPa毎（太線・数字あり）</span></div>';
-    html += '<div class="row">' + swatch('#ffffff', 1) + '<span>4hPa毎（細線・数字あり）</span></div>';
-    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">データがない台風・期間は非表示</span></div>';
   } else {
     title.textContent = 'Wind Legend / 風の凡例（気象庁の風の強さの階級）';
     const stops = [
@@ -826,7 +801,10 @@ function buildLegend(){
       html += '<div class="row">' + arrowSVG(0, s[0], speedColor(s[0])) + '<span>' + s[1] + '</span>' + jma + '</div>';
     });
   }
-  if (displayMode !== 'pressure' && pressureOverlay){
+  // Isobars (JRA-3Q) are overlaid on top of wind/rain markers automatically
+  // whenever this storm has pressure data -- no separate mode/toggle.
+  const pdata = DATA.pressure[currentStormCode];
+  if (pdata && pdata.times && pdata.times.length){
     const swatch = function(color, weight){
       return '<svg width="' + ARROW_SIZE + '" height="16"><line x1="2" y1="8" x2="' + (ARROW_SIZE-2) + '" y2="8" stroke="' + color + '" stroke-width="' + weight + '"/></svg>';
     };
@@ -839,40 +817,14 @@ function buildLegend(){
 }
 
 function updateThresholdControl(){
-  const panel = document.getElementById('threshold-control');
-  const title = document.getElementById('threshold-title');
   const slider = document.getElementById('threshold-slider');
   const valueEl = document.getElementById('threshold-value');
-  if (displayMode === 'pressure'){
-    panel.style.display = 'none';
-    title.style.display = 'none';
-    return;
-  }
-  panel.style.display = '';
-  title.style.display = '';
-  title.textContent = 'Min Value Filter / 最小値フィルタ（表示が重い場合に）';
   const max = displayMode === 'rain' ? 50 : 30;
   const unit = displayMode === 'rain' ? 'mm/h' : 'm/s';
   slider.max = String(max);
   slider.step = '5';
   slider.value = String(displayThreshold[displayMode]);
   valueEl.textContent = slider.value + ' ' + unit + '以上を表示';
-}
-
-function updateOverlayVisibility(){
-  // The overlay checkbox only makes sense in wind/rain mode (pressure mode
-  // already shows isobars on their own) and only when this storm actually
-  // has JRA-3Q pressure data.
-  const pdata = DATA.pressure[currentStormCode];
-  const hasPressure = !!(pdata && pdata.times && pdata.times.length);
-  const show = hasPressure && displayMode !== 'pressure';
-  const overlayLabel = document.getElementById('pressure-overlay-label');
-  const overlayToggle = document.getElementById('pressure-overlay-toggle');
-  overlayLabel.style.display = show ? '' : 'none';
-  if (!show){
-    pressureOverlay = false;
-    overlayToggle.checked = false;
-  }
 }
 
 let ACTIVE_ORDER = []; // STORM_ORDER filtered down by the current filter panel state
@@ -1051,16 +1003,14 @@ async function selectStorm(code){
   const obsIdx = getPlayableIndices(s);
   document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (hasObs ? '' : '（観測データなし・経路のみ）');
   document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (hasObs ? ', ' + obsIdx.length + ' 3-hourly steps' : '');
-  // Wind/rain need station observation data; pressure comes from JRA-3Q and
-  // is independent of that, so only wind/rain buttons are gated on hasObs.
   document.querySelectorAll('.mode-btn').forEach(function(b){
-    b.disabled = !hasObs && b.dataset.mode !== 'pressure';
+    b.disabled = !hasObs;
   });
-  // Pressure data is fetched regardless of the current mode: besides
-  // powering the pressure display mode itself, it also determines whether
-  // the "overlay isobars on wind/rain" checkbox is offered for this storm.
+  // Pressure data (JRA-3Q) is fetched regardless of mode: whenever this
+  // storm has it, isobars are automatically overlaid on the wind/rain
+  // markers (see buildLegend/updateFrame).
   await loadPressureData(code);
-  updateOverlayVisibility();
+  buildLegend();
 
   const slider = document.getElementById('slider');
   slider.max = obsIdx.length - 1;
@@ -1290,15 +1240,12 @@ function updateFrame(pos){
   netRainLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
   isobarLayer.clearLayers();
 
-  if (displayMode === 'pressure'){
-    renderPressure(timeMs);
-    return;
-  }
-
   const obsNet = DATA.obsNet[currentStormCode];
   const src = currentObsSource(s, obsNet, displayMode);
   if (src) renderObsLayer(src.layer, src.data, timeMs, displayMode);
-  if (pressureOverlay) renderPressure(timeMs);
+  // Isobars are overlaid automatically whenever this storm has JRA-3Q data
+  // (renderPressure() is a no-op if it doesn't).
+  renderPressure(timeMs);
 }
 
 function currentObsSource(s, obsNet, mode){
@@ -1411,7 +1358,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     document.querySelectorAll('.mode-btn').forEach(function(btn){
-      btn.addEventListener('click', async function(){
+      btn.addEventListener('click', function(){
         const mode = btn.dataset.mode;
         if (mode === displayMode) return;
         displayMode = mode;
@@ -1419,8 +1366,6 @@ document.addEventListener('DOMContentLoaded', function(){
           b.classList.toggle('active', b.dataset.mode === mode);
         });
         buildLegend();
-        updateOverlayVisibility();
-        if (mode === 'pressure' && currentStormCode) await loadPressureData(currentStormCode);
         if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
       });
     });
@@ -1429,12 +1374,6 @@ document.addEventListener('DOMContentLoaded', function(){
       displayThreshold[displayMode] = parseInt(e.target.value, 10);
       const unit = displayMode === 'rain' ? 'mm/h' : 'm/s';
       document.getElementById('threshold-value').textContent = e.target.value + ' ' + unit + '以上を表示';
-      if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
-    });
-
-    document.getElementById('pressure-overlay-toggle').addEventListener('change', function(e){
-      pressureOverlay = e.target.checked;
-      buildLegend();
       if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
     });
 
