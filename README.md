@@ -148,6 +148,9 @@ python3 -m http.server 8000
   python3 scripts/build_pressure_json.py --raw-dir /path/to/185個のncファイル
   python3 scripts/build_pressure_json.py --raw-dir ... --codes 1919,1915  # 特定の台風だけ
   ```
+  手元での`git`操作が難しい場合は、`notebooks/build_pressure_json_colab.ipynb`
+  （Google Drive上の.ncファイルを読み込み、変換して、GitHub Personal Access
+  Tokenで直接pushまで行うColab版）を使ってください。
 
 ## 絞り込み機能
 
