@@ -632,7 +632,8 @@ function rainColor(mm){
 }
 
 function rainCircleSVG(mm, color){
-  const r = mm > 0 ? Math.min(3 + mm * 0.32, 17) : 2.4;
+  // Fixed radius regardless of mm -- only color encodes intensity.
+  const r = 6;
   return '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '">' +
     '<circle cx="0" cy="0" r="' + r + '" fill="' + color + '" fill-opacity="0.8" stroke="' + color + '" stroke-width="1"/>' +
     '</svg>';
