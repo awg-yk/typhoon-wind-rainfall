@@ -218,6 +218,12 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 }
 .typhoon-eye{ pointer-events:none; }
 
+.isobar-label{
+  pointer-events:none; font-family:var(--mono); font-size:10px; font-weight:700;
+  color:#fff; text-align:center; line-height:14px;
+  text-shadow:0 0 3px #000, 0 0 3px #000, 0 1px 1px #000;
+}
+
 .leaflet-tooltip{
   background:var(--panel); color:var(--text); border:1px solid var(--line);
   border-radius:3px; font-family:var(--mono); font-size:11px; line-height:1.5;
@@ -606,6 +612,53 @@ function marchingSquares(grid, lat, lon, level){
 }
 
 const PRESSURE_INTERVAL_HPA = 4;
+const PRESSURE_SMOOTH_PASSES = 3; // raw JRA-3Q grid is coarse (stride-2 downsampled); smooth before contouring so lines aren't jagged
+
+function smoothGrid(grid, passes){
+  // Repeated 3x3 box blur (edge cells average over however many neighbors
+  // exist). Cheap and sufficient to round off the grid-cell jaggedness that
+  // marching squares would otherwise trace exactly.
+  const nLat = grid.length, nLon = grid[0].length;
+  let g = grid;
+  for (let p = 0; p < passes; p++){
+    const out = new Array(nLat);
+    for (let i = 0; i < nLat; i++){
+      const row = new Array(nLon);
+      for (let j = 0; j < nLon; j++){
+        let sum = 0, cnt = 0;
+        for (let di = -1; di <= 1; di++){
+          const ii = i + di;
+          if (ii < 0 || ii >= nLat) continue;
+          for (let dj = -1; dj <= 1; dj++){
+            const jj = j + dj;
+            if (jj < 0 || jj >= nLon) continue;
+            sum += g[ii][jj];
+            cnt++;
+          }
+        }
+        row[j] = sum / cnt;
+      }
+      out[i] = row;
+    }
+    g = out;
+  }
+  return g;
+}
+
+function labelPointsForLevel(segs, maxLabels){
+  // Isobars for a single typhoon are usually one (or a few) closed loops;
+  // rather than fully tracing loop topology, just sample a handful of
+  // segment midpoints spread across the array as label anchor points.
+  if (!segs.length) return [];
+  const n = Math.min(maxLabels, segs.length);
+  const step = Math.max(1, Math.floor(segs.length / n));
+  const pts = [];
+  for (let i = 0; i < segs.length && pts.length < n; i += step){
+    const s = segs[i];
+    pts.push([(s[0][0] + s[1][0]) / 2, (s[0][1] + s[1][1]) / 2]);
+  }
+  return pts;
+}
 
 function renderPressure(timeMs){
   isobarLayer.clearLayers();
@@ -617,8 +670,9 @@ function renderPressure(timeMs){
     const diff = Math.abs(Date.parse(pdata.times[i]) - timeMs);
     if (diff < bestDiff){ bestDiff = diff; idx = i; }
   }
-  const grid = pdata.values[idx];
-  if (!grid) return;
+  const rawGrid = pdata.values[idx];
+  if (!rawGrid) return;
+  const grid = smoothGrid(rawGrid, PRESSURE_SMOOTH_PASSES);
 
   let vmin = Infinity, vmax = -Infinity;
   for (let i = 0; i < grid.length; i++){
@@ -635,9 +689,22 @@ function renderPressure(timeMs){
     const major = level % 20 === 0;
     segs.forEach(function(seg){
       L.polyline(seg, {
-        color: major ? '#e8d9a8' : '#9c8fd0',
-        weight: major ? 1.8 : 1,
-        opacity: major ? .9 : .6
+        color: '#ffffff',
+        weight: major ? 2 : 1,
+        opacity: major ? .95 : .6
+      }).addTo(isobarLayer);
+    });
+    // Number the isobar so users can tell highs from lows -- label every
+    // level, but only a couple of anchor points per level to avoid clutter.
+    labelPointsForLevel(segs, major ? 2 : 1).forEach(function(pt){
+      L.marker(pt, {
+        icon: L.divIcon({
+          className: 'isobar-label',
+          html: String(level),
+          iconSize: [30, 14],
+          iconAnchor: [15, 7]
+        }),
+        interactive: false
       }).addTo(isobarLayer);
     });
   }
@@ -660,8 +727,8 @@ function buildLegend(){
     const swatch = function(color, weight){
       return '<svg width="' + ARROW_SIZE + '" height="16"><line x1="2" y1="8" x2="' + (ARROW_SIZE-2) + '" y2="8" stroke="' + color + '" stroke-width="' + weight + '"/></svg>';
     };
-    html += '<div class="row">' + swatch('#e8d9a8', 1.8) + '<span>20hPa毎（太線）</span></div>';
-    html += '<div class="row">' + swatch('#9c8fd0', 1) + '<span>4hPa毎（細線）</span></div>';
+    html += '<div class="row">' + swatch('#ffffff', 2) + '<span>20hPa毎（太線・数字あり）</span></div>';
+    html += '<div class="row">' + swatch('#ffffff', 1) + '<span>4hPa毎（細線・数字あり）</span></div>';
     html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">データがない台風・期間は非表示</span></div>';
   } else {
     title.textContent = 'Wind Legend / 風の凡例';
