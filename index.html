@@ -71,22 +71,28 @@ header .spacer{ flex:1; }
 /* ===== Filter ===== */
 #filter-section{
   font-family:var(--mono); font-size:11px; color:var(--text-dim);
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin-bottom:14px;
 }
-#filter-toggle{ color:var(--teal); }
-#filter-toggle:hover{ color:var(--amber-bright); }
-#filter-body{ margin-top:8px; }
-#filter-body.hidden{ display:none; }
-#filter-section .grp{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
 #filter-section label{ display:flex; align-items:center; gap:4px; cursor:pointer; }
-#filter-section select{
-  font-family:var(--mono); font-size:11px; background:var(--panel); color:var(--text-dim);
-  border:1px solid var(--line); padding:3px 5px; border-radius:2px;
-}
 #filter-count{ color:var(--amber-bright); }
 
 /* ===== Body layout ===== */
-#body{ flex:1; display:flex; min-height:0; }
+#body{ flex:1; display:flex; min-height:0; position:relative; }
 #map{ flex:1; min-width:0; background:#0a1420; position:relative; }
+
+/* Legend/readout/about panel, floated over the map's bottom-right corner
+   instead of living in the left nav panel -- keeps the left side to pure
+   selection controls (filter, year/storm, mode). */
+#mapinfo{
+  position:absolute; right:16px; bottom:16px; z-index:1000;
+  width:290px; max-height:calc(100% - 32px); overflow-y:auto;
+  background:var(--panel); border:1px solid var(--line); border-radius:4px;
+  padding:14px 16px; box-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+@media (max-width: 860px){
+  #mapinfo{ position:static; width:auto; max-height:none; margin:12px 18px; }
+}
 .leaflet-container{ background:#0a1420; }
 /* Dark map look matched to reference (typhoon_track_finder.html):
    invert the light GSI "pale" tiles and re-tint them. */
@@ -273,26 +279,15 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 
   <div id="body">
     <div id="leftpanel">
+      <div id="filter-section">
+        <label><input type="checkbox" id="f-landfall">上陸・通過(日本)のみ</label>
+        <span id="filter-count"></span>
+      </div>
+
       <div id="picker">
         <div id="picker-cols">
           <select id="year-select"><option value="">年を選択</option></select>
           <select id="storm-select" style="display:none"></select>
-        </div>
-      </div>
-
-      <div id="filter-section">
-        <button type="button" id="filter-toggle" class="section-label" style="cursor:pointer; background:none; border:none; padding:0;">絞り込み &#9662;</button>
-        <div id="filter-body" class="hidden">
-          <div class="grp">
-            <label><input type="checkbox" id="f-landfall">上陸・通過(日本)のみ</label>
-          </div>
-          <div class="grp">
-            <span>月</span>
-            <select id="f-month"><option value="">すべて</option></select>
-          </div>
-          <div class="grp">
-            <span id="filter-count"></span>
-          </div>
         </div>
       </div>
 
@@ -305,7 +300,9 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
         <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
         <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
       </div>
-
+    </div>
+    <div id="map"></div>
+    <div id="mapinfo">
       <div class="readout" id="readout">
         <div class="k">日時</div><div class="v" id="v-time">&mdash;</div>
         <div class="k">中心気圧</div><div class="v big" id="v-pres">&mdash;</div>
@@ -330,7 +327,6 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
         「風」表示では矢印が風の吹いていく方向、長さと色が風速(m/s)を表します。「雨」表示では丸の大きさと色が1時間降水量(mm)を表します。台風の中心（赤文字のTD/TS/STS/T/L）は気象庁ベストトラックに基づき、上に中心気圧を表示します。経路線は、実線（オレンジ）が通過済み、破線（水色）がこの後進む経路です。
       </div>
     </div>
-    <div id="map"></div>
   </div>
 
   <div id="timebar">
@@ -832,9 +828,7 @@ let ACTIVE_ORDER = []; // STORM_ORDER filtered down by the current filter panel 
 let selectedYear = null; // year currently chosen in the year dropdown
 
 function currentFilters(){
-  const monthVal = document.getElementById('f-month').value;
   return {
-    months: monthVal ? [parseInt(monthVal, 10)] : [],
     landfallOnly: document.getElementById('f-landfall').checked
   };
 }
@@ -843,7 +837,6 @@ function applyFilters(){
   const f = currentFilters();
   ACTIVE_ORDER = STORM_ORDER.filter(function(code){
     const s = STORM_META[code];
-    if (f.months.length && !(s.months || []).some(function(m){ return f.months.includes(m); })) return false;
     if (f.landfallOnly && !s.landfallJP) return false;
     return true;
   });
@@ -863,24 +856,8 @@ function applyFilters(){
   }
 }
 
-function buildMonthOptions(){
-  const sel = document.getElementById('f-month');
-  for (let m = 1; m <= 12; m++){
-    const opt = document.createElement('option');
-    opt.value = String(m);
-    opt.textContent = m + '月';
-    sel.appendChild(opt);
-  }
-}
-
 function wireFilterPanel(){
-  buildMonthOptions();
-  document.getElementById('filter-toggle').addEventListener('click', function(){
-    document.getElementById('filter-body').classList.toggle('hidden');
-  });
-  document.querySelectorAll('#filter-section input, #filter-section select').forEach(function(el){
-    el.addEventListener('change', applyFilters);
-  });
+  document.getElementById('f-landfall').addEventListener('change', applyFilters);
 }
 
 function updateHeaderSub(){
