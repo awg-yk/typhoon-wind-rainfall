@@ -39,6 +39,11 @@ python3 -m http.server 8000
   いたときに必要な分だけ読み込みます
 - `data/pressure/*.json` … 台風ごとのJRA-3Q海面更正気圧グリッド（`scripts/
   build_pressure_json.py` で生成、気圧配置モードで開いたときのみ読み込み）
+- `data/stations_network.json` … AMeDAS＋気象台等の拡張観測網（風976地点・
+  雨1669地点、`scripts/build_station_network.py` で生成、起動時に読み込み）
+- `data/storms_obs/*.json` … 台風ごとのAMeDAS観測網の風・雨データ
+  （`scripts/convert_amedas_csv.py` で生成、風/雨モードで開いたときのみ
+  読み込み。無い台風は旧156地点網にフォールバック）
 - `bst_landfall_only.txt` … 観測データ付き142台風の元になった気象庁ベストトラック
   抜粋（参考保存用）
 - `wind_csv/*.csv`（142個） … 各台風の全国観測風データの元データ（参考保存用）
@@ -96,10 +101,18 @@ python3 -m http.server 8000
   手元での`git`操作が難しい場合は、`notebooks/convert_amedas_csv_colab.ipynb`
   （Google Drive上のCSVを読み込み、変換して、GitHub Personal Access Tokenで
   直接pushまで行うColab版）を使ってください。
-  `data/storms_obs/*.json` を既存の `data/storms/*.json`（`wind`/`rain`キー、旧
-  156地点網）に統合してフロントエンドに表示する処理はまだ未実装です。風と雨で
-  地点網が異なる（`data/stations.json` は共通1リストの前提）ため、`index.html` 側の
-  表示ロジックも合わせて変更が必要です。
+
+  `data/storms_obs/*.json` は（`data/raw_amedas/`とは違い）`.gitignore`
+  対象外で、リポジトリにコミットする運用です。風/雨モードのフロントエンド
+  表示に使うためです（下記）。全台風分では数百MBになる見込みですが、
+  GitHub Pagesからの配信自体はファイル単位の静的配信なので問題ありません。
+- **フロントエンド（`index.html`）でのAMeDAS観測網表示**: 「風 Wind」「雨
+  Rain」モードは、その台風に `data/storms_obs/<コード>_{wind,rain}.json`
+  があればAMeDAS観測網（風976地点・雨1669地点、`data/stations_network.json`）
+  を優先して使い、無ければ従来の `data/storms/<コード>.json` 内の
+  `wind`/`rain`（旧156地点網）にフォールバックします。風と雨で地点網が
+  異なるため、地点マーカーは3種類（旧156地点／AMeDAS風976地点／AMeDAS雨
+  1669地点）を別レイヤーとして地図上に用意し、表示モードに応じて切り替えます。
 - `scripts/download_jra3q_pressure.py` … ERA5との精度比較のため、気象庁
   第3次長期再解析
   [JRA-3Q](https://jra.kishou.go.jp/JRA-3Q/index_ja.html) の海面更正気圧
@@ -184,8 +197,10 @@ python3 -m http.server 8000
   切り替えボタンは無効化されます
 - 台風の経路線をクリックすると、その地点の時刻まで再生位置がジャンプします
 - 左パネルの「風 / 雨 / 気圧」ボタンで、全国観測地点・気圧配置の表示を切り替え可能
-  - 風：矢印（吹いていく方向、長さと色は風速）
-  - 雨：丸（大きさと色は1時間降水量）
+  - 風：矢印（吹いていく方向、長さと色は風速）。`data/storms_obs/<コード>_wind.json`
+    があればAMeDAS観測網（976地点）、無ければ旧156地点網を使用
+  - 雨：丸（大きさと色は1時間降水量）。同様にAMeDAS観測網（1669地点）が
+    あれば優先、無ければ旧156地点網にフォールバック
   - 気圧：JRA-3Q再解析の海面更正気圧から作図した等圧線（4hPa間隔、20hPa毎は太線）。
     `data/pressure/<台風コード>.json` がある台風のみ表示されます（`scripts/
     build_pressure_json.py` 参照）。観測データのない台風（`hasObs=false`）でも

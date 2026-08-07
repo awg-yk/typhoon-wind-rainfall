@@ -341,7 +341,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 <script>
 (function(){
 "use strict";
-const DATA = { stationNames: [], stationCoords: [], storms: {}, pressure: {} };
+const DATA = { stationNames: [], stationCoords: [], storms: {}, pressure: {}, network: { wind: [], rain: [] }, obsNet: {} };
 let STORM_META = {};   // code -> {name, year}, from data/index.json (tiny, loaded up front)
 let STORM_ORDER = [];
 // JMA best-track "階級" (grade) codes:
@@ -375,7 +375,9 @@ function gradeCode(grade){
 }
 
 let map, tyMarker, trackLine, trackPastLine, trackHitLine, isobarLayer;
-let windLayer = []; // array of {marker, station index}
+let windLayer = []; // array of {marker, station index} -- legacy 156-station network
+let netWindLayer = []; // AMeDAS network (976 stations), shown when a storm has data/storms_obs/<code>_wind.json
+let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has data/storms_obs/<code>_rain.json
 let displayMode = 'wind'; // 'wind' | 'rain' | 'pressure'
 let currentStormCode = null;
 let currentIdx = 0;
@@ -414,6 +416,34 @@ async function loadIndex(){
   const res = await fetch('data/index.json');
   if (!res.ok) throw new Error('index.json: ' + res.status);
   STORM_META = await res.json();
+}
+
+async function loadNetworkStations(){
+  // Expanded AMeDAS+気象台等 observation network (976 wind stations, 1669
+  // rain stations -- separate lists since not every station reports both).
+  // ~480KB, loaded up front alongside the legacy 156-station list so both
+  // marker layers can be pre-built in initMap().
+  const res = await fetch('data/stations_network.json');
+  if (!res.ok) throw new Error('stations_network.json: ' + res.status);
+  DATA.network = await res.json();
+}
+
+async function loadStormObsNetwork(code){
+  // Per-storm AMeDAS network wind/rain (data/storms_obs/<code>_{wind,rain}.json),
+  // fetched on demand and cached. Not every storm has this yet (fetched
+  // separately, storm by storm); a 404 on either file just means that half
+  // (or all) of it isn't available, handled as null so callers fall back to
+  // the legacy 156-station data embedded in data/storms/<code>.json.
+  if (Object.prototype.hasOwnProperty.call(DATA.obsNet, code)) return DATA.obsNet[code];
+  const fetchOne = function(kind){
+    return fetch('data/storms_obs/' + code + '_' + kind + '.json')
+      .then(function(res){ return res.ok ? res.json() : null; })
+      .catch(function(){ return null; });
+  };
+  const [wind, rain] = await Promise.all([fetchOne('wind'), fetchOne('rain')]);
+  const obs = (wind || rain) ? { wind: wind, rain: rain } : null;
+  DATA.obsNet[code] = obs;
+  return obs;
 }
 
 async function loadStorm(code){
@@ -471,6 +501,41 @@ async function loadPressureData(code){
   return DATA.pressure[code];
 }
 
+function buildStationLayer(names, coords, layerArr){
+  // Shared setup for a set of pre-created, initially-hidden station markers
+  // (arrow/circle icon swapped per-frame in updateFrame). Used for all three
+  // station networks (legacy + AMeDAS wind + AMeDAS rain).
+  names.forEach(function(name, i){
+    const coord = coords[i];
+    const icon = L.divIcon({
+      className:'wind-arrow',
+      html: arrowSVG(0, 0, '#666'),
+      iconSize:[ARROW_SIZE,ARROW_SIZE],
+      iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]
+    });
+    const m = L.marker([coord[0], coord[1]], {icon:icon, interactive:true, opacity:0});
+    m.addTo(map);
+    m.bindTooltip('', {direction:'top', offset:[0,-ARROW_HALF], sticky:true});
+    m.on('mouseover', function(){
+      // With many closely-spaced arrow markers, fast cursor movement can
+      // occasionally leave a previous marker's tooltip open when the
+      // browser coalesces mousemove events and Leaflet's own mouseout
+      // doesn't fire cleanly. Defensively close any other open tooltip
+      // before this one is shown.
+      layerArr.forEach(function(entry){
+        if (entry.marker !== m) entry.marker.closeTooltip();
+      });
+    });
+    layerArr.push({marker:m, name:name});
+  });
+
+  // Extra safety net: if the cursor leaves the map entirely, make sure no
+  // tooltip from this layer is left stuck open.
+  map.getContainer().addEventListener('mouseleave', function(){
+    layerArr.forEach(function(entry){ entry.marker.closeTooltip(); });
+  });
+}
+
 function initMap(){
   map = L.map('map', { zoomControl:true, attributionControl:true }).setView([36.2, 138.0], 5);
   L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
@@ -489,36 +554,22 @@ function initMap(){
   trackHitLine.on('mouseover', function(){ map.getContainer().style.cursor = 'pointer'; });
   trackHitLine.on('mouseout', function(){ map.getContainer().style.cursor = ''; });
 
-  // Station wind arrow markers, pre-created, hidden until data arrives
-  DATA.stationNames.forEach(function(name, i){
-    const coord = DATA.stationCoords[i];
-    const icon = L.divIcon({
-      className:'wind-arrow',
-      html: arrowSVG(0, 0, '#666'),
-      iconSize:[ARROW_SIZE,ARROW_SIZE],
-      iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]
-    });
-    const m = L.marker([coord[0], coord[1]], {icon:icon, interactive:true, opacity:0});
-    m.addTo(map);
-    m.bindTooltip('', {direction:'top', offset:[0,-ARROW_HALF], sticky:true});
-    m.on('mouseover', function(){
-      // With 156 closely-spaced arrow markers, fast cursor movement can
-      // occasionally leave a previous marker's tooltip open when the
-      // browser coalesces mousemove events and Leaflet's own mouseout
-      // doesn't fire cleanly. Defensively close any other open tooltip
-      // before this one is shown.
-      windLayer.forEach(function(entry){
-        if (entry.marker !== m) entry.marker.closeTooltip();
-      });
-    });
-    windLayer.push({marker:m, name:name});
-  });
-
-  // Extra safety net: if the cursor leaves the map entirely, make sure no
-  // wind tooltip is left stuck open.
-  map.getContainer().addEventListener('mouseleave', function(){
-    windLayer.forEach(function(entry){ entry.marker.closeTooltip(); });
-  });
+  // Station arrow/circle markers, pre-created, hidden until data arrives.
+  // Three separate networks: legacy 156-station (windLayer, used as a
+  // fallback for storms without AMeDAS-network data), and the AMeDAS
+  // network split by kind (netWindLayer 976 stations, netRainLayer 1669 --
+  // wind and rain don't share the same station list).
+  buildStationLayer(DATA.stationNames, DATA.stationCoords, windLayer);
+  buildStationLayer(
+    DATA.network.wind.map(function(s){ return s.name; }),
+    DATA.network.wind.map(function(s){ return [s.lat, s.lon]; }),
+    netWindLayer
+  );
+  buildStationLayer(
+    DATA.network.rain.map(function(s){ return s.name; }),
+    DATA.network.rain.map(function(s){ return [s.lat, s.lon]; }),
+    netRainLayer
+  );
 
   tyMarker = L.marker([0,0], {
     icon: L.divIcon({className:'ty-mark-wrap', html:'', iconSize:[70,32], iconAnchor:[35,24]}),
@@ -906,13 +957,22 @@ async function selectStorm(code){
   document.getElementById('slider').disabled = false;
   document.getElementById('play-btn').disabled = false;
 
+  // AMeDAS-network wind/rain (data/storms_obs/<code>_{wind,rain}.json) takes
+  // priority over the legacy 156-station data embedded in the storm file
+  // when present; fetched here (not lazily on mode switch) since it also
+  // determines whether the wind/rain buttons should be enabled at all.
+  let obsNet = null;
+  try { obsNet = await loadStormObsNetwork(code); } catch (err) { obsNet = null; }
+  if (myToken !== selectToken) return;
+  const hasObs = !!(obsNet && (obsNet.wind || obsNet.rain)) || !s.noObs;
+
   const obsIdx = getPlayableIndices(s);
-  document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (s.noObs ? '（観測データなし・経路のみ）' : '');
-  document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (s.noObs ? '' : ', ' + obsIdx.length + ' 3-hourly steps');
+  document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (hasObs ? '' : '（観測データなし・経路のみ）');
+  document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (hasObs ? ', ' + obsIdx.length + ' 3-hourly steps' : '');
   // Wind/rain need station observation data; pressure comes from JRA-3Q and
-  // is independent of that, so only wind/rain buttons are gated on noObs.
+  // is independent of that, so only wind/rain buttons are gated on hasObs.
   document.querySelectorAll('.mode-btn').forEach(function(b){
-    b.disabled = !!s.noObs && b.dataset.mode !== 'pressure';
+    b.disabled = !hasObs && b.dataset.mode !== 'pressure';
   });
   if (displayMode === 'pressure') await loadPressureData(code);
 
@@ -1136,36 +1196,63 @@ function updateFrame(pos){
   trackPastLine.setLatLngs(pastPts);
   trackLine.setLatLngs(futPts.length ? [pastPts[pastPts.length-1]].concat(futPts) : []);
 
-  // pressure mode: isobar contours instead of station markers
+  // Hide every station/isobar layer, then show only what the current mode
+  // (and, for wind/rain, which network this storm actually has data in)
+  // calls for.
+  windLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
+  netWindLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
+  netRainLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
+  isobarLayer.clearLayers();
+
   if (displayMode === 'pressure'){
-    windLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
     renderPressure(timeMs);
     return;
   }
-  isobarLayer.clearLayers();
 
-  // wind arrows / rain circles at each station
-  const wind = s.wind;
-  const rain = s.rain;
-  for (let i=0;i<windLayer.length;i++){
-    const entry = windLayer[i];
+  const obsNet = DATA.obsNet[currentStormCode];
+  const src = currentObsSource(s, obsNet, displayMode);
+  if (src) renderObsLayer(src.layer, src.data, timeMs, displayMode);
+}
 
-    if (displayMode === 'rain'){
-      const mm = (rain && rain[i]) ? rain[i][idx] : null;
+function currentObsSource(s, obsNet, mode){
+  // AMeDAS network data (obsNet.wind/.rain -- {times, values}, values[i][t])
+  // takes priority when this storm has it; otherwise fall back to the
+  // legacy 156-station data embedded in data/storms/<code>.json, reshaped
+  // into the same {times, values} form so both paths share one renderer.
+  if (mode === 'wind' && obsNet && obsNet.wind) return { layer: netWindLayer, data: obsNet.wind };
+  if (mode === 'rain' && obsNet && obsNet.rain) return { layer: netRainLayer, data: obsNet.rain };
+  if (mode === 'wind') return { layer: windLayer, data: { times: s.times, values: s.wind } };
+  if (mode === 'rain') return { layer: windLayer, data: { times: s.times, values: s.rain } };
+  return null;
+}
+
+function renderObsLayer(layer, data, timeMs, mode){
+  if (!data.times || !data.times.length) return;
+  let idx = 0, bestDiff = Infinity;
+  for (let i = 0; i < data.times.length; i++){
+    const diff = Math.abs(Date.parse(data.times[i]) - timeMs);
+    if (diff < bestDiff){ bestDiff = diff; idx = i; }
+  }
+
+  for (let i = 0; i < layer.length; i++){
+    const entry = layer[i];
+    const stationValues = data.values ? data.values[i] : null;
+    const v = stationValues ? stationValues[idx] : null;
+
+    if (mode === 'rain'){
+      const mm = v;
       if (mm === null || mm === undefined){
         entry.marker.setOpacity(0);
         continue;
       }
       entry.marker.setOpacity(1);
       const color = rainColor(mm);
-      const html = rainCircleSVG(mm, color);
-      const tip = entry.name + '<br>' + mm.toFixed(1) + ' mm/h';
-      entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:html, iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
-      entry.marker.setTooltipContent(tip);
+      entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:rainCircleSVG(mm, color), iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
+      entry.marker.setTooltipContent(entry.name + '<br>' + mm.toFixed(1) + ' mm/h');
       continue;
     }
 
-    const w = (wind && wind[i]) ? wind[i][idx] : null;
+    const w = v;
     if (!w){
       entry.marker.setOpacity(0);
       continue;
@@ -1216,7 +1303,7 @@ function pause(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  Promise.all([loadStations(), loadIndex()]).then(function(){
+  Promise.all([loadStations(), loadIndex(), loadNetworkStations()]).then(function(){
     STORM_ORDER = computeStormOrder();
 
     initMap();
