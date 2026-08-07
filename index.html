@@ -594,21 +594,21 @@ function initMap(){
   isobarLayer = L.layerGroup().addTo(map);
 }
 
-const ARROW_SIZE = 42; // px, marker bounding box (was 26)
+const ARROW_SIZE = 64; // px, marker bounding box -- larger than the glyph itself so hovering near (not just exactly on) a station still shows its tooltip
 const ARROW_HALF = ARROW_SIZE/2;
 
 function arrowSVG(deg, speed, color){
-  // deg: direction the wind blows TOWARD (0 = up/north)
-  const len = 12 + Math.min(speed, 30) * 0.85;
-  return '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '" style="overflow:visible;transform:rotate(' + deg + 'deg);">' +
-    '<line x1="0" y1="' + (len/2) + '" x2="0" y2="' + (-len/2) + '" stroke="' + color + '" stroke-width="3.4" stroke-linecap="round"/>' +
-    '<path d="M -6.2,' + (-len/2+7.2) + ' L 0,' + (-len/2-3.2) + ' L 6.2,' + (-len/2+7.2) + ' Z" fill="' + color + '"/>' +
+  // deg: direction the wind blows TOWARD (0 = up/north). The glyph points
+  // right (east) by default, so it needs an extra -90deg to point up at deg=0.
+  const size = 16 + Math.min(speed, 30) * 0.55;
+  return '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '" style="overflow:visible;transform:rotate(' + (deg - 90) + 'deg);">' +
+    '<text x="0" y="0" font-size="' + size + '" fill="' + color + '" text-anchor="middle" dominant-baseline="central">➤</text>' +
     '</svg>';
 }
 
 function speedColor(spd){
   // JMA official wind-speed color scale.
-  if (spd < 5) return '#f2f2ff';
+  if (spd < 5) return '#a0d2ff';
   if (spd < 10) return '#0041ff';
   if (spd < 15) return '#faf500';
   if (spd < 20) return '#ff9900';
@@ -1299,8 +1299,9 @@ function renderObsLayer(layer, data, timeMs, mode){
     entry.marker.setOpacity(1);
     let html, tip;
     if (dirFrom === null){
-      // calm
-      html = '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '"><circle cx="0" cy="0" r="5" fill="#5fa3a3"/></svg>';
+      // Calm, or direction not recorded -- no direction to point, but still
+      // color by speed like every other marker rather than a fixed color.
+      html = '<svg width="' + ARROW_SIZE + '" height="' + ARROW_SIZE + '" viewBox="-' + ARROW_HALF + ' -' + ARROW_HALF + ' ' + ARROW_SIZE + ' ' + ARROW_SIZE + '"><circle cx="0" cy="0" r="5" fill="' + speedColor(spd) + '"/></svg>';
       tip = entry.name + '<br>' + spd.toFixed(1) + ' m/s (\u9759\u7a4f)';
     } else {
       const toward = (dirFrom + 180) % 360;
