@@ -201,6 +201,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 .mode-btn:hover{ color:var(--text); }
 .mode-btn.active[data-mode="wind"]{ background:var(--amber); color:var(--ink); }
 .mode-btn.active[data-mode="rain"]{ background:var(--rain); color:var(--ink); }
+.mode-btn.active[data-mode="pressure"]{ background:#9c8fd0; color:var(--ink); }
 
 .ty-mark-wrap{ pointer-events:none; }
 .ty-mark{
@@ -293,6 +294,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       <div class="mode-toggle" id="mode-toggle">
         <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
         <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
+        <button type="button" class="mode-btn" data-mode="pressure">気圧 Pressure</button>
       </div>
 
       <div class="readout" id="readout">
@@ -333,7 +335,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 <script>
 (function(){
 "use strict";
-const DATA = { stationNames: [], stationCoords: [], storms: {} };
+const DATA = { stationNames: [], stationCoords: [], storms: {}, pressure: {} };
 let STORM_META = {};   // code -> {name, year}, from data/index.json (tiny, loaded up front)
 let STORM_ORDER = [];
 // JMA best-track "階級" (grade) codes:
@@ -366,9 +368,9 @@ function gradeCode(grade){
   }
 }
 
-let map, tyMarker, trackLine, trackPastLine, trackHitLine;
+let map, tyMarker, trackLine, trackPastLine, trackHitLine, isobarLayer;
 let windLayer = []; // array of {marker, station index}
-let displayMode = 'wind'; // 'wind' | 'rain'
+let displayMode = 'wind'; // 'wind' | 'rain' | 'pressure'
 let currentStormCode = null;
 let currentIdx = 0;
 let playing = false;
@@ -447,6 +449,22 @@ async function loadStorm(code){
   return s;
 }
 
+async function loadPressureData(code){
+  // JRA-3Q sea-level pressure grid for isobar drawing, fetched only when
+  // the pressure display mode is actually used. Not every storm has this
+  // (only landfallJP storms were downloaded, and a few months' source data
+  // may be missing) -- a missing file is cached as null so we don't refetch.
+  if (Object.prototype.hasOwnProperty.call(DATA.pressure, code)) return DATA.pressure[code];
+  try {
+    const res = await fetch('data/pressure/' + code + '.json');
+    if (!res.ok){ DATA.pressure[code] = null; return null; }
+    DATA.pressure[code] = await res.json();
+  } catch (err) {
+    DATA.pressure[code] = null;
+  }
+  return DATA.pressure[code];
+}
+
 function initMap(){
   map = L.map('map', { zoomControl:true, attributionControl:true }).setView([36.2, 138.0], 5);
   L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
@@ -501,6 +519,8 @@ function initMap(){
     interactive:true, opacity:0
   }).addTo(map);
   tyMarker.bindTooltip('', {permanent:false, direction:'top'});
+
+  isobarLayer = L.layerGroup().addTo(map);
 }
 
 const ARROW_SIZE = 42; // px, marker bounding box (was 26)
@@ -547,6 +567,82 @@ function rainCircleSVG(mm, color){
     '</svg>';
 }
 
+function marchingSquares(grid, lat, lon, level){
+  // Classic marching squares over a lat/lon grid of scalar values, returning
+  // a flat array of 2-point line segments (each [[lat,lon],[lat,lon]]) that
+  // approximate the `level` contour. Saddle cases (5, 10) are resolved with
+  // a fixed (non-disambiguated) pairing -- fine for isobar drawing, where a
+  // locally "wrong" saddle split is visually indistinguishable.
+  const segs = [];
+  const nLat = grid.length, nLon = grid[0].length;
+  function frac(v1, v2){ return v2 === v1 ? 0.5 : (level - v1) / (v2 - v1); }
+  for (let i = 0; i < nLat - 1; i++){
+    for (let j = 0; j < nLon - 1; j++){
+      const tl = grid[i][j], tr = grid[i][j+1], br = grid[i+1][j+1], bl = grid[i+1][j];
+      let idx = 0;
+      if (tl > level) idx |= 8;
+      if (tr > level) idx |= 4;
+      if (br > level) idx |= 2;
+      if (bl > level) idx |= 1;
+      if (idx === 0 || idx === 15) continue;
+
+      const latT = lat[i], latB = lat[i+1], lonL = lon[j], lonR = lon[j+1];
+      const top    = [latT, lonL + (lonR - lonL) * frac(tl, tr)];
+      const right  = [latT + (latB - latT) * frac(tr, br), lonR];
+      const bottom = [latB, lonL + (lonR - lonL) * frac(bl, br)];
+      const left   = [latT + (latB - latT) * frac(tl, bl), lonL];
+
+      const CASES = {
+        1:[[left,bottom]], 2:[[bottom,right]], 3:[[left,right]],
+        4:[[top,right]], 5:[[left,top],[bottom,right]], 6:[[top,bottom]],
+        7:[[left,top]], 8:[[top,left]], 9:[[top,bottom]],
+        10:[[top,right],[left,bottom]], 11:[[top,right]],
+        12:[[left,right]], 13:[[bottom,right]], 14:[[left,bottom]]
+      };
+      CASES[idx].forEach(function(seg){ segs.push(seg); });
+    }
+  }
+  return segs;
+}
+
+const PRESSURE_INTERVAL_HPA = 4;
+
+function renderPressure(timeMs){
+  isobarLayer.clearLayers();
+  const pdata = DATA.pressure[currentStormCode];
+  if (!pdata || !pdata.times || !pdata.times.length) return;
+
+  let idx = 0, bestDiff = Infinity;
+  for (let i = 0; i < pdata.times.length; i++){
+    const diff = Math.abs(Date.parse(pdata.times[i]) - timeMs);
+    if (diff < bestDiff){ bestDiff = diff; idx = i; }
+  }
+  const grid = pdata.values[idx];
+  if (!grid) return;
+
+  let vmin = Infinity, vmax = -Infinity;
+  for (let i = 0; i < grid.length; i++){
+    for (let j = 0; j < grid[i].length; j++){
+      const v = grid[i][j];
+      if (v < vmin) vmin = v;
+      if (v > vmax) vmax = v;
+    }
+  }
+  const start = Math.ceil(vmin / PRESSURE_INTERVAL_HPA) * PRESSURE_INTERVAL_HPA;
+  for (let level = start; level <= vmax; level += PRESSURE_INTERVAL_HPA){
+    const segs = marchingSquares(grid, pdata.lat, pdata.lon, level);
+    if (!segs.length) continue;
+    const major = level % 20 === 0;
+    segs.forEach(function(seg){
+      L.polyline(seg, {
+        color: major ? '#e8d9a8' : '#9c8fd0',
+        weight: major ? 1.8 : 1,
+        opacity: major ? .9 : .6
+      }).addTo(isobarLayer);
+    });
+  }
+}
+
 function buildLegend(){
   const el = document.getElementById('legend-wind');
   const title = document.getElementById('legend-title');
@@ -559,6 +655,14 @@ function buildLegend(){
     stops.forEach(function(s){
       html += '<div class="row">' + rainCircleSVG(s[0], rainColor(s[0])) + '<span>' + s[1] + ' mm/h</span></div>';
     });
+  } else if (displayMode === 'pressure'){
+    title.textContent = 'Pressure Legend / 気圧配置（JRA-3Q海面更正気圧）';
+    const swatch = function(color, weight){
+      return '<svg width="' + ARROW_SIZE + '" height="16"><line x1="2" y1="8" x2="' + (ARROW_SIZE-2) + '" y2="8" stroke="' + color + '" stroke-width="' + weight + '"/></svg>';
+    };
+    html += '<div class="row">' + swatch('#e8d9a8', 1.8) + '<span>20hPa毎（太線）</span></div>';
+    html += '<div class="row">' + swatch('#9c8fd0', 1) + '<span>4hPa毎（細線）</span></div>';
+    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">データがない台風・期間は非表示</span></div>';
   } else {
     title.textContent = 'Wind Legend / 風の凡例';
     const stops = [
@@ -738,7 +842,12 @@ async function selectStorm(code){
   const obsIdx = getPlayableIndices(s);
   document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (s.noObs ? '（観測データなし・経路のみ）' : '');
   document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (s.noObs ? '' : ', ' + obsIdx.length + ' 3-hourly steps');
-  document.querySelectorAll('.mode-btn').forEach(function(b){ b.disabled = !!s.noObs; });
+  // Wind/rain need station observation data; pressure comes from JRA-3Q and
+  // is independent of that, so only wind/rain buttons are gated on noObs.
+  document.querySelectorAll('.mode-btn').forEach(function(b){
+    b.disabled = !!s.noObs && b.dataset.mode !== 'pressure';
+  });
+  if (displayMode === 'pressure') await loadPressureData(code);
 
   const slider = document.getElementById('slider');
   slider.max = obsIdx.length - 1;
@@ -960,6 +1069,14 @@ function updateFrame(pos){
   trackPastLine.setLatLngs(pastPts);
   trackLine.setLatLngs(futPts.length ? [pastPts[pastPts.length-1]].concat(futPts) : []);
 
+  // pressure mode: isobar contours instead of station markers
+  if (displayMode === 'pressure'){
+    windLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
+    renderPressure(timeMs);
+    return;
+  }
+  isobarLayer.clearLayers();
+
   // wind arrows / rain circles at each station
   const wind = s.wind;
   const rain = s.rain;
@@ -1050,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     document.querySelectorAll('.mode-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){
+      btn.addEventListener('click', async function(){
         const mode = btn.dataset.mode;
         if (mode === displayMode) return;
         displayMode = mode;
@@ -1058,6 +1175,7 @@ document.addEventListener('DOMContentLoaded', function(){
           b.classList.toggle('active', b.dataset.mode === mode);
         });
         buildLegend();
+        if (mode === 'pressure' && currentStormCode) await loadPressureData(currentStormCode);
         if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
       });
     });
