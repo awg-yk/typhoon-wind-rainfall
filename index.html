@@ -527,6 +527,15 @@ async function loadPressureData(code){
   return DATA.pressure[code];
 }
 
+function setEntryVisible(entry, visible){
+  // setOpacity(0) alone still leaves the marker hoverable/tooltip-able --
+  // it's just invisible. Filtered-out stations should be un-hoverable too,
+  // so also toggle pointer-events on the marker's DOM element.
+  entry.marker.setOpacity(visible ? 1 : 0);
+  const el = entry.marker.getElement();
+  if (el) el.style.pointerEvents = visible ? '' : 'none';
+}
+
 function buildStationLayer(names, coords, layerArr){
   // Shared setup for a set of pre-created, initially-hidden station markers
   // (arrow/circle icon swapped per-frame in updateFrame). Used for all three
@@ -606,7 +615,7 @@ function initMap(){
   isobarLayer = L.layerGroup().addTo(map);
 }
 
-const ARROW_SIZE = 64; // px, marker bounding box -- larger than the glyph itself so hovering near (not just exactly on) a station still shows its tooltip
+const ARROW_SIZE = 96; // px, marker bounding box -- much larger than the glyph itself so hovering near (not just exactly on) a station still shows its tooltip
 const ARROW_HALF = ARROW_SIZE/2;
 
 function arrowSVG(deg, speed, color, box){
@@ -1245,9 +1254,9 @@ function updateFrame(pos){
   // Hide every station/isobar layer, then show only what the current mode
   // (and, for wind/rain, which network this storm actually has data in)
   // calls for.
-  windLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
-  netWindLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
-  netRainLayer.forEach(function(entry){ entry.marker.setOpacity(0); });
+  windLayer.forEach(function(entry){ setEntryVisible(entry, false); });
+  netWindLayer.forEach(function(entry){ setEntryVisible(entry, false); });
+  netRainLayer.forEach(function(entry){ setEntryVisible(entry, false); });
   isobarLayer.clearLayers();
 
   const obsNet = DATA.obsNet[currentStormCode];
@@ -1289,10 +1298,10 @@ function renderObsLayer(layer, data, timeMs, mode){
       // 0mm/h (measured no rain) is never worth showing as a marker, regardless
       // of the min-value filter -- it's the baseline, not a data point of interest.
       if (mm === null || mm === undefined || mm <= 0 || mm < threshold){
-        entry.marker.setOpacity(0);
+        setEntryVisible(entry, false);
         continue;
       }
-      entry.marker.setOpacity(1);
+      setEntryVisible(entry, true);
       const color = rainColor(mm);
       entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:rainCircleSVG(mm, color), iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
       entry.marker.setTooltipContent(entry.name + '<br>' + mm.toFixed(1) + ' mm/h');
@@ -1301,11 +1310,11 @@ function renderObsLayer(layer, data, timeMs, mode){
 
     const w = v;
     if (!w || w[0] < threshold){
-      entry.marker.setOpacity(0);
+      setEntryVisible(entry, false);
       continue;
     }
     const spd = w[0], dirFrom = w[1];
-    entry.marker.setOpacity(1);
+    setEntryVisible(entry, true);
     let html, tip;
     if (dirFrom === null){
       // Calm, or direction not recorded -- no direction to point, but still
