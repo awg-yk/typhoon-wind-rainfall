@@ -222,6 +222,11 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   display:flex; gap:0; margin:10px 0 4px 0; border:1px solid var(--line);
   border-radius:3px; overflow:hidden;
 }
+#mode-nodata-note{
+  font-size:11px; color:var(--text-dim); background:var(--panel-2);
+  border:1px solid var(--line); border-radius:3px; padding:6px 8px;
+  margin-bottom:10px;
+}
 .mode-btn{
   flex:1; font-family:var(--mono); font-size:11px; letter-spacing:.03em;
   padding:7px 6px; background:var(--panel-2); color:var(--text-dim);
@@ -319,6 +324,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
         <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
         <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
       </div>
+      <div id="mode-nodata-note" style="display:none;"></div>
 
       <div class="readout" id="readout">
         <div class="k">日時</div><div class="v" id="v-time">&mdash;</div>
@@ -401,6 +407,7 @@ let windLayer = []; // array of {marker, station index} -- legacy 156-station ne
 let netWindLayer = []; // AMeDAS network (976 stations), shown when a storm has data/storms_obs/<code>_wind.json
 let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has data/storms_obs/<code>_rain.json
 let displayMode = 'wind'; // 'wind' | 'rain'
+const modeHasData = { wind: false, rain: false }; // per-mode data availability for the current storm
 // Per-mode minimum-value filter (m/s for wind, mm/h for rain): markers below
 // this are skipped entirely (no icon rebuilt) to keep frame updates cheap
 // when a storm's AMeDAS network data has hundreds of near-zero stations.
@@ -848,6 +855,20 @@ function buildLegend(){
   updateThresholdControl();
 }
 
+function updateModeNote(){
+  const note = document.getElementById('mode-nodata-note');
+  if (modeHasData[displayMode]){
+    note.style.display = 'none';
+    return;
+  }
+  const other = displayMode === 'wind' ? 'rain' : 'wind';
+  const label = displayMode === 'wind' ? '風' : '雨';
+  note.textContent = modeHasData[other]
+    ? 'この台風には' + label + 'の観測データがありません（この時代の観測網では記録されていません）。'
+    : 'この台風には観測データがありません（経路のみ）。';
+  note.style.display = '';
+}
+
 function updateThresholdControl(){
   const slider = document.getElementById('threshold-slider');
   const valueEl = document.getElementById('threshold-value');
@@ -1017,7 +1038,12 @@ async function selectStorm(code){
   let obsNet = null;
   try { obsNet = await loadStormObsNetwork(code); } catch (err) { obsNet = null; }
   if (myToken !== selectToken) return;
-  const hasObs = !!(obsNet && (obsNet.wind || obsNet.rain)) || !s.noObs;
+
+  // Check per-mode data availability by actual content, not just whether
+  // the obsNet field exists -- see dataHasAnyValue()'s comment.
+  modeHasData.wind = dataHasAnyValue((currentObsSource(s, obsNet, 'wind') || {}).data);
+  modeHasData.rain = dataHasAnyValue((currentObsSource(s, obsNet, 'rain') || {}).data);
+  const hasObs = modeHasData.wind || modeHasData.rain;
 
   const obsIdx = getPlayableIndices(s);
   document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (hasObs ? '' : '（観測データなし・経路のみ）');
@@ -1025,6 +1051,7 @@ async function selectStorm(code){
   document.querySelectorAll('.mode-btn').forEach(function(b){
     b.disabled = !hasObs;
   });
+  updateModeNote();
   // Pressure data (JRA-3Q) is fetched regardless of mode: whenever this
   // storm has it, isobars are automatically overlaid on the wind/rain
   // markers (see buildLegend/updateFrame).
@@ -1279,6 +1306,24 @@ function currentObsSource(s, obsNet, mode){
   return null;
 }
 
+function dataHasAnyValue(data){
+  // A source can exist structurally (obsNet.wind is a real {times,values}
+  // object) while every value in it is null -- e.g. pre-1961 storms, where
+  // JMA's network has no digitized wind readings at all even though rain
+  // gauge records go back further. Distinguish "no data for this mode"
+  // from "all stations currently below threshold/filtered" this way.
+  if (!data || !data.values) return false;
+  for (let i = 0; i < data.values.length; i++){
+    const station = data.values[i];
+    if (!station) continue;
+    for (let t = 0; t < station.length; t++){
+      const v = station[t];
+      if (v !== null && v !== undefined) return true;
+    }
+  }
+  return false;
+}
+
 function renderObsLayer(layer, data, timeMs, mode){
   if (!data.times || !data.times.length) return;
   let idx = 0, bestDiff = Infinity;
@@ -1386,6 +1431,7 @@ document.addEventListener('DOMContentLoaded', function(){
           b.classList.toggle('active', b.dataset.mode === mode);
         });
         buildLegend();
+        updateModeNote();
         if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
       });
     });
