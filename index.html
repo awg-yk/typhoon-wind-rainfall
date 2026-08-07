@@ -95,9 +95,12 @@ header .spacer{ flex:1; }
   #mapinfo{ position:static; width:auto; max-height:none; margin:12px 18px; }
 }
 
-#about-btn{
+#topright{
   position:absolute; right:16px; top:16px; z-index:1000;
-  width:24px; height:24px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:flex-end; gap:8px;
+}
+#about-btn{
+  width:24px; height:24px; border-radius:50%; flex-shrink:0;
   background:var(--panel); color:var(--teal); border:1px solid var(--line);
   font-family:var(--serif); font-style:italic; font-size:13px; font-weight:700;
   cursor:pointer; display:flex; align-items:center; justify-content:center;
@@ -112,6 +115,20 @@ header .spacer{ flex:1; }
   font-size:11px; line-height:1.7; color:var(--text-dim);
 }
 #about-popover.open{ display:block; }
+
+#ranking-panel{
+  width:280px; max-height:min(50vh, 420px); overflow-y:auto;
+  background:var(--panel); border:1px solid var(--line); border-radius:4px;
+  padding:10px 12px; box-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+#ranking-panel .section-label{ margin-bottom:6px; }
+.ranking-table{ width:100%; border-collapse:collapse; font-size:11px; color:var(--text-dim); }
+.ranking-table td{ padding:3px 4px; border-top:1px solid var(--line); white-space:nowrap; }
+.ranking-table tr:first-child td{ border-top:none; }
+.ranking-table .rank{ color:var(--amber-bright); font-weight:700; width:1.4em; }
+.ranking-table .name{ color:var(--paper); width:100%; overflow:hidden; text-overflow:ellipsis; }
+.ranking-table .val{ text-align:right; font-weight:600; color:var(--paper); }
+.ranking-table .time{ text-align:right; color:var(--text-dim); font-size:10px; }
 .leaflet-container{ background:#0a1420; }
 /* Dark map look matched to reference (typhoon_track_finder.html):
    invert the light GSI "pale" tiles and re-tint them. */
@@ -345,7 +362,10 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       <div class="section-label" id="legend-title">Wind Legend / 風の凡例</div>
       <div id="legend-wind"></div>
     </div>
-    <button type="button" id="about-btn" title="About">i</button>
+    <div id="topright">
+      <button type="button" id="about-btn" title="About">i</button>
+      <div id="ranking-panel" style="display:none;"></div>
+    </div>
     <div id="about-popover">
       「風」表示では矢印が風の吹いていく方向、長さと色が風速(m/s)を表します。「雨」表示では丸の大きさと色が1時間降水量(mm)を表します。台風の中心（赤文字のTD/TS/STS/T/L）は気象庁ベストトラックに基づき、上に中心気圧を表示します。経路線は、実線（オレンジ）が通過済み、破線（水色）がこの後進む経路です。
     </div>
@@ -408,6 +428,7 @@ let netWindLayer = []; // AMeDAS network (976 stations), shown when a storm has 
 let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has data/storms_obs/<code>_rain.json
 let displayMode = 'wind'; // 'wind' | 'rain'
 const modeHasData = { wind: false, rain: false }; // per-mode data availability for the current storm
+const ranking = { wind: [], rain: [] }; // top-10 {name,time,value} for the current storm, per mode
 // Per-mode minimum-value filter (m/s for wind, mm/h for rain): markers below
 // this are skipped entirely (no icon rebuilt) to keep frame updates cheap
 // when a storm's AMeDAS network data has hundreds of near-zero stations.
@@ -1041,17 +1062,34 @@ async function selectStorm(code){
 
   // Check per-mode data availability by actual content, not just whether
   // the obsNet field exists -- see dataHasAnyValue()'s comment.
-  modeHasData.wind = dataHasAnyValue((currentObsSource(s, obsNet, 'wind') || {}).data);
-  modeHasData.rain = dataHasAnyValue((currentObsSource(s, obsNet, 'rain') || {}).data);
+  const windSrc = currentObsSource(s, obsNet, 'wind');
+  const rainSrc = currentObsSource(s, obsNet, 'rain');
+  modeHasData.wind = dataHasAnyValue(windSrc && windSrc.data);
+  modeHasData.rain = dataHasAnyValue(rainSrc && rainSrc.data);
   const hasObs = modeHasData.wind || modeHasData.rain;
+  ranking.wind = modeHasData.wind ? computeRanking(windSrc.layer, windSrc.data, 'wind') : [];
+  ranking.rain = modeHasData.rain ? computeRanking(rainSrc.layer, rainSrc.data, 'rain') : [];
 
   const obsIdx = getPlayableIndices(s);
   document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (hasObs ? '' : '（観測データなし・経路のみ）');
   document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (hasObs ? ', ' + obsIdx.length + ' 3-hourly steps' : '');
+  // Only offer a mode that actually has data -- e.g. pre-1961 storms have
+  // rain records but no digitized wind readings at all. If the mode
+  // currently showing just lost its data, fall back to the other one.
   document.querySelectorAll('.mode-btn').forEach(function(b){
-    b.disabled = !hasObs;
+    b.disabled = !modeHasData[b.dataset.mode];
   });
+  if (!modeHasData[displayMode]){
+    const fallback = displayMode === 'wind' ? 'rain' : 'wind';
+    if (modeHasData[fallback]){
+      displayMode = fallback;
+      document.querySelectorAll('.mode-btn').forEach(function(b){
+        b.classList.toggle('active', b.dataset.mode === displayMode);
+      });
+    }
+  }
   updateModeNote();
+  updateRankingPanel();
   // Pressure data (JRA-3Q) is fetched regardless of mode: whenever this
   // storm has it, isobars are automatically overlaid on the wind/rain
   // markers (see buildLegend/updateFrame).
@@ -1324,6 +1362,62 @@ function dataHasAnyValue(data){
   return false;
 }
 
+function formatDateTime(iso){
+  const d = new Date(iso);
+  return d.getFullYear() + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0') +
+    ' ' + String(d.getHours()).padStart(2,'0') + ':00';
+}
+
+function computeRanking(layer, data, mode){
+  // Top-10 by raw value across every station and every timestep in the
+  // storm's whole observation period -- independent of the current
+  // min-value filter or timeline position, since this is a summary of
+  // the whole event, not the current frame.
+  if (!layer || !data || !data.values) return [];
+  const top = []; // kept sorted descending, length <= 10
+  for (let i = 0; i < layer.length; i++){
+    const station = data.values[i];
+    if (!station) continue;
+    for (let t = 0; t < station.length; t++){
+      let v = station[t];
+      if (v === null || v === undefined) continue;
+      if (mode === 'wind'){
+        v = v[0]; // [speed, dirFrom]
+        if (v === null || v === undefined) continue;
+      } else if (v <= 0){
+        continue; // 0mm/h baseline isn't interesting for a "biggest rain" ranking
+      }
+      if (top.length < 10 || v > top[top.length-1].value){
+        let idx = top.length;
+        while (idx > 0 && top[idx-1].value < v) idx--;
+        top.splice(idx, 0, { name: layer[i].name, time: data.times[t], value: v });
+        if (top.length > 10) top.length = 10;
+      }
+    }
+  }
+  return top;
+}
+
+function updateRankingPanel(){
+  const panel = document.getElementById('ranking-panel');
+  const list = ranking[displayMode];
+  if (!list || !list.length){
+    panel.style.display = 'none';
+    return;
+  }
+  panel.style.display = '';
+  const unit = displayMode === 'rain' ? 'mm/h' : 'm/s';
+  const title = displayMode === 'rain' ? '雨量ランキング TOP10' : '風速ランキング TOP10';
+  let html = '<div class="section-label">' + title + '</div><table class="ranking-table"><tbody>';
+  list.forEach(function(row, i){
+    html += '<tr><td class="rank">' + (i+1) + '</td><td class="name">' + row.name + '</td>' +
+      '<td class="val">' + row.value.toFixed(1) + ' ' + unit + '</td>' +
+      '<td class="time">' + formatDateTime(row.time) + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  panel.innerHTML = html;
+}
+
 function renderObsLayer(layer, data, timeMs, mode){
   if (!data.times || !data.times.length) return;
   let idx = 0, bestDiff = Infinity;
@@ -1432,6 +1526,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
         buildLegend();
         updateModeNote();
+        updateRankingPanel();
         if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
       });
     });
