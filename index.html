@@ -430,6 +430,11 @@ let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has
 let displayMode = 'wind'; // 'wind' | 'rain'
 const modeHasData = { wind: false, rain: false }; // per-mode data availability for the current storm
 const ranking = { wind: [], rain: [] }; // top-10 {name,time,value} for the current storm, per mode
+// The timeline (slider/ticks/playback) follows whichever times axis backs
+// the currently displayed mode -- see activeTimeline(). Recomputed on
+// storm select and on mode switch (wind/rain can have different cadences).
+let activeTimes = [];
+let activePlayIdx = [];
 // Per-mode minimum-value filter (m/s for wind, mm/h for rain): markers below
 // this are skipped entirely (no icon rebuilt) to keep frame updates cheap
 // when a storm's AMeDAS network data has hundreds of near-zero stations.
@@ -1075,14 +1080,13 @@ async function selectStorm(code){
   ranking.wind = modeHasData.wind ? computeRanking(windSrc.layer, windSrc.data, 'wind') : [];
   ranking.rain = modeHasData.rain ? computeRanking(rainSrc.layer, rainSrc.data, 'rain') : [];
 
-  const obsIdx = getPlayableIndices(s);
-  document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (hasObs ? '' : '（観測データなし・経路のみ）');
-  document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (hasObs ? ', ' + obsIdx.length + ' 3-hourly steps' : '');
   // Only offer a mode that actually has data -- e.g. pre-1961 storms have
   // rain records but no digitized wind readings at all. If the mode
   // currently showing just lost its data, fall back to the other one.
   document.querySelectorAll('.mode-btn').forEach(function(b){
-    b.disabled = !modeHasData[b.dataset.mode];
+    const m = b.dataset.mode;
+    b.disabled = !modeHasData[m];
+    b.title = modeHasData[m] ? '' : 'この台風には' + (m === 'wind' ? '風' : '雨') + 'の観測データはありません。';
   });
   if (!modeHasData[displayMode]){
     const fallback = displayMode === 'wind' ? 'rain' : 'wind';
@@ -1093,6 +1097,14 @@ async function selectStorm(code){
       });
     }
   }
+
+  const tl = activeTimeline(s, obsNet, displayMode);
+  activeTimes = tl.times;
+  activePlayIdx = tl.playIdx;
+  const ih = Math.round(intervalHoursFor(activeTimes, activePlayIdx) * 10) / 10;
+
+  document.getElementById('side-name-ja').textContent = '台風 ' + (s.name || '(名称不明)') + (hasObs ? '' : '（観測データなし・経路のみ）');
+  document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (hasObs ? ', ' + activePlayIdx.length + ' ' + ih + '-hourly steps' : '');
   updateModeNote();
   updateRankingPanel();
   // Pressure data (JRA-3Q) is fetched regardless of mode: whenever this
@@ -1102,10 +1114,10 @@ async function selectStorm(code){
   buildLegend();
 
   const slider = document.getElementById('slider');
-  slider.max = obsIdx.length - 1;
+  slider.max = activePlayIdx.length - 1;
   slider.value = 0;
 
-  buildTicks(obsIdx.map(function(i){ return s.times[i]; }));
+  buildTicks(activePlayIdx.map(function(i){ return activeTimes[i]; }));
 
   // Fit map to track bounds
   const bounds = s.track.map(function(p){ return [p.lat, p.lon]; });
@@ -1184,21 +1196,18 @@ function getObsIndices(s){
   return s._obsIdx;
 }
 
-function getIntervalHours(s){
+function intervalHoursFor(times, playIdx){
   // Median gap (in hours) between consecutive playable observation steps.
   // Used to scale playback speed so 1-hourly storms don't feel sluggish next
   // to 3-hourly ones (see play()).
-  if (s._intervalHours) return s._intervalHours;
-  const obsIdx = getPlayableIndices(s);
-  if (obsIdx.length < 2){ s._intervalHours = 3; return s._intervalHours; }
+  if (playIdx.length < 2) return 3;
   const gaps = [];
-  for (let i=1;i<obsIdx.length;i++){
-    const dt = (Date.parse(s.times[obsIdx[i]]) - Date.parse(s.times[obsIdx[i-1]])) / 3600000;
+  for (let i=1;i<playIdx.length;i++){
+    const dt = (Date.parse(times[playIdx[i]]) - Date.parse(times[playIdx[i-1]])) / 3600000;
     if (dt > 0) gaps.push(dt);
   }
   gaps.sort(function(a,b){ return a-b; });
-  s._intervalHours = gaps.length ? gaps[Math.floor(gaps.length/2)] : 3;
-  return s._intervalHours;
+  return gaps.length ? gaps[Math.floor(gaps.length/2)] : 3;
 }
 
 function getPlayableIndices(s){
@@ -1217,6 +1226,31 @@ function getPlayableIndices(s){
   });
   s._playIdx = playable.length ? playable : obsIdx.slice(0,1);
   return s._playIdx;
+}
+
+function computeNetworkPlayIndices(times, s){
+  const trackStartMs = trackTimeMs(s.track[0].time);
+  const trackEndMs = trackTimeMs(s.track[s.track.length-1].time);
+  const idx = [];
+  for (let i = 0; i < times.length; i++){
+    const t = Date.parse(times[i]);
+    if (t >= trackStartMs && t <= trackEndMs) idx.push(i);
+  }
+  return idx.length ? idx : [0];
+}
+
+function activeTimeline(s, obsNet, mode){
+  // The AMeDAS-network files (data/storms_obs/*) already carry a clean,
+  // uniform times axis at the real observation cadence (hourly for most
+  // storms) -- prefer that for the timeline over the legacy synthesized-
+  // from-track cadence, which for pre-1990s storms can be as coarse as
+  // 6-hourly (JMA's best-track resolution back then) even when we now
+  // have hourly network readings for the same storm.
+  const net = obsNet && obsNet[mode];
+  if (net && net.times && net.times.length){
+    return { times: net.times, playIdx: computeNetworkPlayIndices(net.times, s) };
+  }
+  return { times: s.times, playIdx: getPlayableIndices(s) };
 }
 
 function findTrackAt(track, timeMs){
@@ -1253,13 +1287,12 @@ function findNearestTrackPoint(s, latlng){
   return best;
 }
 
-function findNearestPlayableIndex(s, timeMs){
-  // Map an arbitrary time to the closest index within the playable
-  // (slider) index list.
-  const obsIdx = getPlayableIndices(s);
+function findNearestPlayableIndex(timeMs){
+  // Map an arbitrary time to the closest index within the current
+  // timeline's playable (slider) index list.
   let bestPos = 0, bestDiff = Infinity;
-  obsIdx.forEach(function(idx, pos){
-    const diff = Math.abs(Date.parse(s.times[idx]) - timeMs);
+  activePlayIdx.forEach(function(idx, pos){
+    const diff = Math.abs(Date.parse(activeTimes[idx]) - timeMs);
     if (diff < bestDiff){ bestDiff = diff; bestPos = pos; }
   });
   return bestPos;
@@ -1268,7 +1301,7 @@ function findNearestPlayableIndex(s, timeMs){
 function onTrackClick(e){
   const s = DATA.storms[currentStormCode];
   const tp = findNearestTrackPoint(s, e.latlng);
-  const pos = findNearestPlayableIndex(s, trackTimeMs(tp.time));
+  const pos = findNearestPlayableIndex(trackTimeMs(tp.time));
   if (playing) pause();
   updateFrame(pos);
 }
@@ -1276,9 +1309,8 @@ function onTrackClick(e){
 function updateFrame(pos){
   currentIdx = pos;
   const s = DATA.storms[currentStormCode];
-  const obsIdx = getPlayableIndices(s);
-  const idx = obsIdx[pos];
-  const t = s.times[idx];
+  const idx = activePlayIdx[pos];
+  const t = activeTimes[idx];
   const timeMs = Date.parse(t);
   document.getElementById('slider').value = pos;
 
@@ -1477,10 +1509,8 @@ function renderObsLayer(layer, data, timeMs, mode){
 }
 
 function step(){
-  const s = DATA.storms[currentStormCode];
-  const obsIdx = getPlayableIndices(s);
   const next = currentIdx + 1;
-  if (next >= obsIdx.length){
+  if (next >= activePlayIdx.length){
     pause();
     return;
   }
@@ -1490,12 +1520,11 @@ function step(){
 function play(){
   playing = true;
   document.getElementById('play-btn').innerHTML = '&#10074;&#10074;';
-  const s = DATA.storms[currentStormCode];
   let speed = parseInt(document.getElementById('speed-select').value, 10);
   // Each step of a 1-hourly storm advances the typhoon 1/3 as much real time as
   // a step of a 3-hourly storm, so at the same frame delay it looks 3x slower.
   // Play 1-hourly storms at 3x the frame rate to match the apparent pace.
-  if (getIntervalHours(s) <= 1.5) speed = speed / 3;
+  if (intervalHoursFor(activeTimes, activePlayIdx) <= 1.5) speed = speed / 3;
   playTimer = setInterval(step, speed);
 }
 function pause(){
@@ -1533,7 +1562,22 @@ document.addEventListener('DOMContentLoaded', function(){
         buildLegend();
         updateModeNote();
         updateRankingPanel();
-        if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
+        const s = DATA.storms[currentStormCode];
+        if (currentStormCode && s){
+          // Wind and rain can have different observation cadences (e.g. one
+          // network file hourly, the other synthesized from a coarser
+          // legacy source), so the timeline needs rebuilding on every mode
+          // switch, not just on storm change. Keep the same wall-clock
+          // time position across the switch rather than resetting to 0.
+          const prevTimeMs = activeTimes.length ? Date.parse(activeTimes[activePlayIdx[currentIdx]]) : null;
+          const obsNet = DATA.obsNet[currentStormCode];
+          const tl = activeTimeline(s, obsNet, displayMode);
+          activeTimes = tl.times;
+          activePlayIdx = tl.playIdx;
+          document.getElementById('slider').max = activePlayIdx.length - 1;
+          buildTicks(activePlayIdx.map(function(i){ return activeTimes[i]; }));
+          updateFrame(prevTimeMs !== null ? findNearestPlayableIndex(prevTimeMs) : 0);
+        }
       });
     });
 
