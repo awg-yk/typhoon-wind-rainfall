@@ -93,6 +93,9 @@ python3 -m http.server 8000
   python3 scripts/convert_amedas_csv.py --codes 1912,1915
   python3 scripts/convert_amedas_csv.py --all   # data/raw_amedas/ にある分すべて
   ```
+  手元での`git`操作が難しい場合は、`notebooks/convert_amedas_csv_colab.ipynb`
+  （Google Drive上のCSVを読み込み、変換して、GitHub Personal Access Tokenで
+  直接pushまで行うColab版）を使ってください。
   `data/storms_obs/*.json` を既存の `data/storms/*.json`（`wind`/`rain`キー、旧
   156地点網）に統合してフロントエンドに表示する処理はまだ未実装です。風と雨で
   地点網が異なる（`data/stations.json` は共通1リストの前提）ため、`index.html` 側の
