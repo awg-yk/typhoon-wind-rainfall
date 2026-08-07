@@ -134,6 +134,11 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 #legend-wind{ font-size:11px; color:var(--text-dim); line-height:1.7; }
 #legend-wind .row{ display:flex; align-items:center; gap:8px; margin-bottom:3px;}
 #legend-wind svg{ flex-shrink:0; }
+#legend-wind .jma-label{ color:var(--text-dim); opacity:.75; margin-left:2px; }
+
+#threshold-control{ display:flex; align-items:center; gap:10px; }
+#threshold-control input[type="range"]{ flex:1; accent-color:var(--amber); }
+.threshold-value{ font-size:11px; color:var(--text-dim); white-space:nowrap; min-width:88px; text-align:right; }
 
 .section-label{
   font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
@@ -311,6 +316,13 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       </div>
 
       <hr class="rule">
+      <div class="section-label" id="threshold-title">Min Value Filter / 最小値フィルタ</div>
+      <div id="threshold-control">
+        <input type="range" id="threshold-slider" min="0" max="30" step="1" value="0">
+        <div id="threshold-value" class="threshold-value"></div>
+      </div>
+
+      <hr class="rule">
       <div class="section-label" id="legend-title">Wind Legend / 風の凡例</div>
       <div id="legend-wind"></div>
 
@@ -379,6 +391,10 @@ let windLayer = []; // array of {marker, station index} -- legacy 156-station ne
 let netWindLayer = []; // AMeDAS network (976 stations), shown when a storm has data/storms_obs/<code>_wind.json
 let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has data/storms_obs/<code>_rain.json
 let displayMode = 'wind'; // 'wind' | 'rain' | 'pressure'
+// Per-mode minimum-value filter (m/s for wind, mm/h for rain): markers below
+// this are skipped entirely (no icon rebuilt) to keep frame updates cheap
+// when a storm's AMeDAS network data has hundreds of near-zero stations.
+const displayThreshold = { wind: 0, rain: 0 };
 let currentStormCode = null;
 let currentIdx = 0;
 let playing = false;
@@ -614,7 +630,8 @@ function rainColor(mm){
   if (mm < 20) return '#9c4fd0';
   if (mm < 30) return '#c23fa8';
   if (mm < 50) return '#c23f6a';
-  return '#8f1f3f';
+  if (mm < 80) return '#8f1f3f';
+  return '#5c1029';
 }
 
 function rainCircleSVG(mm, color){
@@ -766,12 +783,15 @@ function buildLegend(){
   const title = document.getElementById('legend-title');
   let html = '';
   if (displayMode === 'rain'){
-    title.textContent = 'Rain Legend / 雨の凡例（1時間降水量）';
+    title.textContent = 'Rain Legend / 雨の凡例（1時間降水量・気象庁の強さの階級）';
     const stops = [
-      [0, '0mm'], [3, '1-5'], [8, '5-10'], [15,'10-20'], [25,'20-30'], [40,'30-50'], [60,'50+']
+      [0, '0mm', ''], [3, '1-5', ''], [8, '5-10', ''],
+      [15,'10-20','やや強い雨'], [25,'20-30','強い雨'], [40,'30-50','激しい雨'],
+      [65,'50-80','非常に激しい雨'], [90,'80+','猛烈な雨']
     ];
     stops.forEach(function(s){
-      html += '<div class="row">' + rainCircleSVG(s[0], rainColor(s[0])) + '<span>' + s[1] + ' mm/h</span></div>';
+      const jma = s[2] ? '<span class="jma-label">' + s[2] + '</span>' : '';
+      html += '<div class="row">' + rainCircleSVG(s[0], rainColor(s[0])) + '<span>' + s[1] + ' mm/h</span>' + jma + '</div>';
     });
   } else if (displayMode === 'pressure'){
     title.textContent = 'Pressure Legend / 気圧配置（JRA-3Q海面更正気圧）';
@@ -782,15 +802,38 @@ function buildLegend(){
     html += '<div class="row">' + swatch('#ffffff', 1) + '<span>4hPa毎（細線・数字あり）</span></div>';
     html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">データがない台風・期間は非表示</span></div>';
   } else {
-    title.textContent = 'Wind Legend / 風の凡例';
+    title.textContent = 'Wind Legend / 風の凡例（気象庁の風の強さの階級）';
     const stops = [
-      [3, '0-5 m/s'], [8, '5-10'], [13,'10-15'], [18,'15-20'], [23,'20-25'], [28,'25+']
+      [3, '0-5 m/s', ''], [8, '5-10', ''],
+      [13,'10-15','やや強い風'], [18,'15-20','強い風'], [23,'20-25','非常に強い風'], [28,'25+','猛烈な風']
     ];
     stops.forEach(function(s){
-      html += '<div class="row">' + arrowSVG(0, s[0], speedColor(s[0])) + '<span>' + s[1] + '</span></div>';
+      const jma = s[2] ? '<span class="jma-label">' + s[2] + '</span>' : '';
+      html += '<div class="row">' + arrowSVG(0, s[0], speedColor(s[0])) + '<span>' + s[1] + '</span>' + jma + '</div>';
     });
   }
   el.innerHTML = html;
+  updateThresholdControl();
+}
+
+function updateThresholdControl(){
+  const panel = document.getElementById('threshold-control');
+  const title = document.getElementById('threshold-title');
+  const slider = document.getElementById('threshold-slider');
+  const valueEl = document.getElementById('threshold-value');
+  if (displayMode === 'pressure'){
+    panel.style.display = 'none';
+    title.style.display = 'none';
+    return;
+  }
+  panel.style.display = '';
+  title.style.display = '';
+  title.textContent = 'Min Value Filter / 最小値フィルタ（表示が重い場合に）';
+  const max = displayMode === 'rain' ? 50 : 30;
+  const unit = displayMode === 'rain' ? 'mm/h' : 'm/s';
+  slider.max = String(max);
+  slider.value = String(displayThreshold[displayMode]);
+  valueEl.textContent = slider.value + ' ' + unit + '未満を非表示';
 }
 
 let ACTIVE_ORDER = []; // STORM_ORDER filtered down by the current filter panel state
@@ -1233,6 +1276,7 @@ function renderObsLayer(layer, data, timeMs, mode){
     const diff = Math.abs(Date.parse(data.times[i]) - timeMs);
     if (diff < bestDiff){ bestDiff = diff; idx = i; }
   }
+  const threshold = displayThreshold[mode] || 0;
 
   for (let i = 0; i < layer.length; i++){
     const entry = layer[i];
@@ -1241,7 +1285,7 @@ function renderObsLayer(layer, data, timeMs, mode){
 
     if (mode === 'rain'){
       const mm = v;
-      if (mm === null || mm === undefined){
+      if (mm === null || mm === undefined || mm < threshold){
         entry.marker.setOpacity(0);
         continue;
       }
@@ -1253,7 +1297,7 @@ function renderObsLayer(layer, data, timeMs, mode){
     }
 
     const w = v;
-    if (!w){
+    if (!w || w[0] < threshold){
       entry.marker.setOpacity(0);
       continue;
     }
@@ -1332,6 +1376,13 @@ document.addEventListener('DOMContentLoaded', function(){
         if (mode === 'pressure' && currentStormCode) await loadPressureData(currentStormCode);
         if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
       });
+    });
+
+    document.getElementById('threshold-slider').addEventListener('input', function(e){
+      displayThreshold[displayMode] = parseInt(e.target.value, 10);
+      const unit = displayMode === 'rain' ? 'mm/h' : 'm/s';
+      document.getElementById('threshold-value').textContent = e.target.value + ' ' + unit + '未満を非表示';
+      if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
     });
 
     document.getElementById('slider').addEventListener('input', function(e){
