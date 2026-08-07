@@ -18,13 +18,23 @@ materializing a subset server-side, and has been reliable.
 
 Requires: pip install xarray netCDF4
 
-Runs SERIALLY by default (--workers 1), and a full 185-month run therefore
-takes roughly 42 minutes. That is not an oversight: GDEX's THREDDS backend
-could not handle concurrency here. Four parallel processes made nginx return
-"504 Gateway Time-out" for nearly every request, while one-at-a-time reads
-succeed consistently at ~13.5s each. (Threads are worse still -- netCDF4/HDF5
-isn't thread-safe and a threaded run deadlocked outright, which is why
---workers > 1 uses processes rather than threads.)
+Built for reliability over speed, because GDEX's THREDDS backend has proved
+fragile under any load:
+  - Concurrency is off by default (--workers 1). Four parallel processes made
+    nginx return "504 Gateway Time-out" for nearly every request. (Threads are
+    worse still -- netCDF4/HDF5 isn't thread-safe and a threaded run deadlocked
+    outright, which is why --workers > 1 uses processes, not threads.)
+  - Each month is read in --chunk-days slices along the time axis rather than
+    in one request. Asking for a whole month (~124 6-hourly steps) started
+    returning 504s even serially, and even for a month that had downloaded
+    fine in one request earlier; smaller requests come back inside the
+    gateway timeout.
+  - Every chunk is retried independently with exponential backoff, and the
+    whole month list is retried over several passes, so transient server
+    trouble costs a retry rather than the run.
+
+A full 185-month run therefore takes on the order of an hour. That is the
+intended trade.
 
 Dataset is d640000 (historical, Sep 1947 onward) or d640001 (near-real-time,
 from Dec 2023 onward). This script tries d640000 first for every month and
@@ -45,13 +55,16 @@ Usage:
   python3 scripts/download_jra3q_pressure.py                # sea-level pressure only
   python3 scripts/download_jra3q_pressure.py --include-surface-pressure
   python3 scripts/download_jra3q_pressure.py --north 55 --south 10 --west 110 --east 165
+  python3 scripts/download_jra3q_pressure.py --chunk-days 2  # even smaller requests
   python3 scripts/download_jra3q_pressure.py --workers 2    # only if GDEX can take it
   python3 scripts/download_jra3q_pressure.py --dry-run      # just print the month list/count
 """
 import argparse
 import calendar
 import concurrent.futures
+import contextlib
 import json
+import os
 import sys
 import time
 from datetime import datetime
@@ -82,9 +95,19 @@ WORKERS = 1      # SERIAL by default, deliberately. A single OPeNDAP read
 # if GDEX's capacity changes.)
 PASSES = 3       # whole-list retry passes for anything that failed
 PASS_SLEEP_SEC = 15
-RETRIES = 2      # attempts within one pass
-RETRY_SLEEP_SEC = 5
-REQUEST_SPACING_SEC = 0.5  # small gap between reads, to stay polite
+RETRIES = 2      # month-level attempts within one pass
+RETRY_SLEEP_SEC = 5        # base for exponential backoff (5s, 10s, 20s, ...)
+REQUEST_SPACING_SEC = 0.5  # small gap between months, to stay polite
+
+# Read each month in time-slices rather than in one request. A whole month is
+# ~124 6-hourly steps, which is enough work that GDEX's backend regularly
+# exceeds nginx's gateway timeout (504) -- even for a month that had
+# previously downloaded fine in one go, once the server got busy. Smaller
+# requests come back comfortably inside the timeout.
+CHUNK_DAYS = 5             # ~20 time steps per request
+CHUNK_ATTEMPTS = 5         # per chunk, with backoff -- be patient, not fast
+OPEN_ATTEMPTS = 5          # for the initial metadata open
+CHUNK_SPACING_SEC = 0.3
 
 
 def needed_year_months():
@@ -123,37 +146,6 @@ def output_filename(var_code, var_name, year, month):
     return f"jra3q.anl_surf.{var_code}.{var_name}-an-gauss.{yyyymm}0100_{yyyymm}{lastday}18.japan.nc"
 
 
-def fetch_subset(url, var_key, bbox, out_path):
-    """Open the remote file over OPeNDAP, read only the bbox, write locally.
-
-    Writes to a temp path first and renames on success, so an interrupted
-    run can't leave a half-written file that a later pass would mistake for
-    a completed download. The temp file is removed if anything fails.
-    """
-    import xarray as xr
-
-    tmp_path = out_path.with_suffix(".tmp.nc")
-    ds = None
-    try:
-        ds = xr.open_dataset(url)
-        lat_vals = ds["lat"].values
-        # JRA-3Q's lat axis runs north -> south, so the slice has to match
-        # that direction or .sel() silently returns an empty selection.
-        lat_slice = slice(bbox["north"], bbox["south"]) if lat_vals[0] > lat_vals[-1] \
-            else slice(bbox["south"], bbox["north"])
-        subset = ds[[var_key]].sel(lat=lat_slice, lon=slice(bbox["west"], bbox["east"]))
-        if subset[var_key].size == 0:
-            raise ValueError(f"empty selection for bbox {bbox}")
-        subset.to_netcdf(tmp_path)
-    except BaseException:
-        tmp_path.unlink(missing_ok=True)
-        raise
-    finally:
-        if ds is not None:
-            ds.close()
-    tmp_path.replace(out_path)
-
-
 def summarize_error(e):
     """One-line, human-readable reason. The raw OSError from netCDF4 embeds
     the whole URL and the server's HTML error page, which is unreadable in a
@@ -169,12 +161,108 @@ def summarize_error(e):
     return f"{type(e).__name__}: {text.replace(chr(10), ' ')[:100]}"
 
 
-def try_month(dataset, var_code, var_name, y, m, bbox, out_path):
+@contextlib.contextmanager
+def quiet_stderr():
+    """Silence the netCDF C library's direct-to-fd-2 chatter.
+
+    On a DAP error it dumps the server's whole HTML error page plus a parser
+    'syntax error, unexpected WORD_WORD' line straight to file descriptor 2,
+    bypassing Python -- several unreadable lines per failure. The Python-level
+    exception still carries the information we report.
+    """
+    saved_fd = os.dup(2)
+    devnull_fd = os.open(os.devnull, os.O_WRONLY)
+    try:
+        os.dup2(devnull_fd, 2)
+        yield
+    finally:
+        os.dup2(saved_fd, 2)
+        os.close(devnull_fd)
+        os.close(saved_fd)
+
+
+def with_retries(fn, describe, attempts, base_sleep):
+    """Call fn(), retrying with exponential backoff. Returns fn()'s value.
+
+    Raises the last exception if every attempt fails. `describe` is a short
+    string used in the progress line so a slow month shows what it's stuck on.
+    """
+    last = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with quiet_stderr():
+                return fn()
+        except Exception as e:  # noqa: BLE001 - any failure here is retryable
+            last = e
+            if attempt < attempts:
+                wait = base_sleep * (2 ** (attempt - 1))
+                print(f"      {describe}: {summarize_error(e)} "
+                      f"(attempt {attempt}/{attempts}, retrying in {wait}s)", flush=True)
+                time.sleep(wait)
+            else:
+                print(f"      {describe}: {summarize_error(e)} "
+                      f"(attempt {attempt}/{attempts}, giving up)", flush=True)
+    raise last
+
+
+def fetch_subset(url, var_key, bbox, out_path, chunk_days=CHUNK_DAYS):
+    """Open the remote file over OPeNDAP, read only the bbox, write locally.
+
+    The read is split into chunks of `chunk_days` days along the time axis
+    rather than pulling a whole month in one request. A full month (~124
+    6-hourly steps) is enough work that GDEX's backend often exceeds nginx's
+    gateway timeout and the request dies with a 504; smaller requests come
+    back well inside it. Each chunk is retried independently with backoff, so
+    one unlucky chunk doesn't cost the whole month's progress.
+
+    Writes to a temp path first and renames on success, so an interrupted
+    run can't leave a half-written file that a later pass would mistake for
+    a completed download. The temp file is removed if anything fails.
+    """
+    import xarray as xr
+
+    tmp_path = out_path.with_suffix(".tmp.nc")
+    ds = None
+    try:
+        ds = with_retries(lambda: xr.open_dataset(url), "open", OPEN_ATTEMPTS, RETRY_SLEEP_SEC)
+        lat_vals = ds["lat"].values
+        # JRA-3Q's lat axis runs north -> south, so the slice has to match
+        # that direction or .sel() silently returns an empty selection.
+        lat_slice = slice(bbox["north"], bbox["south"]) if lat_vals[0] > lat_vals[-1] \
+            else slice(bbox["south"], bbox["north"])
+        boxed = ds[[var_key]].sel(lat=lat_slice, lon=slice(bbox["west"], bbox["east"]))
+        if boxed[var_key].sizes.get("lat", 0) == 0 or boxed[var_key].sizes.get("lon", 0) == 0:
+            raise ValueError(f"empty selection for bbox {bbox}")
+
+        n_times = boxed.sizes["time"]
+        steps_per_chunk = max(1, chunk_days * 4)  # JRA-3Q is 6-hourly
+        pieces = []
+        for start in range(0, n_times, steps_per_chunk):
+            stop = min(start + steps_per_chunk, n_times)
+            piece = with_retries(
+                lambda s=start, e=stop: boxed.isel(time=slice(s, e)).load(),
+                f"times {start}-{stop - 1}/{n_times}",
+                CHUNK_ATTEMPTS, RETRY_SLEEP_SEC)
+            pieces.append(piece)
+            time.sleep(CHUNK_SPACING_SEC)
+
+        combined = xr.concat(pieces, dim="time") if len(pieces) > 1 else pieces[0]
+        combined.to_netcdf(tmp_path)
+    except BaseException:
+        tmp_path.unlink(missing_ok=True)
+        raise
+    finally:
+        if ds is not None:
+            ds.close()
+    tmp_path.replace(out_path)
+
+
+def try_month(dataset, var_code, var_name, y, m, bbox, out_path, chunk_days):
     url = build_opendap_url(dataset, var_code, var_name, y, m)
     var_key = f"{var_name}-an-gauss"
     for attempt in range(1, RETRIES + 1):
         try:
-            fetch_subset(url, var_key, bbox, out_path)
+            fetch_subset(url, var_key, bbox, out_path, chunk_days)
             return True
         except Exception as e:
             print(f"    {y:04d}-{m:02d} {dataset}: {summarize_error(e)} "
@@ -190,7 +278,7 @@ def fetch_job(job):
     Module-level (not a closure) so it can be pickled for ProcessPoolExecutor,
     and takes its config in the job tuple for the same reason.
     """
-    y, m, var_code, var_name, out_dir_str, bbox = job
+    y, m, var_code, var_name, out_dir_str, bbox, chunk_days = job
     out_dir = Path(out_dir_str)
     out_path = out_dir / output_filename(var_code, var_name, y, m)
     if out_path.exists() and out_path.stat().st_size > 0:
@@ -198,7 +286,7 @@ def fetch_job(job):
     for dataset in DATASETS:
         if dataset == "d640001" and (y, m) < D640001_STARTS:
             continue
-        if try_month(dataset, var_code, var_name, y, m, bbox, out_path):
+        if try_month(dataset, var_code, var_name, y, m, bbox, out_path, chunk_days):
             return job, True
     return job, False
 
@@ -216,6 +304,9 @@ def main():
     ap.add_argument("--east", type=float, default=DEFAULT_BBOX["east"])
     ap.add_argument("--workers", type=int, default=WORKERS,
                      help=f"concurrent OPeNDAP reads (default {WORKERS})")
+    ap.add_argument("--chunk-days", type=int, default=CHUNK_DAYS,
+                     help=f"days of data per OPeNDAP request (default {CHUNK_DAYS}). Lower it if "
+                          "the server keeps returning 504s; each request then asks for less work.")
     ap.add_argument("--passes", type=int, default=PASSES,
                      help=f"whole-list retry passes for failures (default {PASSES})")
     args = ap.parse_args()
@@ -248,7 +339,7 @@ def main():
     for stale in out_dir.glob("*.tmp.nc"):
         stale.unlink()
 
-    pending = [(y, m, var_code, var_name, str(out_dir), bbox)
+    pending = [(y, m, var_code, var_name, str(out_dir), bbox, args.chunk_days)
                for (y, m) in months
                for var_code, var_name in variables]
 
