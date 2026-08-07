@@ -133,19 +133,28 @@ python3 -m http.server 8000
   python3 scripts/download_jra3q_pressure.py --include-surface-pressure  # 地上気圧も
   python3 scripts/download_jra3q_pressure.py --workers 4 # 静的サーバーは並列に耐える
   ```
-  全185ヶ月・日本域切り出し済みで合計1GB弱。`data/raw_jra3q/` に保存され、既存
+  全185ヶ月のうち184ヶ月は日本域切り出し済みで合計1GB弱。`data/raw_jra3q/` に保存され、既存
   ファイルはスキップされる（途中で止まっても再実行で再開可能）ので、時間を分けて
   実行しても問題ありません。手元の環境からGDEXへのHTTPS接続がブロックされる場合は
   `notebooks/jra3q_colab_download.ipynb`（Google Colab上で実行し、ブラウザ経由で
   PCにダウンロードする版）を使ってください。
-- `scripts/build_pressure_json.py` … 上記でダウンロードした185個の月別netCDF
+
+  **既知の欠損**: `198310`（1983年10月）のみ、静的ファイルサーバー・OPeNDAP
+  どちらの経路でも `500 Internal Server Error` / `DAP server error`（GDEX側で
+  元データの取得自体がタイムアウトしている）となり取得できていません。何度
+  リトライしても同じ理由で失敗するため、一時的な混雑ではなくGDEX側のこの
+  ファイル固有の問題とみられます。そのため台風8310（1983年10号）の気圧配置
+  データのみ欠けています。将来GDEX側で直っていれば再取得できます。
+- `scripts/build_pressure_json.py` … 上記でダウンロードした月別netCDF
   ファイル（`data/raw_jra3q/` などローカルの保存先）を、台風ごとの経路期間に
   合わせて `data/pressure/<台風コード>.json`（`{lat:[...], lon:[...],
   times:[...JST...], values:[[[hPa整数,...]...]...]}`）に切り出すスクリプト。
   格子は既定で間引き（`--stride 2`、緯度経度とも半分の解像度）、値は整数hPaに
   丸めてファイルサイズを抑えています（等圧線の描画には十分な精度）。生の
   netCDFファイルは大きすぎるためリポジトリには含めず、この変換後のJSONだけを
-  コミットします。
+  コミットします。上記の欠損月をまたぐ台風（8310）は変換時にスキップされ
+  `data/pressure/8310.json` は存在しません（フロントエンドはその場合、気圧
+  モードで等圧線を表示しないだけで、経路・風・雨の表示には影響しません）。
   ```bash
   pip install xarray netCDF4
   python3 scripts/build_pressure_json.py --raw-dir /path/to/185個のncファイル
