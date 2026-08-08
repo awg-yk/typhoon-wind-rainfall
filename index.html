@@ -1068,7 +1068,8 @@ function buildStormSelect(y){
     const s = STORM_META[code];
     const opt = document.createElement('option');
     opt.value = code;
-    opt.textContent = parseInt(code.slice(2), 10) + '号 ' + (s.name || '(NONAME)');
+    opt.textContent = parseInt(code.slice(2), 10) + '号 ' + (s.name || '(NONAME)') +
+      (s.officialName ? '(' + s.officialName + ')' : '');
     sel.appendChild(opt);
   });
   sel.value = codes.includes(currentStormCode) ? currentStormCode : codes[0];

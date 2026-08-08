@@ -1,0 +1,17 @@
+{
+  "source": "user-provided spreadsheet: JMA's list of officially-named natural phenomena (気象庁が名称を定めた気象・地震・火山現象一覧)",
+  "note": "Only the typhoon-related rows (「台風第Ｎ号」 in the 期間・現象等 column) are extracted here. Era year (昭和/平成/令和) converted to the Gregorian year, combined with the storm number, to derive the 4-digit storm code used elsewhere in this repo (data/index.json's officialName field on that code).",
+  "generatedFrom": "user-provided spreadsheet (33 rows, 10 typhoon rows), 2026-08-08",
+  "entries": [
+    {"code": "5415", "officialName": "洞爺丸台風", "period": "昭和２９年９月（台風第１５号）"},
+    {"code": "5822", "officialName": "狩野川台風", "period": "昭和３３年９月（台風第２２号）"},
+    {"code": "5914", "officialName": "宮古島台風", "period": "昭和３４年９月（台風第１４号）"},
+    {"code": "5915", "officialName": "伊勢湾台風", "period": "昭和３４年９月（台風第１５号）"},
+    {"code": "6118", "officialName": "第２室戸台風", "period": "昭和３６年９月（台風第１８号）"},
+    {"code": "6618", "officialName": "第２宮古島台風", "period": "昭和４１年９月（台風第１８号）"},
+    {"code": "6816", "officialName": "第３宮古島台風", "period": "昭和４３年９月（台風第１６号）"},
+    {"code": "7709", "officialName": "沖永良部台風", "period": "昭和５２年９月（台風第９号）"},
+    {"code": "1915", "officialName": "令和元年房総半島台風", "period": "令和元年９月（台風第１５号）"},
+    {"code": "1919", "officialName": "令和元年東日本台風", "period": "令和元年１０月（台風第１９号）"}
+  ]
+}
