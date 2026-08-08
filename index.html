@@ -1400,8 +1400,10 @@ function dataHasAnyValue(data){
 }
 
 function formatDateTime(iso){
+  // No year -- used only in the ranking panel, where every row is from
+  // the same (already-selected) storm/year, so it'd just be noise.
   const d = new Date(iso);
-  return d.getFullYear() + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0') +
+  return String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0') +
     ' ' + String(d.getHours()).padStart(2,'0') + ':00';
 }
 
@@ -1482,6 +1484,10 @@ function renderObsLayer(layer, data, timeMs, mode){
       const color = rainColor(mm);
       entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:rainCircleSVG(mm, color), iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
       entry.marker.setTooltipContent(entry.name + '<br>' + mm.toFixed(1) + ' mm/h');
+      // Where markers overlap, the more intense (hotter-colored) one should
+      // draw on top -- e.g. an orange 40mm/h dot shouldn't be hidden behind
+      // a pale blue 2mm/h dot just because it happens to render first.
+      entry.marker.setZIndexOffset(Math.round(mm * 10));
       continue;
     }
 
@@ -1505,6 +1511,10 @@ function renderObsLayer(layer, data, timeMs, mode){
     }
     entry.marker.setIcon(L.divIcon({className:'wind-arrow', html:html, iconSize:[ARROW_SIZE,ARROW_SIZE], iconAnchor:[ARROW_SIZE/2,ARROW_SIZE/2]}));
     entry.marker.setTooltipContent(tip);
+    // Same idea as rain: stronger wind draws on top of weaker wind where
+    // markers overlap, so a 30m/s red arrow doesn't get buried under a
+    // 3m/s blue one.
+    entry.marker.setZIndexOffset(Math.round(spd * 10));
   }
 }
 
