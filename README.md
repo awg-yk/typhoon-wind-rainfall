@@ -185,7 +185,6 @@ python3 -m http.server 8000
   `data/index.json` の `landfallJP`（[デジタル台風](https://agora.ex.nii.ac.jp/digital-typhoon/disaster/landfall-full/)
   の記録に基づき日本に上陸・通過したか）が `true` の台風だけに絞り込みます。
   初期状態は未チェック（全1954台風を表示）です。
-- **月**（プルダウン）: 経路が該当した月（`data/index.json` の `months`）で絞り込みます。
 
 年のプルダウンで年を選ぶと、その年の台風が号数順に横のプルダウンに並びます
 （絞り込みで対象がいない年はグレーアウトします）。
@@ -221,49 +220,56 @@ python3 -m http.server 8000
 - データは台風ごとに分割し、選択したタブの分だけ読み込む方式にしています。
   最初の表示（地図・タブ・最初の台風）が数秒以内に出るようにするための工夫です。
 
+## 対象台風の選定（landfallJP + damaging）
+
+データ収集（AMeDAS観測網・JRA-3Q気圧配置）の対象は、以下いずれかを
+満たす台風です（`data/index.json` の各エントリのフラグ）:
+
+- **`landfallJP: true`** — 日本に上陸・通過した台風（221台風）。
+  [デジタル台風](https://agora.ex.nii.ac.jp/digital-typhoon/disaster/landfall-full/)
+  のベストトラック解析に基づく判定。
+- **`damaging: true`** — 上陸・通過はしていないものの日本国内で大きな
+  被害を出した台風（70台風、`landfallJP=true`のものを除く）。
+  [デジタル台風 災害データベース](https://agora.ex.nii.ac.jp/cgi-bin/dt/disaster.pl?lang=ja&basin=wnp&sort=dead_or_missing&order=dec&stype=number)
+  の死者・行方不明者数ランキング（上位204台風）のうち、`landfallJP`で
+  拾えていなかったものを追加。元データと選定方法は
+  `data/damage_storm_codes.json` に記録してあります。
+
+`scripts/fetch_amedas_obsdl.py --landfall-only`・
+`scripts/download_jra3q_pressure.py`・`scripts/build_pressure_json.py`
+（`--codes`未指定時）はいずれもこの `landfallJP OR damaging` を対象に
+自動的に含めるようになっています。フロントエンド側は対応不要です
+（`data/storms_obs/`・`data/pressure/` にファイルさえあれば、
+`landfallJP`かどうかに関係なく年/台風プルダウンから選んで表示されます。
+「上陸・通過(日本)のみ」フィルタは表示の絞り込みであって、データの
+有無とは独立しています）。
+
 ## 現状・引き継ぎ事項（次のセッション向け）
 
-冒頭で挙げた4つの改善（①全台風収録 ②観測網拡張 ③JRA-3Qへの切替 ④絞り込み
-機能）はいずれも実装済みです。ただし以下は未完了・要作業です。
+### 1. AMeDAS観測網データ（`data/storms_obs/`）
 
-### 1. AMeDAS観測網データ（`data/storms_obs/`）がまだ全台風分揃っていない
+`landfallJP=true`の221台風分は取得・push完了。追加した`damaging`70台風
+のうち9台風は既に取得済みで、**残り約61台風分が未取得**です。
 
-現時点（このセッション終了時点）で `data/storms_obs/` には130台風分
-（うち上陸・通過台風`landfallJP=true`の221台風中106台風分）のみpush済み。
-**残り115台風分は未変換・未pushです。**
+対応方法（Colabだけで完結）: `notebooks/fetch_and_convert_amedas_colab.ipynb`
+をColabで上から実行してください（取得→変換→pushまで自動）。既に取得済み
+の台風は自動スキップされるので、追加分だけが処理されます。手順の詳細は
+ノートブック内の説明を参照。GitHubへのpushで`getpass`のトークン入力が
+うまくいかない場合は、`google.colab.userdata`（Colabの「シークレット」
+機能）でトークンを渡す方式に切り替えてください。
 
-対応方法（Colabだけで完結する手順を確立済み）:
+### 2. JRA-3Q気圧データ（`data/pressure/`）
 
-- `notebooks/fetch_and_convert_amedas_colab.ipynb` をColabで開いて上から
-  実行すれば、**取得（気象庁obsdl API）→ 変換 → GitHubへpush** まで
-  すべてColab上だけで完結します。手元PCでの実行やGoogle Driveへの手動
-  アップロードは不要です（`scripts/fetch_amedas_obsdl.py` は`requests`
-  だけで完結するスクリプトで、Colabの実行環境からも気象庁サイトへ到達
-  できることを確認済み）。
-  - 取得キャッシュ（`data/raw_amedas/`）はシンボリックリンクでGoogle
-    Drive上に置く構成にしてあるので、Colabのセッションが切断されても
-    ノートブックを再実行するだけで完了済み分はスキップされ、続きから
-    再開できます。
-  - 全115台風分の取得には数時間かかる可能性があります。1回のセッションで
-    終わらなければ、④（取得）→⑤（変換）→⑥（push）のセルを繰り返し
-    実行してください。
-- 従来の `notebooks/convert_amedas_csv_colab.ipynb`（手元PCで取得した
-  CSVをGoogle Drive経由でColabに渡して変換・pushするだけの版）も引き続き
-  利用可能です。
-- どちらのノートブックも、GitHubへのpushには`git`操作ではなくColab上で
-  Personal Access Tokenを使う方式です。**Colabの `getpass` は稀にマスク
-  表示のドット文字列をそのまま値として拾ってしまう不具合があったため、
-  うまくいかない場合は `google.colab.userdata`（Colabの「シークレット」
-  機能）でトークンを渡す方式に切り替えてください。**
+`landfallJP=true`分は220/221台風で完了（残り1台風 `8310`＝1983年台風10号
+は、GDEX側のサーバーエラーが恒久的に再現するため欠損として運用 — 詳細は
+上記「フォルダの中身」の`download_jra3q_pressure.py`の項を参照）。
+`damaging`70台風分の追加により、必要な月が185→226ヶ月（+41ヶ月）に
+増えています。
 
-### 2. JRA-3Q気圧データ（`data/pressure/`）は220/221台風分で完了
-
-残り1台風（`8310`、1983年台風10号）だけ、GDEX側のサーバーエラー
-（`500 Internal Server Error` / `DAP server error`、元データ取得の
-タイムアウト）が静的ファイル配信・OPeNDAPどちらの経路でも再現し、
-リトライでは解決できないことを確認済み。GDEX側の状況が変わらない限り
-このまま欠損として運用する想定（詳細は上記「フォルダの中身」の
-`download_jra3q_pressure.py` の項を参照）。
+対応方法: `notebooks/jra3q_colab_download.ipynb`→
+`notebooks/build_pressure_json_colab.ipynb`の順にColabで実行してください。
+前者は前回ダウンロード済みのZIPがあれば任意セルでアップロードすることで、
+新規41ヶ月分だけの取得に短縮できます（無い場合は226ヶ月分を再取得）。
 
 ### 3. フロントエンドの実ブラウザでの見た目確認 — 完了（2026-08-07）
 

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Slice the JRA-3Q monthly Japan-area pressure files (from
 scripts/download_jra3q_pressure.py / notebooks/jra3q_colab_download.ipynb)
-into one compact JSON per landfallJP storm, matching that storm's track
-period, for the frontend to load on demand as a new "気圧配置" display mode.
+into one compact JSON per landfallJP (or 'damaging', see
+data/damage_storm_codes.json) storm, matching that storm's track period,
+for the frontend to load on demand as a new "気圧配置" display mode.
 
 Run this locally where the 185 downloaded .nc files are (they're too big to
 ship through this session) -- point --raw-dir at that folder.
@@ -119,7 +120,9 @@ def main():
     ap.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
     ap.add_argument("--stride", type=int, default=2,
                      help="keep every Nth grid point in lat/lon (default 2, i.e. half resolution)")
-    ap.add_argument("--codes", help="comma-separated storm codes to build (default: all landfallJP)")
+    ap.add_argument("--codes", help="comma-separated storm codes to build "
+                     "(default: all landfallJP storms, plus any storm flagged 'damaging' -- "
+                     "see data/damage_storm_codes.json)")
     args = ap.parse_args()
 
     try:
@@ -138,7 +141,7 @@ def main():
         codes = [c.strip() for c in args.codes.split(",") if c.strip()]
     else:
         index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
-        codes = [c for c, m in index.items() if m.get("landfallJP")]
+        codes = [c for c, m in index.items() if m.get("landfallJP") or m.get("damaging")]
 
     ds_cache = {}
     ok, failed = 0, []

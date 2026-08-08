@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Download JRA-3Q sea-level pressure (prmsl-msl-an-gauss, i.e. the field
 used to draw a "pressure pattern" weather chart), cropped to a Japan-area
-bounding box, for every month touched by a landfallJP storm's track.
+bounding box, for every month touched by a landfallJP or 'damaging' storm's
+track (see data/damage_storm_codes.json for the latter).
 
 Default method ("full"): download the whole-globe monthly file over plain
 HTTPS from GDEX's static file server, crop it to the bounding box locally
@@ -98,7 +99,11 @@ CHUNK_SPACING_SEC = 0.3
 
 def needed_year_months():
     index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
-    codes = [c for c, m in index.items() if m.get("landfallJP")]
+    # landfallJP storms, plus any storm flagged 'damaging' (major Japan-wide
+    # damage per the Digital Typhoon disaster database -- see
+    # data/damage_storm_codes.json -- even if best-track landfall detection
+    # didn't flag it).
+    codes = [c for c, m in index.items() if m.get("landfallJP") or m.get("damaging")]
     months = set()
     for code in codes:
         path = STORMS_DIR / f"{code}.json"

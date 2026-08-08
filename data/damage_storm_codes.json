@@ -1,0 +1,427 @@
+{
+  "source": "https://agora.ex.nii.ac.jp/cgi-bin/dt/disaster.pl?lang=ja&basin=wnp&sort=dead_or_missing&order=dec&stype=number",
+  "note": "Typhoon damage ranking (deaths/missing, sorted descending) from the Digital Typhoon disaster database. Codes here are storms from that ranking that are not already flagged landfallJP=true in data/index.json -- added so AMeDAS/pressure data collection also covers storms with major Japan-wide damage even if best-track landfall detection missed them (e.g. damage from a nearby-passing or rapidly-weakening system).",
+  "generatedFrom": "user-provided disaster ranking spreadsheet (204 rows), 2026-08-08",
+  "codes": [
+    {
+      "code": "1807",
+      "rank": 8,
+      "name": "PRAPIROON",
+      "deadOrMissing": 271
+    },
+    {
+      "code": "6529",
+      "rank": 10,
+      "name": "CARMEN",
+      "deadOrMissing": 209
+    },
+    {
+      "code": "6807",
+      "rank": 15,
+      "name": "POLLY",
+      "deadOrMissing": 133
+    },
+    {
+      "code": "7408",
+      "rank": 17,
+      "name": "GILDA",
+      "deadOrMissing": 111
+    },
+    {
+      "code": "5914",
+      "rank": 20,
+      "name": "SARAH",
+      "deadOrMissing": 99
+    },
+    {
+      "code": "7125",
+      "rank": 25,
+      "name": "VIRGINIA",
+      "deadOrMissing": 84
+    },
+    {
+      "code": "6604",
+      "rank": 26,
+      "name": "KIT",
+      "deadOrMissing": 83
+    },
+    {
+      "code": "5905",
+      "rank": 35,
+      "name": "BILLIE",
+      "deadOrMissing": 60
+    },
+    {
+      "code": "5705",
+      "rank": 39,
+      "name": "VIRGINIA",
+      "deadOrMissing": 53
+    },
+    {
+      "code": "5612",
+      "rank": 48,
+      "name": "EMMA",
+      "deadOrMissing": 43
+    },
+    {
+      "code": "1326",
+      "rank": 50,
+      "name": "WIPHA",
+      "deadOrMissing": 43
+    },
+    {
+      "code": "6613",
+      "rank": 53,
+      "name": "TESS",
+      "deadOrMissing": 39
+    },
+    {
+      "code": "8512",
+      "rank": 59,
+      "name": "ODESSA",
+      "deadOrMissing": 31
+    },
+    {
+      "code": "0909",
+      "rank": 67,
+      "name": "ETAU",
+      "deadOrMissing": 28
+    },
+    {
+      "code": "9804",
+      "rank": 71,
+      "name": "REX",
+      "deadOrMissing": 25
+    },
+    {
+      "code": "8610",
+      "rank": 72,
+      "name": "SARAH",
+      "deadOrMissing": 21
+    },
+    {
+      "code": "9112",
+      "rank": 84,
+      "name": "GLADYS",
+      "deadOrMissing": 16
+    },
+    {
+      "code": "6104",
+      "rank": 86,
+      "name": "BETTY",
+      "deadOrMissing": 14
+    },
+    {
+      "code": "9118",
+      "rank": 90,
+      "name": "LUKE",
+      "deadOrMissing": 12
+    },
+    {
+      "code": "8912",
+      "rank": 95,
+      "name": "KEN/LOLA",
+      "deadOrMissing": 11
+    },
+    {
+      "code": "9617",
+      "rank": 97,
+      "name": "VIOLET",
+      "deadOrMissing": 11
+    },
+    {
+      "code": "0014",
+      "rank": 98,
+      "name": "SAOMAI",
+      "deadOrMissing": 11
+    },
+    {
+      "code": "0315",
+      "rank": 99,
+      "name": "CHOI-WAN",
+      "deadOrMissing": 11
+    },
+    {
+      "code": "8705",
+      "rank": 101,
+      "name": "THELMA",
+      "deadOrMissing": 9
+    },
+    {
+      "code": "9809",
+      "rank": 103,
+      "name": "YANNI",
+      "deadOrMissing": 9
+    },
+    {
+      "code": "8712",
+      "rank": 105,
+      "name": "DINAH",
+      "deadOrMissing": 8
+    },
+    {
+      "code": "2302",
+      "rank": 112,
+      "name": "MAWAR",
+      "deadOrMissing": 8
+    },
+    {
+      "code": "9503",
+      "rank": 115,
+      "name": "FAYE",
+      "deadOrMissing": 7
+    },
+    {
+      "code": "9109",
+      "rank": 122,
+      "name": "CAITLIN",
+      "deadOrMissing": 6
+    },
+    {
+      "code": "9115",
+      "rank": 123,
+      "name": "IVY",
+      "deadOrMissing": 6
+    },
+    {
+      "code": "1412",
+      "rank": 127,
+      "name": "NAKRI",
+      "deadOrMissing": 6
+    },
+    {
+      "code": "2010",
+      "rank": 128,
+      "name": "HAISHEN",
+      "deadOrMissing": 6
+    },
+    {
+      "code": "0417",
+      "rank": 134,
+      "name": "AERE",
+      "deadOrMissing": 4
+    },
+    {
+      "code": "0314",
+      "rank": 137,
+      "name": "MAEMI",
+      "deadOrMissing": 3
+    },
+    {
+      "code": "2215",
+      "rank": 145,
+      "name": "TALAS",
+      "deadOrMissing": 3
+    },
+    {
+      "code": "2313",
+      "rank": 146,
+      "name": "YUN-YEUNG",
+      "deadOrMissing": 3
+    },
+    {
+      "code": "1917",
+      "rank": 151,
+      "name": "TAPAH",
+      "deadOrMissing": 2
+    },
+    {
+      "code": "2110",
+      "rank": 152,
+      "name": "MIRINAE",
+      "deadOrMissing": 2
+    },
+    {
+      "code": "2211",
+      "rank": 153,
+      "name": "HINNAMNOR",
+      "deadOrMissing": 2
+    },
+    {
+      "code": "7709",
+      "rank": 154,
+      "name": "BABE",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "9217",
+      "rank": 155,
+      "name": "RYAN",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "9907",
+      "rank": 157,
+      "name": "OLGA",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "0003",
+      "rank": 158,
+      "name": "KIROGI",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "0209",
+      "rank": 159,
+      "name": "FENGSHEN",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "1613",
+      "rank": 162,
+      "name": "MALOU",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "1825",
+      "rank": 164,
+      "name": "KONG-REY",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "1905",
+      "rank": 165,
+      "name": "DANAS",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "2306",
+      "rank": 168,
+      "name": "KHANUN",
+      "deadOrMissing": 1
+    },
+    {
+      "code": "6618",
+      "rank": 170,
+      "name": "CORA",
+      "deadOrMissing": null
+    },
+    {
+      "code": "9905",
+      "rank": 171,
+      "name": "NEIL",
+      "deadOrMissing": null
+    },
+    {
+      "code": "9908",
+      "rank": 172,
+      "name": "PAUL",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0008",
+      "rank": 173,
+      "name": "JELAWAT",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0116",
+      "rank": 174,
+      "name": "NARI",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0205",
+      "rank": 175,
+      "name": "RAMMASUN",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0213",
+      "rank": 177,
+      "name": "PHANFONE",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0215",
+      "rank": 178,
+      "name": "RUSA",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0216",
+      "rank": 179,
+      "name": "SINLAKU",
+      "deadOrMissing": null
+    },
+    {
+      "code": "0711",
+      "rank": 183,
+      "name": "NARI",
+      "deadOrMissing": null
+    },
+    {
+      "code": "1618",
+      "rank": 185,
+      "name": "CHABA",
+      "deadOrMissing": null
+    },
+    {
+      "code": "1813",
+      "rank": 188,
+      "name": "SHANSHAN",
+      "deadOrMissing": null
+    },
+    {
+      "code": "1903",
+      "rank": 190,
+      "name": "SEPAT",
+      "deadOrMissing": null
+    },
+    {
+      "code": "1909",
+      "rank": 192,
+      "name": "LEKIMA",
+      "deadOrMissing": null
+    },
+    {
+      "code": "1913",
+      "rank": 193,
+      "name": "LINGLING",
+      "deadOrMissing": null
+    },
+    {
+      "code": "1918",
+      "rank": 194,
+      "name": "MITAG",
+      "deadOrMissing": null
+    },
+    {
+      "code": "2009",
+      "rank": 195,
+      "name": "MAYSAK",
+      "deadOrMissing": null
+    },
+    {
+      "code": "2012",
+      "rank": 196,
+      "name": "DOLPHIN",
+      "deadOrMissing": null
+    },
+    {
+      "code": "2014",
+      "rank": 197,
+      "name": "CHAN-HOM",
+      "deadOrMissing": null
+    },
+    {
+      "code": "2116",
+      "rank": 199,
+      "name": "MINDULLE",
+      "deadOrMissing": null
+    },
+    {
+      "code": "2407",
+      "rank": 203,
+      "name": "AMPIL",
+      "deadOrMissing": null
+    },
+    {
+      "code": "2523",
+      "rank": 204,
+      "name": "NAKRI",
+      "deadOrMissing": null
+    }
+  ]
+}

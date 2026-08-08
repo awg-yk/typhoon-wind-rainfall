@@ -205,7 +205,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--codes", help="comma-separated storm codes, e.g. 1912,1915")
     ap.add_argument("--landfall-only", action="store_true",
-                     help="use all landfallJP storms from data/index.json")
+                     help="use all landfallJP storms from data/index.json, plus any storm flagged "
+                          "'damaging' (major Japan-wide damage per the Digital Typhoon disaster "
+                          "database -- see data/damage_storm_codes.json -- even if best-track "
+                          "landfall detection didn't flag it)")
     ap.add_argument("--kind", default="wind,rain", help="wind,rain or just one")
     ap.add_argument("--dry-run", action="store_true", help="print the request plan without fetching")
     args = ap.parse_args()
@@ -219,7 +222,7 @@ def main():
         codes = [c.strip() for c in args.codes.split(",") if c.strip()]
     elif args.landfall_only:
         index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
-        codes = [c for c, m in index.items() if m.get("landfallJP")]
+        codes = [c for c, m in index.items() if m.get("landfallJP") or m.get("damaging")]
     else:
         sys.exit("specify --codes or --landfall-only")
 
