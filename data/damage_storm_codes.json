@@ -1,427 +1,2047 @@
 {
   "source": "https://agora.ex.nii.ac.jp/cgi-bin/dt/disaster.pl?lang=ja&basin=wnp&sort=dead_or_missing&order=dec&stype=number",
-  "note": "Typhoon damage ranking (deaths/missing, sorted descending) from the Digital Typhoon disaster database. Codes here are storms from that ranking that are not already flagged landfallJP=true in data/index.json -- added so AMeDAS/pressure data collection also covers storms with major Japan-wide damage even if best-track landfall detection missed them (e.g. damage from a nearby-passing or rapidly-weakening system).",
+  "note": "Typhoon damage ranking (deaths/missing, sorted descending) from the Digital Typhoon disaster database, top 204 storms. Includes both storms already flagged landfallJP=true and the 70 that needed a new damaging=true flag (see data/index.json). Fields: deadOrMissing (死者・行方不明者), injured (負傷者), houseDamage (住家被害 棟数), floodDamage (浸水被害 棟数), costOkuYen (被害額、億円).",
   "generatedFrom": "user-provided disaster ranking spreadsheet (204 rows), 2026-08-08",
   "codes": [
+    {
+      "code": "5915",
+      "rank": 1,
+      "name": "VERA",
+      "deadOrMissing": 5098,
+      "injured": 38921,
+      "houseDamage": 833965,
+      "floodDamage": 363611,
+      "costOkuYen": null
+    },
+    {
+      "code": "5415",
+      "rank": 2,
+      "name": "MARIE",
+      "deadOrMissing": 1761,
+      "injured": 1601,
+      "houseDamage": 207542,
+      "floodDamage": 103533,
+      "costOkuYen": null
+    },
+    {
+      "code": "5822",
+      "rank": 3,
+      "name": "IDA",
+      "deadOrMissing": 1269,
+      "injured": 1138,
+      "houseDamage": 16743,
+      "floodDamage": 521715,
+      "costOkuYen": null
+    },
+    {
+      "code": "5115",
+      "rank": 4,
+      "name": "RUTH",
+      "deadOrMissing": 943,
+      "injured": 2644,
+      "houseDamage": 221118,
+      "floodDamage": 138273,
+      "costOkuYen": null
+    },
+    {
+      "code": "5313",
+      "rank": 5,
+      "name": "TESS",
+      "deadOrMissing": 478,
+      "injured": 2559,
+      "houseDamage": 86398,
+      "floodDamage": 495875,
+      "costOkuYen": null
+    },
+    {
+      "code": "6624",
+      "rank": 6,
+      "name": "HELEN",
+      "deadOrMissing": 318,
+      "injured": 976,
+      "houseDamage": 73166,
+      "floodDamage": 53601,
+      "costOkuYen": null
+    },
+    {
+      "code": "6626",
+      "rank": 7,
+      "name": "IDA",
+      "deadOrMissing": 318,
+      "injured": 976,
+      "houseDamage": 73166,
+      "floodDamage": 53601,
+      "costOkuYen": null
+    },
     {
       "code": "1807",
       "rank": 8,
       "name": "PRAPIROON",
-      "deadOrMissing": 271
+      "deadOrMissing": 271,
+      "injured": 484,
+      "houseDamage": 22491,
+      "floodDamage": 28619,
+      "costOkuYen": null
+    },
+    {
+      "code": "5907",
+      "rank": 9,
+      "name": "GEORGIA",
+      "deadOrMissing": 235,
+      "injured": 1528,
+      "houseDamage": 76199,
+      "floodDamage": 148607,
+      "costOkuYen": null
     },
     {
       "code": "6529",
       "rank": 10,
       "name": "CARMEN",
-      "deadOrMissing": 209
+      "deadOrMissing": 209,
+      "injured": null,
+      "houseDamage": null,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "6118",
+      "rank": 11,
+      "name": "NANCY",
+      "deadOrMissing": 202,
+      "injured": 4972,
+      "houseDamage": 499444,
+      "floodDamage": 384120,
+      "costOkuYen": null
+    },
+    {
+      "code": "7617",
+      "rank": 12,
+      "name": "FRAN",
+      "deadOrMissing": 169,
+      "injured": 435,
+      "houseDamage": 11193,
+      "floodDamage": 442317,
+      "costOkuYen": 2080
+    },
+    {
+      "code": "5412",
+      "rank": 13,
+      "name": "JUNE",
+      "deadOrMissing": 146,
+      "injured": 311,
+      "houseDamage": 39855,
+      "floodDamage": 181380,
+      "costOkuYen": null
+    },
+    {
+      "code": "5202",
+      "rank": 14,
+      "name": "DINAH",
+      "deadOrMissing": 135,
+      "injured": 28,
+      "houseDamage": 425,
+      "floodDamage": 39712,
+      "costOkuYen": null
     },
     {
       "code": "6807",
       "rank": 15,
       "name": "POLLY",
-      "deadOrMissing": 133
+      "deadOrMissing": 133,
+      "injured": 63,
+      "houseDamage": 443,
+      "floodDamage": 14662,
+      "costOkuYen": null
+    },
+    {
+      "code": "1919",
+      "rank": 16,
+      "name": "HAGIBIS",
+      "deadOrMissing": 121,
+      "injured": 388,
+      "houseDamage": 75758,
+      "floodDamage": 29941,
+      "costOkuYen": null
     },
     {
       "code": "7408",
       "rank": 17,
       "name": "GILDA",
-      "deadOrMissing": 111
+      "deadOrMissing": 111,
+      "injured": 171,
+      "houseDamage": 1448,
+      "floodDamage": 148934,
+      "costOkuYen": null
+    },
+    {
+      "code": "7920",
+      "rank": 18,
+      "name": "TIP",
+      "deadOrMissing": 111,
+      "injured": 478,
+      "houseDamage": 7523,
+      "floodDamage": 37450,
+      "costOkuYen": 1057
+    },
+    {
+      "code": "6524",
+      "rank": 19,
+      "name": "TRIX",
+      "deadOrMissing": 107,
+      "injured": 330,
+      "houseDamage": 8105,
+      "floodDamage": 251820,
+      "costOkuYen": null
     },
     {
       "code": "5914",
       "rank": 20,
       "name": "SARAH",
-      "deadOrMissing": 99
+      "deadOrMissing": 99,
+      "injured": 509,
+      "houseDamage": 16632,
+      "floodDamage": 14360,
+      "costOkuYen": null
+    },
+    {
+      "code": "0423",
+      "rank": 21,
+      "name": "TOKAGE",
+      "deadOrMissing": 99,
+      "injured": 704,
+      "houseDamage": 19235,
+      "floodDamage": 54850,
+      "costOkuYen": 934
+    },
+    {
+      "code": "1112",
+      "rank": 22,
+      "name": "TALAS",
+      "deadOrMissing": 98,
+      "injured": 113,
+      "houseDamage": 4008,
+      "floodDamage": 22094,
+      "costOkuYen": null
+    },
+    {
+      "code": "8210",
+      "rank": 23,
+      "name": "BESS",
+      "deadOrMissing": 95,
+      "injured": 174,
+      "houseDamage": 5312,
+      "floodDamage": 113902,
+      "costOkuYen": 5916
+    },
+    {
+      "code": "7220",
+      "rank": 24,
+      "name": "HELEN",
+      "deadOrMissing": 85,
+      "injured": 157,
+      "houseDamage": 4213,
+      "floodDamage": 146547,
+      "costOkuYen": null
     },
     {
       "code": "7125",
       "rank": 25,
       "name": "VIRGINIA",
-      "deadOrMissing": 84
+      "deadOrMissing": 84,
+      "injured": 1,
+      "houseDamage": 202,
+      "floodDamage": 11504,
+      "costOkuYen": null
     },
     {
       "code": "6604",
       "rank": 26,
       "name": "KIT",
-      "deadOrMissing": 83
+      "deadOrMissing": 83,
+      "injured": 91,
+      "houseDamage": 433,
+      "floodDamage": 128041,
+      "costOkuYen": null
+    },
+    {
+      "code": "7505",
+      "rank": 27,
+      "name": "PHYLLIS",
+      "deadOrMissing": 77,
+      "injured": 209,
+      "houseDamage": 2419,
+      "floodDamage": 50222,
+      "costOkuYen": null
+    },
+    {
+      "code": "6523",
+      "rank": 28,
+      "name": "SHIRLEY",
+      "deadOrMissing": 73,
+      "injured": 883,
+      "houseDamage": 63436,
+      "floodDamage": 49626,
+      "costOkuYen": null
+    },
+    {
+      "code": "5821",
+      "rank": 29,
+      "name": "HELEN",
+      "deadOrMissing": 72,
+      "injured": 111,
+      "houseDamage": 5648,
+      "floodDamage": 48700,
+      "costOkuYen": null
+    },
+    {
+      "code": "7119",
+      "rank": 30,
+      "name": "OLIVE",
+      "deadOrMissing": 69,
+      "injured": 209,
+      "houseDamage": 1691,
+      "floodDamage": 18113,
+      "costOkuYen": null
+    },
+    {
+      "code": "5522",
+      "rank": 31,
+      "name": "LOUISE",
+      "deadOrMissing": 68,
+      "injured": 537,
+      "houseDamage": 85554,
+      "floodDamage": 51294,
+      "costOkuYen": null
+    },
+    {
+      "code": "9119",
+      "rank": 32,
+      "name": "MIREILLE",
+      "deadOrMissing": 62,
+      "injured": 1499,
+      "houseDamage": 170447,
+      "floodDamage": 22965,
+      "costOkuYen": 5735
+    },
+    {
+      "code": "5405",
+      "rank": 33,
+      "name": "GRACE",
+      "deadOrMissing": 61,
+      "injured": 69,
+      "houseDamage": 5442,
+      "floodDamage": 32265,
+      "costOkuYen": null
+    },
+    {
+      "code": "6016",
+      "rank": 34,
+      "name": "DELLA",
+      "deadOrMissing": 61,
+      "injured": 145,
+      "houseDamage": 2265,
+      "floodDamage": 45009,
+      "costOkuYen": null
     },
     {
       "code": "5905",
       "rank": 35,
       "name": "BILLIE",
-      "deadOrMissing": 60
+      "deadOrMissing": 60,
+      "injured": 77,
+      "houseDamage": 603,
+      "floodDamage": 77288,
+      "costOkuYen": null
+    },
+    {
+      "code": "6420",
+      "rank": 36,
+      "name": "WILDA",
+      "deadOrMissing": 56,
+      "injured": 530,
+      "houseDamage": 71269,
+      "floodDamage": 44751,
+      "costOkuYen": null
+    },
+    {
+      "code": "5302",
+      "rank": 37,
+      "name": "JUDY",
+      "deadOrMissing": 54,
+      "injured": 56,
+      "houseDamage": 1802,
+      "floodDamage": 33640,
+      "costOkuYen": null
+    },
+    {
+      "code": "5414",
+      "rank": 38,
+      "name": "LORNA",
+      "deadOrMissing": 54,
+      "injured": 41,
+      "houseDamage": 422,
+      "floodDamage": 43762,
+      "costOkuYen": null
     },
     {
       "code": "5705",
       "rank": 39,
       "name": "VIRGINIA",
-      "deadOrMissing": 53
+      "deadOrMissing": 53,
+      "injured": 33,
+      "houseDamage": 396,
+      "floodDamage": 129673,
+      "costOkuYen": null
+    },
+    {
+      "code": "9313",
+      "rank": 40,
+      "name": "YANCY",
+      "deadOrMissing": 48,
+      "injured": 266,
+      "houseDamage": 1892,
+      "floodDamage": 10447,
+      "costOkuYen": 1755
+    },
+    {
+      "code": "6012",
+      "rank": 41,
+      "name": "WENDY",
+      "deadOrMissing": 47,
+      "injured": 154,
+      "houseDamage": 449,
+      "floodDamage": 21144,
+      "costOkuYen": null
+    },
+    {
+      "code": "6734",
+      "rank": 42,
+      "name": "DINAH",
+      "deadOrMissing": 47,
+      "injured": 41,
+      "houseDamage": 2959,
+      "floodDamage": 26842,
+      "costOkuYen": null
+    },
+    {
+      "code": "0418",
+      "rank": 43,
+      "name": "SONGDA",
+      "deadOrMissing": 47,
+      "injured": 1364,
+      "houseDamage": 57466,
+      "floodDamage": 10026,
+      "costOkuYen": 1262
+    },
+    {
+      "code": "5817",
+      "rank": 44,
+      "name": "FLOSSIE",
+      "deadOrMissing": 45,
+      "injured": 39,
+      "houseDamage": 1996,
+      "floodDamage": 17641,
+      "costOkuYen": null
+    },
+    {
+      "code": "7123",
+      "rank": 45,
+      "name": "TRIX",
+      "deadOrMissing": 44,
+      "injured": 103,
+      "houseDamage": 1427,
+      "floodDamage": 122290,
+      "costOkuYen": null
+    },
+    {
+      "code": "8310",
+      "rank": 46,
+      "name": "FORREST",
+      "deadOrMissing": 44,
+      "injured": 118,
+      "houseDamage": 640,
+      "floodDamage": 56267,
+      "costOkuYen": 805
+    },
+    {
+      "code": "1703",
+      "rank": 47,
+      "name": "NANMADOL",
+      "deadOrMissing": 44,
+      "injured": 39,
+      "houseDamage": 1528,
+      "floodDamage": 2336,
+      "costOkuYen": null
     },
     {
       "code": "5612",
       "rank": 48,
       "name": "EMMA",
-      "deadOrMissing": 43
+      "deadOrMissing": 43,
+      "injured": 313,
+      "houseDamage": 32044,
+      "floodDamage": 11489,
+      "costOkuYen": null
+    },
+    {
+      "code": "8115",
+      "rank": 49,
+      "name": "THAD",
+      "deadOrMissing": 43,
+      "injured": 173,
+      "houseDamage": 4401,
+      "floodDamage": 31082,
+      "costOkuYen": 2272
     },
     {
       "code": "1326",
       "rank": 50,
       "name": "WIPHA",
-      "deadOrMissing": 43
+      "deadOrMissing": 43,
+      "injured": 130,
+      "houseDamage": 1094,
+      "floodDamage": 6142,
+      "costOkuYen": null
+    },
+    {
+      "code": "5811",
+      "rank": 51,
+      "name": "ALICE",
+      "deadOrMissing": 40,
+      "injured": 64,
+      "houseDamage": 1089,
+      "floodDamage": 46243,
+      "costOkuYen": null
+    },
+    {
+      "code": "9019",
+      "rank": 52,
+      "name": "FLO",
+      "deadOrMissing": 40,
+      "injured": 131,
+      "houseDamage": 16541,
+      "floodDamage": 18183,
+      "costOkuYen": 1322
     },
     {
       "code": "6613",
       "rank": 53,
       "name": "TESS",
-      "deadOrMissing": 39
+      "deadOrMissing": 39,
+      "injured": 22,
+      "houseDamage": 74,
+      "floodDamage": 19142,
+      "costOkuYen": null
+    },
+    {
+      "code": "8218",
+      "rank": 54,
+      "name": "JUDY",
+      "deadOrMissing": 38,
+      "injured": 174,
+      "houseDamage": 651,
+      "floodDamage": 136308,
+      "costOkuYen": 1258
+    },
+    {
+      "code": "5609",
+      "rank": 55,
+      "name": "BABS",
+      "deadOrMissing": 36,
+      "injured": 213,
+      "houseDamage": 37341,
+      "floodDamage": 10431,
+      "costOkuYen": null
+    },
+    {
+      "code": "9918",
+      "rank": 56,
+      "name": "BART",
+      "deadOrMissing": 36,
+      "injured": 1077,
+      "houseDamage": 47150,
+      "floodDamage": 23218,
+      "costOkuYen": 1631
+    },
+    {
+      "code": "7506",
+      "rank": 57,
+      "name": "RITA",
+      "deadOrMissing": 33,
+      "injured": 51,
+      "houseDamage": 711,
+      "floodDamage": 48832,
+      "costOkuYen": 340
+    },
+    {
+      "code": "5615",
+      "rank": 58,
+      "name": "HARRIET",
+      "deadOrMissing": 31,
+      "injured": 41,
+      "houseDamage": 4170,
+      "floodDamage": 47520,
+      "costOkuYen": null
     },
     {
       "code": "8512",
       "rank": 59,
       "name": "ODESSA",
-      "deadOrMissing": 31
+      "deadOrMissing": 31,
+      "injured": 232,
+      "houseDamage": 7805,
+      "floodDamage": 2858,
+      "costOkuYen": 714
+    },
+    {
+      "code": "8513",
+      "rank": 60,
+      "name": "PAT",
+      "deadOrMissing": 31,
+      "injured": 232,
+      "houseDamage": 7805,
+      "floodDamage": 2858,
+      "costOkuYen": 714
+    },
+    {
+      "code": "8514",
+      "rank": 61,
+      "name": "RUBY",
+      "deadOrMissing": 31,
+      "injured": 232,
+      "houseDamage": 7805,
+      "floodDamage": 2858,
+      "costOkuYen": 714
+    },
+    {
+      "code": "6309",
+      "rank": 62,
+      "name": "BESS",
+      "deadOrMissing": 29,
+      "injured": 46,
+      "houseDamage": 2064,
+      "floodDamage": 25166,
+      "costOkuYen": null
+    },
+    {
+      "code": "7306",
+      "rank": 63,
+      "name": "ELLEN",
+      "deadOrMissing": 29,
+      "injured": 10,
+      "houseDamage": 110,
+      "floodDamage": 37783,
+      "costOkuYen": null
+    },
+    {
+      "code": "0514",
+      "rank": 64,
+      "name": "NABI",
+      "deadOrMissing": 29,
+      "injured": 179,
+      "houseDamage": 7452,
+      "floodDamage": 21160,
+      "costOkuYen": 949
+    },
+    {
+      "code": "1610",
+      "rank": 65,
+      "name": "LIONROCK",
+      "deadOrMissing": 29,
+      "injured": 14,
+      "houseDamage": 3973,
+      "floodDamage": 2031,
+      "costOkuYen": null
+    },
+    {
+      "code": "6515",
+      "rank": 66,
+      "name": "JEAN",
+      "deadOrMissing": 28,
+      "injured": 368,
+      "houseDamage": 58951,
+      "floodDamage": 5716,
+      "costOkuYen": null
     },
     {
       "code": "0909",
       "rank": 67,
       "name": "ETAU",
-      "deadOrMissing": 28
+      "deadOrMissing": 28,
+      "injured": 29,
+      "houseDamage": 1173,
+      "floodDamage": 5217,
+      "costOkuYen": 71
+    },
+    {
+      "code": "6810",
+      "rank": 68,
+      "name": "TRIX",
+      "deadOrMissing": 27,
+      "injured": 68,
+      "houseDamage": 263,
+      "floodDamage": 24386,
+      "costOkuYen": null
+    },
+    {
+      "code": "7010",
+      "rank": 69,
+      "name": "ANITA",
+      "deadOrMissing": 27,
+      "injured": 556,
+      "houseDamage": 48652,
+      "floodDamage": 59961,
+      "costOkuYen": null
+    },
+    {
+      "code": "0421",
+      "rank": 70,
+      "name": "MEARI",
+      "deadOrMissing": 27,
+      "injured": 95,
+      "houseDamage": 3068,
+      "floodDamage": 19153,
+      "costOkuYen": 210
     },
     {
       "code": "9804",
       "rank": 71,
       "name": "REX",
-      "deadOrMissing": 25
+      "deadOrMissing": 25,
+      "injured": 55,
+      "houseDamage": 486,
+      "floodDamage": 13927,
+      "costOkuYen": null
     },
     {
       "code": "8610",
       "rank": 72,
       "name": "SARAH",
-      "deadOrMissing": 21
+      "deadOrMissing": 21,
+      "injured": 106,
+      "houseDamage": 2683,
+      "floodDamage": 105072,
+      "costOkuYen": 1055
+    },
+    {
+      "code": "7129",
+      "rank": 73,
+      "name": "CARMEN",
+      "deadOrMissing": 20,
+      "injured": 11,
+      "houseDamage": 30,
+      "floodDamage": 59665,
+      "costOkuYen": null
+    },
+    {
+      "code": "0310",
+      "rank": 74,
+      "name": "ETAU",
+      "deadOrMissing": 20,
+      "injured": 93,
+      "houseDamage": 708,
+      "floodDamage": 2253,
+      "costOkuYen": 351
+    },
+    {
+      "code": "1518",
+      "rank": 75,
+      "name": "ETAU",
+      "deadOrMissing": 20,
+      "injured": 82,
+      "houseDamage": 7555,
+      "floodDamage": 15782,
+      "costOkuYen": null
+    },
+    {
+      "code": "1115",
+      "rank": 76,
+      "name": "ROKE",
+      "deadOrMissing": 19,
+      "injured": 337,
+      "houseDamage": 3739,
+      "floodDamage": 7840,
+      "costOkuYen": null
+    },
+    {
+      "code": "9304",
+      "rank": 77,
+      "name": "NATHAN",
+      "deadOrMissing": 18,
+      "injured": 20,
+      "houseDamage": 143,
+      "floodDamage": 4316,
+      "costOkuYen": 178
+    },
+    {
+      "code": "9305",
+      "rank": 78,
+      "name": "OFELIA",
+      "deadOrMissing": 18,
+      "injured": 20,
+      "houseDamage": 143,
+      "floodDamage": 4316,
+      "costOkuYen": 178
+    },
+    {
+      "code": "9306",
+      "rank": 79,
+      "name": "PERCY",
+      "deadOrMissing": 18,
+      "injured": 20,
+      "houseDamage": 143,
+      "floodDamage": 4316,
+      "costOkuYen": 178
+    },
+    {
+      "code": "9807",
+      "rank": 80,
+      "name": "VICKI",
+      "deadOrMissing": 18,
+      "injured": 569,
+      "houseDamage": 21165,
+      "floodDamage": 8692,
+      "costOkuYen": null
+    },
+    {
+      "code": "9808",
+      "rank": 81,
+      "name": "WALDO",
+      "deadOrMissing": 18,
+      "injured": 569,
+      "houseDamage": 21165,
+      "floodDamage": 8692,
+      "costOkuYen": null
+    },
+    {
+      "code": "0416",
+      "rank": 82,
+      "name": "CHABA",
+      "deadOrMissing": 18,
+      "injured": 285,
+      "houseDamage": 8627,
+      "floodDamage": 46581,
+      "costOkuYen": 1054
+    },
+    {
+      "code": "8506",
+      "rank": 83,
+      "name": "IRMA",
+      "deadOrMissing": 16,
+      "injured": 49,
+      "houseDamage": 811,
+      "floodDamage": 12691,
+      "costOkuYen": 1303
     },
     {
       "code": "9112",
       "rank": 84,
       "name": "GLADYS",
-      "deadOrMissing": 16
+      "deadOrMissing": 16,
+      "injured": 11,
+      "houseDamage": 53,
+      "floodDamage": 4162,
+      "costOkuYen": 119
+    },
+    {
+      "code": "8913",
+      "rank": 85,
+      "name": "MAC",
+      "deadOrMissing": 15,
+      "injured": 26,
+      "houseDamage": 159,
+      "floodDamage": 5063,
+      "costOkuYen": null
     },
     {
       "code": "6104",
       "rank": 86,
       "name": "BETTY",
-      "deadOrMissing": 14
+      "deadOrMissing": 14,
+      "injured": 225,
+      "houseDamage": 6764,
+      "floodDamage": 260,
+      "costOkuYen": null
+    },
+    {
+      "code": "9810",
+      "rank": 87,
+      "name": "ZEB",
+      "deadOrMissing": 14,
+      "injured": 67,
+      "houseDamage": 770,
+      "floodDamage": 12548,
+      "costOkuYen": null
+    },
+    {
+      "code": "1821",
+      "rank": 88,
+      "name": "JEBI",
+      "deadOrMissing": 14,
+      "injured": 980,
+      "houseDamage": 97910,
+      "floodDamage": 707,
+      "costOkuYen": null
+    },
+    {
+      "code": "7916",
+      "rank": 89,
+      "name": "OWEN",
+      "deadOrMissing": 12,
+      "injured": 83,
+      "houseDamage": 1503,
+      "floodDamage": 68216,
+      "costOkuYen": 1074
     },
     {
       "code": "9118",
       "rank": 90,
       "name": "LUKE",
-      "deadOrMissing": 12
+      "deadOrMissing": 12,
+      "injured": 23,
+      "houseDamage": 225,
+      "floodDamage": 52662,
+      "costOkuYen": 242
+    },
+    {
+      "code": "9719",
+      "rank": 91,
+      "name": "OLIWA",
+      "deadOrMissing": 12,
+      "injured": 25,
+      "houseDamage": 216,
+      "floodDamage": 16016,
+      "costOkuYen": 402.6
+    },
+    {
+      "code": "0415",
+      "rank": 92,
+      "name": "MEGI",
+      "deadOrMissing": 12,
+      "injured": 24,
+      "houseDamage": 513,
+      "floodDamage": 2724,
+      "costOkuYen": 397
+    },
+    {
+      "code": "6816",
+      "rank": 93,
+      "name": "DELLA",
+      "deadOrMissing": 11,
+      "injured": 80,
+      "houseDamage": 5715,
+      "floodDamage": 15322,
+      "costOkuYen": null
+    },
+    {
+      "code": "8911",
+      "rank": 94,
+      "name": "JUDY",
+      "deadOrMissing": 11,
+      "injured": null,
+      "houseDamage": 76,
+      "floodDamage": 10664,
+      "costOkuYen": null
     },
     {
       "code": "8912",
       "rank": 95,
       "name": "KEN/LOLA",
-      "deadOrMissing": 11
+      "deadOrMissing": 11,
+      "injured": null,
+      "houseDamage": 76,
+      "floodDamage": 10664,
+      "costOkuYen": null
+    },
+    {
+      "code": "9117",
+      "rank": 96,
+      "name": "KINNA",
+      "deadOrMissing": 11,
+      "injured": 94,
+      "houseDamage": 382,
+      "floodDamage": 2586,
+      "costOkuYen": 511
     },
     {
       "code": "9617",
       "rank": 97,
       "name": "VIOLET",
-      "deadOrMissing": 11
+      "deadOrMissing": 11,
+      "injured": 73,
+      "houseDamage": 898,
+      "floodDamage": 12226,
+      "costOkuYen": 167.1
     },
     {
       "code": "0014",
       "rank": 98,
       "name": "SAOMAI",
-      "deadOrMissing": 11
+      "deadOrMissing": 11,
+      "injured": 103,
+      "houseDamage": 609,
+      "floodDamage": 70017,
+      "costOkuYen": 248
     },
     {
       "code": "0315",
       "rank": 99,
       "name": "CHOI-WAN",
-      "deadOrMissing": 11
+      "deadOrMissing": 11,
+      "injured": 9,
+      "houseDamage": 191,
+      "floodDamage": 1,
+      "costOkuYen": 3
+    },
+    {
+      "code": "0613",
+      "rank": 100,
+      "name": "SHANSHAN",
+      "deadOrMissing": 11,
+      "injured": 556,
+      "houseDamage": 9251,
+      "floodDamage": 934,
+      "costOkuYen": 174
     },
     {
       "code": "8705",
       "rank": 101,
       "name": "THELMA",
-      "deadOrMissing": 9
+      "deadOrMissing": 9,
+      "injured": 24,
+      "houseDamage": 51,
+      "floodDamage": 3426,
+      "costOkuYen": 155
+    },
+    {
+      "code": "8719",
+      "rank": 102,
+      "name": "KELLY",
+      "deadOrMissing": 9,
+      "injured": 17,
+      "houseDamage": 216,
+      "floodDamage": 24044,
+      "costOkuYen": 529
     },
     {
       "code": "9809",
       "rank": 103,
       "name": "YANNI",
-      "deadOrMissing": 9
+      "deadOrMissing": 9,
+      "injured": 14,
+      "houseDamage": 143,
+      "floodDamage": 17806,
+      "costOkuYen": null
+    },
+    {
+      "code": "1915",
+      "rank": 104,
+      "name": "FAXAI",
+      "deadOrMissing": 9,
+      "injured": 160,
+      "houseDamage": 93096,
+      "floodDamage": 276,
+      "costOkuYen": null
     },
     {
       "code": "8712",
       "rank": 105,
       "name": "DINAH",
-      "deadOrMissing": 8
+      "deadOrMissing": 8,
+      "injured": 189,
+      "houseDamage": 37078,
+      "floodDamage": 611,
+      "costOkuYen": 874
+    },
+    {
+      "code": "8922",
+      "rank": 106,
+      "name": "WAYNE",
+      "deadOrMissing": 8,
+      "injured": 8,
+      "houseDamage": 247,
+      "floodDamage": 5824,
+      "costOkuYen": null
+    },
+    {
+      "code": "9211",
+      "rank": 107,
+      "name": "KENT",
+      "deadOrMissing": 8,
+      "injured": 2,
+      "houseDamage": 13,
+      "floodDamage": 379,
+      "costOkuYen": 17
+    },
+    {
+      "code": "0111",
+      "rank": 108,
+      "name": "PABUK",
+      "deadOrMissing": 8,
+      "injured": 141,
+      "houseDamage": 154,
+      "floodDamage": 1052,
+      "costOkuYen": 63
+    },
+    {
+      "code": "0115",
+      "rank": 109,
+      "name": "DANAS",
+      "deadOrMissing": 8,
+      "injured": 48,
+      "houseDamage": 140,
+      "floodDamage": 1158,
+      "costOkuYen": 111
+    },
+    {
+      "code": "0422",
+      "rank": 110,
+      "name": "MA-ON",
+      "deadOrMissing": 8,
+      "injured": 169,
+      "houseDamage": 5553,
+      "floodDamage": 7843,
+      "costOkuYen": 58
+    },
+    {
+      "code": "1721",
+      "rank": 111,
+      "name": "LAN",
+      "deadOrMissing": 8,
+      "injured": 245,
+      "houseDamage": 3132,
+      "floodDamage": 8183,
+      "costOkuYen": null
     },
     {
       "code": "2302",
       "rank": 112,
       "name": "MAWAR",
-      "deadOrMissing": 8
+      "deadOrMissing": 8,
+      "injured": 49,
+      "houseDamage": 754,
+      "floodDamage": 9359,
+      "costOkuYen": null
+    },
+    {
+      "code": "2410",
+      "rank": 113,
+      "name": "SHANSHAN",
+      "deadOrMissing": 8,
+      "injured": 131,
+      "houseDamage": 3010,
+      "floodDamage": 2925,
+      "costOkuYen": null
+    },
+    {
+      "code": "9210",
+      "rank": 114,
+      "name": "JANIS",
+      "deadOrMissing": 7,
+      "injured": 67,
+      "houseDamage": 1561,
+      "floodDamage": 1508,
+      "costOkuYen": 740
     },
     {
       "code": "9503",
       "rank": 115,
       "name": "FAYE",
-      "deadOrMissing": 7
+      "deadOrMissing": 7,
+      "injured": 10,
+      "houseDamage": 6,
+      "floodDamage": 1303,
+      "costOkuYen": 28
+    },
+    {
+      "code": "0406",
+      "rank": 116,
+      "name": "DIANMU",
+      "deadOrMissing": 7,
+      "injured": 116,
+      "houseDamage": 180,
+      "floodDamage": 202,
+      "costOkuYen": 92
+    },
+    {
+      "code": "0704",
+      "rank": 117,
+      "name": "MAN-YI",
+      "deadOrMissing": 7,
+      "injured": 83,
+      "houseDamage": 295,
+      "floodDamage": 3993,
+      "costOkuYen": 253
+    },
+    {
+      "code": "1318",
+      "rank": 118,
+      "name": "MAN-YI",
+      "deadOrMissing": 7,
+      "injured": 143,
+      "houseDamage": 1650,
+      "floodDamage": 10089,
+      "costOkuYen": null
+    },
+    {
+      "code": "1418",
+      "rank": 119,
+      "name": "PHANFONE",
+      "deadOrMissing": 7,
+      "injured": 72,
+      "houseDamage": 257,
+      "floodDamage": 2540,
+      "costOkuYen": null
+    },
+    {
+      "code": "9014",
+      "rank": 120,
+      "name": "ZOLA",
+      "deadOrMissing": 6,
+      "injured": 24,
+      "houseDamage": 67,
+      "floodDamage": 420,
+      "costOkuYen": 151
+    },
+    {
+      "code": "9020",
+      "rank": 121,
+      "name": "GENE",
+      "deadOrMissing": 6,
+      "injured": 20,
+      "houseDamage": 210,
+      "floodDamage": 13318,
+      "costOkuYen": 229
     },
     {
       "code": "9109",
       "rank": 122,
       "name": "CAITLIN",
-      "deadOrMissing": 6
+      "deadOrMissing": 6,
+      "injured": 39,
+      "houseDamage": 64,
+      "floodDamage": 1472,
+      "costOkuYen": 101
     },
     {
       "code": "9115",
       "rank": 123,
       "name": "IVY",
-      "deadOrMissing": 6
+      "deadOrMissing": 6,
+      "injured": 4,
+      "houseDamage": 77,
+      "floodDamage": 1505,
+      "costOkuYen": 16
+    },
+    {
+      "code": "9805",
+      "rank": 124,
+      "name": "STELLA",
+      "deadOrMissing": 6,
+      "injured": 50,
+      "houseDamage": 601,
+      "floodDamage": 5840,
+      "costOkuYen": null
+    },
+    {
+      "code": "0206",
+      "rank": 125,
+      "name": "CHATAAN",
+      "deadOrMissing": 6,
+      "injured": 29,
+      "houseDamage": 210,
+      "floodDamage": 10270,
+      "costOkuYen": 353
+    },
+    {
+      "code": "0918",
+      "rank": 126,
+      "name": "MELOR",
+      "deadOrMissing": 6,
+      "injured": 133,
+      "houseDamage": 2387,
+      "floodDamage": 3310,
+      "costOkuYen": 218
     },
     {
       "code": "1412",
       "rank": 127,
       "name": "NAKRI",
-      "deadOrMissing": 6
+      "deadOrMissing": 6,
+      "injured": 92,
+      "houseDamage": 1033,
+      "floodDamage": 6811,
+      "costOkuYen": null
     },
     {
       "code": "2010",
       "rank": 128,
       "name": "HAISHEN",
-      "deadOrMissing": 6
+      "deadOrMissing": 6,
+      "injured": 110,
+      "houseDamage": 1730,
+      "floodDamage": 283,
+      "costOkuYen": null
+    },
+    {
+      "code": "0221",
+      "rank": 129,
+      "name": "HIGOS",
+      "deadOrMissing": 5,
+      "injured": 96,
+      "houseDamage": 1076,
+      "floodDamage": 1950,
+      "costOkuYen": 183
+    },
+    {
+      "code": "1718",
+      "rank": 130,
+      "name": "TALIM",
+      "deadOrMissing": 5,
+      "injured": 73,
+      "houseDamage": 1424,
+      "floodDamage": 7475,
+      "costOkuYen": null
+    },
+    {
+      "code": "2214",
+      "rank": 131,
+      "name": "NANMADOL",
+      "deadOrMissing": 5,
+      "injured": 161,
+      "houseDamage": 2179,
+      "floodDamage": 1310,
+      "costOkuYen": null
+    },
+    {
+      "code": "9028",
+      "rank": 132,
+      "name": "PAGE",
+      "deadOrMissing": 4,
+      "injured": 12,
+      "houseDamage": 162,
+      "floodDamage": 1544,
+      "costOkuYen": 48
+    },
+    {
+      "code": "9612",
+      "rank": 133,
+      "name": "KIRK",
+      "deadOrMissing": 4,
+      "injured": 77,
+      "houseDamage": 2989,
+      "floodDamage": 1675,
+      "costOkuYen": 205.7
     },
     {
       "code": "0417",
       "rank": 134,
       "name": "AERE",
-      "deadOrMissing": 4
+      "deadOrMissing": 4,
+      "injured": 28,
+      "houseDamage": 3719,
+      "floodDamage": 1256,
+      "costOkuYen": 67
+    },
+    {
+      "code": "1824",
+      "rank": 135,
+      "name": "TRAMI",
+      "deadOrMissing": 4,
+      "injured": 231,
+      "houseDamage": 10407,
+      "floodDamage": 2163,
+      "costOkuYen": null
+    },
+    {
+      "code": "9709",
+      "rank": 136,
+      "name": "ROSIE",
+      "deadOrMissing": 3,
+      "injured": 47,
+      "houseDamage": 78,
+      "floodDamage": 2057,
+      "costOkuYen": 110.5
     },
     {
       "code": "0314",
       "rank": 137,
       "name": "MAEMI",
-      "deadOrMissing": 3
+      "deadOrMissing": 3,
+      "injured": 107,
+      "houseDamage": 1498,
+      "floodDamage": 342,
+      "costOkuYen": 113
+    },
+    {
+      "code": "0410",
+      "rank": 138,
+      "name": "NAMTHEUN",
+      "deadOrMissing": 3,
+      "injured": 17,
+      "houseDamage": 113,
+      "floodDamage": 2215,
+      "costOkuYen": 103
+    },
+    {
+      "code": "0411",
+      "rank": 139,
+      "name": "MALOU",
+      "deadOrMissing": 3,
+      "injured": 19,
+      "houseDamage": 92,
+      "floodDamage": 2638,
+      "costOkuYen": null
+    },
+    {
+      "code": "0709",
+      "rank": 140,
+      "name": "FITOW",
+      "deadOrMissing": 3,
+      "injured": 87,
+      "houseDamage": 672,
+      "floodDamage": 1345,
+      "costOkuYen": 166
+    },
+    {
+      "code": "1106",
+      "rank": 141,
+      "name": "MA-ON",
+      "deadOrMissing": 3,
+      "injured": 54,
+      "houseDamage": 32,
+      "floodDamage": 150,
+      "costOkuYen": null
+    },
+    {
+      "code": "1408",
+      "rank": 142,
+      "name": "NEOGURI",
+      "deadOrMissing": 3,
+      "injured": 66,
+      "houseDamage": 122,
+      "floodDamage": 1367,
+      "costOkuYen": null
+    },
+    {
+      "code": "1419",
+      "rank": 143,
+      "name": "VONGFONG",
+      "deadOrMissing": 3,
+      "injured": 96,
+      "houseDamage": 134,
+      "floodDamage": 836,
+      "costOkuYen": null
+    },
+    {
+      "code": "2208",
+      "rank": 144,
+      "name": "MEARI",
+      "deadOrMissing": 3,
+      "injured": 9,
+      "houseDamage": 1151,
+      "floodDamage": 6264,
+      "costOkuYen": null
     },
     {
       "code": "2215",
       "rank": 145,
       "name": "TALAS",
-      "deadOrMissing": 3
+      "deadOrMissing": 3,
+      "injured": 20,
+      "houseDamage": 2462,
+      "floodDamage": 4791,
+      "costOkuYen": null
     },
     {
       "code": "2313",
       "rank": 146,
       "name": "YUN-YEUNG",
-      "deadOrMissing": 3
+      "deadOrMissing": 3,
+      "injured": 21,
+      "houseDamage": 2276,
+      "floodDamage": 4125,
+      "costOkuYen": null
+    },
+    {
+      "code": "9916",
+      "rank": 147,
+      "name": "ZIA",
+      "deadOrMissing": 2,
+      "injured": 6,
+      "houseDamage": 112,
+      "floodDamage": 1663,
+      "costOkuYen": 21
+    },
+    {
+      "code": "1511",
+      "rank": 148,
+      "name": "NANGKA",
+      "deadOrMissing": 2,
+      "injured": 57,
+      "houseDamage": 199,
+      "floodDamage": 512,
+      "costOkuYen": null
+    },
+    {
+      "code": "1705",
+      "rank": 149,
+      "name": "NORU",
+      "deadOrMissing": 2,
+      "injured": 51,
+      "houseDamage": 259,
+      "floodDamage": 393,
+      "costOkuYen": null
+    },
+    {
+      "code": "1910",
+      "rank": 150,
+      "name": "KROSA",
+      "deadOrMissing": 2,
+      "injured": 58,
+      "houseDamage": 60,
+      "floodDamage": 10,
+      "costOkuYen": null
     },
     {
       "code": "1917",
       "rank": 151,
       "name": "TAPAH",
-      "deadOrMissing": 2
+      "deadOrMissing": 2,
+      "injured": 69,
+      "houseDamage": 869,
+      "floodDamage": 244,
+      "costOkuYen": null
     },
     {
       "code": "2110",
       "rank": 152,
       "name": "MIRINAE",
-      "deadOrMissing": 2
+      "deadOrMissing": 2,
+      "injured": 45,
+      "houseDamage": 596,
+      "floodDamage": 148,
+      "costOkuYen": null
     },
     {
       "code": "2211",
       "rank": 153,
       "name": "HINNAMNOR",
-      "deadOrMissing": 2
+      "deadOrMissing": 2,
+      "injured": 25,
+      "houseDamage": 74,
+      "floodDamage": 123,
+      "costOkuYen": null
     },
     {
       "code": "7709",
       "rank": 154,
       "name": "BABE",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": null,
+      "houseDamage": 5119,
+      "floodDamage": 3207,
+      "costOkuYen": 61
     },
     {
       "code": "9217",
       "rank": 155,
       "name": "RYAN",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": null,
+      "houseDamage": 9,
+      "floodDamage": 3128,
+      "costOkuYen": 139
+    },
+    {
+      "code": "9606",
+      "rank": 156,
+      "name": "EVE",
+      "deadOrMissing": 1,
+      "injured": 27,
+      "houseDamage": 2361,
+      "floodDamage": 933,
+      "costOkuYen": 788.2
     },
     {
       "code": "9907",
       "rank": 157,
       "name": "OLGA",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": null,
+      "houseDamage": null,
+      "floodDamage": 124,
+      "costOkuYen": null
     },
     {
       "code": "0003",
       "rank": 158,
       "name": "KIROGI",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": 7,
+      "houseDamage": 36,
+      "floodDamage": 2713,
+      "costOkuYen": 38
     },
     {
       "code": "0209",
       "rank": 159,
       "name": "FENGSHEN",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": 2,
+      "houseDamage": 20,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "1204",
+      "rank": 160,
+      "name": "GUCHOL",
+      "deadOrMissing": 1,
+      "injured": 79,
+      "houseDamage": 117,
+      "floodDamage": 285,
+      "costOkuYen": null
+    },
+    {
+      "code": "1515",
+      "rank": 161,
+      "name": "GONI",
+      "deadOrMissing": 1,
+      "injured": 147,
+      "houseDamage": 3705,
+      "floodDamage": 397,
+      "costOkuYen": null
     },
     {
       "code": "1613",
       "rank": 162,
       "name": "MALOU",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": 2,
+      "houseDamage": 98,
+      "floodDamage": 457,
+      "costOkuYen": null
+    },
+    {
+      "code": "1616",
+      "rank": 163,
+      "name": "MALAKAS",
+      "deadOrMissing": 1,
+      "injured": 47,
+      "houseDamage": 2279,
+      "floodDamage": 2455,
+      "costOkuYen": null
     },
     {
       "code": "1825",
       "rank": 164,
       "name": "KONG-REY",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": 32,
+      "houseDamage": 170,
+      "floodDamage": 2,
+      "costOkuYen": null
     },
     {
       "code": "1905",
       "rank": 165,
       "name": "DANAS",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": 6,
+      "houseDamage": 12,
+      "floodDamage": 813,
+      "costOkuYen": null
+    },
+    {
+      "code": "1908",
+      "rank": 166,
+      "name": "FRANCISCO",
+      "deadOrMissing": 1,
+      "injured": 5,
+      "houseDamage": 12,
+      "floodDamage": 16,
+      "costOkuYen": null
+    },
+    {
+      "code": "2108",
+      "rank": 167,
+      "name": "NEPARTAK",
+      "deadOrMissing": 1,
+      "injured": null,
+      "houseDamage": null,
+      "floodDamage": 1,
+      "costOkuYen": null
     },
     {
       "code": "2306",
       "rank": 168,
       "name": "KHANUN",
-      "deadOrMissing": 1
+      "deadOrMissing": 1,
+      "injured": 103,
+      "houseDamage": 278,
+      "floodDamage": 145,
+      "costOkuYen": null
+    },
+    {
+      "code": "2512",
+      "rank": 169,
+      "name": "LINGLING",
+      "deadOrMissing": 1,
+      "injured": 5,
+      "houseDamage": 98,
+      "floodDamage": 208,
+      "costOkuYen": null
     },
     {
       "code": "6618",
       "rank": 170,
       "name": "CORA",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 41,
+      "houseDamage": 7765,
+      "floodDamage": 30,
+      "costOkuYen": null
     },
     {
       "code": "9905",
       "rank": 171,
       "name": "NEIL",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 3,
+      "houseDamage": 23,
+      "floodDamage": 207,
+      "costOkuYen": null
     },
     {
       "code": "9908",
       "rank": 172,
       "name": "PAUL",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": 2,
+      "floodDamage": 48,
+      "costOkuYen": null
     },
     {
       "code": "0008",
       "rank": 173,
       "name": "JELAWAT",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 2,
+      "houseDamage": 36,
+      "floodDamage": 3,
+      "costOkuYen": null
     },
     {
       "code": "0116",
       "rank": 174,
       "name": "NARI",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 4,
+      "houseDamage": 154,
+      "floodDamage": 928,
+      "costOkuYen": null
     },
     {
       "code": "0205",
       "rank": 175,
       "name": "RAMMASUN",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 2,
+      "houseDamage": 1,
+      "floodDamage": 1,
+      "costOkuYen": null
+    },
+    {
+      "code": "0207",
+      "rank": 176,
+      "name": "HALONG",
+      "deadOrMissing": null,
+      "injured": 9,
+      "houseDamage": 229,
+      "floodDamage": 301,
+      "costOkuYen": null
     },
     {
       "code": "0213",
       "rank": 177,
       "name": "PHANFONE",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": null,
+      "floodDamage": 88,
+      "costOkuYen": null
     },
     {
       "code": "0215",
       "rank": 178,
       "name": "RUSA",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 12,
+      "houseDamage": 137,
+      "floodDamage": 380,
+      "costOkuYen": null
     },
     {
       "code": "0216",
       "rank": 179,
       "name": "SINLAKU",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 31,
+      "houseDamage": 242,
+      "floodDamage": 45,
+      "costOkuYen": null
+    },
+    {
+      "code": "0507",
+      "rank": 180,
+      "name": "BANYAN",
+      "deadOrMissing": null,
+      "injured": 5,
+      "houseDamage": 2,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "0511",
+      "rank": 181,
+      "name": "MAWAR",
+      "deadOrMissing": null,
+      "injured": 6,
+      "houseDamage": 25,
+      "floodDamage": 89,
+      "costOkuYen": null
+    },
+    {
+      "code": "0705",
+      "rank": 182,
+      "name": "USAGI",
+      "deadOrMissing": null,
+      "injured": 30,
+      "houseDamage": 163,
+      "floodDamage": 637,
+      "costOkuYen": null
     },
     {
       "code": "0711",
       "rank": 183,
       "name": "NARI",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 2,
+      "houseDamage": 153,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "1612",
+      "rank": 184,
+      "name": "NAMTHEUN",
+      "deadOrMissing": null,
+      "injured": 1,
+      "houseDamage": null,
+      "floodDamage": null,
+      "costOkuYen": null
     },
     {
       "code": "1618",
       "rank": 185,
       "name": "CHABA",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 14,
+      "houseDamage": 137,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "1722",
+      "rank": 186,
+      "name": "SAOLA",
+      "deadOrMissing": null,
+      "injured": 22,
+      "houseDamage": 185,
+      "floodDamage": 220,
+      "costOkuYen": null
+    },
+    {
+      "code": "1812",
+      "rank": 187,
+      "name": "JONGDARI",
+      "deadOrMissing": null,
+      "injured": 35,
+      "houseDamage": 273,
+      "floodDamage": 37,
+      "costOkuYen": null
     },
     {
       "code": "1813",
       "rank": 188,
       "name": "SHANSHAN",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 7,
+      "houseDamage": 8,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "1820",
+      "rank": 189,
+      "name": "CIMARON",
+      "deadOrMissing": null,
+      "injured": 35,
+      "houseDamage": 639,
+      "floodDamage": 322,
+      "costOkuYen": null
     },
     {
       "code": "1903",
       "rank": 190,
       "name": "SEPAT",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": 3,
+      "floodDamage": 2,
+      "costOkuYen": null
+    },
+    {
+      "code": "1906",
+      "rank": 191,
+      "name": "NARI",
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": 1,
+      "floodDamage": 1,
+      "costOkuYen": null
     },
     {
       "code": "1909",
       "rank": 192,
       "name": "LEKIMA",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 6,
+      "houseDamage": null,
+      "floodDamage": null,
+      "costOkuYen": null
     },
     {
       "code": "1913",
       "rank": 193,
       "name": "LINGLING",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 7,
+      "houseDamage": 2,
+      "floodDamage": 1,
+      "costOkuYen": null
     },
     {
       "code": "1918",
       "rank": 194,
       "name": "MITAG",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 10,
+      "houseDamage": 7,
+      "floodDamage": 94,
+      "costOkuYen": null
     },
     {
       "code": "2009",
       "rank": 195,
       "name": "MAYSAK",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 34,
+      "houseDamage": 116,
+      "floodDamage": 35,
+      "costOkuYen": null
     },
     {
       "code": "2012",
       "rank": 196,
       "name": "DOLPHIN",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": 3,
+      "floodDamage": 41,
+      "costOkuYen": null
     },
     {
       "code": "2014",
       "rank": 197,
       "name": "CHAN-HOM",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 3,
+      "houseDamage": 15,
+      "floodDamage": null,
+      "costOkuYen": null
+    },
+    {
+      "code": "2114",
+      "rank": 198,
+      "name": "CHANTHU",
+      "deadOrMissing": null,
+      "injured": 9,
+      "houseDamage": 81,
+      "floodDamage": 228,
+      "costOkuYen": null
     },
     {
       "code": "2116",
       "rank": 199,
       "name": "MINDULLE",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 21,
+      "houseDamage": 165,
+      "floodDamage": 3,
+      "costOkuYen": null
+    },
+    {
+      "code": "2204",
+      "rank": 200,
+      "name": "AERE",
+      "deadOrMissing": null,
+      "injured": 1,
+      "houseDamage": 11,
+      "floodDamage": 220,
+      "costOkuYen": null
+    },
+    {
+      "code": "2307",
+      "rank": 201,
+      "name": "LAN",
+      "deadOrMissing": null,
+      "injured": 68,
+      "houseDamage": 262,
+      "floodDamage": 692,
+      "costOkuYen": null
+    },
+    {
+      "code": "2405",
+      "rank": 202,
+      "name": "MARIA",
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": 3,
+      "floodDamage": 52,
+      "costOkuYen": null
     },
     {
       "code": "2407",
       "rank": 203,
       "name": "AMPIL",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": 4,
+      "houseDamage": 2,
+      "floodDamage": 1,
+      "costOkuYen": null
     },
     {
       "code": "2523",
       "rank": 204,
       "name": "NAKRI",
-      "deadOrMissing": null
+      "deadOrMissing": null,
+      "injured": null,
+      "houseDamage": 42,
+      "floodDamage": null,
+      "costOkuYen": null
     }
   ]
 }

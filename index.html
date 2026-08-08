@@ -172,6 +172,16 @@ header .spacer{ flex:1; }
 .readout .v{ color:var(--paper); text-align:right; font-weight:600; }
 .readout .v.big{ font-size:22px; color:var(--amber-bright); }
 
+#damage-info{
+  margin-top:8px; padding:8px 10px;
+  background:var(--panel-2); border:1px solid var(--line); border-radius:3px;
+  font-family:var(--mono); font-size:11px; line-height:1.7;
+}
+#damage-info .title{ color:#e0793a; letter-spacing:.08em; text-transform:uppercase; font-size:10px; margin-bottom:3px; }
+#damage-info .row{ display:flex; justify-content:space-between; gap:8px; }
+#damage-info .row .k{ color:var(--text-dim); }
+#damage-info .row .v{ color:var(--paper); font-weight:600; }
+
 hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 
 #legend-wind{ font-size:11px; color:var(--text-dim); line-height:1.3; }
@@ -322,7 +332,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   <div id="body">
     <div id="leftpanel">
       <div id="filter-section">
-        <label><input type="checkbox" id="f-landfall">上陸・通過(日本)のみ</label>
+        <label><input type="checkbox" id="f-landfall">上陸・通過や被害のあった台風のみ</label>
         <span id="filter-count"></span>
       </div>
 
@@ -344,6 +354,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
         <div class="k">階級</div><div class="v" id="v-grade">&mdash;</div>
         <div class="k">位置</div><div class="v" id="v-pos">&mdash;</div>
       </div>
+      <div id="damage-info" style="display:none;"></div>
 
       <hr class="rule">
       <div class="mode-toggle" id="mode-toggle">
@@ -476,6 +487,20 @@ async function loadIndex(){
   const res = await fetch('data/index.json');
   if (!res.ok) throw new Error('index.json: ' + res.status);
   STORM_META = await res.json();
+}
+
+let DAMAGE_INFO = {}; // code -> {rank,name,deadOrMissing,injured,houseDamage,floodDamage,costOkuYen}
+
+async function loadDamageInfo(){
+  // Digital Typhoon disaster-database ranking (see data/damage_storm_codes.json
+  // for source/methodology) -- optional, so a missing/failed fetch just
+  // means no damage panel is shown, not a load error for the whole app.
+  try {
+    const res = await fetch('data/damage_storm_codes.json');
+    if (!res.ok) return;
+    const j = await res.json();
+    (j.codes || []).forEach(function(e){ DAMAGE_INFO[e.code] = e; });
+  } catch (err) { /* optional data -- ignore */ }
 }
 
 async function loadNetworkStations(){
@@ -900,6 +925,33 @@ function updateModeNote(){
   note.style.display = '';
 }
 
+function updateDamageInfo(code){
+  const el = document.getElementById('damage-info');
+  const d = DAMAGE_INFO[code];
+  if (!d){
+    el.style.display = 'none';
+    return;
+  }
+  const rows = [
+    ['死者・行方不明者', d.deadOrMissing, '人'],
+    ['負傷者', d.injured, '人'],
+    ['住家被害', d.houseDamage, '棟'],
+    ['浸水被害', d.floodDamage, '棟'],
+    ['被害額', d.costOkuYen, '億円']
+  ].filter(function(r){ return r[1] !== null && r[1] !== undefined; });
+  if (!rows.length){
+    el.style.display = 'none';
+    return;
+  }
+  let html = '<div class="title">被害状況（デジタル台風 災害DB, 全国）</div>';
+  rows.forEach(function(r){
+    html += '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' +
+      Number(r[1]).toLocaleString('ja-JP') + ' ' + r[2] + '</span></div>';
+  });
+  el.innerHTML = html;
+  el.style.display = '';
+}
+
 function updateThresholdControl(){
   const slider = document.getElementById('threshold-slider');
   const valueEl = document.getElementById('threshold-value');
@@ -924,7 +976,7 @@ function applyFilters(){
   const f = currentFilters();
   ACTIVE_ORDER = STORM_ORDER.filter(function(code){
     const s = STORM_META[code];
-    if (f.landfallOnly && !s.landfallJP) return false;
+    if (f.landfallOnly && !s.landfallJP && !s.damaging) return false;
     return true;
   });
   document.getElementById('filter-count').textContent = ACTIVE_ORDER.length + ' / ' + STORM_ORDER.length + ' 件';
@@ -1107,6 +1159,7 @@ async function selectStorm(code){
   document.getElementById('side-name-en').textContent = code + ' / ' + s.track.length + ' track points' + (hasObs ? ', ' + activePlayIdx.length + ' ' + ih + '-hourly steps' : '');
   updateModeNote();
   updateRankingPanel();
+  updateDamageInfo(code);
   // Pressure data (JRA-3Q) is fetched regardless of mode: whenever this
   // storm has it, isobars are automatically overlaid on the wind/rain
   // markers (see buildLegend/updateFrame).
@@ -1228,27 +1281,56 @@ function getPlayableIndices(s){
   return s._playIdx;
 }
 
-function computeNetworkPlayIndices(times, s){
+function denseIndices(times, values){
+  // The network files always request hourly slots from JMA's API, but
+  // older eras (e.g. the 1970s) only actually reported every 3 hours --
+  // the in-between hourly slots are null for every single station, not
+  // just sparse. Counting "any station has data" would treat every hour
+  // as a real observation step and the timeline would blink between a
+  // real 3-hourly frame and two empty ones. Instead, same heuristic as
+  // the legacy getObsIndices(): count how many stations report at each
+  // time-index and keep only indices at/above half that storm's peak
+  // station count, since a real observation time is reported by
+  // (nearly) all stations at once.
+  const n = times.length;
+  const counts = new Array(n).fill(0);
+  for (let i = 0; i < values.length; i++){
+    const station = values[i];
+    if (!station) continue;
+    for (let t = 0; t < n; t++){
+      if (station[t] !== null && station[t] !== undefined) counts[t]++;
+    }
+  }
+  const peak = Math.max.apply(null, counts);
+  if (peak === 0) return [];
+  const threshold = peak / 2;
+  const idxs = [];
+  for (let i = 0; i < n; i++) if (counts[i] >= threshold) idxs.push(i);
+  return idxs;
+}
+
+function computeNetworkPlayIndices(times, values, s){
   const trackStartMs = trackTimeMs(s.track[0].time);
   const trackEndMs = trackTimeMs(s.track[s.track.length-1].time);
-  const idx = [];
-  for (let i = 0; i < times.length; i++){
+  const dense = denseIndices(times, values);
+  const candidates = dense.length ? dense : times.map(function(_, i){ return i; });
+  const idx = candidates.filter(function(i){
     const t = Date.parse(times[i]);
-    if (t >= trackStartMs && t <= trackEndMs) idx.push(i);
-  }
-  return idx.length ? idx : [0];
+    return t >= trackStartMs && t <= trackEndMs;
+  });
+  return idx.length ? idx : candidates.slice(0, 1);
 }
 
 function activeTimeline(s, obsNet, mode){
-  // The AMeDAS-network files (data/storms_obs/*) already carry a clean,
-  // uniform times axis at the real observation cadence (hourly for most
-  // storms) -- prefer that for the timeline over the legacy synthesized-
-  // from-track cadence, which for pre-1990s storms can be as coarse as
-  // 6-hourly (JMA's best-track resolution back then) even when we now
-  // have hourly network readings for the same storm.
+  // The AMeDAS-network files (data/storms_obs/*) carry a times axis at
+  // the real observation cadence for most (modern, hourly) storms --
+  // prefer that over the legacy synthesized-from-track cadence, which for
+  // pre-1990s storms can be as coarse as 6-hourly (JMA's best-track
+  // resolution back then). computeNetworkPlayIndices additionally filters
+  // out hourly slots that aren't real observations (see denseIndices()).
   const net = obsNet && obsNet[mode];
   if (net && net.times && net.times.length){
-    return { times: net.times, playIdx: computeNetworkPlayIndices(net.times, s) };
+    return { times: net.times, playIdx: computeNetworkPlayIndices(net.times, net.values || [], s) };
   }
   return { times: s.times, playIdx: getPlayableIndices(s) };
 }
@@ -1544,7 +1626,7 @@ function pause(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  Promise.all([loadStations(), loadIndex(), loadNetworkStations()]).then(function(){
+  Promise.all([loadStations(), loadIndex(), loadNetworkStations(), loadDamageInfo()]).then(function(){
     STORM_ORDER = computeStormOrder();
 
     initMap();
