@@ -1035,7 +1035,8 @@ function buildYearSelect(){
     });
     const opt = document.createElement('option');
     opt.value = y;
-    opt.textContent = y + '年';
+    const era = japaneseEra(y);
+    opt.textContent = y + '年' + (era ? '（' + era + '年）' : '');
     opt.disabled = !hasActive;
     sel.appendChild(opt);
   });
@@ -1480,6 +1481,25 @@ function dataHasAnyValue(data){
     }
   }
   return false;
+}
+
+function japaneseEra(year){
+  // Calendar-year granularity only (no month), which is fine here since
+  // every use is a typhoon-season year label, not an exact date -- the
+  // only two years where the Gregorian/era boundary actually falls
+  // mid-year (1989, 2019) both have their typhoon season entirely on the
+  // later era's side anyway.
+  const y = parseInt(year, 10);
+  if (!Number.isFinite(y)) return null;
+  const eras = [[2019,'令和'],[1989,'平成'],[1926,'昭和'],[1912,'大正'],[1868,'明治']];
+  for (let i = 0; i < eras.length; i++){
+    const start = eras[i][0], name = eras[i][1];
+    if (y >= start){
+      const n = y - start + 1;
+      return name + (n === 1 ? '元' : n);
+    }
+  }
+  return null;
 }
 
 function formatDateTime(iso){
