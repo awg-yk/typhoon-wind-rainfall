@@ -247,6 +247,17 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   grid-column: 3; grid-row: 2;
   display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px; color:var(--text-dim);
 }
+#slider-tip{
+  position:fixed; transform:translate(-50%,-100%); margin-top:-14px;
+  background:var(--panel); border:1px solid var(--amber); color:var(--paper);
+  font-family:var(--mono); font-size:11px; padding:4px 8px; border-radius:3px;
+  white-space:nowrap; pointer-events:none; z-index:50; display:none;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+#slider-tip::after{
+  content:''; position:absolute; left:50%; top:100%; transform:translateX(-50%);
+  border:5px solid transparent; border-top-color:var(--amber);
+}
 
 /* Wind arrow marker */
 .wind-arrow{ pointer-events:none; }
@@ -394,6 +405,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
     <button id="play-btn" disabled>&#9654;</button>
     <div id="time-label">&mdash;</div>
     <input id="slider" type="range" min="0" max="0" value="0" step="1" disabled>
+    <div id="slider-tip"></div>
     <select id="speed-select">
       <option value="300">速い</option>
       <option value="600" selected>標準</option>
@@ -1084,7 +1096,7 @@ function renderDamageLayer(prefectures){
 function setDamageModeAvailable(available){
   modeHasData.damage = available;
   const btn = document.querySelector('.mode-btn[data-mode="damage"]');
-  if (btn) btn.disabled = !available;
+  if (btn) btn.style.display = available ? '' : 'none';
   if (!available && displayMode === 'damage'){
     // The map-overlay mode just lost its data (storm changed) -- fall back
     // like the wind/rain pair does, preferring wind then rain.
@@ -1366,8 +1378,7 @@ async function selectStorm(code){
   // once its async TYDB fetch resolves -- not here.)
   document.querySelectorAll('.mode-btn[data-mode="wind"], .mode-btn[data-mode="rain"]').forEach(function(b){
     const m = b.dataset.mode;
-    b.disabled = !modeHasData[m];
-    b.title = modeHasData[m] ? '' : 'この台風には' + (m === 'wind' ? '風' : '雨') + 'の観測データはありません。';
+    b.style.display = modeHasData[m] ? '' : 'none';
   });
   if (displayMode !== 'damage' && !modeHasData[displayMode]){
     const fallback = displayMode === 'wind' ? 'rain' : 'wind';
@@ -1617,6 +1628,12 @@ function onTrackClick(e){
   updateFrame(pos);
 }
 
+function formatFullDateTime(iso){
+  const d = new Date(iso);
+  return d.getFullYear()+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getDate()).padStart(2,'0')+
+    ' ' + String(d.getHours()).padStart(2,'0') + ':00 JST';
+}
+
 function updateFrame(pos){
   currentIdx = pos;
   const s = DATA.storms[currentStormCode];
@@ -1625,9 +1642,7 @@ function updateFrame(pos){
   const timeMs = Date.parse(t);
   document.getElementById('slider').value = pos;
 
-  const d = new Date(t);
-  const label = d.getFullYear()+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getDate()).padStart(2,'0')+
-    ' ' + String(d.getHours()).padStart(2,'0') + ':00 JST';
+  const label = formatFullDateTime(t);
   document.getElementById('time-label').textContent = label;
   document.getElementById('v-time').textContent = label;
 
@@ -1952,10 +1967,39 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
 
-    document.getElementById('slider').addEventListener('input', function(e){
+    const sliderEl = document.getElementById('slider');
+    const sliderTip = document.getElementById('slider-tip');
+    function positionSliderTip(){
+      // Approximate the native thumb's screen position from the track's
+      // bounding box -- there's no DOM API for a range input's actual
+      // thumb rect, but this formula (thumb center = track edge + half
+      // thumb width, interpolated across the usable track width) matches
+      // the ::-webkit/-moz-range-thumb size set in CSS closely enough.
+      const min = Number(sliderEl.min) || 0, max = Number(sliderEl.max) || 0, val = Number(sliderEl.value) || 0;
+      const pct = max > min ? (val - min) / (max - min) : 0;
+      const rect = sliderEl.getBoundingClientRect();
+      const thumb = 12;
+      const x = rect.left + thumb/2 + pct * (rect.width - thumb);
+      sliderTip.style.left = x + 'px';
+      sliderTip.style.top = rect.top + 'px';
+      const idx = activePlayIdx[val];
+      if (idx !== undefined && activeTimes[idx]) sliderTip.textContent = formatFullDateTime(activeTimes[idx]);
+    }
+    sliderEl.addEventListener('input', function(e){
       if (playing) pause();
       updateFrame(parseInt(e.target.value,10));
+      positionSliderTip();
     });
+    ['pointerdown','touchstart'].forEach(function(evt){
+      sliderEl.addEventListener(evt, function(){
+        positionSliderTip();
+        sliderTip.style.display = 'block';
+      });
+    });
+    ['pointerup','touchend','touchcancel'].forEach(function(evt){
+      sliderEl.addEventListener(evt, function(){ sliderTip.style.display = 'none'; });
+    });
+    sliderEl.addEventListener('blur', function(){ sliderTip.style.display = 'none'; });
     document.getElementById('play-btn').addEventListener('click', function(){
       if (playing) pause(); else play();
     });
