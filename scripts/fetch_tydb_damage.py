@@ -7,10 +7,17 @@ Each page has (when present):
   - a free-text "気象の状況" paragraph, often ending in a damage summary
     sentence (e.g. "死者・行方不明31人、負傷者41人、全壊796棟...")
   - a structured "被害の状況" table, one row per prefecture plus a total
-    row, with columns 死者・不明者/負傷者/全壊/半壊/一部破損/床上浸水/
-    床下浸水/非住家 and a 情報元 (source) column -- this is the more
-    reliable figure since it's structured and prefecture-broken-down,
-    rather than a hand-written sentence.
+    row -- this is the more reliable figure since it's structured and
+    prefecture-broken-down, rather than a hand-written sentence.
+
+The table's damage columns are NOT the same set on every page -- most
+storms have 死者・不明者/負傷者/全壊/半壊/一部破損/床上浸水/床下浸水/非住家,
+but some add 焼失 (burned), 流失 (washed away), or other categories (e.g.
+TY5508, 1955 Typhoon 8, has a 焼失 column between 一部破損 and 床上浸水).
+So the table's own header row is read and used to key each row's values
+by column name, rather than assuming a fixed column order/count -- an
+earlier version of this script hardcoded 8 columns and would have
+silently misaligned or dropped values on pages like that one.
 
 NOTE: this cannot be run inside the current sandboxed session -- outbound
 access to tydb.bosai.go.jp is blocked by this environment's network
@@ -19,10 +26,12 @@ notebooks/fetch_tydb_damage_colab.ipynb.
 
 Output: one data/tydb_damage/<code>.json per storm:
   {"title": "...", "weatherText": "...",
-   "prefectures": [{"pref": "...", "dead_missing": int|null, ...,
-                     "source": "..."}, ...],
-   "total": {same shape as a prefecture row, pref omitted}}
-A storm with no TYDB page (404) gets {"notFound": true}.
+   "prefectures": [{"pref": "...", "dead_missing": int|null, ..., "source": "..."}, ...],
+   "total": {same shape as a prefecture row, pref/source omitted}}
+Damage-category keys vary per storm (see HEADER_KEY_MAP) -- always check
+which keys are actually present in a given storm's rows rather than
+assuming the common set. A storm with no TYDB page (404) gets
+{"notFound": true}.
 
 Usage:
   pip install requests beautifulsoup4
@@ -44,17 +53,66 @@ OUT_DIR = ROOT / "data" / "tydb_damage"
 BASE_URL = "https://tydb.bosai.go.jp/TYDB/HTML/{code}.html"
 SLEEP_SEC = 0.5
 
-# Order matches the table's columns, left to right, after 都道府県.
-PREF_COLUMNS = [
-    "dead_missing", "injured", "destroyed", "half_destroyed",
-    "partial_damage", "flooded_above_floor", "flooded_below_floor",
-    "non_residential",
-]
+# Known 被害の状況 column headers -> our key. Any header not listed here
+# falls back to the raw (stripped) header text as the key, so an unknown
+# damage category (a new source's wording, say) is still captured under
+# its own key rather than silently dropped or merged into the wrong column.
+HEADER_KEY_MAP = {
+    "都道府県": "pref",
+    "死者・不明者": "dead_missing",
+    "死者・行方不明者": "dead_missing",
+    "死者・不明": "dead_missing",
+    "死者": "dead",
+    "行方不明者": "missing",
+    "負傷者": "injured",
+    "全壊": "destroyed",
+    "半壊": "half_destroyed",
+    "流失": "washed_away",
+    "全焼": "burned",
+    "半焼": "half_burned",
+    "焼失": "burned",
+    "一部破損": "partial_damage",
+    "床上浸水": "flooded_above_floor",
+    "床下浸水": "flooded_below_floor",
+    "非住家": "non_residential",
+    "情報元": "source",
+}
+
+
+def header_key(header_text):
+    h = header_text.strip()
+    return HEADER_KEY_MAP.get(h, h)
 
 
 def parse_int(cell_text):
     t = cell_text.strip().replace(",", "")
     return int(t) if t else None
+
+
+def parse_damage_table(table):
+    header_row = table.find("tr")
+    headers = [th.get_text(strip=True) for th in header_row.find_all("th")]
+    if not headers:
+        return [], None
+    keys = [header_key(h) for h in headers]  # keys[0] is 都道府県's key ('pref')
+
+    prefectures = []
+    total = None
+    for tr in table.find_all("tr")[1:]:  # skip header row
+        cells = tr.find_all("td")
+        if not cells:
+            continue
+        pref = cells[0].get_text(strip=True)
+        row = {}
+        for key, cell in zip(keys[1:], cells[1:]):
+            text = cell.get_text(strip=True)
+            row[key] = text if key == "source" else parse_int(text)
+        if pref in ("合　計", "合計"):
+            total = row
+        elif any(v not in (None, "") for k, v in row.items() if k != "source"):
+            row["pref"] = pref
+            prefectures.append(row)
+    return prefectures, total
 
 
 def parse_page(html):
@@ -72,27 +130,13 @@ def parse_page(html):
         if p:
             result["weatherText"] = " ".join(p.get_text().split())
 
-    prefectures = []
-    total = None
+    prefectures, total = [], None
     table_anchor = soup.find("a", attrs={"name": "table"})
     if table_anchor:
         section = table_anchor.find_parent("section")
         table = section.find("table") if section else None
         if table:
-            for tr in table.find_all("tr")[1:]:  # skip header row
-                cells = tr.find_all("td")
-                if len(cells) < 9:
-                    continue
-                pref = cells[0].get_text(strip=True)
-                nums = [parse_int(c.get_text()) for c in cells[1:9]]
-                source = cells[9].get_text(strip=True) if len(cells) > 9 else ""
-                row = dict(zip(PREF_COLUMNS, nums))
-                row["source"] = source
-                if pref in ("合　計", "合計"):
-                    total = row
-                elif any(v is not None for v in nums):
-                    row["pref"] = pref
-                    prefectures.append(row)
+            prefectures, total = parse_damage_table(table)
 
     result["prefectures"] = prefectures
     result["total"] = total
