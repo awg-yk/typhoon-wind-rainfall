@@ -181,6 +181,7 @@ header .spacer{ flex:1; }
 #damage-info .row{ display:flex; justify-content:space-between; gap:8px; }
 #damage-info .row .k{ color:var(--text-dim); }
 #damage-info .row .v{ color:var(--paper); font-weight:600; }
+#damage-info .note{ margin-top:6px; padding-top:6px; border-top:1px solid var(--line); color:var(--text-dim); font-size:10px; line-height:1.6; }
 
 hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 
@@ -401,7 +402,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 <script>
 (function(){
 "use strict";
-const DATA = { stationNames: [], stationCoords: [], storms: {}, pressure: {}, network: { wind: [], rain: [] }, obsNet: {} };
+const DATA = { stationNames: [], stationCoords: [], storms: {}, pressure: {}, network: { wind: [], rain: [] }, obsNet: {}, tydbDamage: {} };
 let STORM_META = {};   // code -> {name, year}, from data/index.json (tiny, loaded up front)
 let STORM_ORDER = [];
 // JMA best-track "階級" (grade) codes:
@@ -584,6 +585,26 @@ async function loadPressureData(code){
     DATA.pressure[code] = null;
   }
   return DATA.pressure[code];
+}
+
+async function loadTydbDamage(code){
+  // Per-storm damage data scraped from 防災科研 TYDB (see
+  // scripts/fetch_tydb_damage.py) -- structured prefecture-level table
+  // plus a free-text summary. More accurate/complete than the older
+  // ranking-derived DAMAGE_INFO (data/damage_storm_codes.json), which
+  // only covered the top-204 storms by death toll and sometimes
+  // disagreed with TYDB's own numbers. Not every storm has a TYDB page,
+  // so a 404/missing file is cached as null.
+  if (Object.prototype.hasOwnProperty.call(DATA.tydbDamage, code)) return DATA.tydbDamage[code];
+  try {
+    const res = await fetch('data/tydb_damage/' + code + '.json');
+    if (!res.ok){ DATA.tydbDamage[code] = null; return null; }
+    const j = await res.json();
+    DATA.tydbDamage[code] = j.notFound ? null : j;
+  } catch (err) {
+    DATA.tydbDamage[code] = null;
+  }
+  return DATA.tydbDamage[code];
 }
 
 function setEntryVisible(entry, visible){
@@ -926,8 +947,59 @@ function updateModeNote(){
   note.style.display = '';
 }
 
-function updateDamageInfo(code){
+const DAMAGE_LABELS = {
+  dead_missing: ['死者・行方不明者', '人'],
+  dead: ['死者', '人'],
+  missing: ['行方不明者', '人'],
+  injured: ['負傷者', '人'],
+  destroyed: ['全壊', '棟'],
+  half_destroyed: ['半壊', '棟'],
+  washed_away: ['流失', '棟'],
+  burned: ['焼失', '棟'],
+  half_burned: ['半焼', '棟'],
+  partial_damage: ['一部破損', '棟'],
+  flooded_above_floor: ['床上浸水', '棟'],
+  flooded_below_floor: ['床下浸水', '棟'],
+  non_residential: ['非住家', '棟']
+};
+// Display order -- casualties first, then structure damage, then flooding.
+const DAMAGE_KEY_ORDER = ['dead_missing', 'dead', 'missing', 'injured', 'destroyed',
+  'half_destroyed', 'washed_away', 'burned', 'half_burned', 'partial_damage',
+  'flooded_above_floor', 'flooded_below_floor', 'non_residential'];
+
+async function updateDamageInfo(code){
   const el = document.getElementById('damage-info');
+  const myToken = selectToken; // abandon this render if a newer storm was selected meanwhile
+  const tydb = await loadTydbDamage(code);
+  if (myToken !== selectToken) return;
+
+  if (tydb && tydb.total){
+    const total = tydb.total;
+    const rows = DAMAGE_KEY_ORDER
+      .filter(function(k){ return total[k] !== null && total[k] !== undefined; })
+      .map(function(k){ return [DAMAGE_LABELS[k][0], total[k], DAMAGE_LABELS[k][1]]; });
+    if (!rows.length){
+      el.style.display = 'none';
+      return;
+    }
+    let html = '<div class="title">被害状況（防災科研 TYDB, 全国）</div>';
+    rows.forEach(function(r){
+      html += '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' +
+        Number(r[1]).toLocaleString('ja-JP') + ' ' + r[2] + '</span></div>';
+    });
+    if (tydb.weatherText){
+      // The free-text summary occasionally mentions a category the
+      // structured table doesn't break out (e.g. 焼失 for some storms) --
+      // shown as a note so nothing gets silently missed.
+      html += '<div class="note">' + tydb.weatherText + '</div>';
+    }
+    el.innerHTML = html;
+    el.style.display = '';
+    return;
+  }
+
+  // Fall back to the older ranking-derived figures (data/damage_storm_codes.json)
+  // for the few storms TYDB doesn't have a page/table for.
   const d = DAMAGE_INFO[code];
   if (!d){
     el.style.display = 'none';
