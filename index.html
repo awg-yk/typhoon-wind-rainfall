@@ -1021,6 +1021,13 @@ const DAMAGE_KEY_ORDER = ['dead_missing', 'dead', 'missing', 'injured', 'destroy
 function deathCount(prefRow){
   return (prefRow.dead_missing || 0) + (prefRow.dead || 0) + (prefRow.missing || 0);
 }
+function rowHasNonzero(row){
+  // TYDB can have a real page/table where every field is 0 -- a page
+  // exists but there's nothing to report. That must not count as "this
+  // storm has damage data" (would otherwise show a 被害 mode button that,
+  // once clicked, colors nothing).
+  return Object.keys(row).some(function(k){ return k !== 'pref' && k !== 'source' && (row[k] || 0) !== 0; });
+}
 function positive(prefRow, keys){
   return keys.some(function(k){ return (prefRow[k] || 0) > 0; });
 }
@@ -1120,7 +1127,7 @@ async function updateDamageInfo(code){
   const tydb = await loadTydbDamage(code);
   if (myToken !== selectToken) return;
 
-  const hasPrefData = !!(tydb && tydb.prefectures && tydb.prefectures.length);
+  const hasPrefData = !!(tydb && tydb.prefectures && tydb.prefectures.some(rowHasNonzero));
   renderDamageLayer(hasPrefData ? tydb.prefectures : []);
   setDamageModeAvailable(hasPrefData);
   if (displayMode === 'damage' && currentStormCode === code) map.addLayer(damageLayer);

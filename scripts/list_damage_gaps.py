@@ -35,12 +35,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def row_has_nonzero(row):
+    return any((row.get(k) or 0) != 0 for k in row if k not in ("pref", "source"))
+
+
 def has_real_damage_table(code):
+    # A storm can have a TYDB page and a "被害の状況" table that TYDB itself
+    # fills in as all-zeros (dead_missing/injured/destroyed/... every field
+    # 0) -- that page exists, but there is no actual damage to report, so
+    # it must not count as a "damage storm" here. ~400 of the 855 storms
+    # found by `fetch_tydb_damage.py --all` are exactly this case.
     p = ROOT / "data" / "tydb_damage" / f"{code}.json"
     if not p.exists():
         return False
     d = json.loads(p.read_text(encoding="utf-8"))
-    return bool(d.get("prefectures")) or bool(d.get("total"))
+    total = d.get("total")
+    if total and row_has_nonzero(total):
+        return True
+    return any(row_has_nonzero(row) for row in (d.get("prefectures") or []))
 
 
 def has_any_value(path):
