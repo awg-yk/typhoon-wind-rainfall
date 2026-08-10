@@ -332,7 +332,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
   <div id="body">
     <div id="leftpanel">
       <div id="filter-section">
-        <label><input type="checkbox" id="f-landfall">上陸・通過や被害のあった台風のみ</label>
+        <label><input type="checkbox" id="f-landfall" checked>上陸・通過や被害のあった台風のみ</label>
         <span id="filter-count"></span>
       </div>
 
@@ -889,12 +889,12 @@ function buildLegend(){
   } else {
     title.textContent = 'Wind Legend / 風の凡例（気象庁の風の強さの階級）';
     const stops = [
-      [3, '0-5 m/s', ''], [8, '5-10', ''],
+      [3, '0-5', ''], [8, '5-10', ''],
       [13,'10-15','やや強い風'], [18,'15-20','強い風'], [23,'20-25','非常に強い風'], [28,'25+','猛烈な風']
     ];
     stops.forEach(function(s){
       const jma = s[2] ? '<span class="jma-label">' + s[2] + '</span>' : '';
-      html += '<div class="row">' + arrowSVG(0, s[0], speedColor(s[0]), LEGEND_ICON_BOX) + '<span>' + s[1] + '</span>' + jma + '</div>';
+      html += '<div class="row">' + arrowSVG(0, s[0], speedColor(s[0]), LEGEND_ICON_BOX) + '<span>' + s[1] + ' m/s</span>' + jma + '</div>';
     });
   }
   // Isobars (JRA-3Q) are overlaid on top of wind/rain markers automatically
@@ -1655,6 +1655,11 @@ document.addEventListener('DOMContentLoaded', function(){
     buildLegend();
     wireFilterPanel();
     applyFilters(); // builds ACTIVE_ORDER/year list from the default filter state and selects the first match
+
+    // Default landing view: 2025's Typhoon 23 (NAKRI), if it's in the
+    // (default-checked) filtered set.
+    selectYear('2025');
+    if (ACTIVE_ORDER.includes('2523')) selectStorm('2523');
 
     document.getElementById('year-select').addEventListener('change', function(e){
       selectYear(e.target.value || null);
