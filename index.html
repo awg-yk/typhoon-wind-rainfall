@@ -938,7 +938,7 @@ function buildLegend(){
     CHOROPLETH_COLORS.forEach(function(c, i){
       html += '<div class="row">' + swatch(c) + '<span>' + (i === CHOROPLETH_COLORS.length - 1 ? '被害大' : (i === 0 ? '被害小' : '')) + '</span></div>';
     });
-    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">この台風内での相対比較（時系列ではなく合計値）</span></div>';
+    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">この台風内での相対比較（時系列ではなく、人的被害を重視した加重指標）</span></div>';
   } else {
     title.textContent = 'Wind Legend / 風の凡例（気象庁の風の強さの階級）';
     const stops = [
@@ -999,16 +999,28 @@ const DAMAGE_KEY_ORDER = ['dead_missing', 'dead', 'missing', 'injured', 'destroy
   'half_destroyed', 'washed_away', 'burned', 'half_burned', 'partial_damage',
   'flooded_above_floor', 'flooded_below_floor', 'non_residential'];
 
+// Weights for damageScore(), not a straight sum of every count -- human
+// casualties are typically far rarer than e.g. 床下浸水 (minor flooding)
+// but obviously matter more, so a plain sum lets flood counts drown out
+// deaths/injuries. Casualties are weighted heaviest, full/washed-away/
+// burned structure loss next, partial damage and flooding lightest.
+const DAMAGE_WEIGHTS = {
+  dead_missing: 100, dead: 100, missing: 100, injured: 20,
+  destroyed: 5, washed_away: 5, burned: 5,
+  half_destroyed: 2, half_burned: 2,
+  partial_damage: 1, flooded_above_floor: 1,
+  flooded_below_floor: 0.5, non_residential: 0.5
+};
+
 function damageScore(prefRow){
   // Single "how bad was it" number per prefecture, used only to rank/color
-  // the choropleth -- not shown as a value, so it's fine to just sum every
-  // damage count a storm's table happens to report (categories vary by
-  // storm, see HEADER_KEY_MAP in scripts/fetch_tydb_damage.py).
+  // the choropleth -- not shown as a value, so a weighted sum (see
+  // DAMAGE_WEIGHTS) is fine even though it isn't a real physical unit.
   let sum = 0;
   Object.keys(prefRow).forEach(function(k){
-    if (k === 'pref' || k === 'source') return;
     const v = prefRow[k];
-    if (typeof v === 'number') sum += v;
+    if (typeof v !== 'number') return;
+    sum += v * (DAMAGE_WEIGHTS[k] !== undefined ? DAMAGE_WEIGHTS[k] : 1);
   });
   return sum;
 }
