@@ -202,6 +202,7 @@ def fetch_storm_kind(session, code: str, kind: str, stations: List[dict], dry_ru
 
 
 def main():
+    global SLEEP_SEC
     ap = argparse.ArgumentParser()
     ap.add_argument("--codes", help="comma-separated storm codes, e.g. 1912,1915")
     ap.add_argument("--landfall-only", action="store_true",
@@ -210,8 +211,15 @@ def main():
                           "database -- see data/damage_storm_codes.json -- even if best-track "
                           "landfall detection didn't flag it)")
     ap.add_argument("--kind", default="wind,rain", help="wind,rain or just one")
+    ap.add_argument("--sleep", type=float, default=SLEEP_SEC,
+                     help=f"seconds to wait between batch requests (default {SLEEP_SEC}); "
+                          "also scales the retry backoff. obsdl has no documented rate limit "
+                          "-- this exists to be polite -- so lowering it (e.g. 1.0 or 0.5) is "
+                          "usually safe if a run is going too slowly, but raise it back up if "
+                          "you start seeing more FAILED / non-CSV-response retries")
     ap.add_argument("--dry-run", action="store_true", help="print the request plan without fetching")
     args = ap.parse_args()
+    SLEEP_SEC = args.sleep
 
     network = load_network()
     kinds = [k.strip() for k in args.kind.split(",") if k.strip() in ("wind", "rain")]
