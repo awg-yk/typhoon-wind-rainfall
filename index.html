@@ -934,12 +934,18 @@ function buildLegend(){
       return '<svg width="' + LEGEND_ICON_BOX + '" height="' + LEGEND_ICON_BOX + '"><rect x="1" y="1" width="' +
         (LEGEND_ICON_BOX-2) + '" height="' + (LEGEND_ICON_BOX-2) + '" fill="' + color + '" stroke="#0a1420"/></svg>';
     };
+    const tierLabels = [
+      '浸水（床上/床下）1棟以上、または非住家1棟以上',
+      '一部破損 1棟以上',
+      '半壊 1棟以上',
+      '全壊 1棟以上、または負傷者 1人以上',
+      '死者・行方不明者 1人以上'
+    ];
     html += '<div class="row">' + swatch(CHOROPLETH_NO_DATA) + '<span>被害報告なし</span></div>';
-    CHOROPLETH_GRADED_COLORS.forEach(function(c, i){
-      html += '<div class="row">' + swatch(c) + '<span>' + (i === 0 ? '被害小（死者・行方不明者0人）' : '') + '</span></div>';
+    CHOROPLETH_COLORS.forEach(function(c, i){
+      html += '<div class="row">' + swatch(c) + '<span>' + tierLabels[i] + '</span></div>';
     });
-    html += '<div class="row">' + swatch(CHOROPLETH_FATAL_COLOR) + '<span>死者・行方不明者 1人以上</span></div>';
-    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">死者・行方不明者がいる県は件数によらず最も濃い色。それ以外はこの台風内での相対比較（時系列ではなく、負傷者・建物被害等を重視した加重指標）</span></div>';
+    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">各都道府県は、上記のうち該当する最も重い区分の色になります（件数の多寡は問いません）</span></div>';
   } else {
     title.textContent = 'Wind Legend / 風の凡例（気象庁の風の強さの階級）';
     const stops = [
@@ -1000,73 +1006,47 @@ const DAMAGE_KEY_ORDER = ['dead_missing', 'dead', 'missing', 'injured', 'destroy
   'half_destroyed', 'washed_away', 'burned', 'half_burned', 'partial_damage',
   'flooded_above_floor', 'flooded_below_floor', 'non_residential'];
 
-// A death/missing person is categorically worse than any amount of
-// property damage, and counts of 1-2 are common -- a weighted-sum scale
-// (as this used to be) still let a prefecture with zero deaths but heavy
-// flooding outrank one with a handful of deaths. So: any prefecture with
-// at least one death/missing person gets the single most-severe color,
-// full stop. Everything else is graded (via DAMAGE_WEIGHTS below) among
-// the remaining, lighter colors.
 function deathCount(prefRow){
   return (prefRow.dead_missing || 0) + (prefRow.dead || 0) + (prefRow.missing || 0);
 }
-
-// Weights for the non-fatal grading, not a straight sum of every count --
-// counts vary wildly by category (a few dozen 全壊 vs. thousands of
-// 床下浸水), so injuries and structure loss are weighted well above mere
-// flooding.
-const DAMAGE_WEIGHTS = {
-  injured: 20,
-  destroyed: 5, washed_away: 5, burned: 5,
-  half_destroyed: 2, half_burned: 2,
-  partial_damage: 1, flooded_above_floor: 1,
-  flooded_below_floor: 0.5, non_residential: 0.5
-};
-
-function damageScore(prefRow){
-  // Non-fatal severity score, used only to grade/color prefectures that
-  // had zero deaths (see deathCount() above) -- not shown as a value, so
-  // a weighted sum (DAMAGE_WEIGHTS) is fine even though it isn't a real
-  // physical unit.
-  let sum = 0;
-  Object.keys(DAMAGE_WEIGHTS).forEach(function(k){
-    const v = prefRow[k];
-    if (typeof v === 'number') sum += v * DAMAGE_WEIGHTS[k];
-  });
-  return sum;
+function positive(prefRow, keys){
+  return keys.some(function(k){ return (prefRow[k] || 0) > 0; });
 }
 
-// Sequential low->high severity scale, independent of the JMA wind/rain
-// scales (this is a relative "how bad, compared to this storm's own worst
-// prefecture" measure, not an absolute meteorological intensity). The
-// last color is reserved exclusively for "at least one death/missing" --
-// non-fatal prefectures are graded across the other four.
+// Fixed 5-tier rule (not a relative/weighted score) -- each tier is "at
+// least 1 of these categories occurred", checked highest-severity first,
+// per exact thresholds specified by the project owner:
+//   赤紫 tier4: >=1 死者・行方不明者
+//   赤   tier3: >=1 全壊(destroyed/washed_away/burned的な全損) or >=1 負傷者
+//   濃橙 tier2: >=1 半壊(half_destroyed/half_burned)
+//   橙   tier1: >=1 一部破損
+//   黄   tier0: >=1 浸水(床上/床下) or 非住家
+function damageTier(prefRow){
+  if (deathCount(prefRow) > 0) return 4;
+  if (positive(prefRow, ['destroyed', 'washed_away', 'burned']) || (prefRow.injured || 0) > 0) return 3;
+  if (positive(prefRow, ['half_destroyed', 'half_burned'])) return 2;
+  if ((prefRow.partial_damage || 0) > 0) return 1;
+  if (positive(prefRow, ['flooded_above_floor', 'flooded_below_floor', 'non_residential'])) return 0;
+  return -1; // nothing reported
+}
+
+// 黄(浸水/非住家) -> 橙(一部破損) -> 濃橙(半壊) -> 赤(全壊/負傷) -> 赤紫(死者・行方不明者)
 const CHOROPLETH_COLORS = ['#ffe9a8', '#ffbf5f', '#ff8a3d', '#e8482f', '#8f1f3f'];
-const CHOROPLETH_FATAL_COLOR = CHOROPLETH_COLORS[CHOROPLETH_COLORS.length - 1];
-const CHOROPLETH_GRADED_COLORS = CHOROPLETH_COLORS.slice(0, -1);
 const CHOROPLETH_NO_DATA = '#2a3542';
 
 function computeDamageScores(prefectures){
-  // {byName: {"静岡県": {fatal, score}, ...}, maxScore: number (over
-  // non-fatal prefectures only)}. Shared by all damage-choropleth
-  // renderers so they always agree.
+  // {byName: {"静岡県": tier (0-4, or -1 for none), ...}}. Shared by all
+  // damage-choropleth renderers so they always agree.
   const byName = {};
-  let maxScore = 0;
   (prefectures || []).forEach(function(row){
-    const fatal = deathCount(row) > 0;
-    const score = damageScore(row);
-    byName[row.pref] = { fatal: fatal, score: score };
-    if (!fatal && score > maxScore) maxScore = score;
+    byName[row.pref] = damageTier(row);
   });
-  return { byName: byName, maxScore: maxScore };
+  return { byName: byName };
 }
 
-function choroplethColor(entry, maxScore){
-  if (!entry) return CHOROPLETH_NO_DATA;
-  if (entry.fatal) return CHOROPLETH_FATAL_COLOR;
-  if (!entry.score || entry.score <= 0 || !maxScore) return CHOROPLETH_NO_DATA;
-  const idx = Math.min(CHOROPLETH_GRADED_COLORS.length - 1, Math.floor((entry.score / maxScore) * CHOROPLETH_GRADED_COLORS.length));
-  return CHOROPLETH_GRADED_COLORS[idx];
+function choroplethColor(tier){
+  if (tier === undefined || tier === null || tier < 0) return CHOROPLETH_NO_DATA;
+  return CHOROPLETH_COLORS[tier];
 }
 
 function prefectureTooltipHTML(name, row){
@@ -1086,17 +1066,14 @@ function renderDamageLayer(prefectures){
   damageLayer.clearLayers();
   if (!PREFECTURES_GEOJSON || !prefectures || !prefectures.length) return;
   const scores = computeDamageScores(prefectures);
-  const hasAnyDamage = Object.keys(scores.byName).some(function(name){
-    const e = scores.byName[name];
-    return e.fatal || e.score > 0;
-  });
+  const hasAnyDamage = Object.keys(scores.byName).some(function(name){ return scores.byName[name] >= 0; });
   if (!hasAnyDamage) return;
   const rowByName = {};
   prefectures.forEach(function(row){ rowByName[row.pref] = row; });
   L.geoJSON(PREFECTURES_GEOJSON, {
     style: function(feature){
-      const entry = scores.byName[feature.properties.name];
-      return { color: '#0a1420', weight: 1, fillColor: choroplethColor(entry, scores.maxScore), fillOpacity: 0.72 };
+      const tier = scores.byName[feature.properties.name];
+      return { color: '#0a1420', weight: 1, fillColor: choroplethColor(tier), fillOpacity: 0.72 };
     },
     onEachFeature: function(feature, layer){
       layer.bindTooltip(prefectureTooltipHTML(feature.properties.name, rowByName[feature.properties.name]), { sticky: true });
