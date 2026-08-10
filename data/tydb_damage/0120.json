@@ -1,0 +1,16 @@
+{
+ "title": "2001年 台風第20号 (Krosa) : TY0120",
+ "weatherText": "マリアナ諸島近海で発生後北西に進み、その後、北東に向きを変えた。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

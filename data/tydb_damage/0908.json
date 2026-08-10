@@ -1,0 +1,29 @@
+{
+ "title": "2009年 台風第8号 (Morakot) : TY0908",
+ "weatherText": "8月3日に日本の南海上で発生し、発達しながら北西から西に進み、6日夜から7日朝にかけて先島諸島に接近した。8日には台湾北部に上陸し、10日には北寄りに進路を変え、中国南岸に上陸した。台風8号は台湾、中国に大きな被害をもたらした。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成22年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

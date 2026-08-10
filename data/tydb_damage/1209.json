@@ -1,0 +1,16 @@
+{
+ "title": "2012年 台風第9号 (Saola) : TY1209",
+ "weatherText": "フィリピンの東海上で台風となり、北上後、先島諸島周辺を通過後、中国大陸に上陸。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

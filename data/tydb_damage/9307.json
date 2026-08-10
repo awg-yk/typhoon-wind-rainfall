@@ -1,0 +1,65 @@
+{
+ "title": "1993年 台風第7号 (Robyn) : TY9307",
+ "weatherText": "8月1日にトラック島の東海上で発生し、9日には大型で非常に強い勢力で奄美大島付近を通過し、10日にほぼ同じ勢力で長崎県平戸島付近を通過した。その後、次第に勢力を弱めながら日本海を北東に進み、11日に同海域で温帯低気圧に変わった。死者9人、負傷者50人、全壊・流失39棟、半壊・一部破損234棟、床上浸水619棟、床下浸水1252棟（情報元：気象要覧第1128号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "福岡市",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 13,
+   "destroyed": 21,
+   "half_destroyed": 9,
+   "partial_damage": 132,
+   "flooded_above_floor": 592,
+   "flooded_below_floor": 855,
+   "non_residential": 310,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 5,
+   "injured": 14,
+   "destroyed": 26,
+   "half_destroyed": 47,
+   "partial_damage": 988,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 329,
+   "non_residential": 212,
+   "source": "鹿児島県｢平成5年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 8,
+  "injured": 32,
+  "destroyed": 47,
+  "half_destroyed": 57,
+  "partial_damage": 1127,
+  "flooded_above_floor": 616,
+  "flooded_below_floor": 1184,
+  "non_residential": 522,
+  "source": ""
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "title": "1979年 台風第10号 (Irving) : TY7910",
+ "weatherText": "8月7日朝マリアナ諸島の西方海上で発生した台風は、14日遅く石垣島と宮古島との間を通って東シナ海に進んだ。台風はその後、17日に朝鮮半島南西部に上陸して温帯低気圧となった。死者4人、負傷者4人、浸水1290棟（気象要覧第960号）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 88,
+   "flooded_below_floor": 1192,
+   "non_residential": 27,
+   "source": "静岡県",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 88,
+  "flooded_below_floor": 1192,
+  "non_residential": 27,
+  "source": ""
+ }
+}

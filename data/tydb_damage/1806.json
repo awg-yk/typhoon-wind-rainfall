@@ -1,0 +1,16 @@
+{
+ "title": "2018年 台風第6号 (Gaemi) : TY1806",
+ "weatherText": "台湾、沖縄の南を通過後、本州の南海上を東進。沖縄本島では大雨や強風。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

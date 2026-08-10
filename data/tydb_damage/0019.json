@@ -1,0 +1,29 @@
+{
+ "title": "2000年 台風第19号 (Yagi) : TY0019",
+ "weatherText": "10月21日にマリアナ諸島の北海上で発生し、24日に宮古島の南東海上で強い勢力になった。25日に宮古島と石垣島の間を通過し、26～28日にかけて宮古島の北の海上で時計回りに一回転しながら勢力を弱め、27日に同海域で熱帯低気圧になった。半壊・一部破損4棟（情報元：気象要覧第1214号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 4,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1214号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 4,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

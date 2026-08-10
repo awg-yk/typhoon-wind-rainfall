@@ -1,0 +1,41 @@
+{
+ "title": "1970年 台風第11号 (Billie) : TY7011",
+ "weatherText": "8月22日15時フィリピンの東およそ1000kmの海上にあった熱帯低気圧は，24日12時に台風となって北上した。27日3時には南大東島付近，28日12時ころ奄美大島の南西部をかすめて東シナ海に出て，30日昼過ぎ済州島の西側を通って朝鮮半島の西海上を北上した。8月27日3時の中心気圧960hPa，最大風速45m/sであった。 負傷者4人、全壊26棟、半壊49棟、一部破損91棟、床上浸水27棟、床下浸水212棟（気象要覧第852号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第852号（被害状況より）",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 34,
+   "half_destroyed": 121,
+   "partial_damage": 85,
+   "flooded_above_floor": 40,
+   "flooded_below_floor": 460,
+   "non_residential": 163,
+   "source": "鹿児島県「昭和45年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 34,
+  "half_destroyed": 124,
+  "partial_damage": 85,
+  "flooded_above_floor": 40,
+  "flooded_below_floor": 460,
+  "non_residential": 163,
+  "source": ""
+ }
+}

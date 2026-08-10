@@ -1,0 +1,29 @@
+{
+ "title": "1988年 台風第4号 (Thad) : TY8804",
+ "weatherText": "死者4人、負傷者16人、全壊・流失5棟、半壊・一部破損9棟、床上浸水94棟、床下浸水1012棟（情報元：気象要覧第1066号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 51,
+   "non_residential": null,
+   "source": "鹿児島県「昭和63年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 3,
+  "flooded_below_floor": 51,
+  "non_residential": 0,
+  "source": ""
+ }
+}

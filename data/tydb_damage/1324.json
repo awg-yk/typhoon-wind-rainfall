@@ -1,0 +1,113 @@
+{
+ "title": "2013年 台風第24号 (Danas) : TY1324",
+ "weatherText": "10月4日にマリアナ諸島で発生し、7日には非常に強い台風となり、与論島付近を通過した。8日には強い台風となり、長崎県対馬市付近を通過して北東に進んだ。9日には日本海を北東に進み、石川県能登半島沖で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "石川県危機対策課",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "富山県「平成２５年版富山県消防防災年報」",
+   "pref": "富山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "鳥取県「平成２５年消防防災年報」",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "岡山県「平成２５年災害年報」",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "福岡県「平成２５年災害年報」",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 4,
+   "source": "長崎県「平成２６年度版消防防災年報」",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 38,
+   "half_destroyed": 188,
+   "partial_damage": 839,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 260,
+   "source": "鹿児島県「平成２５年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県防災危機管理課",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 6,
+  "destroyed": 38,
+  "half_destroyed": 189,
+  "partial_damage": 850,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 265,
+  "source": ""
+ }
+}

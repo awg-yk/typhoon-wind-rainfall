@@ -1,0 +1,16 @@
+{
+ "title": "2001年 台風第9号 (Man-yi) : TY0109",
+ "weatherText": "北北西に進みながら小笠原諸島近海で北東に向きを変え北へ移動した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

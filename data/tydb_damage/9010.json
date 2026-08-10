@@ -1,0 +1,29 @@
+{
+ "title": "1990年 台風第10号 (Vernon) : TY9010",
+ "weatherText": "7月28日に沖ノ鳥島の南西海上で発生し、その後北上して本州付近に接近してきたが、日本付近に勢力の強い高気圧があったため、伊豆諸島付近で進路を東に変え遠ざかり、10日には日本のはるか東で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 2,
+  "source": ""
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "title": "1963年 台風第19号 (Lola) : TY6319",
+ "weatherText": "10月6日9時にマーシャル群島に発生した熱帯低気圧は西進し，12日9時には進路を東北東に変え，15時に台風となった。その後台風は13日21時に進路を北北西に変え，17日15時に沖ノ鳥島付近に達した。以後進路を北，さらに北北東に変えて，20日9時には関東東方海上で温帯低気圧となった。10月17日13時の飛行機観測では，中心示度934hPa，中心付近の最大風速77m/sを示した。このころが台風の最盛期であった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第770号",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 14,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第770号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 14,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

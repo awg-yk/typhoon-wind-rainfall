@@ -1,0 +1,65 @@
+{
+ "title": "1970年 台風第6号 (No Name) : TY7006",
+ "weatherText": "九州南海上にあった熱帯低気圧は7月30日9時に台風となって北西に進んだが18時頃には衰弱し，再び熱帯低気圧となった。死者4人、負傷者2人、全壊2棟、一部破損10棟、床上浸水6414棟、床下浸水36254棟（気象要覧第851号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "気象要覧第851号",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 57,
+   "non_residential": null,
+   "source": "気象要覧第851号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6160,
+   "flooded_below_floor": 34450,
+   "non_residential": 2,
+   "source": "気象要覧第851号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": 10,
+   "flooded_above_floor": 254,
+   "flooded_below_floor": 1741,
+   "non_residential": 7,
+   "source": "気象要覧第851号",
+   "pref": "三重県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 2,
+  "destroyed": 2,
+  "half_destroyed": 0,
+  "partial_damage": 10,
+  "flooded_above_floor": 6414,
+  "flooded_below_floor": 36254,
+  "non_residential": 9,
+  "source": ""
+ }
+}

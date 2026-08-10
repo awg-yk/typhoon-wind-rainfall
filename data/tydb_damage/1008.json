@@ -1,0 +1,16 @@
+{
+ "title": "2010年 台風第8号 (Namtheun) : TY1008",
+ "weatherText": "東シナ海で発生後、台風6号にすぐに吸収され消滅。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

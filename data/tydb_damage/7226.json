@@ -1,0 +1,53 @@
+{
+ "title": "1972年 台風第26号 (Olga) : TY7226",
+ "weatherText": "マリアナ諸島方面から北上してきた台風は，10月29日夜には関東の東方海上を通過し，静岡県では29日から30日にかけて波浪が高くなった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": 1,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 3,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第878号",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第878号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 5,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 5,
+  "non_residential": 1,
+  "source": ""
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "title": "1975年 台風第13号 (Cora) : TY7513",
+ "weatherText": "10月4日朝沖縄南東海上で進路を北東に変えた台風は，奄美諸島に風雨による被害を与えながら次第に東北東に向きを変えて進んだ。一方，5日朝，東北地方北部から日本海沿岸沿いに南西にのびていた秋雨前線が東進し，この前線の雨域と台風の雨域とが合わさって，5日朝から夜にかけて東海地方から関東地方で大雨となった。浸水2024棟、全壊・一部破損2079棟（気象要覧第914号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 50,
+   "non_residential": null,
+   "source": "茨城県消防年報昭和50年",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 349,
+   "non_residential": null,
+   "source": "気象要覧第914号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 7,
+   "flooded_below_floor": 32,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 85,
+   "destroyed": 285,
+   "half_destroyed": 524,
+   "partial_damage": 1268,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 383,
+   "non_residential": 373,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 8,
+   "flooded_below_floor": 216,
+   "non_residential": null,
+   "source": "気象要覧第914号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 30,
+   "flooded_below_floor": 350,
+   "non_residential": null,
+   "source": "気象要覧第914号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 30,
+   "flooded_below_floor": 370,
+   "non_residential": null,
+   "source": "気象要覧第914号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 30,
+   "non_residential": null,
+   "source": "気象要覧第914号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 8,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "鹿児島県「昭和50年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 87,
+  "destroyed": 285,
+  "half_destroyed": 524,
+  "partial_damage": 1276,
+  "flooded_above_floor": 89,
+  "flooded_below_floor": 1780,
+  "non_residential": 375,
+  "source": ""
+ }
+}

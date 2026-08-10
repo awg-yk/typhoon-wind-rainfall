@@ -1,0 +1,53 @@
+{
+ "title": "1960年 台風第14号 (Bess) : TY6014",
+ "weatherText": "8月15日21時に硫黄島の東南東の洋上に発生した熱帯低気圧は，16日9時に台風となった。この台風は17日昼頃まで同じ海域に停滞状態を続けた。17日午後から進路を北西にとり，18日21時には父島の南方洋上に達した。 その後台風は父島の西方で進路を北北西から北に変え，19日21時前に鳥島の西方を通過，20日昼頃八丈島の西に達した。台風はやや速度を早めて，同日夜房総沖を北東に進み，21時ごろには三陸沖に達した。台風はその後東から東南東に進んだ。22日夜半過ぎから23日朝にかけて反転して進路を西から西北西に変え衰え始めた。25日午後には三陸沖およそ400kmの洋上に達し，その後北上を続け，26日15時に根室の東北東洋上で温帯低気圧になった。8月16日9時，中心気圧990hPa，最大風速30m/s。18日21時，中心気圧985hPa，中心付近の最大風速33m/s。20日昼頃，中心気圧980hPa，風速25m/s以上の暴風半径は50kmであった。20日21時以後の東進時の暴風半径は200〜250ｋｍ。25日午後，中心気圧986hPa，最大風速25m/sとなった。 負傷者4人、全壊4棟、半壊4棟、流失2棟、一部破損13棟、床上浸水691棟、床下浸水5405棟（気象要覧第732号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 21,
+   "non_residential": 3,
+   "source": "気象要覧第732号",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 5,
+   "half_destroyed": 3,
+   "partial_damage": 12,
+   "flooded_above_floor": 691,
+   "flooded_below_floor": 3091,
+   "non_residential": 27,
+   "source": "気象要覧第732号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2293,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 6,
+  "half_destroyed": 3,
+  "partial_damage": 13,
+  "flooded_above_floor": 691,
+  "flooded_below_floor": 3112,
+  "non_residential": 30,
+  "source": ""
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "title": "1956年 台風第6号 (Wanda) : TY5606",
+ "weatherText": "7月25日9時サイパン島付近に発生した熱帯低気圧は、27日早朝北緯20度線に達するまで発達しながら北上し、その後急発達して進路を西に変えた。27日9時から台風として扱われ、28日3時にはWandaと命名された。台風はさらに発達しながら西進を続け、28日夜、沖ノ鳥島の東約300kmの沖合いを通り、30日15時頃ラサ島の南南東260kmに達した。8月1日5時ごろ台風の中心は宮古島に最も接近し、同島の北東約50km沖合いを通って東シナ海に入ったが、そのころから進路を北西に変えた。台風は2日3時過ぎに中国大陸に上陸し、4日9時ころ温低化した。7月27日12時5分の飛行機観測：中心示度997hPa、中心付近の最大風速23m/s。 28日夜の中心示度960hPa。 30日15時頃、中心示度915hPa（最低気圧）、中心付近の最大風速75m/s、25m/s以上の暴風半径600km。 負傷者1人、全壊73棟、半壊110棟、流失338棟、一部破損71棟（気象要覧第683号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 3,
+   "half_destroyed": 39,
+   "partial_damage": 71,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 88,
+   "source": "気象要覧第683号",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 408,
+   "half_destroyed": 71,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 9,
+   "source": "気象要覧第683号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 3,
+  "half_destroyed": 39,
+  "partial_damage": 71,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 88,
+  "source": ""
+ }
+}

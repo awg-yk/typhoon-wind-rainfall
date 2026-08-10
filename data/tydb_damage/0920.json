@@ -1,0 +1,29 @@
+{
+ "title": "2009年 台風第20号 (Lupit) : TY0920",
+ "weatherText": "10月16日にフィリピンの東海で発生し、24日から26日にかけて沖縄県の南東を通過した。その後、日本の南海上を北東に進み、27日に北海道の東海上で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "沖縄県「平成22年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 1,
+  "source": ""
+ }
+}

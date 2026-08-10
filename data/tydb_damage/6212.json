@@ -1,0 +1,41 @@
+{
+ "title": "1962年 台風第12号 (Ruth) : TY6212",
+ "weatherText": "8月12日9時，トラック島北方の北緯10度，東経151度付近の洋上に発生した熱帯低気圧は北西に進み，14日9時にグアム島の北東洋上で台風となった。台風は北北西に進み16日15時硫黄島の南東460kmの北緯22.5度，東経145.0度に達した。台風は18日9時には鳥島の東北東100kmの洋上に達し，進路を北に変え，20日朝八丈島の東80kmの海上に達した。その後進路を北北東に転じて，20日夜半銚子の東130kmの海上を通過した。その後進路を北東にとり，21日15時小名浜の東260kmの海上を北東進し，22日朝三陸沖に去り，23日15時温帯低気圧となった。8月14日9時の中心気圧1004hPa。16日15時，中心気圧915hPa，最大風速75m/s，風速25m/s以上の暴風半径200km。20日夜半，中心気圧960hPa，最大風速40m/sを示した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 32,
+   "non_residential": 4,
+   "source": "気象要覧第756号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 32,
+  "non_residential": 4,
+  "source": ""
+ }
+}

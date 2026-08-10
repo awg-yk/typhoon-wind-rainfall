@@ -1,0 +1,29 @@
+{
+ "title": "2012年 台風第5号 (Talim) : TY1205",
+ "weatherText": "6月18日に南シナ海で発生し東にゆっくり進み、20日には台湾海峡通過後、北東に進み、21日には東シナ海で熱帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 1,
+   "source": "鹿児島県「平成２４年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 4,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 1,
+  "non_residential": 1,
+  "source": ""
+ }
+}

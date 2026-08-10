@@ -1,0 +1,29 @@
+{
+ "title": "1963年 台風第15号 (Hester) : TY6315",
+ "weatherText": "8日3時にガム島の東約700キロに発生した熱帯低気圧は、西ないし西北西進して、11日15時にはヤップ島の西北西約700kmにて、台風となった。その後台風は北に進路をとり、13日9時には南大東島付近に達した。以後進路を北から北東、更に東北東に変えて、北太平洋に去った。13日9時の台風の中心気圧は995hPa、中心付近の最大風速は20m/sで、この台風の最盛期であった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 9,
+   "partial_damage": null,
+   "flooded_above_floor": 124,
+   "flooded_below_floor": 201,
+   "non_residential": 3,
+   "source": "宮崎市",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 9,
+  "partial_damage": 0,
+  "flooded_above_floor": 124,
+  "flooded_below_floor": 201,
+  "non_residential": 3,
+  "source": ""
+ }
+}

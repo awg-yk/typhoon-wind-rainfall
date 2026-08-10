@@ -1,0 +1,41 @@
+{
+ "title": "2010年 台風第7号 (Kompasu) : TY1007",
+ "weatherText": "8月29日に沖縄の南東海上で台風となり、発達しながら北西に進み、31日に沖縄本島北部を通過した。1日には九州西方の東シナ海を北北西に進み、2日に朝鮮半島に上陸・横断した後、日本海を北東に進み、3日に日本海で熱帯低気圧になった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "鹿児島県「平成２２年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": 2,
+   "half_destroyed": 6,
+   "partial_damage": 45,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 37,
+   "source": "沖縄県「平成２３年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 5,
+  "destroyed": 2,
+  "half_destroyed": 6,
+  "partial_damage": 51,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 37,
+  "source": ""
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "title": "2013年 台風第4号 (Leepi) : TY1304",
+ "weatherText": "フィリピンの東で発生し、北上後、宮古島付近を通過した、東シナ海へ抜けた後、温帯低気圧となり、九州を横断。梅雨前線とともに山口県などに大雨をもたらした。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

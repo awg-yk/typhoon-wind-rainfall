@@ -1,0 +1,29 @@
+{
+ "title": "1961年 台風第26号 (Billie) : TY6126",
+ "weatherText": "10月18日15時ポナペ島の北東に発生した熱帯低気圧は、発達しながら西進し、24日3時台風となった。進路を北西から北に変えて、26日21時には硫黄島の南南東を通過し、三陸沖を通って千島列島中部に達した。30日9時にはカムチャッカ半島に上陸し、温帯低気圧となった。その後北北東に進みシベリア東部で消滅した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 3,
+   "non_residential": 56,
+   "source": "岩手県",
+   "pref": "岩手県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 3,
+  "non_residential": 56,
+  "source": ""
+ }
+}

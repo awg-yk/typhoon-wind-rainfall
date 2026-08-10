@@ -1,0 +1,41 @@
+{
+ "title": "1959年 台風第20号 (Emma) : TY5920",
+ "weatherText": "11月1日9時，マーシャル諸島クェゼリン島の南南西250kmの洋上で発生した熱帯低気圧は，西北西に進んだ。7日3時にグアム島西方約250kmで台風とされた。台風は10日9時にはルソン島の東方約800kmに達し，次第に進路が西から北に変わり，11日から12日にかけてバシー海峡東方海域を北に進んだ。 台風は12日昼頃から進路を次第に北東に変え，同日21時には宮古島の東方約50kmの海上を通過した。その後東北東に進み13日9時には沖縄東方約150kmに海上に達した。14日9時には鳥島の東方約300kmの洋上に達し温帯低気圧となった。11月10日9時，中心気圧985hPa，中心付近の最大風速40m/s以上。11日から12日にかけて，中心気圧960hPa（飛行機観測では956hPaが最低），最大風速65m/s，風速25m/sの暴風域は中心から半径400kmにもなった（この頃が最盛期）。この頃モンゴル付近に1040hPa以上の高気圧が存在し，台風の進行に伴い南西諸島及び台湾南東方海域では気圧傾度がかなり急峻となり，暴風雨域が非常に広く,かつ強くなった。 死者・行方不明2人、負傷者5人、全壊103棟、半壊225棟、床上浸水97棟、床下浸水1075棟（気象要覧第723号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 8,
+   "half_destroyed": 47,
+   "partial_damage": null,
+   "flooded_above_floor": 97,
+   "flooded_below_floor": 1075,
+   "non_residential": 47,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 4,
+   "destroyed": 95,
+   "half_destroyed": 178,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 528,
+   "source": "気象要覧第723号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 5,
+  "destroyed": 103,
+  "half_destroyed": 225,
+  "partial_damage": 0,
+  "flooded_above_floor": 97,
+  "flooded_below_floor": 1075,
+  "non_residential": 575,
+  "source": ""
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "title": "2008年 台風第13号 (Sinlaku) : TY0813",
+ "weatherText": "9月9日にフィリピンの東海上で発生し、発達しながらゆっくりと北上し、12日には八重山地方の南海上を進み、14日には台湾北部に上陸した。16日には台湾の北で東に進路を変え、18日夜には九州南部を通過し、四国南部から東海地方南部を経て、20日には関東の南東海上を東北東に進み、21日には日本の東海上で温帯低気圧に変わった。石垣市川平では12日の日降水量が観測史上最多の444.5ミリとなった。与那国島では13日の日降水量が観測史上最多の765ミリとなった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "静岡県災害対策室",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 31,
+   "flooded_below_floor": 372,
+   "non_residential": 3,
+   "source": "宮崎県「平成２０年災害の記録」（災異誌第44号）",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 2,
+   "partial_damage": 5,
+   "flooded_above_floor": 17,
+   "flooded_below_floor": 186,
+   "non_residential": null,
+   "source": "鹿児島県「平成20年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 2,
+   "half_destroyed": 6,
+   "partial_damage": 62,
+   "flooded_above_floor": 36,
+   "flooded_below_floor": 31,
+   "non_residential": 26,
+   "source": "沖縄県「平成２１年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 7,
+  "half_destroyed": 8,
+  "partial_damage": 67,
+  "flooded_above_floor": 85,
+  "flooded_below_floor": 589,
+  "non_residential": 29,
+  "source": ""
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "title": "2015年 台風第13号 (Soudelor) : TY1513",
+ "weatherText": "8月2日12時から24時間に中心気圧が45ヘクトパスカル以上低下し、中心気圧900hPa、最大風速60メートルの猛烈な台風に発達。非常に強い勢力を保って沖縄の南に達し、台湾に上陸した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

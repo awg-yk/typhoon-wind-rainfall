@@ -1,0 +1,16 @@
+{
+ "title": "2018年 台風第18号 (Rumbia) : TY1818",
+ "weatherText": "沖縄周辺で台風となり中国大陸へ上陸。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

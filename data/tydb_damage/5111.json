@@ -1,0 +1,137 @@
+{
+ "title": "1951年 台風第11号 (Marge) : TY5111",
+ "weatherText": "8月10日21時グアム島の南東海上に発生した熱帯低気圧は，北西に進行した。11日7時52分の飛行機観測により台風（Tropical Storm）として取り扱われるようになり，Margeと命名された。11日21時には台風（Typhoon）となった。台風は西進し，13日午前にはグワラ島はるか西方に達し北ないし北西に転向した。18日9時には沖縄近海に達して東シナ海を北西進した。21日夜には上海沖において北東に転向し，23日9時頃朝鮮半島南西端を通過し，24日9時にはウラジオ付近に達した。死者・行方不明4人、負傷者11人、全壊23棟、半壊40棟、流失1棟、一部破損2棟、床上浸水37棟、床下浸水585棟（気象要覧第624号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 12,
+   "non_residential": 3,
+   "source": "気象要覧第624号",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "気象要覧第624号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 7,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第624号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 125,
+   "non_residential": null,
+   "source": "気象要覧第624号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 17,
+   "flooded_below_floor": 22,
+   "non_residential": 1,
+   "source": "気象要覧第624号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 20,
+   "non_residential": null,
+   "source": "気象要覧第624号",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 11,
+   "destroyed": 9,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 44,
+   "non_residential": 27,
+   "source": "気象要覧第624号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 8,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 43,
+   "non_residential": 19,
+   "source": "気象要覧第624号",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": 1,
+   "source": "気象要覧第624号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": 2,
+   "destroyed": 315,
+   "half_destroyed": 978,
+   "partial_damage": null,
+   "flooded_above_floor": 16,
+   "flooded_below_floor": 311,
+   "non_residential": 2226,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 13,
+  "destroyed": 342,
+  "half_destroyed": 982,
+  "partial_damage": 2,
+  "flooded_above_floor": 37,
+  "flooded_below_floor": 585,
+  "non_residential": 2277,
+  "source": ""
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "title": "2010年 台風第14号 (Chaba) : TY1014",
+ "weatherText": "10月24日にフィリピンの東で発生し、28日には沖縄地方、29日には奄美地方の東海上を北東に進んだ。30日には四国沖から紀伊半島沖、房総半島沖に進み、日本の東海上で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "神奈川県安全防災局",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 18,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "静岡県",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "鹿児島県「平成２２年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成２３年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 27,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 4,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 4,
+  "source": ""
+ }
+}

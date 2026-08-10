@@ -1,0 +1,29 @@
+{
+ "title": "2001年 台風第1号 (Cimaron) : TY0101",
+ "weatherText": "5月11日にルソン島の西海上で発生し、13日に台湾の南東海上に進んだ後、勢力を弱めながら北東に進み、14日に沖縄本島の北海上に達した。その後、進路を東に変え、14日に沖縄本島の北東海上で温帯低気圧に変わった。床上浸水1棟、床下浸水4棟（情報元：気象要覧第1221号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "気象要覧第1221号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 4,
+  "non_residential": 0,
+  "source": ""
+ }
+}

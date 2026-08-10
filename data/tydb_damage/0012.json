@@ -1,0 +1,65 @@
+{
+ "title": "2000年 台風第12号 (Prapiroon) : TY0012",
+ "weatherText": "8月27日に沖ノ鳥島の西海上で台風となり、29日には宮古島と石垣島の間を通過した。30日には東シナ海で大型で非常に強い勢力となり、朝鮮半島に上陸後、日本海北部で温帯低気圧に変わり、津軽海峡を通過した。死者・行方不明1人、床上浸水4棟、床下浸水107棟（情報元：気象要覧第1213号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "北海道新聞",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 15,
+   "non_residential": null,
+   "source": "新潟日報",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 39,
+   "non_residential": null,
+   "source": "京都新聞",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 11,
+   "non_residential": null,
+   "source": "高知新聞",
+   "pref": "高知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 8,
+  "flooded_below_floor": 68,
+  "non_residential": 0,
+  "source": ""
+ }
+}

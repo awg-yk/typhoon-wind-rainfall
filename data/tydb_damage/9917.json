@@ -1,0 +1,16 @@
+{
+ "title": "1999年 台風第17号 (Ann) : TY9917",
+ "weatherText": "沖縄の南で発生後、北へ移動し、奄美渡島通過後、東シナ海で北西へ移動した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "title": "2001年 台風第21号 (Haiyan) : TY0121",
+ "weatherText": "10月12日にルソン島の東海上で発生し、16日に石垣島の南東海上で強い勢力になり、同島の東海上を通過した。17日には沖縄の北西海上に達した後、勢力を弱め始め、18日に日本の東海上で温帯低気圧に変わった。負傷者1人、全壊・流失1棟、半壊・一部破損29棟、床上浸水157棟、床下浸水775棟（情報元：気象要覧第1226号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 9,
+   "flooded_above_floor": 93,
+   "flooded_below_floor": 542,
+   "non_residential": null,
+   "source": "宮崎県「災害の記録」",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 55,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 14,
+   "non_residential": 17,
+   "source": "鹿児島県「平成13年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 2,
+  "partial_damage": 65,
+  "flooded_above_floor": 93,
+  "flooded_below_floor": 556,
+  "non_residential": 17,
+  "source": ""
+ }
+}

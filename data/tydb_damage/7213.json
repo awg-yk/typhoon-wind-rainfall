@@ -1,0 +1,113 @@
+{
+ "title": "1972年 台風第13号 (Alice) : TY7213",
+ "weatherText": "8月5日，鳥島のはるか南東海上に発生した台風は，7日朝には八丈島の南東約150kmの海上に達し，北西に進んだ。次第に進路を北に変え，15時には銚子の南東海上にまで達し，房総半島をかすめるように北〜北北東に進み，8日朝三陸沖500km付近を通り，北東進して9日朝には北海道東方洋上に去った。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 16,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 318,
+   "non_residential": null,
+   "source": "気象要覧第876号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 275,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 12,
+   "non_residential": null,
+   "source": "茨城県消防年報昭和47年",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 17,
+   "non_residential": null,
+   "source": "気象要覧第876号（被害状況より）",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 35,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 69,
+   "non_residential": null,
+   "source": "気象要覧第876号（被害状況より）",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": 13,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第876号（被害状況より）",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第876号（被害状況より）",
+   "pref": "三重県"
+  }
+ ],
+ "total": {
+  "dead_missing": 19,
+  "injured": 0,
+  "destroyed": 16,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 726,
+  "non_residential": 0,
+  "source": ""
+ }
+}

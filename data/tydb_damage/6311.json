@@ -1,0 +1,77 @@
+{
+ "title": "1963年 台風第11号 (Della) : TY6311",
+ "weatherText": "8月24日3時，硫黄島の南西海上に発生した熱帯低気圧は北西に進み，25日21時奄美大島の南東200kmの洋上で台風となった。台風はこのころから次第に進を北〜北北東に変えて，28日3時には室戸岬の南南西140kmの海上に達し，その後進路を東北東に変えた。台風は29日3時に伊豆新島付近を通過，6時には勝浦の南50kmの海上を通って東方海上を進み，25日15時に温帯低気圧になった。8月25日21時の中心気圧995hPa。26日15時，中心気圧975hPa，最大風速35m/sを示し，このころが台風の最盛期となった。28日3時の中心気圧975hPa，最大風速30m/s。 半壊1棟、一部破損4棟、床上浸水752棟、床下浸水14692棟（気象要覧第768号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 743,
+   "non_residential": 2,
+   "source": "気象要覧第768号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2736,
+   "flooded_below_floor": 33932,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": 52,
+   "flooded_below_floor": 1069,
+   "non_residential": 3,
+   "source": "気象要覧第768号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 264,
+   "non_residential": 2,
+   "source": "気象要覧第768号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": 2,
+   "source": "紀州災異誌",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 4,
+  "flooded_above_floor": 2815,
+  "flooded_below_floor": 36015,
+  "non_residential": 9,
+  "source": ""
+ }
+}

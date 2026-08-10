@@ -1,0 +1,29 @@
+{
+ "title": "1991年 台風第13号 (No-name) : TY9113",
+ "weatherText": "8月26日に日本の南海上で発生し、ごく小さい弱い台風から勢力を強めることはなく東シナ海で進路を北に変え、五島列島付近を通過した後、29日に対馬付近で弱い熱帯低気圧となった。その後北東進して、日本海中部で温帯低気圧となり、津軽海峡で消滅した。死者1人、全壊1棟、半壊・一部破損2棟、床上浸水1棟、床下浸水1棟（情報元：気象要覧第1104号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "title": "2005年 台風第9号 (Matsa) : TY0509",
+ "weatherText": "7月31日にフィリピンの東で発生し、8月2日03時には強風域が直径1000kmの大型台風となった。3日には中心気圧955hPa、最大風速40m/s、暴風域半径170kmと勢力を維持しながら先島諸島に接近した。沖縄本島地方を強風域に巻き込みながら、4日に石垣島を通過、通過時の19時46分には石垣市登野城で958.1hPaの最低気圧を観測した。台風の速度が遅かったため、宮古島で約27時間､多良間島では約29時間と長時間暴風域に入ったままとなった。この台風の影響で、石垣市登野城で最大瞬間風速50.6m/s（5日02:04）を観測するなど、先島諸島各地で非常に強い風を観測。また、3日降り始めからの雨量は平良市で336mmを観測するなど、城辺町、伊良部町でも300mmを越える大雨となった。長時間にわたる暴風により、農作物被害、倒木、建物損壊の他、停電や船舶の欠航に伴う生活物資の不足など、住民生活や観光に影響を与えた。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成１８年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 5,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

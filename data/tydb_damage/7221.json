@@ -1,0 +1,41 @@
+{
+ "title": "1972年 台風第21号 (Ida) : TY7221",
+ "weatherText": "9月17日に台風となり、小笠原諸島周辺を通過後、北に向きを変え伊豆諸島へ向かい、その後東に向きを変えた。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 19,
+   "non_residential": 2,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第877号",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 19,
+  "non_residential": 2,
+  "source": ""
+ }
+}

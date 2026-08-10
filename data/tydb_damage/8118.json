@@ -1,0 +1,89 @@
+{
+ "title": "1981年 台風第18号 (Agnes) : TY8118",
+ "weatherText": "8月30日から31日に台風が南西諸島近海を通過し、東シナ海に進んだため同地方は暴風となった。一方、四国や中部地方では台風の周辺を流れる南よりの湿った気流の影響で大雨となり、東北地方でも前線が停滞して大雨となった。9月1日から2日にかけて東シナ海西部を北上していた台風は、次第に向きを北東に変え、3日には対馬海峡を通って日本海に進んだ。台風は4日に山口県北西沖で温帯低気圧となったが、その後日本海を早い速度で北東進し、夜には北海道を通ってオホーツク海へ進んだ。死者・行方不明9人、負傷者3人、全壊・流失4棟、半壊・一部破損17棟、床上浸水131棟、床下浸水568棟（情報元：気象要覧第985号）。",
+ "prefectures": [
+  {
+   "dead_missing": 8,
+   "injured": 3,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": 13,
+   "flooded_above_floor": 125,
+   "flooded_below_floor": 523,
+   "non_residential": null,
+   "source": "気象要覧985号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 2,
+   "partial_damage": 1,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 119,
+   "non_residential": 16,
+   "source": "青森県「昭和５6年災害による被害」",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 27,
+   "non_residential": null,
+   "source": "気象要覧985号",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧985号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "鹿児島県「昭和56年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 5,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 9,
+  "injured": 5,
+  "destroyed": 5,
+  "half_destroyed": 7,
+  "partial_damage": 17,
+  "flooded_above_floor": 150,
+  "flooded_below_floor": 669,
+  "non_residential": 19,
+  "source": ""
+ }
+}

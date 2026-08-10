@@ -1,0 +1,16 @@
+{
+ "title": "2018年 台風第8号 (Maria) : TY1808",
+ "weatherText": "5日18時から24時間で中心気圧は72hPaも低下し猛烈な勢力に発達。宮古島や石垣島の一部は暴風域に。また、西日本豪雨をもたらした本州付近に停滞した前線に向かって大量の湿った空気を送り込んだ。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

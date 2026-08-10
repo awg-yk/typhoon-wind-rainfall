@@ -1,0 +1,53 @@
+{
+ "title": "1972年 台風第7号 (Rita) : TY7207",
+ "weatherText": "グアム島付近から北上した台風第7号は7月20日から21日にかけて西方西進しながら奄美大島の北部海上を通り，東シナ海に入って22日から23日にかけて沖縄の西部海上をゆっくりと南下し，23日夜宮古島付近を経て太平洋側にでた。24日未明再び北上して25日9時頃奄美大島の西方200kmの海上を通り，同日午後から進路を北西に変えて26日には済州島の西側を通って大陸方面に去った。死者・行方不明4人、負傷者7人、全壊11棟、半壊21棟、流失2棟、一部破損6棟、床上浸水99棟、床下浸水222棟（気象要覧第875号）",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": 2,
+   "destroyed": 6,
+   "half_destroyed": 7,
+   "partial_damage": 2,
+   "flooded_above_floor": 27,
+   "flooded_below_floor": 19,
+   "non_residential": 2,
+   "source": "気象要覧第875号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 5,
+   "half_destroyed": 35,
+   "partial_damage": 49,
+   "flooded_above_floor": 47,
+   "flooded_below_floor": 264,
+   "non_residential": 50,
+   "source": "鹿児島県「昭和47年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 4,
+   "destroyed": 2,
+   "half_destroyed": 12,
+   "partial_damage": null,
+   "flooded_above_floor": 7,
+   "flooded_below_floor": 122,
+   "non_residential": 46,
+   "source": "気象要覧第875号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 8,
+  "destroyed": 13,
+  "half_destroyed": 54,
+  "partial_damage": 51,
+  "flooded_above_floor": 81,
+  "flooded_below_floor": 405,
+  "non_residential": 98,
+  "source": ""
+ }
+}

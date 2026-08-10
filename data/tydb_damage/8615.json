@@ -1,0 +1,161 @@
+{
+ "title": "1986年 台風第15号 (No-name) : TY8615",
+ "weatherText": "9月2日に八丈島の南約230kmの海上で台風となったものの、3日には大島の南南西およそ50kmの海上で熱帯低気圧に衰えた。その後関東地方を通って、4日には北海道の南海上に達して温帯低気圧に変わり、さらに東に進んだ。全壊・流失1棟、半壊・一部破損11棟、床上浸水302棟、床下浸水1416棟（情報元：気象要覧第1045号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 48,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "青森県「昭和６１年災害による被害」",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 27,
+   "non_residential": null,
+   "source": "栃木県「過去における主な災害一覧」",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 146,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 13,
+   "flooded_below_floor": 144,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 52,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 56,
+   "non_residential": 1,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 95,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "福井県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 41,
+   "flooded_below_floor": 535,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "京都府"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 12,
+  "flooded_above_floor": 76,
+  "flooded_below_floor": 1134,
+  "non_residential": 1,
+  "source": ""
+ }
+}

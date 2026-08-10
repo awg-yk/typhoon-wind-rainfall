@@ -1,0 +1,29 @@
+{
+ "title": "1981年 台風第9号 (Nina) : TY8109",
+ "weatherText": "7月21〜22日に台風が先島諸島付近を通った。浸水32棟（気象要覧第983号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 32,
+   "non_residential": null,
+   "source": "気象要覧第983号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 32,
+  "non_residential": 0,
+  "source": ""
+ }
+}

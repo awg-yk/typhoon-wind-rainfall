@@ -1,0 +1,16 @@
+{
+ "title": "2012年 台風第18号 (Ewiniar) : TY1218",
+ "weatherText": "日本の南で発生後北上し、小笠原諸島を通過した後伊豆諸島に接近。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

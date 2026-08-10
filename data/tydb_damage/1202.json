@@ -1,0 +1,16 @@
+{
+ "title": "2012年 台風第2号 (Sanvu) : TY1202",
+ "weatherText": "マリアナ諸島付近で台風となり北西に進んだ後、975hPaまで成長しながら進路を北北東に変えて小笠原諸島に接近。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

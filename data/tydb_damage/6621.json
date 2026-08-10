@@ -1,0 +1,53 @@
+{
+ "title": "1966年 台風第21号 (Elsie) : TY6621",
+ "weatherText": "ルソン島西海上から発達しながら北上し、16日には台湾南部を通過し、北東に進み、18日には奄美大島付近で温帯低気圧となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 1593,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 22000,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 4000,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "兵庫県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 12,
+  "flooded_below_floor": 27593,
+  "non_residential": 0,
+  "source": ""
+ }
+}

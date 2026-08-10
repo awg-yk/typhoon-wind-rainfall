@@ -1,0 +1,29 @@
+{
+ "title": "1985年 台風第3号 (Gay) : TY8503",
+ "weatherText": "5月24〜26日は台風が日本の南海上を北東進するに伴い梅雨前線も北上し、また、前線上に発生した低気圧が本州を北東進したため各地で雨となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "紀州災異誌",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 5,
+  "non_residential": 0,
+  "source": ""
+ }
+}

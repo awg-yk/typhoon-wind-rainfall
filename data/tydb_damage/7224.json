@@ -1,0 +1,65 @@
+{
+ "title": "1972年 台風第24号 (Marie) : TY7224",
+ "weatherText": "台風は，10月10日朝，硫黄島の南東約500kmの海上を北に進み，12日9時には銚子の東南東約600kmの海上に達して北北東に進み，三陸のあるか沖合を通り，カムチャツカ半島方面に去った。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 269,
+   "non_residential": null,
+   "source": "気象要覧第878号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 11,
+   "non_residential": null,
+   "source": "気象要覧第878号",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": 7,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 20,
+   "non_residential": null,
+   "source": "気象要覧第878号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 2,
+  "flooded_above_floor": 8,
+  "flooded_below_floor": 307,
+  "non_residential": 7,
+  "source": ""
+ }
+}

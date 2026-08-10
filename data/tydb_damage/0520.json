@@ -1,0 +1,16 @@
+{
+ "title": "2005年 台風第20号 (Kirogi) : TY0520",
+ "weatherText": "沖縄県の南東海上で発生し後南西に進み、その後北北西に向きを変え後、北東に向きを変えた。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

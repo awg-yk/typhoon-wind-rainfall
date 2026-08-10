@@ -1,0 +1,29 @@
+{
+ "title": "1996年 台風第21号 (Zane) : TY9621",
+ "weatherText": "9月24日にグアム島の西の海上で発生し、28日に中型の強い勢力で中心が宮古島付近を通過した。29日に沖縄本島の北西の海上で大型で強い勢力となり、30日に沖永良部島の南海上を通過した。その後、1日に本州の南海上を、2日には父島の北の海上を東寄りに進んだ。負傷者4人、半壊28棟、床上浸水63棟、床下浸水1棟（情報元：気象要覧第1165号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 28,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 60,
+   "non_residential": 13,
+   "source": "鹿児島県｢平成8年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 28,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 60,
+  "non_residential": 13,
+  "source": ""
+ }
+}

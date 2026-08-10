@@ -1,0 +1,29 @@
+{
+ "title": "1968年 台風第19号 (Gloria) : TY6819",
+ "weatherText": "10月12日15時カロリン群島の北緯7.0度東経142.2度に発生した熱帯低気圧は，北西〜北進し，17日9時にフィリピンの東方洋上北緯15.5度東経134.2度で台風となった。台風は北上して，23日15時室戸岬の南方約800kmの北緯26.3度東経133.8度に達して北東に向きを変えた。25日3時八丈島の南東およそ300kmの北緯31.6度東経141.6度に達して熱帯低気圧となった。9時には八丈島の東600km付近の北緯33.0度東経145.0度において温帯低気圧となった。 関東地方南部では台風第19号の接近により，23日から前線活動がさらに活発となって房総沖の前線上に低気圧が発生，台風第19号の勢力を吸収して急速に発達した。台風発生時の中心気圧は985hPa。18日21時には中心気圧955hPa，中心付近の最大風速35m/s，25m/s以上の暴風半径は300kmともっとも発達し，この勢力は19日9時まで続いた。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 90,
+   "non_residential": null,
+   "source": "気象要覧第829号",
+   "pref": "千葉県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 90,
+  "non_residential": 0,
+  "source": ""
+ }
+}

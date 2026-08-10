@@ -1,0 +1,161 @@
+{
+ "title": "1957年 台風第7号 (Agnes) : TY5707",
+ "weatherText": "8月11日21時にウルシー島南に発生した熱帯低気圧は，13日21時にヤップ島の北西約300kmの海上で台風となった。以後およそ北北西に進んで沖ノ鳥島の南南西約500kmに達したときAngesと命名された。この台風は大きく蛇行して北北西に向かいながら発達した。中心は19日10時ごろに沖永良部島の北側を通って東シナ海に入ったが，同日夜からは北に転向し一時減速した。九州西方海上を21日朝にかけて通過し，同日1時ころ朝鮮半島南部に上陸し，22日15時にハバロフスクの北西方で温帯低気圧に変わった。 この台風は日本列島本土には上陸しなかったが，暴風域が大きかった上ゆっくりと九州西方海上を北進したため，九州や四国では長時間にわたって影響を受けた。13日21時，中心気圧1000hPa，最大風速約23m/sと推定される。 15日9時，中心気圧990hPa，最大風速40?45m/s，暴風半径（25m/s以上）150km程度。 18日9時，中心気圧905hPa。これより18日夜半までは中心気圧910hPa，最大風速75m/s，暴風半径600kmくらいの勢力を維持した。 九州西方海上を進むときの中心気圧は940?965hPaであった。 死者・行方不明26人、負傷者26人、全壊102棟、半壊208棟、流失3棟、一部破損839棟、床上浸水109棟、床下浸水1200棟（気象要覧第696号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第696号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "気象要覧第696号",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "気象要覧第696号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 12,
+   "non_residential": null,
+   "source": "気象要覧第696号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 81,
+   "non_residential": 4,
+   "source": "気象要覧第696号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 1,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 7,
+   "source": "気象要覧第696号",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "気象要覧第696号",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": 14,
+   "injured": 8,
+   "destroyed": 19,
+   "half_destroyed": 24,
+   "partial_damage": 473,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 176,
+   "non_residential": 128,
+   "source": "気象要覧第696号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 3,
+   "half_destroyed": 5,
+   "partial_damage": 8,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 20,
+   "non_residential": 19,
+   "source": "気象要覧第696号",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": 6,
+   "half_destroyed": 10,
+   "partial_damage": 29,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 22,
+   "non_residential": 35,
+   "source": "気象要覧第696号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 6,
+   "injured": 6,
+   "destroyed": 20,
+   "half_destroyed": 20,
+   "partial_damage": 72,
+   "flooded_above_floor": 37,
+   "flooded_below_floor": 357,
+   "non_residential": 75,
+   "source": "気象要覧第696号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 4,
+   "destroyed": 51,
+   "half_destroyed": 144,
+   "partial_damage": 250,
+   "flooded_above_floor": 31,
+   "flooded_below_floor": 532,
+   "non_residential": 277,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 26,
+  "injured": 26,
+  "destroyed": 105,
+  "half_destroyed": 208,
+  "partial_damage": 839,
+  "flooded_above_floor": 109,
+  "flooded_below_floor": 1200,
+  "non_residential": 551,
+  "source": ""
+ }
+}

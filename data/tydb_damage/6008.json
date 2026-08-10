@@ -1,0 +1,29 @@
+{
+ "title": "1960年 台風第8号 (Shirley) : TY6008",
+ "weatherText": "7月28日3時ごろフィリピン諸島東方約900kmで発生した熱帯低気圧は北西に進み，30日3時にバシー海峡東方洋上で台風となった。台風は31日14時ごろからの与那国島南方約50kmの洋上に接近し，その後進路を北西から西北西に変えて，同日21時ごろ台湾北部に上陸した。台風は次第に衰え，向きを再び北西に変えて進み，台湾海峡を横断して1日21時には華南に上陸した。台風は華南沿岸部を北北西に進み2日21時には 揚子江下流域に達して温帯低気圧になった。7月28日15時，中心気圧970hPa，中心付近の最大風速33m/s。 31日9時には，910hPaに発達し，中心付近の最大風速は65m/s，風速25m/sの暴風半径最大160kmとなった（最盛期）。",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": 7,
+   "destroyed": 0,
+   "half_destroyed": 488,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第731号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 7,
+  "destroyed": 0,
+  "half_destroyed": 488,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

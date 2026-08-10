@@ -1,0 +1,77 @@
+{
+ "title": "1979年 台風第18号 (Roger) : TY7918",
+ "weatherText": "10月4日に沖ノ鳥島付近で発生した台風は、6日には日本の南海上を北上した。これに伴って八丈島の南にあった前線も活発化して北上した。このため、関東から東海地方東部では6日夜半から激しい雨となり、7日には雨域は東北地方にも広がった。床上浸水27棟、床下浸水1226棟（気象要覧第962号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 11,
+   "non_residential": null,
+   "source": "船橋市、富津市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 117,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "気象要覧第962号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 15,
+   "non_residential": null,
+   "source": "気象要覧第962号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 150,
+   "non_residential": null,
+   "source": "気象要覧第962号",
+   "pref": "三重県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 12,
+  "flooded_below_floor": 300,
+  "non_residential": 0,
+  "source": ""
+ }
+}

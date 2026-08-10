@@ -1,0 +1,53 @@
+{
+ "title": "2008年 台風第15号 (Jangmi) : TY0815",
+ "weatherText": "9月24日にフィリピンの東海上で発生し、発達しながら西北西に進み、28日に台湾北部に上陸した。勢力は急速に衰え、29日には進路を東に変え、10月1日に九州の南海上で温帯低気圧となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "宮崎県「平成２０年災害の記録」（災異誌第44号）",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": 3,
+   "source": "鹿児島県「平成20年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成２１年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 3,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 7,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 5,
+  "non_residential": 3,
+  "source": ""
+ }
+}

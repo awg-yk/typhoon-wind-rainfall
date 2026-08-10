@@ -1,0 +1,16 @@
+{
+ "title": "2023年 台風第3号 (Guchol) : TY2303",
+ "weatherText": "強い勢力を保ちながら本州の南を南東へ移動した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

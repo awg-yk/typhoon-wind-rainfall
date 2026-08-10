@@ -1,0 +1,65 @@
+{
+ "title": "1973年 台風第10号 (Iris) : TY7310",
+ "weatherText": "台風は8月15日名瀬付近を通過した後，東シナ海を北上，朝鮮半島を横断して日本海の北部で温帯低気圧となり，18日に北海道を通って東方海上へ去った。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 8,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 3431,
+   "non_residential": null,
+   "source": "気象要覧第888号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 46,
+   "non_residential": null,
+   "source": "気象要覧第888号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第888号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "鹿児島県「昭和48年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 3,
+  "half_destroyed": 9,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 3477,
+  "non_residential": 3,
+  "source": ""
+ }
+}

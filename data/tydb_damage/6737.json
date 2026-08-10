@@ -1,0 +1,29 @@
+{
+ "title": "1967年 台風第37号 (Gilda) : TY6737",
+ "weatherText": "11月7日15時にポナペ島付近の北緯9.3度，東経160.4度に発生した熱帯低気圧は南西に進み，9日15時には台風となった。台風は発生しておよそ1日くらい右回りの小さな半円を描きながら北上したが，その後向きを西北西に変え，13日9時頃サイパン島とグアム島の間を通った。17日早朝に宮古島の南およそ400kmの海上をとおり，18日正午頃台湾と右岸に上陸した。よく19日には台湾海峡を北部に抜けて20日3時に東シナ海で消滅した。台風発生時の中心気圧は995hPa。14日3時にもっとも発達して，中心気圧910hPa，中心付近の最大風速60m/s，中心より北側350kmと南側300km以内では25m/sとなった。 床上浸水69棟、床下浸水39棟（気象要覧）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 69,
+   "flooded_below_floor": 39,
+   "non_residential": null,
+   "source": "気象要覧第819号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 69,
+  "flooded_below_floor": 39,
+  "non_residential": 0,
+  "source": ""
+ }
+}

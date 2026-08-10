@@ -1,0 +1,29 @@
+{
+ "title": "1994年 台風第16号 (Fred) : TY9416",
+ "weatherText": "8月14日にマリアナ諸島の東海上で発生し、19日には沖縄の南海上にて大型で非常に強い勢力となった。その後進路を北西に変え、20日に石垣島付近を通過、22日には華中で弱い熱帯低気圧に変わった。この弱い熱帯低気圧は、次第に進路を北から東北東に変え、24日には華北で温帯低気圧に変わり、27日に北海道の西の日本海で消滅した。負傷者29人、全壊・流失6棟、半壊・一部破損94棟（情報元：気象要覧第1140号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 29,
+   "destroyed": 6,
+   "half_destroyed": null,
+   "partial_damage": 94,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1140号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 29,
+  "destroyed": 6,
+  "half_destroyed": 0,
+  "partial_damage": 94,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

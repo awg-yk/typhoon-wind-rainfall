@@ -1,0 +1,29 @@
+{
+ "title": "2010年 台風第11号 (Fanapi) : TY1011",
+ "weatherText": "9月15日に沖縄の南海上で台風になり、発達しながら沖縄地方に接近し、18日から19日にかけて先島諸島の南海上を通過後、台湾方面に向かった。19日には台湾中部に上陸し、台湾南部を通過、さらに西に進み、20日9時頃には華南に上陸し、熱帯低気圧となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 22,
+   "source": "沖縄県「平成２３年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 5,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 4,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 22,
+  "source": ""
+ }
+}

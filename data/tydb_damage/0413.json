@@ -1,0 +1,29 @@
+{
+ "title": "2004年 台風第13号 (Rananim) : TY0413",
+ "weatherText": "8月8日にフィリピンの東海上で発生し、10日には沖縄の南海上で強風域の半径が500km、中心付近の最大風速が35m/sの大型で強い台風となった。その後、11日に中心気圧950hPa、最大風速40m/sの勢力で先島諸島を通過し東シナ海を北西に進んだ。大型で強い台風となった台風第13号は、10～20km/hの速度で北西に進み、先島諸島へ向かって北上した。勢力を強めながら宮古島と多良間島の間を通って、12日夜には中国大陸に上陸した。強風域の大きな台風であったため、沖縄地方は各地方とも強風域に入り、先島諸島では11日昼過ぎから12日朝にかけて暴風域に入った。宮古島では最大瞬間風速48。8m/s（11日20:10）、石垣島では42。2m/s（11日16:21）を観測した。た、沖縄地方の沿岸の海域では大しけとなり、特に台風の接近した先島諸島では猛烈なしけとなった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成１７年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 5,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

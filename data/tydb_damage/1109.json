@@ -1,0 +1,29 @@
+{
+ "title": "2011年 台風第9号 (Muifa) : TY1109",
+ "weatherText": "7月28日にフィリピン東海上で発生し、5日には沖縄本島の南を通過した。6日には東シナ海を北上し、8日には黄海を北上し、9日に中国東北区で熱帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 46,
+   "destroyed": 2,
+   "half_destroyed": 9,
+   "partial_damage": 44,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 26,
+   "non_residential": 13,
+   "source": "沖縄県「平成２４年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 46,
+  "destroyed": 2,
+  "half_destroyed": 9,
+  "partial_damage": 44,
+  "flooded_above_floor": 11,
+  "flooded_below_floor": 26,
+  "non_residential": 13,
+  "source": ""
+ }
+}

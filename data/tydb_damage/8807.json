@@ -1,0 +1,29 @@
+{
+ "title": "1988年 台風第7号 (Agnes) : TY8807",
+ "weatherText": "死者1人、負傷者1人（情報元：気象要覧第1067号）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1067号",
+   "pref": "徳島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

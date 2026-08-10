@@ -1,0 +1,29 @@
+{
+ "title": "1992年 台風第3号 (Bobbie) : TY9203",
+ "weatherText": "6月23日にフィリピンの東海上で発生し、28日から29日にかけて中型で強い勢力で、沖縄近海を通過した後、30日から1日にかけて、中型でなみの強さの勢力で房総半島をかすめ、福島県沖で温帯低気圧に変わった。全壊1棟、半壊・一部破損2棟（情報元：気象要覧第1115号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

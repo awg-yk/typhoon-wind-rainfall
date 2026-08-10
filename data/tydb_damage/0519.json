@@ -1,0 +1,29 @@
+{
+ "title": "2005年 台風第19号 (Longwang) : TY0519",
+ "weatherText": "9月26日にマリアナ諸島付近で発生し、30日には一時勢力が弱まったものの、その後中心付近の最大風速が45m/s、暴風半径120kmと再び勢力を強め、先島諸島の南海上を西北西に進んだ。石垣市登野城で最大瞬間風速44.2m/s（1日20:31）を観測するなど、八重山地方の各地で非常に強い風に見舞われた。また石垣市川平や竹富町大原、波照間島では1時間に30mm以上の降水量も観測、沿岸の海域では12mの猛烈なしけとなった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成１８年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": null,
+  "injured": 4,
+  "destroyed": null,
+  "half_destroyed": null,
+  "partial_damage": null,
+  "flooded_above_floor": null,
+  "flooded_below_floor": null,
+  "non_residential": null,
+  "source": ""
+ }
+}

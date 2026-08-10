@@ -1,0 +1,29 @@
+{
+ "title": "2013年 台風第7号 (Soulik) : TY1307",
+ "weatherText": "7月8日にマリアナ諸島付近で発生し、12日昼前から13日午後にかけて先島諸島は暴風域に入った。13日に台湾を西北西に横断し、東シナ海から中国大陸に上陸、華中付近で熱帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 14,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 13,
+   "source": "沖縄県防災危機管理課",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 14,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 3,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": null,
+  "source": ""
+ }
+}

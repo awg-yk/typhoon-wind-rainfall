@@ -1,0 +1,29 @@
+{
+ "title": "2007年 台風第20号 (Faxai) : TY0720",
+ "weatherText": "10月26日に沖縄県の南大東島の南で発生し、発達しながら北東に進み、27日には伊豆諸島から関東地方を通過、千葉県房総半島をかすめた後、28日に三陸沖の海上で温帯低気圧に変わった。三宅島では27日15時50分までの1時間に103ミリの強い雨が降り、27日夜までの24時間雨量も428ミリと観測史上最多となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "神奈川県「平成２０年版消防年報」",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

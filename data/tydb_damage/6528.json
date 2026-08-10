@@ -1,0 +1,41 @@
+{
+ "title": "1965年 台風第28号 (Bess) : TY6528",
+ "weatherText": "台風第28号は10月2日から5日かけて，八丈島の東方海上をゆっくり北上した。一方北海道及び千島方面には優勢なる高気圧があって，この期間広い範囲に北東の強風が吹き，関東南岸と東北地方太平洋岸に激しい高波が押し寄せ沿岸各地に被害があった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第794号",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第794号",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 2,
+  "half_destroyed": 1,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

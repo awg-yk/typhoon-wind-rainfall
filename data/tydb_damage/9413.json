@@ -1,0 +1,29 @@
+{
+ "title": "1994年 台風第13号 (Doug) : TY9413",
+ "weatherText": "8月1日にマリアナ諸島の西海上で発生し、5日には大型で非常に強い勢力となり、8日には与那国島の西海上を経て東シナ海を北上した。全壊・流失19棟、半壊・一部破損552棟（情報元：気象要覧第1140号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 19,
+   "half_destroyed": null,
+   "partial_damage": 552,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1140号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 19,
+  "half_destroyed": 0,
+  "partial_damage": 552,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

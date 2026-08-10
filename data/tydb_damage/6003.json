@@ -1,0 +1,29 @@
+{
+ "title": "1960年 台風第3号 (Mary) : TY6003",
+ "weatherText": "6月2日9時に南シナ海中部で発生した熱帯低気圧は，一時東進したが，2日夜半から向きを変えて南西に進んだ。4日9時に台風となった。 台風はその後北西に向きを変え，西沙群島付近を進んだ。5日から6日にかけて最盛期となり，その後北上して9日未明中国大陸に上陸した。上陸後，弱まりながら北東に進み10日15時に東シナ海に抜けた。 台風は東シナ海を北東から東に進むにつれて再び発達し，九州・本州南方海上を南南東に進んだ。12日9時に温帯低気圧になった。6月4日9時の中心気圧990hPa，最大風速25m/s。台風最盛期の中心気圧980hPa，最大風速33m/s，20m/sの暴風圏は南半円400km，北半円300km。10日15時の中心気圧988hPa，最大風速28m/s。九州南方海上を通過した11日朝から午後にかけて中心気圧は982hPaに深まり，中心付近の最大風速も33m/sに達した。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 5,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 187,
+   "non_residential": 1,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 5,
+  "partial_damage": 6,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 187,
+  "non_residential": 1,
+  "source": ""
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "title": "2001年 台風第19号 ( Lekima) : TY0119",
+ "weatherText": "9月22日にルソン島の北東海上で発生し、26日に台湾南東部に上陸、28日に同島中部で熱帯低気圧になった。全壊・流失1棟、半壊・一部破損1棟、床上浸水24棟、床下浸水36棟（情報元：気象要覧第1225号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 36,
+   "non_residential": null,
+   "source": "気象要覧第1225号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 24,
+  "flooded_below_floor": 36,
+  "non_residential": 0,
+  "source": ""
+ }
+}

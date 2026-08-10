@@ -1,0 +1,29 @@
+{
+ "title": "1989年 台風第25号 (Colleen) : TY8925",
+ "weatherText": "10月1日にマリアナ諸島の東方海上に発生し、父島の近海に達した。父島では風雨がともに強まり最大瞬間風速47.0ｍ/ｓを記録した。その後、台風は向きを北北東に変え、日本の東海上を加速しながら進み、日本から遠ざかっていった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 1,
+  "source": ""
+ }
+}

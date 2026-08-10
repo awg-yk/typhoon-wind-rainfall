@@ -1,0 +1,29 @@
+{
+ "title": "1982年 台風第11号 (Cecil) : TY8211",
+ "weatherText": "8月13日に台風が東シナ海西部を北上して、宮崎、大分県の所々では地形の影響が加わり大雨となった。死者7人、負傷者3人、浸水409棟（情報元：気象要覧第996号）。",
+ "prefectures": [
+  {
+   "dead_missing": 7,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": 54,
+   "partial_damage": 26,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 3,
+  "destroyed": 0,
+  "half_destroyed": 54,
+  "partial_damage": 26,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

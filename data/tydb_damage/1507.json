@@ -1,0 +1,16 @@
+{
+ "title": "2015年 台風第7号 (Dolphin) : TY1507",
+ "weatherText": "中心気圧925hPaまで発達し、小笠原諸島に接近した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

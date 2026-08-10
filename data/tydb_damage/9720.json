@@ -1,0 +1,29 @@
+{
+ "title": "1997年 台風第20号 (David) : TY9720",
+ "weatherText": "9月11日にマーシャル諸島近海で発生し、16日には大型で非常に強い勢力で南鳥島の近海を通過した。18日は大型で強い勢力で父島の北の海上へ進み、向きを北へ変えて伊豆諸島の東海上を通り、その後、勢力を維持して関東の東海上へ進んだ。20日に北海道の東海上で温帯低気圧に変わった。死者1人、負傷者2人、一部破損1棟、床上浸水3棟、床下浸水51棟（情報元：気象要覧第1177号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 1,
+  "non_residential": 0,
+  "source": ""
+ }
+}

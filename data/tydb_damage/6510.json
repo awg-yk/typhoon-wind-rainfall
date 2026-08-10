@@ -1,0 +1,29 @@
+{
+ "title": "1965年 台風第10号 (Emma) : TY6510",
+ "weatherText": "6月26日ー27日にかけてフィリッピン東方で発生した台風が九州から関東までの南岸をかすめるようにして通過した。25日夜には熱帯低気圧となったが、東海から関東にかけて、かなりの大雨をもたらした。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 65,
+   "flooded_below_floor": 200,
+   "non_residential": null,
+   "source": "紀州災異誌",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 65,
+  "flooded_below_floor": 200,
+  "non_residential": 0,
+  "source": ""
+ }
+}

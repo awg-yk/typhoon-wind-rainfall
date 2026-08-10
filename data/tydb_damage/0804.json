@@ -1,0 +1,16 @@
+{
+ "title": "2008年 台風第4号 (Halong) : TY0804",
+ "weatherText": "南シナ海で発生し、北東に進み続けて伊豆諸島近海で温帯低気圧に。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

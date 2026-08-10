@@ -1,0 +1,29 @@
+{
+ "title": "1959年 台風第21号 (Freda) : TY5921",
+ "weatherText": "11月13日10時20分の飛行機観測により，カロリン諸島ヤップ島南南西約200kmの海上に、中心気圧998hPa，中心付近の最大風速35m/s以上の熱帯低気圧が存在することがわかり，同日9時から台風として扱われることになった。 台風は，西北西ないし北西に進み，16日9時にはフィリピン中部の東沖に達した。17日9時にはルソン島の東海岸に上陸して北上し，同日夜バリンタン海峡に抜けた。台風は進路を北から次第に北東に変えて進み，与那国島を通過して東シナ海に入った。その後台風は東シナ海を北東に進み，同日夕刻沖縄本島を通過して，21時には奄美大島の南方海上で温帯低気圧になった。11月16日9時の中心気圧は945hPa，中心付近の最大風速65m/s，風速25m/sの暴風半径350kmとなり，この頃が台風の最盛期。 バリンタン海峡に抜けた頃の中心気圧は990hPaであった。 全壊4棟、半壊9棟、床上浸水153棟、床下浸水102棟（気象要覧第723号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 4,
+   "half_destroyed": 9,
+   "partial_damage": null,
+   "flooded_above_floor": 153,
+   "flooded_below_floor": 102,
+   "non_residential": 9,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 4,
+  "half_destroyed": 9,
+  "partial_damage": 0,
+  "flooded_above_floor": 153,
+  "flooded_below_floor": 102,
+  "non_residential": 9,
+  "source": ""
+ }
+}

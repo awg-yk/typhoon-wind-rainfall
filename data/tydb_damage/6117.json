@@ -1,0 +1,29 @@
+{
+ "title": "1961年 台風第17号 (Marie) : TY6117",
+ "weatherText": "8月29日3時マーカス島南方洋上に発生した熱帯低気圧は北北西に進み，30日3時にはマーカス島近海に達して台風となった。その後も北北西に進んだが，30日15時ごとから進路を西北西から西に変えた。9月3日3時に硫黄島の北西約400kmの海上に達し，その後進路を北西に変えたが衰弱し，3日15時に熱帯低気圧となった。この熱帯低気圧は北上して，4日6時過ぎに室戸岬北西方に上陸した。その後徳島県から香川県東部を通って播磨灘に出た後，近畿地方西部から日本海に抜け，5日3時過ぎに函館北西方に上陸，同日9時釧路付近で消滅した。8月30日3時，中心気圧996hPa。9月1日6時00分の飛行機観測では，中心気圧998hPa，中心付近の最大風速23m/s。 半壊3棟、床上浸水41棟、床下浸水494棟（気象要覧第744号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": null,
+   "flooded_above_floor": 41,
+   "flooded_below_floor": 494,
+   "non_residential": null,
+   "source": "気象要覧第744号",
+   "pref": "香川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 3,
+  "partial_damage": 0,
+  "flooded_above_floor": 41,
+  "flooded_below_floor": 494,
+  "non_residential": 0,
+  "source": ""
+ }
+}

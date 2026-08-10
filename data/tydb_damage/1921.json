@@ -1,0 +1,89 @@
+{
+ "title": "2019年 台風第21号 (Bualoi) : TY1921",
+ "weatherText": "台風21号からの湿った空気と日本の南岸を移動してきた亜熱帯低気圧による湿った空気が、千葉県を中心に流れ込み記録的な大雨となり、千葉県では11人もの死者。死者・行方不明者13人、負傷者8人、全壊22棟、半壊1657棟、一部破損1750棟、床上浸水460棟、床下浸水992棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年10月13日18時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 7,
+   "partial_damage": 84,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 139,
+   "non_residential": 4,
+   "source": "消防庁調べ：令和2年10月13日18時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年10月13日18時00分現在",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 11,
+   "injured": 11,
+   "destroyed": 34,
+   "half_destroyed": 1890,
+   "partial_damage": 2191,
+   "flooded_above_floor": 173,
+   "flooded_below_floor": 542,
+   "non_residential": 30,
+   "source": "消防庁調べ：令和2年10月13日18時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年10月13日18時00分現在",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年10月13日18時00分現在",
+   "pref": "愛知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 13,
+  "injured": 13,
+  "destroyed": 34,
+  "half_destroyed": 1897,
+  "partial_damage": 2279,
+  "flooded_above_floor": 186,
+  "flooded_below_floor": 682,
+  "non_residential": 34,
+  "source": ""
+ }
+}

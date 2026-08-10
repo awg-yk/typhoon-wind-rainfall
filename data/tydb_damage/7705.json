@@ -1,0 +1,29 @@
+{
+ "title": "1977年 台風第5号 (Vera) : TY7705",
+ "weatherText": "7月31日10時頃沖縄県西表島を北西に横断した台風のため八重山群島の島々は，暴風雨，波浪，高潮によって大きな被害を受けた。",
+ "prefectures": [
+  {
+   "dead_missing": 6,
+   "injured": 6,
+   "destroyed": 182,
+   "half_destroyed": 267,
+   "partial_damage": 1189,
+   "flooded_above_floor": 120,
+   "flooded_below_floor": 120,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 6,
+  "injured": 6,
+  "destroyed": 182,
+  "half_destroyed": 267,
+  "partial_damage": 1189,
+  "flooded_above_floor": 120,
+  "flooded_below_floor": 120,
+  "non_residential": 0,
+  "source": ""
+ }
+}

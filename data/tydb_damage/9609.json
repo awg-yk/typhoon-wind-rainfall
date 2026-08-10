@@ -1,0 +1,29 @@
+{
+ "title": "1996年 台風第9号 (Herb) : TY9609",
+ "weatherText": "7月23日にサイパン島の東の海上で発生し、29日にはフィリピンの東海上にて超大型で非常に強い勢力となった。その後、沖縄の南海上をほぼ北西に進み、31日に超大型で非常に強い勢力を維持して西表島付近を通過した。全壊1棟、半壊18棟、床下浸水3棟（情報元：気象要覧第1163号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 18,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "気象要覧第1163号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 18,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 3,
+  "non_residential": 0,
+  "source": ""
+ }
+}

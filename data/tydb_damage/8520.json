@@ -1,0 +1,65 @@
+{
+ "title": "1985年 台風第20号 (Brenda) : TY8520",
+ "weatherText": "10月4日に与那国島の西約20km付近を北上した後、進路を北東に変えて、朝鮮半島南岸で熱帯低気圧となり日本海を進んだ。負傷者35人、全壊・流失9棟、半壊・一部破損82棟、床上浸水82棟、床下浸水144棟（情報元：気象要覧第1034号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 29,
+   "destroyed": 1,
+   "half_destroyed": 0,
+   "partial_damage": 53,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 75,
+   "non_residential": null,
+   "source": "気象要覧1034号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 60,
+   "flooded_below_floor": 63,
+   "non_residential": null,
+   "source": "気象要覧1034号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧1034号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 8,
+   "half_destroyed": null,
+   "partial_damage": 29,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "気象要覧1034号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 35,
+  "destroyed": 9,
+  "half_destroyed": 0,
+  "partial_damage": 82,
+  "flooded_above_floor": 82,
+  "flooded_below_floor": 144,
+  "non_residential": 0,
+  "source": ""
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "title": "1997年 台風第13号 (Winnie) : TY9713",
+ "weatherText": "8月6日にマーシャル諸島近海で発生し、12日には超大型で非常に強い勢力に発達し、16日には沖縄東方海上へ進んだ。台風は勢力を保ちながら、17日には沖縄本島と宮古島の間を通過し、超大型で強い勢力で大陸東岸の長江下流付近に上陸した。死者1人、負傷者10人、半壊2棟、一部破損2棟、床上浸水5棟、床下浸水28棟（情報元：気象要覧第1176号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 59,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 11,
+   "non_residential": 11,
+   "source": "鹿児島県「平成9年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 3,
+  "destroyed": 0,
+  "half_destroyed": 2,
+  "partial_damage": 60,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 11,
+  "non_residential": 11,
+  "source": ""
+ }
+}

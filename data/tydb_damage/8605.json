@@ -1,0 +1,41 @@
+{
+ "title": "1986年 台風第5号 (Nancy) : TY8605",
+ "weatherText": "6月22日にフィリピンの東海上で台風となって北西進し、23日には石垣島の南西約330kmの海上に達し、その後向きを北に変え24日には東シナ海に達した。その後衰弱しながら北北東〜北東進し、25日には済州島付近で熱帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧1042号",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧1042号",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 2,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

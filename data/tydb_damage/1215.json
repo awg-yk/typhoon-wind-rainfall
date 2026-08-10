@@ -1,0 +1,29 @@
+{
+ "title": "2012年 台風第15号 (Bolaven) : TY1215",
+ "weatherText": "8月20日にマリアナ諸島沖で発生し、25日には南大東島の南海上を北北西に進み、26日には沖縄本島を通過し、東シナ海を北西に進んだ。28日には黄海を北上し、29日には温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 9,
+   "half_destroyed": 29,
+   "partial_damage": 593,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 77,
+   "non_residential": 120,
+   "source": "鹿児島県「平成２４年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 9,
+  "half_destroyed": 29,
+  "partial_damage": 593,
+  "flooded_above_floor": 5,
+  "flooded_below_floor": 77,
+  "non_residential": 120,
+  "source": ""
+ }
+}

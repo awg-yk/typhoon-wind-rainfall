@@ -1,0 +1,16 @@
+{
+ "title": "2021年 台風第21号 (Nyatoh) : TY2121",
+ "weatherText": "大型で非常に強い勢力まで発達後、小笠原諸島に接近した後、温帯低気圧に。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

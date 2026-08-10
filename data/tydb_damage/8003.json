@@ -1,0 +1,149 @@
+{
+ "title": "1980年 台風第3号 (Ellen) : TY8003",
+ "weatherText": "日本の南海上を北上していた台風は、5月21日に向きを北東に変え、同日夜には房総半島の東約200kmの海上を通り、22日には北海道の東海上で温帯低気圧となった。この台風と21日頃日本付近にあった前線の影響で関東以西では強い雨が降り、関東太平洋沿岸や伊豆諸島で強風が吹いた。死者・行方不明1人、負傷者1人、半壊・一部破損7棟、床上浸水346棟、床下浸水724棟（気象要覧第969号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 8,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 29,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 30,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 47,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 156,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 345,
+   "flooded_below_floor": 432,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 9,
+   "non_residential": null,
+   "source": "気象要覧969号",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 9,
+  "flooded_above_floor": 347,
+  "flooded_below_floor": 734,
+  "non_residential": 0,
+  "source": ""
+ }
+}

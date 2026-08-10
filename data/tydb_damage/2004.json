@@ -1,0 +1,16 @@
+{
+ "title": "2020年 台風第4号 (Hagupit) : TY2004",
+ "weatherText": "八重山地方を暴風域に巻き込みながら北西に進み、中国大陸に上陸後、黄海、朝鮮半島を通過し、日本海で温帯低気圧に。その後、再発達しながら北海道に接近した。暴風の影響で石垣島では停電が発生した。また、利尻町や利尻富士町、稚内市などに「土砂災害警戒情報」がダ出され、利尻島では50年に1度の記録的大雨となった。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

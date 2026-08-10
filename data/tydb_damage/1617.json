@@ -1,0 +1,16 @@
+{
+ "title": "2016年 台風第17号 (Megi) : TY1617",
+ "weatherText": "マリアナ諸島近海で台風となり、強い台風に発達し、沖縄の南海上を進みながら、大型で非常に強い台風となり、先島諸島では暴風となった。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

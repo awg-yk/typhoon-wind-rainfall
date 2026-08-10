@@ -1,0 +1,16 @@
+{
+ "title": "2000年 台風第20号 (Xangsane) : TY0020",
+ "weatherText": "フィリピンの東の海上で発生後、フィリピンに上陸し、南シナ海で北寄りに向きを変え、台湾の東を通過後、東シナ海で温帯低気圧になり、九州および四国を通過した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

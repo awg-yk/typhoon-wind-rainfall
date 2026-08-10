@@ -1,0 +1,29 @@
+{
+ "title": "2005年 台風第17号 (Saola) : TY0517",
+ "weatherText": "9月24日夜から25日朝にかけて伊豆諸島南部に接近し、八丈島の南海上を通過し北東に進んだ。八丈島では最大瞬間風速52.7m/sの猛烈な風を観測した。また、25日6時には、1時間に55.5mmの激しい雨が降り、総雨量は249.5mmに達した。そのため、八丈島、青ヶ島で強風による住家被害や大雨による崖崩れや道路損壊などの被害が発生。また、25日には銚子市の南南東約210kmの海上を北東進したため、千葉県でも強風による被害が発生した。負傷者1人、一部損壊1棟の被害が生じた（情報元：千葉県）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "千葉県",
+   "pref": "千葉県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "1995年 台風第12号 (Oscar) : TY9512",
+ "weatherText": "9月12日にサイパン島の東の海上で発生し、15日には父島の南西海上にて超大型で非常に強い勢力となった。その後、進路を次第に北北東に変え、17日に超大型で非常に強い勢力を維持して八丈島付近を通過し後、房総沖を経て三陸沖に進んだ。死者2人、負傷者15人、全壊・流失51棟、半壊・一部破損876棟、床上浸水110棟、床下浸水494棟（情報元：気象要覧第1153号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 39,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 28,
+   "non_residential": 26,
+   "source": "茨城県",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 71,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "横浜市、川崎市の災害概要",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 9,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "静岡県総務部消防防災課",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 6,
+  "destroyed": 1,
+  "half_destroyed": 3,
+  "partial_damage": 127,
+  "flooded_above_floor": 3,
+  "flooded_below_floor": 30,
+  "non_residential": 31,
+  "source": ""
+ }
+}

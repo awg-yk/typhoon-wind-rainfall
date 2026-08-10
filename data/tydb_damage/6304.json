@@ -1,0 +1,41 @@
+{
+ "title": "1963年 台風第4号 (Shirley) : TY6304",
+ "weatherText": "6月12日15時，ヤップ島北西洋上に発生した熱帯低気圧は西北西に進み，13日15時に台風となった。台風はその後北ないし北西に進み，16日9時にはルソン島のはるか東方に達した。18日9時に宮古島付近を通り，東シナ海をさらに北北西進した。台風は19日15時に北東に向きを変えて，20日9時に釜山の北を通過して日本海に入り，同日15時には温帯低気圧となった。6月13日15時の中心気圧995hPa。16日9時の中心気圧935hPa，最大風速50m/sを示し，このころが台風の最盛期であった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "気象要覧第766号",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 8,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 7,
+   "non_residential": 15,
+   "source": "気象要覧第766号",
+   "pref": "長崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 8,
+  "flooded_above_floor": 6,
+  "flooded_below_floor": 17,
+  "non_residential": 15,
+  "source": ""
+ }
+}

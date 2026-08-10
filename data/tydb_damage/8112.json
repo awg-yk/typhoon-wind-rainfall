@@ -1,0 +1,41 @@
+{
+ "title": "1981年 台風第12号 (Phyllis) : TY8112",
+ "weatherText": "8月3日から4日にかけて前線が通過したため北海道の中央部から南部に大雨が降った。さらに5〜6日は台風が関東東方海上から北北東に進み、釧路南東海上で温帯低気圧となり、根室を抜けて北方に去った。北海道東部を中心とする一帯は5日夜半から6日朝にかけて強雨となった。死者・行方不明8人、負傷者14人、全壊・流失59棟、半壊・一部破損395棟、床上浸水6119棟、床下浸水20956棟情報元：気象要覧第984号）。",
+ "prefectures": [
+  {
+   "dead_missing": 8,
+   "injured": 14,
+   "destroyed": 52,
+   "half_destroyed": 47,
+   "partial_damage": 88,
+   "flooded_above_floor": 6115,
+   "flooded_below_floor": 20948,
+   "non_residential": 197,
+   "source": "消防庁災害年報",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "消防庁災害年報",
+   "pref": "秋田県"
+  }
+ ],
+ "total": {
+  "dead_missing": 8,
+  "injured": 14,
+  "destroyed": 52,
+  "half_destroyed": 47,
+  "partial_damage": 88,
+  "flooded_above_floor": 6115,
+  "flooded_below_floor": 20986,
+  "non_residential": 197,
+  "source": ""
+ }
+}

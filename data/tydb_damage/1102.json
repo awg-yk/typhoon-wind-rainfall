@@ -1,0 +1,137 @@
+{
+ "title": "2011年 台風第2号 (Songda) : TY1102",
+ "weatherText": "5月22日カロリン諸島近海で発生し、28日から29日にかけて沖縄地方を通過し、29日には九州南海、四国南海を北東に進み、温帯低気圧に変わった。低気圧は30日にかけて、関東地方の南から東海上を通過した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "茨城県「平成２３年災害の記録」",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 13,
+   "flooded_below_floor": 55,
+   "non_residential": 6,
+   "source": "福井県「平成２４年消防防災年報」",
+   "pref": "福井県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "滋賀県「平成２４年版消防防災年報」",
+   "pref": "滋賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 22,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 46,
+   "non_residential": 28,
+   "source": "京都府「平成２３年災害の記録」",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "大阪府消防防災課「平成２３年中大阪府災害年報」",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 13,
+   "non_residential": null,
+   "source": "和歌山県「平成２３・２４年度消防防災年報」",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "徳島県「平成２３年版消防年報」",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "大分県「平成２４年版消防年報」",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 8,
+   "partial_damage": 222,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 8,
+   "non_residential": 46,
+   "source": "鹿児島県「平成２３年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 71,
+   "destroyed": 4,
+   "half_destroyed": 10,
+   "partial_damage": 55,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 5,
+   "non_residential": 62,
+   "source": "沖縄県「平成２４年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 73,
+  "destroyed": 4,
+  "half_destroyed": 20,
+  "partial_damage": 303,
+  "flooded_above_floor": 22,
+  "flooded_below_floor": 135,
+  "non_residential": 143,
+  "source": ""
+ }
+}

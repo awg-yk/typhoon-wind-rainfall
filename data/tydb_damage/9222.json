@@ -1,0 +1,29 @@
+{
+ "title": "1992年 台風第22号 (Yvette) : TY9222",
+ "weatherText": "10月7日にフィリピンに東で発生し、14日から16日にかけ大型で非常に強い勢力で南大東島の南海上を北東進した。17日に父島の北の海上を中型で強い勢力で通過し、18日に日本の東海上で温帯低気圧に変わった。床上浸水2棟、床下浸水2棟（情報元：気象要覧第1118号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第1118号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 2,
+  "flooded_below_floor": 2,
+  "non_residential": 0,
+  "source": ""
+ }
+}

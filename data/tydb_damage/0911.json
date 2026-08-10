@@ -1,0 +1,41 @@
+{
+ "title": "2009年 台風第11号 (Krovanh) : TY0911",
+ "weatherText": "8月28日に日本の南海上で発生し、29日には小笠原諸島の東海を北北西に進み、31日には伊豆諸島近海を通過、夕方には房総半島沖を通過した。その後、太平洋沿岸を北上し、1日には北海道の東海上で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "茨城県「災害の記録　平成２１年」",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "神奈川県「平成２２年版消防年報」",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

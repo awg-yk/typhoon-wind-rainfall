@@ -1,0 +1,65 @@
+{
+ "title": "1961年 台風第15号 (Kathy) : TY6115",
+ "weatherText": "8月14日3時グアム島の北西約400kmの洋上に発生した熱帯低気圧は，北西から北に進み，15日21時に台風となった。17日夕刻には宮崎の南東およそ150kmまで近づいたが，18日3時に熱帯低気圧となって宮崎付近に上陸した。その後は北北西に向かい，19日3時には長崎県五島列島付近に達し同方面で消滅した。8月15日21時，中心気圧994hPa。17日11時00分の飛行機観測によると，中心気圧987hPa，中心付近の最大風速44m/sを観測（最盛期）。 負傷者5人、全壊2棟、半壊16棟、床上浸水427棟、床下浸水1950棟（気象要覧第744号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 250,
+   "non_residential": null,
+   "source": "気象要覧第744号",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 403,
+   "flooded_below_floor": 1521,
+   "non_residential": null,
+   "source": "気象要覧第744号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 1,
+   "half_destroyed": 15,
+   "partial_damage": null,
+   "flooded_above_floor": 22,
+   "flooded_below_floor": 141,
+   "non_residential": null,
+   "source": "気象要覧第744号",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "気象要覧第744号",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 5,
+  "destroyed": 2,
+  "half_destroyed": 16,
+  "partial_damage": 0,
+  "flooded_above_floor": 427,
+  "flooded_below_floor": 1950,
+  "non_residential": 0,
+  "source": ""
+ }
+}

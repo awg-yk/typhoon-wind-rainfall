@@ -1,0 +1,16 @@
+{
+ "title": "2017年 台風第15号 (Sanvu) : TY1715",
+ "weatherText": "マリアナ諸島近海で台風に発達し、父島周辺に停滞し記録的な大雨をもたらす。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

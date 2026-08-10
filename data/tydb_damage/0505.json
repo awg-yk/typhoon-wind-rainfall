@@ -1,0 +1,29 @@
+{
+ "title": "2005年 台風第5号 (Haitang) : TY0505",
+ "weatherText": "7月12日に南鳥島の西南西約260kmで発生し、発達しながら西南西に進み、16日には中心気圧915hPa、最大風速55m/sの大型で猛烈な台風へと発達した。17日には向きを北西へ変えて石垣島の南海上へ進み、18日に石垣島、与那国島に最接近した。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 7,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "沖縄県「平成１８年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 7,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 2,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 2,
+  "source": ""
+ }
+}

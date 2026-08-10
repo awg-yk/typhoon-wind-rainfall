@@ -1,0 +1,29 @@
+{
+ "title": "1953年 台風第4号 (Kit) : TY5304",
+ "weatherText": "6月26日9時の海面天気図解析で認められた熱帯低気圧は，西北西に進み27日9時台風Kitと命名された。ルソン島はるか東方洋上を西北西に進み，ウルシー島近海，バリンタン海峡東方洋上を通過し，7月4日3時頃台湾，9時に台湾海峡を横断，午後に大陸に入った。7日3時に黄海に抜けその後温低化して8日9時頃日本海で消滅した。6月30日9時には910hPaとなった。 全壊54棟、半壊427棟、流失11棟（気象要覧第646号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 65,
+   "half_destroyed": 427,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 455,
+   "source": "気象要覧第646号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 65,
+  "half_destroyed": 427,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 455,
+  "source": ""
+ }
+}

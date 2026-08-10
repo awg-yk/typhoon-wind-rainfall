@@ -1,0 +1,16 @@
+{
+ "title": "2007年 台風第6号 (Pabuk) : TY0706",
+ "weatherText": "フィリピンの東で発生後西進し、台湾南端に上陸した。その後、中国本土の南シナ海沿岸から東シナ海沿岸を進み、黄海を通過して朝鮮半島方面に進んだ。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

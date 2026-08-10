@@ -1,0 +1,29 @@
+{
+ "title": "2002年 台風第4号 (Noguri) : TY0204",
+ "weatherText": "6月4日に海南島の東海上で発生し、10日に宮古島を通過した。勢力を弱めながら、11日には大隅半島のすぐ東の海上を進み、九州の東海上で熱帯低気圧となった。負傷者1人、半壊・一部破損1棟、床下浸水1棟（情報元：気象要覧第1234号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "沖縄県「平成１５年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 2,
+  "non_residential": 0,
+  "source": ""
+ }
+}

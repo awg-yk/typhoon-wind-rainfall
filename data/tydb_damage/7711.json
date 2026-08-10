@@ -1,0 +1,137 @@
+{
+ "title": "1977年 台風第11号 (Emma) : TY7711",
+ "weatherText": "南海上をゆっくり北上してきた台風は，9月19日朝八丈島付近にあったが，その後銚子沖をかすめるように北北東に進み，20日朝三陸沖から次第に遠ざかっていった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "岩手県災異年表",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 140,
+   "flooded_below_floor": 660,
+   "non_residential": null,
+   "source": "気象要覧第937号",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 224,
+   "flooded_below_floor": 0,
+   "non_residential": null,
+   "source": "気象要覧第937号",
+   "pref": "山形県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 3,
+   "destroyed": 18,
+   "half_destroyed": 21,
+   "partial_damage": null,
+   "flooded_above_floor": 2412,
+   "flooded_below_floor": 6743,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": 6,
+   "destroyed": 3,
+   "half_destroyed": 8,
+   "partial_damage": 6,
+   "flooded_above_floor": 974,
+   "flooded_below_floor": 2777,
+   "non_residential": 10,
+   "source": "茨城県の災害昭和52年",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第937号",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 39,
+   "flooded_below_floor": 1259,
+   "non_residential": null,
+   "source": "気象要覧第937号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 23,
+   "flooded_below_floor": 151,
+   "non_residential": null,
+   "source": "気象要覧第937号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 250,
+   "non_residential": 2,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第937号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 9,
+  "injured": 9,
+  "destroyed": 21,
+  "half_destroyed": 29,
+  "partial_damage": 7,
+  "flooded_above_floor": 3813,
+  "flooded_below_floor": 11841,
+  "non_residential": 12,
+  "source": ""
+ }
+}

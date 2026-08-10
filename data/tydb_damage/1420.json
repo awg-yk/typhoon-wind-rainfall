@@ -1,0 +1,16 @@
+{
+ "title": "2014年 台風第20号 (Nuri) : TY1420",
+ "weatherText": "フィリピンの東で台風となり、11月2日にかけての24時間で中心気圧が65hPa急低下し、大型で猛烈な台風に発達。その後、温帯低気圧になるが、、アリューシャン列島付近で中心気圧が920hPaまで再び猛発達した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

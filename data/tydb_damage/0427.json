@@ -1,0 +1,16 @@
+{
+ "title": "2004年 台風第27号 (Nanmadol) : TY0427",
+ "weatherText": "カロリン諸島付近で発生し、北西に進みながら発達し、フィリピンの上陸した後、台湾の南を通過した。その後、この台風を吸収した別の温帯低気圧が、日本付近で爆弾低気圧となり、日本全国に強風や大雨をもたらした。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

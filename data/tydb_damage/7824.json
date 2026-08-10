@@ -1,0 +1,41 @@
+{
+ "title": "1978年 台風第24号 (Ora) : TY7824",
+ "weatherText": "10月10日朝，ルソン島の東方海上で発生した台風は，15日朝奄美大島付近を通過した後，同日午後には西日本の南海上で温帯低気圧となった。死者2人、浸水84棟（気象要覧第950号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": 13,
+   "flooded_below_floor": 129,
+   "non_residential": null,
+   "source": "鹿児島県「昭和53年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 50,
+   "non_residential": null,
+   "source": "気象要覧第950号（被害状況より）",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 4,
+  "flooded_above_floor": 13,
+  "flooded_below_floor": 179,
+  "non_residential": 0,
+  "source": ""
+ }
+}

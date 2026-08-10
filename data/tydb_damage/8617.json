@@ -1,0 +1,29 @@
+{
+ "title": "1986年 台風第17号 (Ben) : TY8617",
+ "weatherText": "9月19日にマーシャル諸島の西海上で台風となり、25日には小笠原諸島のはるか南方海上に達した。その後向きを北に変えて、28日夜父島を通過し、北北東へ進み、29日には八丈島の東海上を通り、30日に日本のはるか東海上で温帯低気圧に変わった。死者・行方不明4人、床上浸水13棟、床下浸水234棟（情報元：気象要覧第1045号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 6,
+   "half_destroyed": 1,
+   "partial_damage": 20,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 7,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 6,
+  "half_destroyed": 1,
+  "partial_damage": 20,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 7,
+  "source": ""
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "title": "2015年 台風第20号 (Krovanh) : TY1520",
+ "weatherText": "マリアナ諸島近海で台風となり、小笠原近海で非常に強い台風になった。小笠原諸島では大雨となった。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

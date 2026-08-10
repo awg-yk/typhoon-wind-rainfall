@@ -1,0 +1,29 @@
+{
+ "title": "2007年 台風第15号 (Krosa) : TY0715",
+ "weatherText": "10月2日にフィリピンの東海上で発生、発達しながら北西から北西北に進み大型で猛烈な勢力に発達した。5日から6日にかけて沖縄県先島諸島は暴風雨となった。その後、勢力を弱めながら台湾北部を通過し、7日に中国南部に上陸した。沖縄県与那国島では、6日00時頃10月の観測では過去最強となる最大風速63.2m/sを記録した。また、台湾、中国に大きな被害をもたらした。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 58,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 30,
+   "source": "沖縄県「平成２０年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 58,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 30,
+  "source": ""
+ }
+}

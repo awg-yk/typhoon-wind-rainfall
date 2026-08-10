@@ -1,0 +1,65 @@
+{
+ "title": "1955年 台風第12号 (No-name) : TY5512",
+ "weatherText": "7月22日9時ごろ上海沖合いに990hPaの台風が発生した。台風はその後、東北東に進み23日9時には富江の西南西120kmの洋上に達したが、熱帯低気圧となった。その後は、長崎の北西方海上から南東に向きを変え、九州南部を横断して24日9時に宮崎の東南東海上で温帯低気圧となった。この台風の接近に伴って、九州・四国地方は雨が降り始め、この雨のため鹿児島県などに被害があった。負傷者1人、全壊1棟、半壊2棟、床上浸水6棟、床下浸水178棟（気象要覧第671号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 24,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 154,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 2,
+  "partial_damage": 0,
+  "flooded_above_floor": 6,
+  "flooded_below_floor": 178,
+  "non_residential": 0,
+  "source": ""
+ }
+}

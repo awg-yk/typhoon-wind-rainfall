@@ -1,0 +1,29 @@
+{
+ "title": "1985年 台風第8号 (Kit) : TY8508",
+ "weatherText": "台風は九州の南海上から東シナ海へゆっくり北西進した。半壊・一部破損62棟、床上浸水1棟、床下浸水11棟（情報元：気象要覧第1032号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 118,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 15,
+   "non_residential": 159,
+   "source": "鹿児島県「昭和60年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 118,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 15,
+  "non_residential": 159,
+  "source": ""
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "title": "1961年 台風第10号 (Helen) : TY6110",
+ "weatherText": "7月23日3時にグアム島南東方約250kmの洋上に発生した熱帯低気圧は西北西に進み，26日21時はルソン島のはるか東方洋上に達した。この低気圧は，その後北東のち北に向きを変えて進み，27日21時には南大東島の南方約500kmの洋上で台風となった。29日15時には南大東島の南方約100kmの洋上に接近し，その後は北北西に向きを変えて進んだ。台風はこのころから奄美諸島の南東方沖に達した30日15時頃までが最盛期であった。台風は奄美大島の南沖を西に進み，31日3時頃から反転して東に進んだ。同日21時頃から台風は北西に向きを変えて，8月2日昼頃九州西方海上を北北西に進み，3日3時頃朝鮮半島南部に上陸した。台風は同日15時には熱帯低気圧となり，さらに21時には温帯低気圧となった。7月27日21時，中心気圧990hPa，中心付近の最大風速25m/sくらい。30日15時，中心気圧970hPa，最大風速55m/s，風速25m/s以上の暴風半径約150km。 死者・行方不明9人、負傷者7人、全壊29棟、半壊121棟、流失1棟、一部破損20棟、床上浸水499棟、床下浸水4229棟（6111,6112号を含む 気象要覧第743号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 6,
+   "destroyed": 17,
+   "half_destroyed": 58,
+   "partial_damage": 99,
+   "flooded_above_floor": 581,
+   "flooded_below_floor": 5250,
+   "non_residential": 107,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 10,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 11,
+   "source": "気象要覧第743号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 6,
+  "destroyed": 27,
+  "half_destroyed": 59,
+  "partial_damage": 99,
+  "flooded_above_floor": 581,
+  "flooded_below_floor": 5250,
+  "non_residential": 118,
+  "source": ""
+ }
+}

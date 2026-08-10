@@ -1,0 +1,101 @@
+{
+ "title": "2024年 台風第14号 (Pulasan) : TY2414",
+ "weatherText": "台風第14号から変わった低気圧や秋雨前線に向かって暖かく湿った空気で石川県能登では線状降水帯による猛烈な雨。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 26,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "山形県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 18,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": 16,
+   "injured": 47,
+   "destroyed": 82,
+   "half_destroyed": 597,
+   "partial_damage": 125,
+   "flooded_above_floor": 52,
+   "flooded_below_floor": 843,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 78,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "消防庁調べ：令和６年９月２０日からの大雨による被害及び 消防機関等の対応状況（第３５報） 令和7年1月28日14時00分現在",
+   "pref": "熊本県"
+  }
+ ],
+ "total": {
+  "dead_missing": 17,
+  "injured": 47,
+  "destroyed": 82,
+  "half_destroyed": 597,
+  "partial_damage": 127,
+  "flooded_above_floor": 67,
+  "flooded_below_floor": 976,
+  "non_residential": 0,
+  "source": ""
+ }
+}

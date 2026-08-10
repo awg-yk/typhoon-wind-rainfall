@@ -1,0 +1,89 @@
+{
+ "title": "1986年 台風第16号 (Abby) : TY8616",
+ "weatherText": "9月14日にグアム島の西海上で台風となり、18日には石垣島の南南西約270kmの海上に達した。その後台風は北西に進み、19日に台湾に上陸して勢力を弱め、夜には東シナ海を北東に進み、20日に東シナ海中部で温帯低気圧になった。死者・行方不明2人、負傷者2人、全壊・流失1棟、半壊・一部破損21棟、床上浸水371棟、床下浸水432棟（情報元：気象要覧第1045号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 16,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 14,
+   "flooded_below_floor": 123,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 357,
+   "flooded_below_floor": 255,
+   "non_residential": null,
+   "source": "気象要覧1045号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 2,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 21,
+  "flooded_above_floor": 373,
+  "flooded_below_floor": 456,
+  "non_residential": 0,
+  "source": ""
+ }
+}

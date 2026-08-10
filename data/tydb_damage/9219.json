@@ -1,0 +1,29 @@
+{
+ "title": "1992年 台風第19号 (Ted) : TY9219",
+ "weatherText": "9月18日にフィリピンの東海上で発生し、22日には大型で並の強さで沖縄の南を北上し、台湾、華中に上陸した後、黄海、朝鮮半島を経て25日未明に日本海で温帯低気圧に変わった。負傷者8人、半壊1棟、床上浸水21棟、床下浸水281棟（情報元：気象要覧第1117号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "島根県「平成４年災害年報」",
+   "pref": "島根県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 2,
+  "non_residential": 0,
+  "source": ""
+ }
+}

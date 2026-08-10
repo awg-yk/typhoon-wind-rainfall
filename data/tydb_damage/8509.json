@@ -1,0 +1,53 @@
+{
+ "title": "1985年 台風第9号 (Lee) : TY8509",
+ "weatherText": "8月12〜14日は台風が沖縄の南から北上したため、南西諸島と暖湿流の西日本の太平洋側で大雨となった。九州南部、四国、近畿、東海の太平洋側で大雨。負傷者15人、全壊5棟、一部破損123棟、床上浸水137棟、床下浸水1358棟（情報元：気象要覧第1032号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "鹿児島県「昭和60年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1317,
+   "flooded_below_floor": 575,
+   "non_residential": null,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 5,
+  "flooded_above_floor": 1317,
+  "flooded_below_floor": 576,
+  "non_residential": 0,
+  "source": ""
+ }
+}

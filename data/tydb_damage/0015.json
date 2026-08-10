@@ -1,0 +1,29 @@
+{
+ "title": "2000年 台風第15号 (Bopha) : TY0015",
+ "weatherText": "9月4日にルソン島の東海上で発生し、8日に沖縄本島の南海上を通過した後、10日にかけて反時計回りに進路を変えて南寄りに進み、台湾の東海上を通過した。死者・行方不明2人、負傷者1人（情報元：気象要覧第1213号）。",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1213号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

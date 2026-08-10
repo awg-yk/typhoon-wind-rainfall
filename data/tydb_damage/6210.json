@@ -1,0 +1,29 @@
+{
+ "title": "1962年 台風第10号 (Opal) : TY6210",
+ "weatherText": "7月30日15時，トラック島北西方洋上に発生した熱帯低気圧は西北西に進み，8月2日12時ヤップ島北方洋上で台風となった。その後北西に進み，5日9時には台湾南東洋上に達した。台風は北西進し台湾北部を横切り，6日午後には中国大陸に上陸して向きを北に変えた。7日には北東に向かい夜に黄海に入り，8日午後朝鮮北部を横切って日本海に抜け，9日12時札幌の西約200kmの海上で温帯低気圧となった。温帯低気圧となった後，9日夜に入って積丹半島，石狩湾を経て留萌付近から上陸し，10日朝には紋別沖に抜けた。8月5日9時，中心気圧910hPa，中心付近の最大風速70m/s，25m/s以上の暴風半径は北東300km，南西200kmに及びこの台風の最盛期を示した。",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": 7,
+   "destroyed": 16,
+   "half_destroyed": 34,
+   "partial_damage": null,
+   "flooded_above_floor": 772,
+   "flooded_below_floor": 10210,
+   "non_residential": 781,
+   "source": "気象要覧第756号",
+   "pref": "北海道"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 7,
+  "destroyed": 16,
+  "half_destroyed": 34,
+  "partial_damage": 0,
+  "flooded_above_floor": 772,
+  "flooded_below_floor": 10210,
+  "non_residential": 781,
+  "source": ""
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "title": "1987年 台風第13号 (Freda) : TY8713",
+ "weatherText": "9月4日にマリアナ近海で発生した熱帯低気圧は西北西に進み、10日には沖ノ鳥島の南南東の海上に達した。15日には小笠原諸島の西の海上を通過し、16日には鳥島の南海上を進んだ。その後北上を続けたが、八丈島の南の海上に達して、向きを次第に北東に変え、日本の東海上で温帯低気圧に変わった。半壊・一部破損7棟、床下浸水15棟（情報元：気象要覧第1057号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 31,
+   "non_residential": null,
+   "source": "岩手日報「いわて災異録」",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 15,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 7,
+  "flooded_above_floor": 4,
+  "flooded_below_floor": 55,
+  "non_residential": 15,
+  "source": ""
+ }
+}

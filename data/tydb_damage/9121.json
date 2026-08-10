@@ -1,0 +1,101 @@
+{
+ "title": "1991年 台風第21号 (Orchid) : TY9121",
+ "weatherText": "10月3日にマリアナ諸島で発生し、7日に沖ノ鳥島の西海上で大型で非常に強い勢力に発達し、進路を北西から北東に変えた。12日から13日にかけて、大型で並の強さで八丈島の南海上を北東に進み、14日に千島の東で温帯低気圧に変わった。死者1人、負傷者20人、全壊・流失22棟、半壊・一部破損118棟、床上浸水156棟、床下浸水2491棟（情報元：気象要覧第1106号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 47,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 90,
+   "non_residential": null,
+   "source": "岩手日報「いわて災異録」",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 6,
+   "destroyed": 8,
+   "half_destroyed": 17,
+   "partial_damage": 127,
+   "flooded_above_floor": 21,
+   "flooded_below_floor": 78,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 28,
+   "non_residential": null,
+   "source": "足利市",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 86,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 28,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 6,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": 17,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "横浜市",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 12,
+  "destroyed": 8,
+  "half_destroyed": 17,
+  "partial_damage": 175,
+  "flooded_above_floor": 26,
+  "flooded_below_floor": 311,
+  "non_residential": 17,
+  "source": ""
+ }
+}

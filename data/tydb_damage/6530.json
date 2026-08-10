@@ -1,0 +1,29 @@
+{
+ "title": "1965年 台風第30号 (Della) : TY6530",
+ "weatherText": "",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "岩手県",
+   "pref": "岩手県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

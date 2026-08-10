@@ -1,0 +1,29 @@
+{
+ "title": "2007年 台風第12号 (Wipha) : TY0712",
+ "weatherText": "9月16日にフィリピンの東海上で発生し、発達しながら西北西に進み、18日には石垣島地方を通過した。19日には中国浙江省に上陸後、中国大陸を北上した。沖縄県西表島では、18日08時頃観測史上第2位となる最大瞬間風速65.9m/sを記録した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 8,
+   "destroyed": 8,
+   "half_destroyed": 8,
+   "partial_damage": 36,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 31,
+   "source": "沖縄県「平成２０年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 8,
+  "destroyed": 8,
+  "half_destroyed": 8,
+  "partial_damage": 36,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 31,
+  "source": ""
+ }
+}

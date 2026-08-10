@@ -1,0 +1,53 @@
+{
+ "title": "1964年 台風第11号 (Helen) : TY6411",
+ "weatherText": "7月27日9時マーカス島の南西方で発生した熱帯低気圧は，28日9時に台風となった。台風はその後北西に進み，30日12時には硫黄島の北を通過した。8月1日9時に種子島の南東約240kmの海上を経て，17時には屋久島東部に上陸，21時には草垣島を通過して，2日2時には枕崎の西方約160kmの海上に達した。その後も引き続き北西に進み，4日3時には遼東半島に達して熱帯低気圧になった。7月30日12時の飛行機観測では中心の最低気圧931hPa，中心付近の最大風速77m/sであり，このころが最盛期であった。8月1日の中心気圧965hPa，最大風速50m/s，風速25m/s以上の暴風半径は200kmであった。 死者1人、負傷者20人、全壊18棟、半壊55棟、一部破損175棟、床上浸水30棟、床下浸水159棟（気象要覧第780号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 100,
+   "source": "気象要覧第780号、気象要覧第780号（被害状況より）",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": 1,
+   "half_destroyed": 4,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 28,
+   "non_residential": 17,
+   "source": "気象要覧第780号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 16,
+   "destroyed": 17,
+   "half_destroyed": 48,
+   "partial_damage": 164,
+   "flooded_above_floor": 30,
+   "flooded_below_floor": 131,
+   "non_residential": 288,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 20,
+  "destroyed": 18,
+  "half_destroyed": 55,
+  "partial_damage": 175,
+  "flooded_above_floor": 30,
+  "flooded_below_floor": 159,
+  "non_residential": 405,
+  "source": ""
+ }
+}

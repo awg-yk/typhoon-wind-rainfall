@@ -1,0 +1,29 @@
+{
+ "title": "1989年 台風第14号 (Nancy) : TY8914",
+ "weatherText": "8月11日に南鳥島の南海上で発生し、東北東に進んだ後、次第に向きを東北東から北西に変え、さらに日本の東で向きを北に変えた後、根室半島をかすめオホーツク海に抜けた。死者3人、半壊・一部破損2棟、床上浸水170棟、床下浸水2128棟（気象要覧第1080号 台風第15号の被害を含む）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 61,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "根室市",
+   "pref": "北海道"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 61,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

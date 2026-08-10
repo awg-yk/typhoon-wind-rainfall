@@ -1,0 +1,29 @@
+{
+ "title": "1983年 台風第13号 (Ida) : TY8313",
+ "weatherText": "10月10日に四国沖をゆっくり北上した後、紀伊半島の南海上を北東進して11日に八丈島と三宅島の間の海域を通過し、夕方には関東の東海上で温帯低気圧となった。全壊・半壊・一部破損7棟、浸水33棟（情報元：気象要覧第1010号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 8,
+   "non_residential": 8,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 6,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 8,
+  "non_residential": 8,
+  "source": ""
+ }
+}

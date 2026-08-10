@@ -1,0 +1,53 @@
+{
+ "title": "1957年 台風第9号 (No-name) : TY5709",
+ "weatherText": "8月21日3時に南大東島の東北東約250kmに熱帯低気圧が発生し，この低気圧は23日9時に台風となった。この台風の影響で四国西部以西の各地が雨となった。 台風はその後次第に速度を早めながら北のち北北東に進んだ。24日3時過ぎには高知付近に上陸したが衰弱して熱帯低気圧となっており，陸上では強い暴風を観測した所はなかった。8月23日9時，熱帯低気圧の中心の東方約200kmの海上（北緯29.2度，東経135.0度）にあった南方定点観測船でSSE 34 kt（約17m/s）の強風となり，最大風速は約18m/sと推定された。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": 2,
+   "half_destroyed": 5,
+   "partial_damage": 30,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "新宮市消防本部",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 500,
+   "non_residential": null,
+   "source": "気象要覧第696号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "気象要覧第696号",
+   "pref": "徳島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 3,
+  "destroyed": 2,
+  "half_destroyed": 5,
+  "partial_damage": 30,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 501,
+  "non_residential": 0,
+  "source": ""
+ }
+}

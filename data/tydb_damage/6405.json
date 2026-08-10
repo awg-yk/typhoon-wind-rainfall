@@ -1,0 +1,125 @@
+{
+ "title": "1964年 台風第5号 (Betty) : TY6405",
+ "weatherText": "台風第5号は東シナ海を北上し、7月7日には温帯低気圧となり朝鮮半島を通過し、日本海に入り、さらに南東にすすんだ。死者行方不明17人、負傷者13人、全壊6棟、半壊41棟、流失8棟、一部破損106棟、床上浸水3786棟、床下浸水17251棟（気象要覧第779号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 32,
+   "flooded_below_floor": 194,
+   "non_residential": 12,
+   "source": "気象要覧第779号",
+   "pref": "山形県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 78,
+   "flooded_below_floor": 226,
+   "non_residential": 7,
+   "source": "気象要覧第779号",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 13,
+   "non_residential": null,
+   "source": "気象要覧第779号",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": 10,
+   "injured": 11,
+   "destroyed": 10,
+   "half_destroyed": 39,
+   "partial_damage": 98,
+   "flooded_above_floor": 1365,
+   "flooded_below_floor": 8490,
+   "non_residential": 704,
+   "source": "気象要覧第779号",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 812,
+   "flooded_below_floor": 3860,
+   "non_residential": null,
+   "source": "気象要覧第779号",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 53,
+   "flooded_below_floor": 929,
+   "non_residential": 1,
+   "source": "気象要覧第779号",
+   "pref": "富山県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 3,
+   "flooded_above_floor": 1443,
+   "flooded_below_floor": 3490,
+   "non_residential": 32,
+   "source": "気象要覧第779号",
+   "pref": "福井県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 1,
+   "partial_damage": 3,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 47,
+   "non_residential": 7,
+   "source": "気象要覧第779号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第779号",
+   "pref": "岐阜県"
+  }
+ ],
+ "total": {
+  "dead_missing": 17,
+  "injured": 13,
+  "destroyed": 14,
+  "half_destroyed": 41,
+  "partial_damage": 106,
+  "flooded_above_floor": 3786,
+  "flooded_below_floor": 17251,
+  "non_residential": 763,
+  "source": ""
+ }
+}

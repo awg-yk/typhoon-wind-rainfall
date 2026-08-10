@@ -1,0 +1,41 @@
+{
+ "title": "1998年 台風第6号 (Todd) : TY9806",
+ "weatherText": "9月16日に南大東島に南海上で発生し、17日には沖ノ鳥島の北西海上で進路を北寄りに変え、南大東島の東海上で北上した。18日に大型で強い勢力となり、その後、勢力を弱めながら北西へ進んで、同日午後には種子島の南海上へ進んだ。19日には東シナ海を西へ進み、長江下流付近に上陸した。死者2人、負傷者10人、半壊48棟、床上浸水120棟、床下浸水823棟（情報元：気象要覧第1189号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 6,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 74,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "宮崎市",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": 6,
+   "source": "鹿児島県「平成10年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 9,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 80,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 5,
+  "non_residential": 6,
+  "source": ""
+ }
+}

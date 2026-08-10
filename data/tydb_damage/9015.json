@@ -1,0 +1,29 @@
+{
+ "title": "1990年 台風第15号 (Abe) : TY9015",
+ "weatherText": "8月24日にグアム島近海で発生した弱い熱帯低気圧は、31日に大型で強い勢力を保ちながら宮古島を通過した。その後勢力を弱めていったん大陸に上陸し、黄海で温帯低気圧となった。死者1人、全壊・流失2棟、半壊・一部破損5棟（情報元：気象要覧第1092号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 2,
+  "non_residential": 0,
+  "source": ""
+ }
+}

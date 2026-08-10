@@ -1,0 +1,101 @@
+{
+ "title": "1967年 台風第22号 (Opal) : TY6722",
+ "weatherText": "8月29日9時，ウェーク島の南東およを580kmの北緯15.0度，東経170.0度に発生した熱帯低気圧は，北西へ進み，30日9時同島の南東およそ400kmの海上，北緯16.1度，東経168.8度に達して台風となった。 台風はその後も北西に進み，同島に接近した9月1日9時頃から進路を西北西に変えた。台風は9月4日以後，北よりの成分をましながら北西に進み，7日21時には父島の東およそ450kmの海上に達して，このころから進路を西南西に変えた。 台風は，11日9時に父島の西方およそ400kmの海上，北緯27.0度，東経137.5度付近でゆっくりとした速度となって北西に向きを変え，12日15時ごろ転向点に達した。台風は，この台風の東北東およそ1200kmの海上にある台風第25号と，日本の東方およそ1800km付近にある台風第24号の3つが互いに干渉しあったとみられる複雑な動きを示した。台風第22号は，北東へ転向後13日夜半頃鳥島の北およそ110km付近を通り，15日3時には八丈島の東方で進路を南に変え，右回りの小さなループを描いて再び北東へ進み，17日15時に千島のウルップ島の南およそ600kmの海上，北緯39.9度，東経150.0度で温帯低気圧となった。台風発生時の中心気圧998hPa。9月4日9時にもっとも発達して，中心気圧920hPa，中心付近の最大風速70m/s，25m/s以上の暴風半径は200kmとなった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 22,
+   "non_residential": null,
+   "source": "気象要覧第817号",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 622,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第817号",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 8,
+   "flooded_below_floor": 47,
+   "non_residential": null,
+   "source": "気象要覧第817号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 4,
+   "half_destroyed": 7,
+   "partial_damage": 37,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 63,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 315,
+   "non_residential": null,
+   "source": "気象要覧第817号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 256,
+   "non_residential": null,
+   "source": "気象要覧第817号",
+   "pref": "愛知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 4,
+  "half_destroyed": 8,
+  "partial_damage": 37,
+  "flooded_above_floor": 20,
+  "flooded_below_floor": 1262,
+  "non_residential": 63,
+  "source": "0"
+ }
+}

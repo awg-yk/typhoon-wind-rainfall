@@ -1,0 +1,53 @@
+{
+ "title": "2006年 台風第7号 (Maria) : TY0607",
+ "weatherText": "8月5日に小笠原諸島の東方沖で発生し、8日には和歌山県潮岬の南東約80kmに位置した後、進路を北東に変えて、9日にかけて東海地方から関東地方の沿岸付近を通過した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 11,
+   "non_residential": null,
+   "source": "千葉県",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "東京都「平成18年水害の記録」",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 14,
+   "non_residential": null,
+   "source": "静岡県災害対策室",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 4,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 26,
+  "non_residential": 0,
+  "source": ""
+ }
+}

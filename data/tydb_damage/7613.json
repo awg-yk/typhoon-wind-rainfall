@@ -1,0 +1,41 @@
+{
+ "title": "1976年 台風第13号 (Billie) : TY7613",
+ "weatherText": "8月8日夜半に台風は石垣島の東南東約360kmの海上に達した。石垣島北部地区は，9日15時過ぎ頃から風雨が急速に弱まって，台風眼の中に入り青空が認められた。死者1人、負傷者12人、全半壊172棟（気象要覧第924号）",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第924号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 12,
+   "destroyed": null,
+   "half_destroyed": 172,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第924号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 12,
+  "destroyed": 0,
+  "half_destroyed": 172,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

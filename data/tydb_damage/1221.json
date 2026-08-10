@@ -1,0 +1,53 @@
+{
+ "title": "2012年 台風第21号 (Prapiroon) : TY1221",
+ "weatherText": "10月7日にフィリピンの東海上で発生し、15日には南大東島の南で停滞した。16日には南西に進み、17日には北に進み、18日には沖縄県・南大東島地方を北東に進んだ。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 22,
+   "non_residential": 1,
+   "source": "宮崎県「平成２４年災害の記録」",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "鹿児島県「平成２４年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県防災危機管理課",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 3,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 3,
+  "flooded_above_floor": 3,
+  "flooded_below_floor": 22,
+  "non_residential": 4,
+  "source": ""
+ }
+}

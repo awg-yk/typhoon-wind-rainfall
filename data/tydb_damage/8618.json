@@ -1,0 +1,29 @@
+{
+ "title": "1986年 台風第18号 (Carmen) : TY8618",
+ "weatherText": "10月2日にトラック島の北海上で台風となり、北西に進み6日日本の南海上に達した。その後進路を北北東から北東に変え、7日には父島の西海上を通過して、8日には八丈島の東海上に達した。台風はその後も北東に進み、関東の東海上で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 1,
+  "source": ""
+ }
+}

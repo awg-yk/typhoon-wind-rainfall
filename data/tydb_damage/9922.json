@@ -1,0 +1,16 @@
+{
+ "title": "1999年 台風第22号 (Gloria) : TY9922",
+ "weatherText": "日本の南で発生後、北東に進んだ。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

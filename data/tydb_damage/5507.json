@@ -1,0 +1,29 @@
+{
+ "title": "1955年 台風第7号 (Clara) : TY5507",
+ "weatherText": "7月5日9時、グアム島の南東方洋上に1008hPaの熱帯低気圧が発生し、7日15時には北緯14.0度、東経139.0度において台風となった。9日15時に台風はClaraと命名された。発達しながら北西に進み、12日21時に石垣島と宮古島の間を通って東シナ海に入った。12日21時台風は、その進路の向きを北に変えた。15日15時には鹿児島の西方約600kmに位置し、その後衰弱しながら北西進して、17日3時山東半島南岸70kmの海上で熱帯低気圧となった。台風が宮古島の付近を通過する際急に速度を落としたため暴風の吹続時間が長くなり、同島は甚大な被害を受けた。7月11日ないし12日ごろの飛行機観測：中心付近の最大風速60m/s、中心から半径100〜150km以内では風速25m/s以上の暴風を伴う。 13日9時21分の飛行機観測：中心気圧値918hPa。 死者・行方不明5人、負傷者5人、全壊1414棟、半壊1522棟（気象要覧第671号）",
+ "prefectures": [
+  {
+   "dead_missing": 5,
+   "injured": 5,
+   "destroyed": 1414,
+   "half_destroyed": 1522,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 5,
+  "injured": 5,
+  "destroyed": 1414,
+  "half_destroyed": 1522,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

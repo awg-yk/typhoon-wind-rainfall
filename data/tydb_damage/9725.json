@@ -1,0 +1,29 @@
+{
+ "title": "1997年 台風第25号 (Keith) : TY9725",
+ "weatherText": "10月26日にマーシャル諸島近海で発生し、2日には超大型で猛烈な強さの勢力でグアムの北の海上を通り、5日には超大型で非常に強い勢力で沖ノ鳥島の南海上へ進んだ。7日には超大型で強い勢力で硫黄島と父島の間を東北東へ進んだ。8日に温帯低気圧に変わった。死者1人、負傷者1人（情報元：気象要覧第1179号）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1179号",
+   "pref": "高知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

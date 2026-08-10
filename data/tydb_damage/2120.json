@@ -1,0 +1,16 @@
+{
+ "title": "2021年 台風第20号 (Malou) : TY2120",
+ "weatherText": "強い勢力まで発達後、日本の東の海上で温帯低気圧に。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

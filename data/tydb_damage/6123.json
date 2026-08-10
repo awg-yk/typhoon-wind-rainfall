@@ -1,0 +1,65 @@
+{
+ "title": "1961年 台風第23号 (Tilda) : TY6123",
+ "weatherText": "9月25日，エニウェック島西南西洋上に発生した熱帯低気圧は，西北西に進み，28日3時にはマリアナ諸島北西洋上で台風となった。台風は西進して29日9時沖ノ鳥島東南東洋上から北上して，30日15時には硫黄島の西南西約450kmの洋上に達し，再び西北西に向きを変えて進み10月2日朝，南大東島のすぐ南の海上に達した。2日夜半頃沖縄の南端をかすめて北西進し4日朝には華中沿岸に上陸したが，5日午後に揚子江河口付近で温帯低気圧となった。 温帯低気圧は北東に転向して6日朝鮮半島南部をかすめて日本海に入り，北東進して6日21時北海道渡島半島に上陸，北海道中央部を北東進して7日以後は樺太東岸を北東進し発達しながらオホーツク海に抜けた。9月28日3時，中心気圧994hPa。10月2日7時10分の飛行機観測によると中心気圧935hPa，中心付近の最大風速62m/sを観測，このころがこの台風の最盛期である。 死者・行方不明31人、負傷者11人、全壊1635棟、半壊3757棟、床上浸水4203棟、床下浸水5175棟（気象要覧第745号）",
+ "prefectures": [
+  {
+   "dead_missing": 18,
+   "injured": null,
+   "destroyed": 9,
+   "half_destroyed": 25,
+   "partial_damage": null,
+   "flooded_above_floor": 2361,
+   "flooded_below_floor": 3119,
+   "non_residential": null,
+   "source": "気象要覧第745号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "気象要覧第745号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 18,
+   "half_destroyed": 77,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 30,
+   "source": "気象要覧第745号",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": 12,
+   "injured": 11,
+   "destroyed": 1626,
+   "half_destroyed": 3732,
+   "partial_damage": null,
+   "flooded_above_floor": 1842,
+   "flooded_below_floor": 2056,
+   "non_residential": 8052,
+   "source": "気象要覧第745号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 31,
+  "injured": 11,
+  "destroyed": 1653,
+  "half_destroyed": 3834,
+  "partial_damage": 2,
+  "flooded_above_floor": 4203,
+  "flooded_below_floor": 5175,
+  "non_residential": 8083,
+  "source": ""
+ }
+}

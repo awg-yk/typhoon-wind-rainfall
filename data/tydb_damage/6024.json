@@ -1,0 +1,41 @@
+{
+ "title": "1960年 台風第24号 (Mamie) : TY6024",
+ "weatherText": "10月11日21時，マーシャル諸島エニウェトク島に発生した熱帯低気圧は，西ないし西南西に進んだ。13日3時頃から進路を西北西に変え，15日9時にはサイパン島の東方約130kmの海上に達して台風となった。17日15時には沖ノ鳥島東方約500kmの洋上で停滞した。台風はその後進路を北ないし北北東に変えた。硫黄島，父島，鳥島の東方洋上を北に進み，20日9時過ぎに房総半島南東約400kmの洋上に達した。その後台風は北東に進み，21日9時に温帯低気圧となった。10月15日9時，中心気圧995hPa，中心付近の最大風速25m/s以上。 18日15時から19日3時ごろは中心気圧が940hPa，中心付近の最大風速が45m/sに達し，この台風の最盛期を示した。 負傷者2人、全壊1棟、半壊3棟、流失2棟、一部破損4棟、床上浸水28棟、床下浸水249棟（気象要覧第734号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 11,
+   "partial_damage": null,
+   "flooded_above_floor": 26,
+   "flooded_below_floor": 161,
+   "non_residential": null,
+   "source": "気象要覧第734号",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 17,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 26,
+   "non_residential": null,
+   "source": "気象要覧第734号",
+   "pref": "茨城県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 20,
+  "half_destroyed": 11,
+  "partial_damage": 0,
+  "flooded_above_floor": 26,
+  "flooded_below_floor": 187,
+  "non_residential": 0,
+  "source": ""
+ }
+}

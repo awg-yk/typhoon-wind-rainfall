@@ -1,0 +1,29 @@
+{
+ "title": "1958年 台風第19号 (Grace) : TY5819",
+ "weatherText": "8月28日3時ころには、トラック島西方海上に熱帯低気圧の存在がはっきりし、29日9時にはグァム島南方で台風となる。急発達しながら、西北西ないし北西に進み、9月3日15時ころ石垣島南西海上を通過し、4日14時前に中国福建省に上陸した。5日18時ころ揚子江河口から東シナ海に出て、6日3時に温低化した。7日朝、秋田付近から奥羽北部を経て、三陸東方の海上に抜けて、9日21時消滅した。負傷者12人、全壊360棟、半壊575棟、一部破損76棟（気象要覧第708号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 12,
+   "destroyed": 360,
+   "half_destroyed": 575,
+   "partial_damage": 76,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 882,
+   "source": "気象要覧第708号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 12,
+  "destroyed": 360,
+  "half_destroyed": 575,
+  "partial_damage": 76,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 882,
+  "source": ""
+ }
+}

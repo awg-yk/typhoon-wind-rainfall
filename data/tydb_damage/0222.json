@@ -1,0 +1,41 @@
+{
+ "title": "2002年 台風第22号 (Bavi) : TY0222",
+ "weatherText": "10月8日にエニウェトク島の西海上で発生した熱帯低気圧は、発達しながら北西へ進み、10日にグアム島の東海上で大型の台風になった。12日に最も勢力を強めて、南鳥島の西南西を通過後、勢力を弱めながら北へ進み、14日に父島の北東海上で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "象要覧第1238号",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 4,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

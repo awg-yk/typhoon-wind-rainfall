@@ -1,0 +1,29 @@
+{
+ "title": "2015年 台風第9号 (Chan-hon) : TY1509",
+ "weatherText": "6月30日にマーシャル諸島近海で発生し、10日には中心気圧935hPa、中心付近の最大風速45m/sと最も発達した。勢力を維持したまま宮古島の北東約100kmの海上を北西に時速25kmの速度で通過し、7月9日夜から10日の午後にかけて沖縄県の各地が暴風域に入った。 10日1時に南城市糸数で最大瞬間風速49.9m/sを観測した。9日0時から11日9時までの総降水量は国頭で287mmとなった。軽傷24人、半壊1棟、一部損壊1棟、非住宅/全壊1棟、非住宅/一部損壊1棟（情報元：沖縄県）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 24,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "沖縄県",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 24,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 2,
+  "source": ""
+ }
+}

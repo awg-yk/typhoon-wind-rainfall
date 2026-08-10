@@ -1,0 +1,16 @@
+{
+ "title": "2015年 台風第26号 (In-fa) : TY1526",
+ "weatherText": "マーシャル諸島近海で台風となり西進し、マリアナ諸島の南東海上で非常に強い勢力へと成長。次第に進路を北東に変えて日本の南の海上で温帯低気圧に。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

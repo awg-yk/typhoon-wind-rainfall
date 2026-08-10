@@ -1,0 +1,29 @@
+{
+ "title": "1976年 台風第6号 (Pamela) : TY7606",
+ "weatherText": "台風は，関東沖を北東進する際，日本南岸に停滞していた前線を刺激し，5月24日から25日にかけて東海地方に大雨をもたらした。死者1人（気象要覧第921号）",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第921号",
+   "pref": "愛知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

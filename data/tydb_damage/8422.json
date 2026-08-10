@@ -1,0 +1,29 @@
+{
+ "title": "1984年 台風第22号 (Vanessa) : TY8422",
+ "weatherText": "10月30日に台風が父島付近を通過した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 5,
+   "partial_damage": 44,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 41,
+   "source": "東京都",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 3,
+  "half_destroyed": 5,
+  "partial_damage": 44,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 1,
+  "non_residential": 41,
+  "source": ""
+ }
+}

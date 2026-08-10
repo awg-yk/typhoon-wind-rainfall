@@ -1,0 +1,16 @@
+{
+ "title": "2014年 台風第14号 (Fengshen) : TY1414",
+ "weatherText": "奄美大島の南で台風となり、日本の南を東へ移動。台風からの湿った空気の影響で秋雨前線が活発化。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "title": "1962年 台風第28号 (Karen) : TY6228",
+ "weatherText": "11月7日15時，カロリン諸島の東方海上に発生した熱帯低気圧は北西に進み，8日9時にはトラック島の北方海上で台風となった。その後北西に進んだが，10日9時頃から向きを西北西に変えて，13日9時には沖ノ鳥島の南方約500kmに達した。次第に向きを北西から北に変えて，15日夕刻頃沖縄の南東約300kmの洋上から進路をさらに北東に変えた。夜半過ぎに南大東島付近を通過し，16日夜半には鳥島の北方50kmを経て本州東方洋上に去った。11月8日9時，中心気圧990hPa，中心付近の最大風速35m/s。13日9時，中心気圧900hPa，中心付近の最大風速70m/s，25m/sの暴風半径は400kmであり，このころが台風の最盛期であった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 4,
+   "half_destroyed": 15,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 17,
+   "source": "気象要覧第759号",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 3,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第759号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": null,
+   "destroyed": 6,
+   "half_destroyed": 16,
+   "partial_damage": 39,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 779,
+   "non_residential": 53,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 0,
+  "destroyed": 10,
+  "half_destroyed": 31,
+  "partial_damage": 39,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 779,
+  "non_residential": 70,
+  "source": ""
+ }
+}
