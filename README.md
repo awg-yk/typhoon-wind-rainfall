@@ -301,12 +301,21 @@ GSIのタイルCDN（cyberjapandata.gsi.go.jp）もサンドボックスから�
 
 ## 被害状況の都道府県別マップ
 
-左パネルの被害状況ブロックに表示される都道府県別の色分け地図
-（`data/japan_prefectures.json`、47都道府県分のSVGパス座標）は、
-MITライセンスの [japanmap](https://www.npmjs.com/package/japanmap)
-（Copyright (c) 2024 The JapanMap Authors）から座標データのみを抽出して
-vendorしたものです。色分けは
-`data/tydb_damage/<コード>.json` の都道府県別被害合計（死者・不明者、
-負傷者、全壊、半壊等を単純合算した相対指標）に基づき、その台風の中で
-最も被害が大きかった都道府県を基準に5段階で塗り分けています
+台風データマップには2つの都道府県別色分け地図があります。色分けの基準は
+共通で、`data/tydb_damage/<コード>.json` の都道府県別被害合計（死者・
+不明者、負傷者、全壊、半壊等を単純合算した相対指標）に基づき、その台風の
+中で最も被害が大きかった都道府県を基準に5段階で塗り分けています
 （時系列ではなく、台風ごとの最終的な被害の合計値の比較です）。
+
+1. **左パネルの被害状況ブロック内の小さい地図**（`data/japan_prefectures.json`、
+   47都道府県分のSVGパス座標、実際の緯度経度ではないイラスト用の座標）は、
+   MITライセンスの [japanmap](https://www.npmjs.com/package/japanmap)
+   （Copyright (c) 2024 The JapanMap Authors）から座標データのみを抽出
+   してvendorしたものです。
+2. **「被害 Damage」モード（風/雨の切り替えボタンの隣）で表示される、
+   実際の国土地理院地図上に重なる色分け**（`data/japan_prefectures.geojson`、
+   実際の緯度経度を持つ都道府県境界ポリゴン）は、
+   CC-BY 4.0ライセンスの [japan-choropleth](https://www.npmjs.com/package/japan-choropleth)
+   （Copyright (c) 2026 Kyodo News、元データは国土交通省 国土数値情報
+   「[行政区域データ](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2025.html)」
+   CC-BY 4.0）から座標データのみを抽出してvendorしたものです。

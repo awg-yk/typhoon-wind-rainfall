@@ -270,6 +270,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 .mode-btn:hover{ color:var(--text); }
 .mode-btn.active[data-mode="wind"]{ background:var(--amber); color:var(--ink); }
 .mode-btn.active[data-mode="rain"]{ background:var(--rain); color:var(--ink); }
+.mode-btn.active[data-mode="damage"]{ background:#e0793a; color:var(--ink); }
 
 .ty-mark-wrap{ pointer-events:none; }
 .ty-mark{
@@ -366,6 +367,7 @@ hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
       <div class="mode-toggle" id="mode-toggle">
         <button type="button" class="mode-btn active" data-mode="wind">風 Wind</button>
         <button type="button" class="mode-btn" data-mode="rain">雨 Rain</button>
+        <button type="button" class="mode-btn" data-mode="damage">被害 Damage</button>
       </div>
       <div id="mode-nodata-note" style="display:none;"></div>
 
@@ -440,12 +442,12 @@ function gradeCode(grade){
   }
 }
 
-let map, tyMarker, trackLine, trackPastLine, trackHitLine, isobarLayer;
+let map, tyMarker, trackLine, trackPastLine, trackHitLine, isobarLayer, damageLayer;
 let windLayer = []; // array of {marker, station index} -- legacy 156-station network
 let netWindLayer = []; // AMeDAS network (976 stations), shown when a storm has data/storms_obs/<code>_wind.json
 let netRainLayer = []; // AMeDAS network (1669 stations), shown when a storm has data/storms_obs/<code>_rain.json
 let displayMode = 'wind'; // 'wind' | 'rain'
-const modeHasData = { wind: false, rain: false }; // per-mode data availability for the current storm
+const modeHasData = { wind: false, rain: false, damage: false }; // per-mode data availability for the current storm
 const ranking = { wind: [], rain: [] }; // top-10 {name,time,value} for the current storm, per mode
 // The timeline (slider/ticks/playback) follows whichever times axis backs
 // the currently displayed mode -- see activeTimeline(). Recomputed on
@@ -520,6 +522,21 @@ async function loadPrefecturesGeo(){
     const res = await fetch('data/japan_prefectures.json');
     if (!res.ok) return;
     PREFECTURES_GEO = await res.json();
+  } catch (err) { /* optional data -- ignore */ }
+}
+
+let PREFECTURES_GEOJSON = null; // real lat/lon prefecture polygons, for the 被害 mode map overlay
+
+async function loadPrefecturesGeoJSON(){
+  // data/japan_prefectures.geojson: real geographic boundaries (unlike
+  // PREFECTURES_GEO's illustrative SVG-pixel paths above), vendored from
+  // the CC-BY-4.0 'japan-choropleth' npm package -- see README for
+  // attribution. Optional: a failure just means the 被害 mode has no
+  // map overlay (the left-panel choropleth still works either way).
+  try {
+    const res = await fetch('data/japan_prefectures.geojson');
+    if (!res.ok) return;
+    PREFECTURES_GEOJSON = await res.json();
   } catch (err) { /* optional data -- ignore */ }
 }
 
@@ -716,6 +733,7 @@ function initMap(){
   tyMarker.bindTooltip('', {permanent:false, direction:'top'});
 
   isobarLayer = L.layerGroup().addTo(map);
+  damageLayer = L.layerGroup();
 }
 
 const ARROW_SIZE = 96; // px, marker bounding box -- much larger than the glyph itself so hovering near (not just exactly on) a station still shows its tooltip
@@ -926,6 +944,17 @@ function buildLegend(){
       const jma = s[2] ? '<span class="jma-label">' + s[2] + '</span>' : '';
       html += '<div class="row">' + rainCircleSVG(s[0], rainColor(s[0]), LEGEND_ICON_BOX) + '<span>' + s[1] + ' mm/h</span>' + jma + '</div>';
     });
+  } else if (displayMode === 'damage'){
+    title.textContent = 'Damage Legend / 被害の凡例（防災科研 TYDB, 都道府県別）';
+    const swatch = function(color){
+      return '<svg width="' + LEGEND_ICON_BOX + '" height="' + LEGEND_ICON_BOX + '"><rect x="1" y="1" width="' +
+        (LEGEND_ICON_BOX-2) + '" height="' + (LEGEND_ICON_BOX-2) + '" fill="' + color + '" stroke="#0a1420"/></svg>';
+    };
+    html += '<div class="row">' + swatch(CHOROPLETH_NO_DATA) + '<span>被害報告なし</span></div>';
+    CHOROPLETH_COLORS.forEach(function(c, i){
+      html += '<div class="row">' + swatch(c) + '<span>' + (i === CHOROPLETH_COLORS.length - 1 ? '被害大' : (i === 0 ? '被害小' : '')) + '</span></div>';
+    });
+    html += '<div class="row"><span style="color:var(--text-dim);font-size:10px;">この台風内での相対比較（時系列ではなく合計値）</span></div>';
   } else {
     title.textContent = 'Wind Legend / 風の凡例（気象庁の風の強さの階級）';
     const stops = [
@@ -1006,25 +1035,34 @@ function damageScore(prefRow){
 const CHOROPLETH_COLORS = ['#ffe9a8', '#ffbf5f', '#ff8a3d', '#e8482f', '#8f1f3f'];
 const CHOROPLETH_NO_DATA = '#2a3542';
 
+function computeDamageScores(prefectures){
+  // {byName: {"静岡県": score, ...}, max: number}. Shared by the left-panel
+  // SVG choropleth and the real-map GeoJSON overlay so both always agree.
+  const byName = {};
+  let max = 0;
+  (prefectures || []).forEach(function(row){
+    const score = damageScore(row);
+    byName[row.pref] = score;
+    if (score > max) max = score;
+  });
+  return { byName: byName, max: max };
+}
+
+function choroplethColor(score, maxScore){
+  if (!score || score <= 0 || !maxScore) return CHOROPLETH_NO_DATA;
+  const idx = Math.min(CHOROPLETH_COLORS.length - 1, Math.floor((score / maxScore) * CHOROPLETH_COLORS.length));
+  return CHOROPLETH_COLORS[idx];
+}
+
 function buildChoropleth(prefectures){
   if (!PREFECTURES_GEO || !prefectures || !prefectures.length) return '';
-  const scoreByPref = {};
-  let maxScore = 0;
-  prefectures.forEach(function(row){
-    const score = damageScore(row);
-    scoreByPref[row.pref] = score;
-    if (score > maxScore) maxScore = score;
-  });
-  if (maxScore <= 0) return '';
+  const scores = computeDamageScores(prefectures);
+  if (scores.max <= 0) return '';
 
   let paths = '';
   PREFECTURES_GEO.forEach(function(p){
-    const score = scoreByPref[p.kanji] || 0;
-    let color = CHOROPLETH_NO_DATA;
-    if (score > 0){
-      const idx = Math.min(CHOROPLETH_COLORS.length - 1, Math.floor((score / maxScore) * CHOROPLETH_COLORS.length));
-      color = CHOROPLETH_COLORS[idx];
-    }
+    const score = scores.byName[p.kanji] || 0;
+    const color = choroplethColor(score, scores.max);
     const label = p.kanji + '：' + (score > 0 ? score.toLocaleString('ja-JP') : '被害報告なし');
     paths += '<path d="' + p.path + '" fill="' + color + '" stroke="#0a1420" stroke-width="0.7">' +
       '<title>' + label + '</title></path>';
@@ -1033,11 +1071,57 @@ function buildChoropleth(prefectures){
     '<div class="pref-map-legend">薄い色ほど被害小・濃い色ほど被害大（この台風内での相対比較）</div></div>';
 }
 
+function renderDamageLayer(prefectures){
+  damageLayer.clearLayers();
+  if (!PREFECTURES_GEOJSON || !prefectures || !prefectures.length) return;
+  const scores = computeDamageScores(prefectures);
+  if (scores.max <= 0) return;
+  L.geoJSON(PREFECTURES_GEOJSON, {
+    style: function(feature){
+      const score = scores.byName[feature.properties.name] || 0;
+      return { color: '#0a1420', weight: 1, fillColor: choroplethColor(score, scores.max), fillOpacity: 0.72 };
+    },
+    onEachFeature: function(feature, layer){
+      const score = scores.byName[feature.properties.name] || 0;
+      layer.bindTooltip(
+        feature.properties.name + '：' + (score > 0 ? score.toLocaleString('ja-JP') + '（被害指数）' : '被害報告なし'),
+        { sticky: true }
+      );
+    }
+  }).addTo(damageLayer);
+}
+
+function setDamageModeAvailable(available){
+  modeHasData.damage = available;
+  const btn = document.querySelector('.mode-btn[data-mode="damage"]');
+  if (btn) btn.disabled = !available;
+  if (!available && displayMode === 'damage'){
+    // The map-overlay mode just lost its data (storm changed) -- fall back
+    // like the wind/rain pair does, preferring wind then rain.
+    const fallback = modeHasData.wind ? 'wind' : (modeHasData.rain ? 'rain' : null);
+    if (fallback){
+      displayMode = fallback;
+      document.querySelectorAll('.mode-btn').forEach(function(b){
+        b.classList.toggle('active', b.dataset.mode === displayMode);
+      });
+      buildLegend();
+      updateModeNote();
+      updateRankingPanel();
+      if (currentStormCode && DATA.storms[currentStormCode]) updateFrame(currentIdx);
+    }
+  }
+}
+
 async function updateDamageInfo(code){
   const el = document.getElementById('damage-info');
   const myToken = selectToken; // abandon this render if a newer storm was selected meanwhile
   const tydb = await loadTydbDamage(code);
   if (myToken !== selectToken) return;
+
+  const hasPrefData = !!(tydb && tydb.prefectures && tydb.prefectures.length);
+  renderDamageLayer(hasPrefData ? tydb.prefectures : []);
+  setDamageModeAvailable(hasPrefData);
+  if (displayMode === 'damage' && currentStormCode === code) map.addLayer(damageLayer);
 
   if (tydb && tydb.total){
     const total = tydb.total;
@@ -1094,6 +1178,17 @@ async function updateDamageInfo(code){
 }
 
 function updateThresholdControl(){
+  const title = document.getElementById('threshold-title');
+  const panel = document.getElementById('threshold-control');
+  if (displayMode === 'damage'){
+    // Damage is a single per-storm total per prefecture, not a per-station
+    // value stream -- the min-value filter has nothing to apply to.
+    title.style.display = 'none';
+    panel.style.display = 'none';
+    return;
+  }
+  title.style.display = '';
+  panel.style.display = '';
   const slider = document.getElementById('threshold-slider');
   const valueEl = document.getElementById('threshold-value');
   const max = displayMode === 'rain' ? 50 : 30;
@@ -1278,12 +1373,14 @@ async function selectStorm(code){
   // Only offer a mode that actually has data -- e.g. pre-1961 storms have
   // rain records but no digitized wind readings at all. If the mode
   // currently showing just lost its data, fall back to the other one.
-  document.querySelectorAll('.mode-btn').forEach(function(b){
+  // (被害/damage availability is set separately in updateDamageInfo(),
+  // once its async TYDB fetch resolves -- not here.)
+  document.querySelectorAll('.mode-btn[data-mode="wind"], .mode-btn[data-mode="rain"]').forEach(function(b){
     const m = b.dataset.mode;
     b.disabled = !modeHasData[m];
     b.title = modeHasData[m] ? '' : 'この台風には' + (m === 'wind' ? '風' : '雨') + 'の観測データはありません。';
   });
-  if (!modeHasData[displayMode]){
+  if (displayMode !== 'damage' && !modeHasData[displayMode]){
     const fallback = displayMode === 'wind' ? 'rain' : 'wind';
     if (modeHasData[fallback]){
       displayMode = fallback;
@@ -1578,17 +1675,25 @@ function updateFrame(pos){
   trackPastLine.setLatLngs(pastPts);
   trackLine.setLatLngs(futPts.length ? [pastPts[pastPts.length-1]].concat(futPts) : []);
 
-  // Hide every station/isobar layer, then show only what the current mode
-  // (and, for wind/rain, which network this storm actually has data in)
-  // calls for.
+  // Hide every station/isobar/damage layer, then show only what the
+  // current mode (and, for wind/rain, which network this storm actually
+  // has data in) calls for.
   windLayer.forEach(function(entry){ setEntryVisible(entry, false); });
   netWindLayer.forEach(function(entry){ setEntryVisible(entry, false); });
   netRainLayer.forEach(function(entry){ setEntryVisible(entry, false); });
   isobarLayer.clearLayers();
+  map.removeLayer(damageLayer);
 
-  const obsNet = DATA.obsNet[currentStormCode];
-  const src = currentObsSource(s, obsNet, displayMode);
-  if (src) renderObsLayer(src.layer, src.data, timeMs, displayMode);
+  if (displayMode === 'damage'){
+    // Damage is a per-storm total, not a per-frame reading -- the layer's
+    // contents are built once (in updateDamageInfo(), on storm change),
+    // this just shows/hides it as the timeline moves and the mode toggles.
+    map.addLayer(damageLayer);
+  } else {
+    const obsNet = DATA.obsNet[currentStormCode];
+    const src = currentObsSource(s, obsNet, displayMode);
+    if (src) renderObsLayer(src.layer, src.data, timeMs, displayMode);
+  }
   // Isobars are overlaid automatically whenever this storm has JRA-3Q data
   // (renderPressure() is a no-op if it doesn't).
   renderPressure(timeMs);
@@ -1788,7 +1893,7 @@ function pause(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  Promise.all([loadStations(), loadIndex(), loadNetworkStations(), loadDamageInfo(), loadPrefecturesGeo()]).then(function(){
+  Promise.all([loadStations(), loadIndex(), loadNetworkStations(), loadDamageInfo(), loadPrefecturesGeo(), loadPrefecturesGeoJSON()]).then(function(){
     STORM_ORDER = computeStormOrder();
 
     initMap();
