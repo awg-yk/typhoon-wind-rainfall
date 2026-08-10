@@ -1,6 +1,6 @@
 # 上陸台風雨風マップ
 
-https://awg-yk.github.io/typhoon_landfall_wind-rainfall/
+https://awg-yk.github.io/typhoon-wind-rainfall/
 
 台風経路・観測風 可視化ツール
 
