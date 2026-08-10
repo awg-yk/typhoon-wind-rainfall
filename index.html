@@ -711,6 +711,7 @@ function rainColor(mm){
   // never actually shown (see renderObsLayer), but the color is kept
   // around as a harmless fallback.
   if (mm <= 0) return '#3a4a5a';
+  if (mm < 1) return '#f2f2ff';
   if (mm < 5) return '#a0d2ff';
   if (mm < 10) return '#218cff';
   if (mm < 20) return '#0041ff';
@@ -877,7 +878,7 @@ function buildLegend(){
   if (displayMode === 'rain'){
     title.textContent = 'Rain Legend / 雨の凡例（1時間降水量・気象庁の強さの階級）';
     const stops = [
-      [3, '1-5', ''], [8, '5-10', ''],
+      [0.5, '0-1', ''], [3, '1-5', ''], [8, '5-10', ''],
       [15,'10-20','やや強い雨'], [25,'20-30','強い雨'], [40,'30-50','激しい雨'],
       [65,'50-80','非常に激しい雨'], [90,'80+','猛烈な雨']
     ];
