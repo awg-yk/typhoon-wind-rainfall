@@ -246,10 +246,50 @@ python3 -m http.server 8000
 
 ## 現状・引き継ぎ事項（次のセッション向け）
 
+### 0. TYDB被害データのカバレッジ拡大（`data/tydb_damage/`）
+
+`scripts/fetch_tydb_damage.py`は元々`landfallJP=true`または`damaging=true`
+の291台風だけを対象にしていましたが、TYDB自体はこれ以外の台風にも
+ページを持っていることがあります（上陸・通過しておらず`damaging`
+フラグも立っていないのに被害の記録がある台風、例: 5111/MARGE, 1951年）。
+`--all`オプションで`data/index.json`の全台風（約1954件）を試すことが
+でき、ページが無い台風は404が返るだけで`{"notFound": true}`として
+記録され次回以降スキップされるため、全件を試すのは安全です（時間は
+かかります）。
+
+```bash
+python3 scripts/fetch_tydb_damage.py --all
+```
+
+Colabでは`notebooks/fetch_tydb_damage_colab.ipynb`の③のセルが既定で
+`--all`になっています。
+
+TYDBカバレッジを広げたあとは、新しく見つかった被害台風のうち
+気圧配置・AMeDAS観測網データが欠けているものを次のスクリプトで
+洗い出せます:
+
+```bash
+python3 scripts/list_damage_gaps.py            # 人が読む形式のレポート
+python3 scripts/list_damage_gaps.py --kind obs # --codes にそのまま渡せるカンマ区切り
+```
+
+「風データが無い」の判定は、AMeDAS観測網ファイルに実際の値が1つも
+無く、かつ旧156地点網（`data/storms/<コード>.json`の`wind`/`rain`）
+にも値が無い場合のみを指します（フロントエンドの
+`dataHasAnyValue()`/`currentObsSource()`のフォールバックと同じ判定）。
+1961年より前の台風は気象庁が風速をまだ電子化していないため、この
+スクリプトが「欠落」として挙げても取得できるデータが存在しない
+場合があります（後述の1./2.の取得手順を試した上で、それでも
+埋まらなければ元データ不在と判断してください）。
+
 ### 1. AMeDAS観測網データ（`data/storms_obs/`）
 
-`landfallJP=true`の221台風分は取得・push完了。追加した`damaging`70台風
-のうち9台風は既に取得済みで、**残り約61台風分が未取得**です。
+`landfallJP OR damaging`の291台風分は取得・push完了しています
+（風データが無い36台風は、1951〜1960年の台風で気象庁が風速を
+電子化する前の時代のため、そもそも元データが存在しません）。
+上記0.でTYDBカバレッジを広げて新しい被害台風が見つかった場合は、
+`scripts/list_damage_gaps.py --kind obs`の出力を
+`fetch_amedas_obsdl.py --codes ...`に渡してください。
 
 対応方法（Colabだけで完結）: `notebooks/fetch_and_convert_amedas_colab.ipynb`
 をColabで上から実行してください（取得→変換→pushまで自動）。既に取得済み
@@ -260,16 +300,18 @@ python3 -m http.server 8000
 
 ### 2. JRA-3Q気圧データ（`data/pressure/`）
 
-`landfallJP=true`分は220/221台風で完了（残り1台風 `8310`＝1983年台風10号
-は、GDEX側のサーバーエラーが恒久的に再現するため欠損として運用 — 詳細は
-上記「フォルダの中身」の`download_jra3q_pressure.py`の項を参照）。
-`damaging`70台風分の追加により、必要な月が185→226ヶ月（+41ヶ月）に
-増えています。
+`landfallJP OR damaging`の291台風分は290台風で完了しています
+（残り1台風`8310`＝1983年台風10号は、GDEX側のサーバーエラーが
+恒久的に再現するため欠損として運用 — 詳細は上記「フォルダの中身」の
+`download_jra3q_pressure.py`の項を参照）。上記0.で新しい被害台風が
+見つかった場合は、`scripts/list_damage_gaps.py --kind pressure`の
+出力する台風コードから必要な月を`download_jra3q_pressure.py`で
+追加取得し、`build_pressure_json.py --codes ...`で変換してください。
 
 対応方法: `notebooks/jra3q_colab_download.ipynb`→
 `notebooks/build_pressure_json_colab.ipynb`の順にColabで実行してください。
 前者は前回ダウンロード済みのZIPがあれば任意セルでアップロードすることで、
-新規41ヶ月分だけの取得に短縮できます（無い場合は226ヶ月分を再取得）。
+新規分だけの取得に短縮できます（無い場合は必要月数分を再取得）。
 
 ### 3. フロントエンドの実ブラウザでの見た目確認 — 完了（2026-08-07）
 

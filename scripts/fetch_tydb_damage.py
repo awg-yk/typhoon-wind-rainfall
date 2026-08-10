@@ -36,6 +36,16 @@ assuming the common set. A storm with no TYDB page (404) gets
 Usage:
   pip install requests beautifulsoup4
   python3 scripts/fetch_tydb_damage.py --landfall-only
+  python3 scripts/fetch_tydb_damage.py --all   # every storm in data/index.json,
+                                                # not just landfallJP/damaging ones --
+                                                # TYDB has pages for some storms that
+                                                # never made landfall (e.g. 5111/MARGE,
+                                                # 1951), so --landfall-only can miss
+                                                # real damage pages. Storms with no
+                                                # TYDB page just come back 404 (recorded
+                                                # as {"notFound": true} and skipped on
+                                                # future runs), so trying everything is
+                                                # safe -- just slower (~1954 requests).
 """
 import argparse
 import json
@@ -148,16 +158,24 @@ def main():
     ap.add_argument("--codes", help="comma-separated storm codes, e.g. 5615,5915")
     ap.add_argument("--landfall-only", action="store_true",
                      help="use all landfallJP or damaging storms from data/index.json")
+    ap.add_argument("--all", action="store_true",
+                     help="try every storm in data/index.json, not just landfallJP/damaging "
+                          "ones -- TYDB has pages for some storms outside that set "
+                          "(e.g. offshore passages that still caused damage); a storm with "
+                          "no page just comes back 404 and is skipped on future runs")
     ap.add_argument("--dry-run", action="store_true", help="print the fetch plan without fetching")
     args = ap.parse_args()
 
     if args.codes:
         codes = [c.strip() for c in args.codes.split(",") if c.strip()]
+    elif args.all:
+        index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+        codes = list(index.keys())
     elif args.landfall_only:
         index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
         codes = [c for c, m in index.items() if m.get("landfallJP") or m.get("damaging")]
     else:
-        sys.exit("specify --codes or --landfall-only")
+        sys.exit("specify --codes, --landfall-only, or --all")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
