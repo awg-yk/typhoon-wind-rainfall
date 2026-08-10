@@ -184,9 +184,8 @@ header .spacer{ flex:1; }
 #damage-info .note{ margin-top:6px; padding-top:6px; border-top:1px solid var(--line); color:var(--text-dim); font-size:10px; line-height:1.6; }
 #damage-info .note summary{ cursor:pointer; color:var(--teal); font-family:var(--mono); font-size:10px; letter-spacing:.04em; margin-bottom:4px; }
 #damage-info .note summary:hover{ color:var(--amber-bright); }
-#damage-info .pref-map{ margin-top:8px; padding-top:8px; border-top:1px solid var(--line); }
-#damage-info .pref-map svg{ width:100%; max-width:220px; display:block; margin:0 auto; }
-#damage-info .pref-map-legend{ font-size:9px; color:var(--text-dim); text-align:center; margin-top:4px; }
+.pref-tip{ font-family:var(--mono); font-size:11px; line-height:1.6; }
+.pref-tip .src{ color:#999; font-size:10px; }
 
 hr.rule{ border:none; border-top:1px solid var(--line); margin:12px 0; }
 
@@ -511,28 +510,13 @@ async function loadDamageInfo(){
   } catch (err) { /* optional data -- ignore */ }
 }
 
-let PREFECTURES_GEO = null; // [{id, kanji, path}] SVG path per prefecture, for the damage choropleth
-
-async function loadPrefecturesGeo(){
-  // Prefecture boundary paths, vendored from the MIT-licensed 'japanmap'
-  // npm package (https://www.npmjs.com/package/japanmap) -- see README's
-  // "被害状況の都道府県別マップ" section for attribution. Optional, like
-  // loadDamageInfo(): a failure just means no choropleth.
-  try {
-    const res = await fetch('data/japan_prefectures.json');
-    if (!res.ok) return;
-    PREFECTURES_GEO = await res.json();
-  } catch (err) { /* optional data -- ignore */ }
-}
-
 let PREFECTURES_GEOJSON = null; // real lat/lon prefecture polygons, for the 被害 mode map overlay
 
 async function loadPrefecturesGeoJSON(){
-  // data/japan_prefectures.geojson: real geographic boundaries (unlike
-  // PREFECTURES_GEO's illustrative SVG-pixel paths above), vendored from
-  // the CC-BY-4.0 'japan-choropleth' npm package -- see README for
-  // attribution. Optional: a failure just means the 被害 mode has no
-  // map overlay (the left-panel choropleth still works either way).
+  // data/japan_prefectures.geojson: real geographic boundaries, vendored
+  // from the CC-BY-4.0 'japan-choropleth' npm package -- see README for
+  // attribution. Optional, like loadDamageInfo(): a failure just means
+  // the 被害 mode has no map overlay.
   try {
     const res = await fetch('data/japan_prefectures.geojson');
     if (!res.ok) return;
@@ -1054,21 +1038,17 @@ function choroplethColor(score, maxScore){
   return CHOROPLETH_COLORS[idx];
 }
 
-function buildChoropleth(prefectures){
-  if (!PREFECTURES_GEO || !prefectures || !prefectures.length) return '';
-  const scores = computeDamageScores(prefectures);
-  if (scores.max <= 0) return '';
-
-  let paths = '';
-  PREFECTURES_GEO.forEach(function(p){
-    const score = scores.byName[p.kanji] || 0;
-    const color = choroplethColor(score, scores.max);
-    const label = p.kanji + '：' + (score > 0 ? score.toLocaleString('ja-JP') : '被害報告なし');
-    paths += '<path d="' + p.path + '" fill="' + color + '" stroke="#0a1420" stroke-width="0.7">' +
-      '<title>' + label + '</title></path>';
-  });
-  return '<div class="pref-map"><svg viewBox="200 0 600 650">' + paths + '</svg>' +
-    '<div class="pref-map-legend">薄い色ほど被害小・濃い色ほど被害大（この台風内での相対比較）</div></div>';
+function prefectureTooltipHTML(name, row){
+  if (!row){
+    return '<div class="pref-tip"><b>' + name + '</b><br>被害報告なし</div>';
+  }
+  const lines = DAMAGE_KEY_ORDER
+    .filter(function(k){ return row[k] !== null && row[k] !== undefined; })
+    .map(function(k){ return DAMAGE_LABELS[k][0] + ' ' + Number(row[k]).toLocaleString('ja-JP') + ' ' + DAMAGE_LABELS[k][1]; });
+  let html = '<div class="pref-tip"><b>' + name + '</b>';
+  lines.forEach(function(l){ html += '<br>' + l; });
+  if (row.source) html += '<br><span class="src">' + row.source + '</span>';
+  return html + '</div>';
 }
 
 function renderDamageLayer(prefectures){
@@ -1076,17 +1056,15 @@ function renderDamageLayer(prefectures){
   if (!PREFECTURES_GEOJSON || !prefectures || !prefectures.length) return;
   const scores = computeDamageScores(prefectures);
   if (scores.max <= 0) return;
+  const rowByName = {};
+  prefectures.forEach(function(row){ rowByName[row.pref] = row; });
   L.geoJSON(PREFECTURES_GEOJSON, {
     style: function(feature){
       const score = scores.byName[feature.properties.name] || 0;
       return { color: '#0a1420', weight: 1, fillColor: choroplethColor(score, scores.max), fillOpacity: 0.72 };
     },
     onEachFeature: function(feature, layer){
-      const score = scores.byName[feature.properties.name] || 0;
-      layer.bindTooltip(
-        feature.properties.name + '：' + (score > 0 ? score.toLocaleString('ja-JP') + '（被害指数）' : '被害報告なし'),
-        { sticky: true }
-      );
+      layer.bindTooltip(prefectureTooltipHTML(feature.properties.name, rowByName[feature.properties.name]), { sticky: true });
     }
   }).addTo(damageLayer);
 }
@@ -1137,7 +1115,6 @@ async function updateDamageInfo(code){
       html += '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' +
         Number(r[1]).toLocaleString('ja-JP') + ' ' + r[2] + '</span></div>';
     });
-    html += buildChoropleth(tydb.prefectures);
     if (tydb.weatherText){
       // The free-text summary occasionally mentions a category the
       // structured table doesn't break out (e.g. 焼失 for some storms), so
@@ -1893,7 +1870,7 @@ function pause(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  Promise.all([loadStations(), loadIndex(), loadNetworkStations(), loadDamageInfo(), loadPrefecturesGeo(), loadPrefecturesGeoJSON()]).then(function(){
+  Promise.all([loadStations(), loadIndex(), loadNetworkStations(), loadDamageInfo(), loadPrefecturesGeoJSON()]).then(function(){
     STORM_ORDER = computeStormOrder();
 
     initMap();
