@@ -97,13 +97,16 @@ OPEN_ATTEMPTS = 5
 CHUNK_SPACING_SEC = 0.3
 
 
-def needed_year_months():
-    index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
-    # landfallJP storms, plus any storm flagged 'damaging' (major Japan-wide
-    # damage per the Digital Typhoon disaster database -- see
-    # data/damage_storm_codes.json -- even if best-track landfall detection
-    # didn't flag it).
-    codes = [c for c, m in index.items() if m.get("landfallJP") or m.get("damaging")]
+def needed_year_months(codes=None):
+    if codes is None:
+        index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+        # landfallJP storms, plus any storm flagged 'damaging' (major Japan-wide
+        # damage per the Digital Typhoon disaster database -- see
+        # data/damage_storm_codes.json -- even if best-track landfall detection
+        # didn't flag it). Pass --codes to compute months for a specific set
+        # instead (e.g. storms found by scripts/list_damage_gaps.py after
+        # widening TYDB coverage beyond landfallJP/damaging).
+        codes = [c for c, m in index.items() if m.get("landfallJP") or m.get("damaging")]
     months = set()
     for code in codes:
         path = STORMS_DIR / f"{code}.json"
@@ -332,6 +335,10 @@ def fetch_job(job):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--codes", help="comma-separated storm codes -- compute needed months "
+                                     "from just these storms instead of the default "
+                                     "landfallJP-or-damaging set, e.g. output from "
+                                     "scripts/list_damage_gaps.py --kind pressure")
     ap.add_argument("--include-surface-pressure", action="store_true",
                      help="also download pres-sfc (surface pressure) alongside prmsl-msl (sea-level pressure)")
     ap.add_argument("--dry-run", action="store_true", help="print the month/file plan without downloading")
@@ -364,7 +371,8 @@ def main():
     if args.include_surface_pressure:
         variables.append(SURFACE_PRESSURE)
 
-    months = needed_year_months()
+    codes = [c.strip() for c in args.codes.split(",") if c.strip()] if args.codes else None
+    months = needed_year_months(codes)
     total_files = len(months) * len(variables)
     print(f"{len(months)} months needed, {len(variables)} variable(s) -> {total_files} files")
     print(f"method: {args.method}, bbox: {bbox}")
