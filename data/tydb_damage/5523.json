@@ -1,0 +1,113 @@
+{
+ "title": "1955年 台風第23号 (Marge) : TY5523",
+ "weatherText": "9月27日夜グアム島付近に発生した熱帯低気圧は、28日3時に台風となった。西北西に進んだ後、29日朝からは北北西に進んだ。10月3日0時には室戸岬の南方約550kmの海上に達し、4日早朝には豊後水道に入った。その後、瀬戸内海西部を通過して山口県に上陸した。熱帯低気圧1004hPaで発生。30日朝の中心示度990hPa、最大風速35m/s。 10月3日の飛行機観測：最低気圧値965hPa、最大風速50m/s、中心から300km以内は風速25m/s以上。 4日早朝、中心示度985hPa、最大風速35m/s。 4日9時（山口県上陸）、中心示度1000hPa。 死者行方不明2人、負傷者4人、全壊26棟、半壊59棟、流失3棟、一部破損837棟、床上浸水1050棟、床下浸水4244棟（気象要覧第673号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 30,
+   "non_residential": null,
+   "source": "気象要覧第673号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "気象要覧第673号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 407,
+   "flooded_below_floor": 1209,
+   "non_residential": null,
+   "source": "気象要覧第673号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": 385,
+   "flooded_below_floor": 615,
+   "non_residential": 7,
+   "source": "気象要覧第673号",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 9,
+   "non_residential": 2,
+   "source": "気象要覧第673号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 7,
+   "half_destroyed": 6,
+   "partial_damage": 126,
+   "flooded_above_floor": 47,
+   "flooded_below_floor": 1069,
+   "non_residential": 56,
+   "source": "気象要覧第673号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 10,
+   "half_destroyed": 19,
+   "partial_damage": 395,
+   "flooded_above_floor": 160,
+   "flooded_below_floor": 1163,
+   "non_residential": 57,
+   "source": "気象要覧第673号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 12,
+   "half_destroyed": 34,
+   "partial_damage": 309,
+   "flooded_above_floor": 47,
+   "flooded_below_floor": 149,
+   "non_residential": 106,
+   "source": "気象要覧第673号",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 5,
+  "destroyed": 29,
+  "half_destroyed": 59,
+  "partial_damage": 837,
+  "flooded_above_floor": 1050,
+  "flooded_below_floor": 4244,
+  "non_residential": 229,
+  "source": ""
+ }
+}

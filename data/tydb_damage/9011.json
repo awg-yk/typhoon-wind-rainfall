@@ -1,0 +1,101 @@
+{
+ "title": "1990年 台風第11号 (Winona) : TY9011",
+ "weatherText": "8月5日に東シナ海で発生した弱い熱帯低気圧は、10日には中型で並みの強さの勢力で静岡県御前崎付近に上陸した。一度三陸沖に抜けたが、根室半島西部を通過し、千島付近で温帯低気圧となった。行方不明1人、負傷者15人、半壊・一部破損16棟、床上浸水74棟、床下浸水798棟（情報元：気象要覧第1092号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 141,
+   "non_residential": 22,
+   "source": "栃木県「過去における主な災害一覧」",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 17,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 3,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 51,
+   "flooded_below_floor": 46,
+   "non_residential": null,
+   "source": "横浜市",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 17,
+   "flooded_above_floor": 151,
+   "flooded_below_floor": 475,
+   "non_residential": 177,
+   "source": "静岡県消防防災課",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 5,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 21,
+  "flooded_above_floor": 216,
+  "flooded_below_floor": 687,
+  "non_residential": 202,
+  "source": ""
+ }
+}

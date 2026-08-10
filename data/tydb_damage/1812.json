@@ -1,0 +1,161 @@
+{
+ "title": "2018年 台風第12号 (Jongdari) : TY1812",
+ "weatherText": "7月27日に小笠原諸島付近を通過した後、寒冷渦の影響から28日には西寄りに進路を変え、三重県伊勢市付近に上陸した。近畿地方から中国地方を西に進み、30日にかけて九州北部を横断後、東シナ海に抜けた。その後、南に進んで反時計回りに回転した後に東シナ海を西に進んだ。伊豆半島の東岸では高波による被害が出た。負傷者35人、半壊4棟、一部破損269棟、床下浸水37棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 9,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 11,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 14,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 9,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 36,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 6,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 75,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": 54,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 9,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 63,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 6,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 15,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 7,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 9,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 28,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "福岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 35,
+  "destroyed": 0,
+  "half_destroyed": 4,
+  "partial_damage": 269,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 37,
+  "non_residential": 44,
+  "source": ""
+ }
+}

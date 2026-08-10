@@ -1,0 +1,125 @@
+{
+ "title": "2016年 台風第7号 (Chanthu) : TY1607",
+ "weatherText": "8月14日にマリアナ諸島で発生し、16日には八丈島の南東海上に進んだ。千葉県銚子市の南約160キロ、茨城県水戸市の南東約80キロ、宮城県仙台市の南東約100キロと、関東の東海上から三陸沖を北に進んだ。その後、台風は速度を速めながら北に進み、北海道襟裳岬付近に上陸した後、温帯低気圧に変わった。この台風により関東地方では、16日午後から17日午前中にかけて、大雨や強風となった所があり、茨城県や千葉県で浸水害や道路冠水、 鉄道の運休などの交通障害があった。また、茨城県では日最大1時間降水量で統計開始以来1位の値を観測した地点があった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": 8,
+   "flooded_above_floor": 40,
+   "flooded_below_floor": 78,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 17,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 17,
+   "flooded_below_floor": 20,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "消防庁調べ：平成28年10月4日17時00分現在",
+   "pref": "鳥取県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 5,
+  "destroyed": 0,
+  "half_destroyed": 3,
+  "partial_damage": 8,
+  "flooded_above_floor": 62,
+  "flooded_below_floor": 135,
+  "non_residential": 0,
+  "source": ""
+ }
+}

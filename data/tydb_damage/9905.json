@@ -1,0 +1,101 @@
+{
+ "title": "1999年 台風第5号 (Neil) : TY9905",
+ "weatherText": "7月22日にフィリピンの東海上で発生し、26日には中型で並の強さで奄美大島を通過、27日に勢力を保ち九州の西の海上を北寄りに進んだ。その後、勢力を弱めながらチェジュ島の東側を通って朝鮮半島南部の黄海沿岸へ進み、弱い熱帯低気圧となった。負傷者3人、全壊1棟、半壊1棟、一部損壊21棟、床上浸水16棟、床下浸水191棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月2日17時00分現在",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 19,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月2日17時00分現在",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 14,
+   "flooded_below_floor": 138,
+   "non_residential": 2,
+   "source": "消防庁調べ：平成11年8月2日17時00分現在",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 17,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月2日17時00分現在",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月2日17時00分現在",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 13,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月2日17時00分現在",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 21,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": 5,
+   "source": "鹿児島県「平成11年災害の記録",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 3,
+  "destroyed": 1,
+  "half_destroyed": 1,
+  "partial_damage": 24,
+  "flooded_above_floor": 16,
+  "flooded_below_floor": 191,
+  "non_residential": 7,
+  "source": ""
+ }
+}

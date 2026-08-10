@@ -1,0 +1,41 @@
+{
+ "title": "2004年 台風第4号 (Conson) : TY0404",
+ "weatherText": "6月7日にルソン島の西海上で発生し、8日には中心付近の最大風速が35m/sの強い台風となった。その後、速度をやや速め時速30kmの速さで沖縄地方へ向かって北上し、最大風速40m/sと勢力を維持したまま10日に先島諸島、久米島を通過して、沖縄本島の西海上を北東へ進んだ。台風が通過した多良間島と久米島では約1時間程度直径約25kmの台風の眼に入った。勢力を維持したまま石垣島と宮古島の間を通り、沖縄本島西海上を北東進した台風は、石垣島地方、宮古島地方及び久米島を暴風域に入れ、さらに、本島中南部・北部、慶良間・粟国諸島や伊是名・伊平屋などの周辺離島も暴風域に巻き込んだ。このため、石垣島で最大瞬間風速42。3m/s（10日0:20）、宮古島で51.5m/s（10日03:53）、久米島で46.1m/s（10日10:55）を観測した。また、台風接近前の8日頃からは梅雨前線の活動が活発となり各地でまとまった雨が降った。特に9日からは台風の影響も重なり、糸満市付近で1時間に約100mmの降水量を観測するなど、猛烈な雨に見舞われた。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 14,
+   "non_residential": 5,
+   "source": "鹿児島県「平成16年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "沖縄県「平成１７年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 1,
+  "flooded_above_floor": 8,
+  "flooded_below_floor": 24,
+  "non_residential": 5,
+  "source": ""
+ }
+}

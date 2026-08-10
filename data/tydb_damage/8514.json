@@ -1,0 +1,89 @@
+{
+ "title": "1985年 台風第14号 (Ruby) : TY8514",
+ "weatherText": "八丈島の西海上を北上して横須賀市付近に上陸して北東進を続けた。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "茨城県の災害昭和60年",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 18,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 5,
+   "source": "消防庁",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第1032号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 2,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 25,
+  "non_residential": 6,
+  "source": ""
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "title": "1954年 台風第13号 (Kathy) : TY5413",
+ "weatherText": "9月1日3時硫黄島東南東沖に熱帯低気圧が発生し、9時頃には台風となった。2日9時頃硫黄島南東方を通過するころ、弱まったので、熱帯低気圧とした。3日9時に進行方向が東から南ないし西南西にゆっくり右回転して、5日15時53分の飛行機観測により台風となった。7日16時頃鹿児島県大隅半島東岸から上陸し、北北東に進み、8日早朝には弱まりながら山口県中部を横切って山陰沖に抜けた。日本海を北東に進み、9日3時には樺太の本斗付近で温帯性低気圧となり、オホーツク海を横切り、15日21時にはベーリング海北部で消滅した。6日14時51分の飛行機観測では、中心示度940hPa、中心付近の最大風速は46m/sでこの頃が最盛期であった。 死者・行方不明32人、負傷者19人、全壊167棟、半壊187棟、一部破損1197棟、床上浸水77棟、床下浸水1700棟（気象要覧第661号）",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第661号",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 1,
+   "partial_damage": 14,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 480,
+   "non_residential": 3,
+   "source": "気象要覧第661号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 6,
+   "partial_damage": 32,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 73,
+   "non_residential": null,
+   "source": "気象要覧第661号",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 26,
+   "non_residential": null,
+   "source": "気象要覧第661号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": 3,
+   "source": "気象要覧第661号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": 2,
+   "destroyed": 5,
+   "half_destroyed": 6,
+   "partial_damage": 16,
+   "flooded_above_floor": 65,
+   "flooded_below_floor": 770,
+   "non_residential": 35,
+   "source": "気象要覧第661号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 10,
+   "injured": 12,
+   "destroyed": 106,
+   "half_destroyed": 89,
+   "partial_damage": 867,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 327,
+   "non_residential": 719,
+   "source": "気象要覧第661号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 6,
+   "injured": 18,
+   "destroyed": 427,
+   "half_destroyed": 1768,
+   "partial_damage": null,
+   "flooded_above_floor": 13,
+   "flooded_below_floor": 66,
+   "non_residential": 2268,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 22,
+  "injured": 32,
+  "destroyed": 544,
+  "half_destroyed": 1871,
+  "partial_damage": 933,
+  "flooded_above_floor": 80,
+  "flooded_below_floor": 1748,
+  "non_residential": 3028,
+  "source": ""
+ }
+}

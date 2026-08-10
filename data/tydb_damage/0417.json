@@ -1,0 +1,29 @@
+{
+ "title": "2004年 台風第17号 (Aere) : TY0417",
+ "weatherText": "8月20日にフィリピンの東海上で発生し、22日には沖縄の南海上で強風域の半径が520km、中心付近の最大風速が35m/sの大型で強い台風となり、発達しながら時速10～20kmの速度で先島諸島方面へ向かって北西進した。24日には中心気圧960hPa、最大風速40m/sの勢力で先島諸島を通過した。大型で強い勢力を維持しながら先島諸島に向かってきた影響で、沖縄地方では大東島地方を除く各地方が強風域に入った。台風の速度が遅かったため、石垣島では約32時間、宮古島で約26時間、与那国島で約28時間の間暴風となった。宮古島では最大瞬間風速51.3m/s（24日0:46）、石垣島では56m/s（24日9:36）を観測している。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 6,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": 1,
+   "source": "沖縄県「平成１７年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 6,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 5,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 1,
+  "non_residential": 1,
+  "source": ""
+ }
+}

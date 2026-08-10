@@ -1,0 +1,65 @@
+{
+ "title": "2018年 台風第13号 (Shanshan) : TY1813",
+ "weatherText": "8月3日に南鳥島近海で発生し、ゆっくりと北上後、5日から6日には小笠原諸島、8日には伊豆諸島の東の海上を進み、8日夜遅くから9日にかけて関東地方、東北地方の沿岸を北上した。負傷者7人、全壊1棟、半壊3棟、一部損壊4棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": 3,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 6,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年8月20日13時00分現在",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 7,
+  "destroyed": 1,
+  "half_destroyed": 3,
+  "partial_damage": 4,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 7,
+  "source": ""
+ }
+}

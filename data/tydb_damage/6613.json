@@ -1,0 +1,89 @@
+{
+ "title": "1966年 台風第13号 (Tess) : TY6613",
+ "weatherText": "硫黄島付近で発生した熱帯低気圧は西北西に進み、奄美大島付近で台風となった。台風12号が東シナ海を北東進しており、台湾を挟んで干渉しあい、14日はほぼ停滞した。その後ゆっくり北西に進み、華南に上陸した。死者・行方不明39人、負傷者22人、全壊17棟、半壊22棟、流失4棟、一部破損31棟、床上浸水3043棟、床下浸水16099棟（気象要覧第804号）",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": 14,
+   "flooded_below_floor": 182,
+   "non_residential": 8,
+   "source": "気象要覧第804号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 69,
+   "flooded_below_floor": 1434,
+   "non_residential": null,
+   "source": "気象要覧第804号",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 449,
+   "non_residential": 2,
+   "source": "気象要覧第804号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 5,
+   "destroyed": 3,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 393,
+   "flooded_below_floor": 4035,
+   "non_residential": 1,
+   "source": "気象要覧第804号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": 9,
+   "injured": 9,
+   "destroyed": 5,
+   "half_destroyed": 10,
+   "partial_damage": null,
+   "flooded_above_floor": 1432,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "おおいたの台風　災害台風とその備え、服部徳一、1992",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 26,
+   "injured": 7,
+   "destroyed": 0,
+   "half_destroyed": 46,
+   "partial_damage": null,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 4425,
+   "non_residential": null,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 74,
+  "injured": 38,
+  "destroyed": 28,
+  "half_destroyed": 80,
+  "partial_damage": 31,
+  "flooded_above_floor": 4508,
+  "flooded_below_floor": 20401,
+  "non_residential": 80,
+  "source": ""
+ }
+}

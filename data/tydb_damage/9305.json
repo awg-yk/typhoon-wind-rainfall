@@ -1,0 +1,89 @@
+{
+ "title": "1993年 台風第5号 (Ofelia) : TY9305",
+ "weatherText": "7月25日にフィリピンの東海上で発生し、27日にごく小さく弱い勢力で大隈半島に上陸した。その後、北北東に進み、山口県徳山市付近に再上陸し、日本海に抜けた。28日には日本海中部で弱い熱帯低気圧となり、その後温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 23,
+   "flooded_below_floor": 192,
+   "non_residential": 81,
+   "source": "青森県「平成５年災害による被害」",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "島根県「平成５年災害年報」",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": 8,
+   "destroyed": 4,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 85,
+   "flooded_below_floor": 1746,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "香川県",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "鹿児島県｢平成5年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 8,
+  "destroyed": 5,
+  "half_destroyed": 1,
+  "partial_damage": 8,
+  "flooded_above_floor": 108,
+  "flooded_below_floor": 1969,
+  "non_residential": 81,
+  "source": ""
+ }
+}

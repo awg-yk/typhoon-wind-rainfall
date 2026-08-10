@@ -1,0 +1,149 @@
+{
+ "title": "1968年 台風第7号 (Polly) : TY6807",
+ "weatherText": "8月3日21時ウェーク島の西南西460kmの海上，北緯17.2度，東経163.0度に発生した熱帯低気圧は北西に進み，7日9時南鳥島の東南東160kmの海上，北緯24.2度，東経155.6度に達して台風となった。11日3時潮岬の南東120kmの海上で向きを西から南西に変えて，東シナ海に入った。14日21時に北緯27.7度，東経123.7度に達して向きを北東に変えた。台風は，日本海中部を経て，17日18時には沿海州に達して温帯低気圧となった。台風発生時の中心気圧は980hPa。14日21時には最盛期となり，中心気圧は965hPa，中心付近の最大風速30m/sであり，この勢力は15日3時まで続いた。 死者・行方不明133人、負傷者63人、全壊52棟、半壊122棟、流失19棟、一部破損250棟、床上浸水2147棟、床下浸水12515棟（気象要覧第828号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 66,
+   "flooded_below_floor": 469,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 20,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 50,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": 118,
+   "injured": 27,
+   "destroyed": 51,
+   "half_destroyed": 60,
+   "partial_damage": 68,
+   "flooded_above_floor": 855,
+   "flooded_below_floor": 3756,
+   "non_residential": 155,
+   "source": "気象要覧第828号",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 40,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1200,
+   "flooded_below_floor": 8200,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 50,
+   "non_residential": null,
+   "source": "紀州災異誌",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2300,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第828号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "気象要覧第828号",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": 15,
+   "injured": 35,
+   "destroyed": 20,
+   "half_destroyed": 62,
+   "partial_damage": 180,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 18,
+   "non_residential": 236,
+   "source": "気象要覧第828号",
+   "pref": "長崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 133,
+  "injured": 63,
+  "destroyed": 71,
+  "half_destroyed": 122,
+  "partial_damage": 250,
+  "flooded_above_floor": 4447,
+  "flooded_below_floor": 12605,
+  "non_residential": 392,
+  "source": ""
+ }
+}

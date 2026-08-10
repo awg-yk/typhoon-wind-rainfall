@@ -1,0 +1,65 @@
+{
+ "title": "1997年 台風第7号 (Opal) : TY9707",
+ "weatherText": "6月14日にフィリピンの東海上で発生し、17日には大型で強い勢力となった。台風は勢力を保ちながら、18日から19日にかけて南大東島の東海上を北上し、20日には紀伊半島東岸を通過し、中型で並の勢力で愛知県に上陸した。その後、東日本から東北地方南部にかけて通過し、三陸沖に達した。死者1人、負傷者20人、全壊2棟、半壊1棟、一部破損67棟、床上浸水3棟、床下浸水93棟（情報元：気象要覧第1174号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "青森県「平成９年災害による被害」",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 6,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 27,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "横浜市",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 11,
+   "non_residential": 1,
+   "source": "静岡県総務部消防防災課",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 31,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 10,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 27,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 42,
+  "non_residential": 1,
+  "source": ""
+ }
+}

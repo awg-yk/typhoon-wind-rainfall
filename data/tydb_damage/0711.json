@@ -1,0 +1,77 @@
+{
+ "title": "2007年 台風第11号 (Nari) : TY0711",
+ "weatherText": "9月13日に南大東島の南南東海上で発生し、発達しながら北西に進み、15日沖縄本島付近を通過し北上した。16日に朝鮮南部に上陸し、北東に進んだ後、17日に日本海上で温帯低気圧に変わった。沖縄県久米島では、15日01時過ぎに同島での観測史上最大の最大瞬間風速62.8m/sを記録した。沖縄、九州、四国、西日本、東北地方で大雨となった。死者・行方不明者4人、負傷者5人、全壊5棟、半壊22棟、一部破損117棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成19年10月18日10時00分現在 東北地方の大雨被害状況",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": 104,
+   "flooded_below_floor": 387,
+   "non_residential": null,
+   "source": "消防庁調べ：平成19年10月18日10時00分現在 東北地方の大雨被害状況",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 5,
+   "destroyed": 5,
+   "half_destroyed": 217,
+   "partial_damage": 2,
+   "flooded_above_floor": 297,
+   "flooded_below_floor": 665,
+   "non_residential": null,
+   "source": "消防庁調べ：平成19年10月18日10時00分現在 東北地方の大雨被害状況",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "宮崎県「平成１９年災害の記録」（災異誌第43号）",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 20,
+   "half_destroyed": 72,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成２０年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 7,
+  "destroyed": 25,
+  "half_destroyed": 289,
+  "partial_damage": 6,
+  "flooded_above_floor": 402,
+  "flooded_below_floor": 1053,
+  "non_residential": 0,
+  "source": ""
+ }
+}

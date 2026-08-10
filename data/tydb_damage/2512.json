@@ -1,0 +1,41 @@
+{
+ "title": "2025年 (Lingling) : TY2512",
+ "weatherText": "沖縄本島の南で発生した熱帯低気圧は北上後、九州の西で台風へと発達し、鹿児島県に上陸した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 12,
+   "non_residential": null,
+   "source": "消防庁調べ：令和７年台風第１２号による被害及び消防機関等の対応状況（第５報）令和7年11月14日17時00分現在",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": 68,
+   "partial_damage": 10,
+   "flooded_above_floor": 112,
+   "flooded_below_floor": 83,
+   "non_residential": null,
+   "source": "消防庁調べ：令和７年台風第１２号による被害及び消防機関等の対応状況（第５報）令和7年11月14日17時00分現在",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 5,
+  "destroyed": 0,
+  "half_destroyed": 68,
+  "partial_damage": 10,
+  "flooded_above_floor": 113,
+  "flooded_below_floor": 95,
+  "non_residential": 0,
+  "source": ""
+ }
+}

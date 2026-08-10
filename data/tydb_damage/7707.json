@@ -1,0 +1,101 @@
+{
+ "title": "1977年 台風第7号 (Amy) : TY7707",
+ "weatherText": "8月21日台湾付近で転向した台風は，23日には東シナ海をさらに北東に進み，24日昼前長崎県島原半島南部に上陸して衰弱したが，その南にあった副低気圧に勢力を移し，24日昼頃鹿児島県川内市付近に上陸した。25日にはこの台風は熱帯低気圧に弱まり四国沖をさらに南下し，28日には消滅した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 78,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 91,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 98,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": 6,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第936号",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 8,
+  "injured": 0,
+  "destroyed": 1,
+  "half_destroyed": 4,
+  "partial_damage": 0,
+  "flooded_above_floor": 21,
+  "flooded_below_floor": 271,
+  "non_residential": 0,
+  "source": ""
+ }
+}

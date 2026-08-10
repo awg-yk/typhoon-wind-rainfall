@@ -1,0 +1,173 @@
+{
+ "title": "2016年 台風第13号 (Malou) : TY1613",
+ "weatherText": "9月6日に宮古島の近海で発生し日本の南を北東に進んだ後、8日に東海道沖で温帯低気圧に変わった。台風第13号から変わった低気圧は、関東地方、東北地方の沿岸を北上し、10日にはオホーツク海に進んだ。台風第13号及び台風から変わった低気圧の影響で、兵庫県養父市で1時間に89.5ミリ、栃木県小山市で81.5ミリなど猛烈な雨となったほか、全国各地で200ミリを超える大 雨となった所があった。また、最大瞬間風速が沖縄県那覇市で31.3メートル、沖縄県渡嘉敷村で31.2メートルなど沖縄・奄美を中心に暴風となり、海は大しけとなった所があった。死者1人、負傷者2人、全壊15棟、半壊42棟、一部破損42棟、床上浸水112棟、床下浸水345棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 15,
+   "half_destroyed": 40,
+   "partial_damage": 37,
+   "flooded_above_floor": 106,
+   "flooded_below_floor": 220,
+   "non_residential": 53,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 18,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 2,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 16,
+   "non_residential": 2,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "富山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 11,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 64,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 2,
+  "destroyed": 15,
+  "half_destroyed": 42,
+  "partial_damage": 41,
+  "flooded_above_floor": 112,
+  "flooded_below_floor": 345,
+  "non_residential": 56,
+  "source": ""
+ }
+}

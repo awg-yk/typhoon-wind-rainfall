@@ -1,0 +1,113 @@
+{
+ "title": "2010年 台風第9号 (Malou) : TY1009",
+ "weatherText": "9月3日に日本の南海上で台風になり、4日に沖縄本島と久米島の間を通過した。5日から6日にはゆっくりした速度で東シナ海を北上、7日には長崎県対馬市の北を通過し、山陰沖を東北東に進み、8日に福井県敦賀市付近に上陸した。その後、南東に進み、岐阜県から静岡県を通過し、静岡県付近で熱帯低気圧に変わり、関東の東海上に抜けた。8日は中国地方から東北南部の広い範囲で大雨となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 30,
+   "flooded_below_floor": 17,
+   "non_residential": null,
+   "source": "東京都「平成２2年水害の記録」",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 3,
+   "flooded_above_floor": 19,
+   "flooded_below_floor": 315,
+   "non_residential": null,
+   "source": "神奈川県「平成２３年版消防年報」",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 3,
+   "source": "石川県「平成２２年版消防防災年報」、石川県危機対策課",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 9,
+   "non_residential": 2,
+   "source": "岐阜県「平成２２年災害一覧表」",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 7,
+   "half_destroyed": 31,
+   "partial_damage": null,
+   "flooded_above_floor": 17,
+   "flooded_below_floor": 119,
+   "non_residential": 32,
+   "source": "静岡県危機対策課",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "山口県「平成２３年度消防防災年報」",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": 1,
+   "source": "長崎県「平成２３年版消防防災年報」",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成２３年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 7,
+  "half_destroyed": 34,
+  "partial_damage": 3,
+  "flooded_above_floor": 66,
+  "flooded_below_floor": 464,
+  "non_residential": 38,
+  "source": ""
+ }
+}

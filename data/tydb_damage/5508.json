@@ -1,0 +1,53 @@
+{
+ "title": "1955年 台風第8号 (Dot) : TY5508",
+ "weatherText": "7月13日3時、マリアナ群島の西方洋上に1004hPaの熱帯低気圧が発生した。14日15時沖ノ鳥島の北西約150kmの洋上において台風第８号となり、6日15時にDotと命名された。台風は16日18時50分ころ宮崎市付近に上陸し、その後、衰えながら九州を縦断して、17日3時に熱帯低気圧となった。この台風による強風の被害はなかったが、台風第7号が九州に最も接近した15日午後から、台風第8号が通過した17日朝にかけて、鹿児島・宮崎・高知の各県にかなりの雨があり、死傷2名を含む被害が報告された。7月14日15時：中心示度1000hPa、最大風速17m/s以上。 16日15時：中心示度995hPa、最大風速33m/s以上。 死者1人、負傷者1人、全壊2棟、半壊1棟、一部破損2棟、焼失1棟、床上浸水23棟、床下浸水1033棟（気象要覧第671号）",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 306,
+   "non_residential": null,
+   "source": "気象要覧第671号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 725,
+   "non_residential": null,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 1,
+  "destroyed": 3,
+  "half_destroyed": 1,
+  "partial_damage": 2,
+  "flooded_above_floor": 23,
+  "flooded_below_floor": 1033,
+  "non_residential": 0,
+  "source": ""
+ }
+}

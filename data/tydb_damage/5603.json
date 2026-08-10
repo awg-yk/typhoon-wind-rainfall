@@ -1,0 +1,29 @@
+{
+ "title": "1956年 台風第3号 (Thelma) : TY5603",
+ "weatherText": "4月16日朝、カロリン群島中部に熱帯低気圧が発生した。同日15時台風となり、その後西北西に進み、17日9時にはThelmaと命名された。台風はルソン島中部を通過して南シナ海に出た。台風は、22日の午後から翌朝にかけて北東に転向し、25日早朝大隈半島を通過して、同日9時過ぎに宮崎市の南東洋上で熱帯低気圧となった。4月16日11時36分と13時45分の飛行機観測：最大風速20m/s。 17日9時、中心付近の最大風速が50m/sに達した。 20日15時10分の飛行機観測：中心示度935hPa、中心付近の最大風速80m/s以上。 22日朝、中心示度990hPa前後。 24日9時ごろ、中心示度996hPa。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第680号",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

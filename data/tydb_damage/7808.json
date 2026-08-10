@@ -1,0 +1,29 @@
+{
+ "title": "1978年 台風第8号 (Wendy) : TY7808",
+ "weatherText": "7月24日15時に沖ノ鳥島の西方海上で発生した台風は，東シナ海に進み，同海域で7月30日から8月1日にかけ複雑な動きをした後，2日18時に鹿児島県阿久根市付近に上陸した。その後北東進を続け，3日15時，日本海で温帯低気圧となって4日オホーツク海に抜けた。死者1人、全半壊23棟、浸水163棟（気象要覧第948号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 6,
+   "partial_damage": 30,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 124,
+   "non_residential": 33,
+   "source": "鹿児島県「昭和53年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 6,
+  "partial_damage": 30,
+  "flooded_above_floor": 3,
+  "flooded_below_floor": 124,
+  "non_residential": 33,
+  "source": ""
+ }
+}

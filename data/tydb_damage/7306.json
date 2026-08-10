@@ -1,0 +1,77 @@
+{
+ "title": "1973年 台風第6号 (Ellen) : TY7306",
+ "weatherText": "7月21日紀伊半島沖で台風第6号は衰えて熱帯低気圧となり，四国沖から西進，24日9時には枕崎の南方海上100kmに達した。その後，熱帯低気圧は次第に向きを北に変え，天草西方海上で再び台風となって，25日午後熊本県宇土半島に上陸，進路を北東にとり，26日3時頃再び熱帯低気圧となり大分県南部から5時過ぎ四国沖に抜けた。死者30人、負傷者10人、全半壊110棟、浸水37783棟（気象要覧第887号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 110,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 27,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 37425,
+   "non_residential": null,
+   "source": "気象要覧第887号",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第887号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第887号",
+   "pref": "熊本県"
+  }
+ ],
+ "total": {
+  "dead_missing": 29,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 37536,
+  "non_residential": 0,
+  "source": ""
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "title": "1965年 台風第17号 (Lucy) : TY6517",
+ "weatherText": "8月15日9時，ウェーク島の南東約700kmの海上に発生した熱帯低気圧は，15日15時同島の南東約600kmの海上で台風となった。台風は北北西に進み，19日15時頃小笠原島付近に達した。台風はこのころから北上をはじめ，21日0時には鳥島の西110kmの海上に達した。その後再び北西〜西北西へと転向し，21日12時潮岬の南東およそ300kmの海上に達して停滞気味となり，その後ゆっくり北上を始めた。台風は22日9時，浜松の南150kmの海上に達し，北北東ないし北東に転向して，御前崎南部をかすめ，22日19時過ぎ伊豆半島の南西海岸に上陸した。その後衰弱しながら伊豆半島北部を通り，23日3時頃東京南西部をかすめて北東に進み，23日6時には熱帯低気圧となって，同日9時鹿島灘へ去った。8月21日0時の中心気圧940hPa，中心付近の最大風速55m/s，25m/s以上の暴風半径は200kmであった。伊豆半島上陸後の20時の中心気圧970hPa，最大風速35m/sであった。 行方不明2人、負傷者5人、全壊1棟、半壊19棟、一部破損285棟、家屋損壊61棟、床上浸水1294棟、床下浸水16115棟（気象要覧第792号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 620,
+   "non_residential": null,
+   "source": "気象要覧第792号、大槌町",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1235,
+   "non_residential": null,
+   "source": "気象要覧第792号",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 680,
+   "non_residential": null,
+   "source": "気象要覧第792号",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 9,
+   "source": "気象要覧第792号",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 2254,
+   "non_residential": 9,
+   "source": "気象要覧第792号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 264,
+   "non_residential": 5,
+   "source": "気象要覧第792号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 9,
+   "destroyed": 1,
+   "half_destroyed": 7,
+   "partial_damage": 104,
+   "flooded_above_floor": 759,
+   "flooded_below_floor": 30335,
+   "non_residential": 3,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": 499,
+   "flooded_below_floor": 2565,
+   "non_residential": 6,
+   "source": "気象要覧第792号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 25,
+   "non_residential": null,
+   "source": "気象要覧第792号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": 19,
+   "partial_damage": 276,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 155,
+   "non_residential": 75,
+   "source": "気象要覧第792号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 11,
+  "destroyed": 2,
+  "half_destroyed": 26,
+  "partial_damage": 392,
+  "flooded_above_floor": 1283,
+  "flooded_below_floor": 38133,
+  "non_residential": 107,
+  "source": ""
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "title": "1999年 台風第8号 (Paul) : TY9908",
+ "weatherText": "8月3日に沖ノ鳥島の東海上で発生し、5日は大型で弱い勢力で沖縄の東方海上へ進み、一時停滞した後、6日にかけて九州の南海上を反時計回りの半円を描くように北上した。その後、都井岬沖へ進み、大隅海峡を通過した後、九州の西海上を北上し、7日には五島列島の達した。その後、進路を西へ変え、7日にチェジュ島の南東の海上で弱い熱帯低気圧となった。全壊2棟、床上浸水6棟、床下浸水42棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 7,
+   "flooded_below_floor": 48,
+   "non_residential": null,
+   "source": "宮崎県「災害の記録」",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 3,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 7,
+  "flooded_below_floor": 48,
+  "non_residential": 0,
+  "source": ""
+ }
+}

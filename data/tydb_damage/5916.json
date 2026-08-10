@@ -1,0 +1,77 @@
+{
+ "title": "1959年 台風第16号 (Amy) : TY5916",
+ "weatherText": "10月3日15時ルソン島東方洋上に熱帯低気圧が発生し，21時に台風とされた。台風は東進し，4日15時頃から北ないし北北東に向きを変えて進んだ。6日昼ごろ沖縄北端を通過し，同日15時には奄美大島の西方約70kmの海上に達した。その後は北東に向きを変えて進んだ。同日21時ごろ屋久島を，7日0時ごろ大隈半島都井岬付近を付近をそれぞれ通過し，7日5時ごろ宿毛付近に上陸した。その後台風は四国東部，近畿中部を通過し，同日10時以降は温帯低気圧となった。10月3日18時には中心付近の最大風速が20m/s以上であることが判った。奄美大島付近にあった6日15時頃の中心気圧980hPa，中心付近の最大風速が約50m/sで，最盛期を示した。宿毛付近上陸時の中心気圧994hPa，最大風速25m/s。 死者・行方不明7人、全壊30棟、半壊48棟、流失1棟、床上浸水4棟、床下浸水286棟（気象要覧第722号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 29,
+   "non_residential": null,
+   "source": "気象要覧第722号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 80,
+   "non_residential": null,
+   "source": "気象要覧第722号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "気象要覧第722号",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 83,
+   "non_residential": null,
+   "source": "気象要覧第722号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 7,
+   "injured": 14,
+   "destroyed": 29,
+   "half_destroyed": 48,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 91,
+   "non_residential": 5,
+   "source": "気象要覧第722号",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 14,
+  "destroyed": 31,
+  "half_destroyed": 48,
+  "partial_damage": 0,
+  "flooded_above_floor": 4,
+  "flooded_below_floor": 286,
+  "non_residential": 5,
+  "source": ""
+ }
+}

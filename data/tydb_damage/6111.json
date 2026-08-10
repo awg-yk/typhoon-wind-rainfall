@@ -1,0 +1,29 @@
+{
+ "title": "1961年 台風第11号 (Ida) : TY6111",
+ "weatherText": "7月28日3時に存在が確認された熱帯低気圧は北西に進み同日15時には台風となった。台風は北西進して九州南部に向かい，31日12時には宮崎県南部に上陸し，その後は進路を西から南西に変えた。台風は31日15時には九州南西海上に抜けて熱帯低気圧となった。この低気圧は同日21時以後は奄美大島北方海域の台風第10号の暴風圏に入り，同台風に吸収された。7月28日15時，中心気圧990hPa，中心付近の最大風速35m/sと推定された。29日15時には中心気圧980hPa，最大風速45m/sに達した（最盛期）",
+ "prefectures": [
+  {
+   "dead_missing": 9,
+   "injured": 3,
+   "destroyed": 7,
+   "half_destroyed": 6,
+   "partial_damage": 20,
+   "flooded_above_floor": 51,
+   "flooded_below_floor": 553,
+   "non_residential": 4,
+   "source": "気象要覧第743号",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 9,
+  "injured": 3,
+  "destroyed": 7,
+  "half_destroyed": 6,
+  "partial_damage": 20,
+  "flooded_above_floor": 51,
+  "flooded_below_floor": 553,
+  "non_residential": 4,
+  "source": ""
+ }
+}

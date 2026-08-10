@@ -1,0 +1,161 @@
+{
+ "title": "2023年 台風第6号 (Khanun) : TY2306",
+ "weatherText": "大型で非常に強い勢力にまで発達した後、沖縄本島の南を通過し。沖縄県内では停電となった。その後、勢力は弱くなったが、進路を引き返すように東へ移動し、沖縄県北部では大雨となった。その後進路を北に変え九州西岸を北上するのに伴い、九州や四国で線状降水帯が発生し激しい雨が観測された。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "滋賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 22,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 19,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 17,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 9,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 50,
+   "flooded_above_floor": 7,
+   "flooded_below_floor": 53,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 85,
+   "destroyed": 3,
+   "half_destroyed": 24,
+   "partial_damage": 166,
+   "flooded_above_floor": 16,
+   "flooded_below_floor": 22,
+   "non_residential": null,
+   "source": "消防庁調べ：令和6年3月6日17時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 103,
+  "destroyed": 5,
+  "half_destroyed": 24,
+  "partial_damage": 249,
+  "flooded_above_floor": 30,
+  "flooded_below_floor": 115,
+  "non_residential": 0,
+  "source": ""
+ }
+}

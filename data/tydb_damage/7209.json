@@ -1,0 +1,101 @@
+{
+ "title": "1972年 台風第9号 (Tess) : TY7209",
+ "weatherText": "北西進を続けて20日15時頃父島の東方海上に達した台風第9号は進路を西に変え，日本の南方海上を西北西進して23日20時頃宮崎県と大分県との県境付近に上陸した。上陸後北西進して21時頃大分市付近を，夜半頃には下関市付近を通り，日本海へ抜けた。死者・行方不明7人、負傷者7人、全壊16棟、半壊19棟、流失4棟、一部破損17棟、床上浸水326棟、床下浸水3276棟（気象要覧第875号）",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第875号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "気象要覧第875号",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 4,
+   "destroyed": 2,
+   "half_destroyed": 1,
+   "partial_damage": 3,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 1179,
+   "non_residential": 3,
+   "source": "気象要覧第875号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 10,
+   "half_destroyed": 13,
+   "partial_damage": 11,
+   "flooded_above_floor": 306,
+   "flooded_below_floor": 1404,
+   "non_residential": 15,
+   "source": "気象要覧第875号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第875号",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 690,
+   "non_residential": 6,
+   "source": "気象要覧第875号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 1,
+   "destroyed": 6,
+   "half_destroyed": 4,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "気象要覧第875号",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 7,
+  "destroyed": 20,
+  "half_destroyed": 19,
+  "partial_damage": 17,
+  "flooded_above_floor": 326,
+  "flooded_below_floor": 3276,
+  "non_residential": 26,
+  "source": ""
+ }
+}

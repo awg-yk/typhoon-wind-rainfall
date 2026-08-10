@@ -1,0 +1,125 @@
+{
+ "title": "1972年 台風第6号 (Phyllis) : TY7206",
+ "weatherText": "台風第6号は7月14日早朝，父島の南西約150km付近を通過し，さらに北西進を続け，15日には進路を北に変えて同日20時過ぎ知多半島に上陸した。上陸後急速に勢力が衰え，23時には石川県南部で温帯低気圧となり日本海に出て北東方に去った。死者・行方不明3人、負傷者13人、全壊5棟、半壊7棟、一部破損19棟、床上浸水368棟、床下浸水9587棟（気象要覧第875号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 22,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 21,
+   "flooded_below_floor": 1623,
+   "non_residential": null,
+   "source": "気象要覧第875号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 28,
+   "non_residential": null,
+   "source": "気象要覧第875号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 69,
+   "flooded_below_floor": 1672,
+   "non_residential": 9,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 3,
+   "flooded_above_floor": 149,
+   "flooded_below_floor": 2156,
+   "non_residential": 7,
+   "source": "気象要覧第875号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 18,
+   "non_residential": 1,
+   "source": "気象要覧第875号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 4,
+   "half_destroyed": 4,
+   "partial_damage": 7,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 825,
+   "non_residential": 20,
+   "source": "気象要覧第875号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 42,
+   "flooded_below_floor": 2864,
+   "non_residential": 11,
+   "source": "気象要覧第875号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 325,
+   "non_residential": 3,
+   "source": "気象要覧第875号",
+   "pref": "三重県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 8,
+  "destroyed": 5,
+  "half_destroyed": 7,
+  "partial_damage": 22,
+  "flooded_above_floor": 312,
+  "flooded_below_floor": 9533,
+  "non_residential": 51,
+  "source": ""
+ }
+}

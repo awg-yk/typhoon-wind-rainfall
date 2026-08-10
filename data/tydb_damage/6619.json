@@ -1,0 +1,125 @@
+{
+ "title": "1966年 台風第19号 (Doris) : TY6619",
+ "weatherText": "9月4日9時，沖ノ鳥島の南南東350kmの海上に発生した熱帯低気圧は，はじめ北東進，のち北進しながら次第に発達して，7日9時，沖ノ鳥島の北東330kmの海上，北緯21.6度，東経139.1度で台風第となった。7日15時から進路を北西にかえ，9日夕方には九州の南海上に達した。その後北上して九州の東海上を進み，豊後水道を経て伊予灘に達し，これより進路を北東に転じて9日21時前に広島県東部に上陸した。その後中国地方を北東進して，9日夜半頃日本海に抜けて，日本海沿岸沿いを進み，10日12時過ぎに秋田県に上陸した。その後北海道南東岸に沿って北東進し，10日21時には千島列島択捉島付近で温帯低気圧となった。9月7日9時，中心気圧994hPa，中心付近の最大風速25m/s。 9日夕方の中心気圧は980hPa，中心付近の最大風速35m/s，風速25m/s以上の暴風半径は50kmであった。10日12時秋田県上陸時の中心気圧は990hPaであった。 死者7人、負傷者4人、全壊6棟、半壊7棟、流失1棟、一部破損25棟、床上浸水2158棟、床下浸水5779棟（気象要覧第805号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 35,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 21,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 117,
+   "flooded_below_floor": 423,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 145,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 70,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第805号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": 5,
+   "injured": 4,
+   "destroyed": 6,
+   "half_destroyed": 7,
+   "partial_damage": 21,
+   "flooded_above_floor": 2144,
+   "flooded_below_floor": 5488,
+   "non_residential": 1,
+   "source": "気象要覧第805号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 16,
+   "non_residential": 1,
+   "source": "気象要覧第805号",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 4,
+  "destroyed": 7,
+  "half_destroyed": 7,
+  "partial_damage": 25,
+  "flooded_above_floor": 2275,
+  "flooded_below_floor": 6202,
+  "non_residential": 2,
+  "source": ""
+ }
+}

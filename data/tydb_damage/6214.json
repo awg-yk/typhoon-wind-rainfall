@@ -1,0 +1,161 @@
+{
+ "title": "1962年 台風第14号 (Thelma) : TY6214",
+ "weatherText": "8月20日9時，サイパン島の北東に発生した熱帯低気圧は，15時には台風となった。その後北西進し，24日0時には鳥島の南南西550kmの海上に達した。その後進路を北俣は北北西に変え，25日21時に潮岬の南東約140kmの洋上に達した。台風は26日4時尾鷲の北東方に上陸し，北上して6時亀山の西，7時彦根付近，8時琵琶湖北岸を通って，9時には福井付近に達した。10時には日本海に抜け，18時能登半島の北に達して熱帯低気圧となり，日本海岸沿いに北上した。8月24日0時中心気圧950hPa，最大風速50m/s，風速25m/s以上の暴風半径90km。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 53,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": 1,
+   "source": "気象要覧第756号",
+   "pref": "福井県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 48,
+   "non_residential": 1,
+   "source": "気象要覧第756号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 39,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 9,
+   "destroyed": 3,
+   "half_destroyed": 7,
+   "partial_damage": 450,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 136,
+   "non_residential": 160,
+   "source": "気象要覧第756号",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 9,
+   "destroyed": 13,
+   "half_destroyed": 41,
+   "partial_damage": 254,
+   "flooded_above_floor": 19,
+   "flooded_below_floor": 810,
+   "non_residential": 57,
+   "source": "気象要覧第756号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 9,
+   "destroyed": 26,
+   "half_destroyed": 28,
+   "partial_damage": 303,
+   "flooded_above_floor": 177,
+   "flooded_below_floor": 7556,
+   "non_residential": 250,
+   "source": "気象要覧第756号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 14,
+   "destroyed": 88,
+   "half_destroyed": 227,
+   "partial_damage": 3723,
+   "flooded_above_floor": 29,
+   "flooded_below_floor": 2050,
+   "non_residential": 964,
+   "source": "気象要覧第756号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": 4,
+   "partial_damage": null,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 694,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "滋賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "気象要覧第756号",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 11,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "気象要覧第756号",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 5,
+  "injured": 45,
+  "destroyed": 135,
+  "half_destroyed": 318,
+  "partial_damage": 4734,
+  "flooded_above_floor": 299,
+  "flooded_below_floor": 11342,
+  "non_residential": 1436,
+  "source": ""
+ }
+}

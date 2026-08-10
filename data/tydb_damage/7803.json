@@ -1,0 +1,29 @@
+{
+ "title": "1978年 台風第3号 (Polly) : TY7803",
+ "weatherText": "日本の南方海上を西北西に進んでいた熱帯低気圧は，6月18日15時，宮古島の北東約100kmの海上で台風となった。その後北寄りから北東に向きを変え，20日18時頃に長崎県西彼杵半島に上陸した。台風は同日20時に北九州付近で温帯低気圧となり，梅雨前線上を北東進して日本海を経て21日遅く北海道の東海上に去った。中部日本では台風と梅雨前線の影響を長期間受けた。死者1人、負傷者4人、全半壊9棟、一部破損13棟、浸水246棟（気象要覧第946号）",
+ "prefectures": [
+  {
+   "dead_missing": 4,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 13,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第946号",
+   "pref": "秋田県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 13,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

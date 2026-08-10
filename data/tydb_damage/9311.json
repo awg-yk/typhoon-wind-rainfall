@@ -1,0 +1,89 @@
+{
+ "title": "1993年 台風第11号 (Vernon) : TY9311",
+ "weatherText": "8月21日に南鳥島で発生し、26日に父島の北で進路を北寄りに変え、27日に中型で強い勢力で千葉県銚子市付近を通過し、本州の東海上を北北東に進んだ。28日には中型で並みの強さで北海道釧路市付近に上陸した。北海道東部を縦断した後、オホーツク海に進み、温帯低気圧に変わった。死者2人、負傷者4人、全壊・流失1棟、半壊・一部破損15棟、床上浸水2798棟、床下浸水12133棟（情報元：気象要覧第1128号）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": 34,
+   "flooded_below_floor": 349,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "宇都宮市",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 74,
+   "flooded_below_floor": 99,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2454,
+   "flooded_below_floor": 5079,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 8,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 31,
+   "non_residential": 4,
+   "source": "川崎市の災害概要、横浜市",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 2,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 15,
+  "flooded_above_floor": 2569,
+  "flooded_below_floor": 5572,
+  "non_residential": 4,
+  "source": ""
+ }
+}

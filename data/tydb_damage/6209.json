@@ -1,0 +1,65 @@
+{
+ "title": "1962年 台風第9号 (Nora) : TY6209",
+ "weatherText": "7月29日3時，沖ノ鳥島南南西約250kmの洋上に発生した熱帯低気圧は，西北西に進み，同日15時に台風となった。その後は北から北西に向きを変えて進み，31日9時には沖縄の南300kmの洋上に達した。次第に向きを北北西に変え，8月1日3時には沖縄の西130kmの海上を通過し，2日済州島の西250km付近を通って北東に進路を変え，3日3時ソウルの南西100kmに達した。 台風は3日午前中に日本海西部に出て衰弱し，東北東ないし東に進み，夜半過ぎに北海道寿都町に上陸，内浦湾を経て4日3時には胆振沖に進み温帯低気圧となった。7月31日9時頃の飛行機観では，中心気圧973hPa，中心付近の最大風速31m/sであった。8月1日3時には，中心気圧968hPa，中心付近の最大風速35m/s，25m/s以上の暴風半径は中心の東側370km，西側200kmにおよび，この台風の最盛期を示した。",
+ "prefectures": [
+  {
+   "dead_missing": 29,
+   "injured": 14,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1342,
+   "flooded_above_floor": 5576,
+   "flooded_below_floor": 13221,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": 8,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 12,
+   "source": "気象要覧第756号",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 6,
+   "destroyed": 3,
+   "half_destroyed": 13,
+   "partial_damage": 43,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 5,
+   "non_residential": 38,
+   "source": "気象要覧第756号",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 30,
+  "injured": 28,
+  "destroyed": 3,
+  "half_destroyed": 13,
+  "partial_damage": 1385,
+  "flooded_above_floor": 5578,
+  "flooded_below_floor": 13226,
+  "non_residential": 50,
+  "source": ""
+ }
+}

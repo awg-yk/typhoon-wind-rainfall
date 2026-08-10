@@ -1,0 +1,65 @@
+{
+ "title": "2002年 台風第13号 (Phanfone) : TY0213",
+ "weatherText": "8月11日にポナペ島の北東海上で発生し、15日に父島の南西海上において大型で非常に強い勢力となった後、北北西に向きを変えて進んだ。台風は17日にはやや弱まって強い勢力となり18日に紀伊半島の南海上で北東へ向きを変えた。19日に八丈島付近を通過し、次第に速度を上げて東北東へ進み、21日に北海道の東海上で温帯低気圧に変わった。床上浸水5棟、床下浸水83棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 36,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 23,
+   "non_residential": 9,
+   "source": "消防庁",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "山梨県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 5,
+  "flooded_below_floor": 83,
+  "non_residential": 9,
+  "source": ""
+ }
+}

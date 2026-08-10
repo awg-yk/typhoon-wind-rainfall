@@ -1,0 +1,89 @@
+{
+ "title": "2001年 台風第16号 (Nari) : TY0116",
+ "weatherText": "9月5日に石垣島の南海上で発生し、沖縄本島南部を通過した後、わずかに勢力を弱めながら、同島のすぐ東の海上で時計回りに小さく一回転した。その後、北西に進み、8日に同島中部を通過した。台風は同島の西の海上で３日間、勢力を維持しながら反時計回りに一回転して、11日には久米島のすぐ南海上で強い勢力になった。台風は速度を落とし、13日に同島付近を通過し、北西に進み、一時的に勢力を弱めたが、向きを南西に変えてから再発達し、15日に石垣島の北海上で再び強い勢力となった。16日に台湾に上陸すると、著しく勢力を弱め、17日に同島の東海上を抜けて、熱帯低気圧になった。この熱帯低気圧は約30時間、同海域でほぼ停滞した後、同島南部から19日に台湾海峡に進んだ。また、本州の前線に影響を与え高知県などに大雨をもたらした。負傷者12人、全壊40棟、半壊70棟、一部損壊63棟、床上浸水1270棟、床下浸水1045棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "消防庁調べ：平成13年9月11日22時00分現在：平成13年9月14日19時30分現在（沖縄のみ）",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 217,
+   "non_residential": null,
+   "source": "消防庁調べ：平成13年9月11日22時00分現在：平成13年9月14日19時30分現在（沖縄のみ）",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 19,
+   "non_residential": null,
+   "source": "消防庁調べ：平成13年9月11日22時00分現在：平成13年9月14日19時30分現在（沖縄のみ）",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 8,
+   "destroyed": 6,
+   "half_destroyed": 8,
+   "partial_damage": 5,
+   "flooded_above_floor": 568,
+   "flooded_below_floor": 576,
+   "non_residential": 3,
+   "source": "消防庁調べ：平成13年9月11日22時00分現在：平成13年9月14日19時30分現在（沖縄のみ）",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成13年9月11日22時00分現在：平成13年9月14日19時30分現在（沖縄のみ）",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 34,
+   "half_destroyed": 62,
+   "partial_damage": 58,
+   "flooded_above_floor": 702,
+   "flooded_below_floor": 226,
+   "non_residential": 16,
+   "source": "消防庁調べ：平成13年9月11日22時00分現在：平成13年9月14日19時30分現在（沖縄のみ）",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 12,
+  "destroyed": 40,
+  "half_destroyed": 70,
+  "partial_damage": 63,
+  "flooded_above_floor": 1270,
+  "flooded_below_floor": 1045,
+  "non_residential": 19,
+  "source": ""
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "1996年 台風第17号 (Violet) : TY9617",
+ "weatherText": "9月11日にフィリピンの東海上で発生し、16日に大型で非常に強い勢力となった。20日に南大東島の東の海上を通過し、21日は日本の南海上を北東に進んだ。22日に大型で強い勢力で八丈島の西の海上を通り、房総半島の東海上を北北東に進んだ後、三陸沖を通り、北海道の東海上を北北東に進んだ。死者11人、負傷者73人、全壊8棟、半壊890棟、床上浸水2612棟、床下浸水9614棟（情報元：気象要覧第1165号）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 4,
+   "flooded_above_floor": 37,
+   "flooded_below_floor": 345,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "狭山市",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 3,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 57,
+   "flooded_above_floor": 75,
+   "flooded_below_floor": 442,
+   "non_residential": null,
+   "source": "船橋市、木更津市、富津市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 2,
+   "half_destroyed": 7,
+   "partial_damage": 318,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "横浜市、川崎市の災害概要",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 52,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 47,
+   "source": "静岡県総務部消防防災課",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 9,
+  "destroyed": 3,
+  "half_destroyed": 9,
+  "partial_damage": 431,
+  "flooded_above_floor": 117,
+  "flooded_below_floor": 791,
+  "non_residential": 47,
+  "source": ""
+ }
+}

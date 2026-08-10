@@ -1,0 +1,41 @@
+{
+ "title": "1993年 台風第14号 (Zola) : TY9314",
+ "weatherText": "9月5日に沖ノ鳥島の西の海上で発生し、9日にごく小さい弱い勢力で和歌山県南部に上陸した。その後、長野県南部で温帯低気圧に変わり、日本の東海上に進んだ。全壊・流失2棟、半壊・一部破損17棟、床上浸水42棟、床下浸水1243棟（情報元：気象要覧第1129号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "静岡県防災局",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 107,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 2,
+  "flooded_below_floor": 113,
+  "non_residential": 0,
+  "source": ""
+ }
+}

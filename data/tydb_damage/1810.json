@@ -1,0 +1,16 @@
+{
+ "title": "2018年 台風第10号 (Ampil) : TY1810",
+ "weatherText": "沖縄本島を通過後、東シナ海を北上し、中国大陸の上海付近に上陸した。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

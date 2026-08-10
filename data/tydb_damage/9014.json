@@ -1,0 +1,41 @@
+{
+ "title": "1990年 台風第14号 (Zola) : TY9014",
+ "weatherText": "8月16日にサイパン島の東海上で発生し、22日に四国南海上から豊後水道・佐田岬半島を通過してｋら大型で並みの勢力を保って広島市付近に上陸した。台風は日本海に抜けた後は、徐々に進行方向を北東に変え、北海道西方海上で弱い熱帯低気圧となった。死者6人、負傷者24人、全壊・流失2棟、半壊・一部破損65棟、床上浸水7棟、床下浸水413棟（情報元：気象要覧第1092号）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "島根県「平成２年災害年報」",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 5,
+  "non_residential": 0,
+  "source": ""
+ }
+}

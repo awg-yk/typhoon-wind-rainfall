@@ -1,0 +1,137 @@
+{
+ "title": "2002年 台風第15号 (Rusa) : TY0215",
+ "weatherText": "8月22日にビキニ島の北海上で発生し、26日には父島の南東海上において大型で強い台風となった。台風は次第に北西へ向きを変え、29日に奄美大島北部を通過し、東シナ海を進み、31日に朝鮮半島に上陸し、1日に同半島の東岸で熱帯低気圧になった。負傷者12人、全壊1棟、半壊10棟、一部損壊126棟、床上浸水105棟、床下浸水275棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 12,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": 1,
+   "source": "消防庁",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 104,
+   "flooded_below_floor": 248,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 4,
+   "source": "消防庁",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 3,
+   "source": "消防庁",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "熊本県",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": 2,
+   "source": "宮崎県",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": 2,
+   "half_destroyed": 15,
+   "partial_damage": 182,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 50,
+   "non_residential": 108,
+   "source": "鹿児島県「平成14年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "沖縄県「平成１５年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 11,
+  "destroyed": 2,
+  "half_destroyed": 17,
+  "partial_damage": 196,
+  "flooded_above_floor": 106,
+  "flooded_below_floor": 326,
+  "non_residential": 118,
+  "source": ""
+ }
+}

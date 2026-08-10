@@ -1,0 +1,149 @@
+{
+ "title": "2016年 台風第18号 (Chaba) : TY1618",
+ "weatherText": "10月3日に沖縄本島に最も接近した後、九州の西海上で進路を東よりに変え、対馬海峡から日本海へ進んで佐渡沖で温帯低気圧に変わった。沖縄県久米島町北原で最大瞬間風速59.7メートルを観測するなど、沖縄本島地方では猛烈な風が吹き、海は猛烈なしけとなった。また、石川県金沢市金沢で最大瞬間風速43.4メートルを観測するなど、西日本から東日本にかけての日本海側を中心に非常に強い風が吹いた。負傷者14人、半壊1棟、一部破損136棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "富山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "福井県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 7,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 6,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 118,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年10月27日10時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 14,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 136,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 16,
+  "source": ""
+ }
+}

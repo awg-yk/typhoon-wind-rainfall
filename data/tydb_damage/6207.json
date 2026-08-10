@@ -1,0 +1,101 @@
+{
+ "title": "1962年 台風第7号 (Louise) : TY6207",
+ "weatherText": "7月21日3時，マーカス島の南東約300kmの洋上に発生した熱帯低気圧は，急速に発達して9時台風となった。その後北上を続け，22日9時頃から次第に向きを西北西に変え，21日以降は北緯28度線付近を西進した。25日9時鳥島の南南東約200kmの洋上に達した頃より台風は西北西ないし北西に進んだ。27日朝，潮岬の南西海上に達してから向きを北から北北東に変え，同日13時潮岬，白浜間（「すさみ」付近）より紀伊半島に上陸した。その後，和歌山県と奈良県の県境を北上，19時頃には奈良市の南20kmに達し，28日0時には彦根付近を北北東進し，28日6時岐阜県西部（伊吹山付近）で熱帯低気圧になった。さらに同日15時には温帯低気圧となって，21時鹿島灘に抜け，29日21時北海道南東海上で消滅した。7月23日13時00分の飛行機観測：中心気圧960hPa，中心付近の最大風速31m/sを観測。25日9時，中心気圧965hPa，最大風速40m/s，風速25m/s以上の暴風半径150kmに及ぶ。27日13時上陸時の中心気圧970hPa，中心付近の最大風速40m/s，暴風半径100kmであった。",
+ "prefectures": [
+  {
+   "dead_missing": 5,
+   "injured": 7,
+   "destroyed": 18,
+   "half_destroyed": 7,
+   "partial_damage": null,
+   "flooded_above_floor": 588,
+   "flooded_below_floor": 6808,
+   "non_residential": null,
+   "source": "気象要覧第755号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 412,
+   "flooded_below_floor": 1981,
+   "non_residential": null,
+   "source": "気象要覧第755号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 1,
+   "destroyed": 4,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 178,
+   "flooded_below_floor": 2395,
+   "non_residential": null,
+   "source": "気象要覧第755号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 43,
+   "non_residential": null,
+   "source": "気象要覧第755号",
+   "pref": "滋賀県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 15,
+   "destroyed": 3,
+   "half_destroyed": 3,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 11,
+   "non_residential": null,
+   "source": "気象要覧第755号",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 3,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 9,
+   "flooded_below_floor": 41,
+   "non_residential": null,
+   "source": "気象要覧第755号",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": 5,
+   "injured": 2,
+   "destroyed": 5,
+   "half_destroyed": 18,
+   "partial_damage": 32,
+   "flooded_above_floor": 334,
+   "flooded_below_floor": 855,
+   "non_residential": 35,
+   "source": "紀州災異誌",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 14,
+  "injured": 27,
+  "destroyed": 33,
+  "half_destroyed": 30,
+  "partial_damage": 32,
+  "flooded_above_floor": 1524,
+  "flooded_below_floor": 12134,
+  "non_residential": 35,
+  "source": ""
+ }
+}

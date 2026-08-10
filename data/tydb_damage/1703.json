@@ -1,0 +1,149 @@
+{
+ "title": "2017年 台風第3号 (Nanmadol) : TY1703",
+ "weatherText": "7月2日に沖縄の南で発生し、東シナ海を北上後、4日からは東寄りに進路を変えて、中心付近の気圧985hPa、中心付近の最大風速30m/sの勢力で8時頃に長崎県長崎市付近に上陸した。九州を横断し、愛媛県宇和島市付近に再上陸し、太平洋沿岸部を進み、5日に日本の東で温帯低気圧となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 9,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "熊谷地方気象台",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 51,
+   "non_residential": null,
+   "source": "新潟地方気象台",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "金沢地方気象台",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 15,
+   "non_residential": null,
+   "source": "富山地方気象台",
+   "pref": "富山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "長野県危機管理部",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 18,
+   "non_residential": 2,
+   "source": "岐阜地方気象台",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "静岡危機報道監",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "名古屋地方気象台",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "和歌山災害対策課",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 4,
+   "source": "熊本地方気象台",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "大分災害対策連絡室",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 12,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 21,
+  "flooded_above_floor": 11,
+  "flooded_below_floor": 101,
+  "non_residential": 8,
+  "source": ""
+ }
+}

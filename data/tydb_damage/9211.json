@@ -1,0 +1,41 @@
+{
+ "title": "1992年 台風第11号 (Kent) : TY9211",
+ "weatherText": "8月5日にマーシャル諸島で発生し、12日には非常に強い中型の勢力で父島の南東海上を北西進し、15日には父島付近を中型で強い勢力で通過した。18日に種子島の東海上で進路を北北西に変え、中型の弱い勢力で宮崎県と大分県境付近に上陸した。その後も北北西に進み、山口県宇部市付近に再上陸し、山口沖で弱い熱帯低気圧となった。死者・行方不明8人、負傷者2人、全壊1棟、半壊・一部破損12棟、床上浸水162棟、床下浸水217棟（情報元：気象要覧第1116号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "鹿児島県｢平成4年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 2,
+  "source": ""
+ }
+}

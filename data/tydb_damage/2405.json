@@ -1,0 +1,89 @@
+{
+ "title": "2024年 台風第5号 (Maria) : TY2405",
+ "weatherText": "小笠原諸島付近で熱帯低気圧から台風に発達し、その後西に進み、岩手県大船渡市付近に上陸した。岩手県においては記録的な大雨となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 9,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "埼玉県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 2,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 51,
+  "non_residential": 1,
+  "source": ""
+ }
+}

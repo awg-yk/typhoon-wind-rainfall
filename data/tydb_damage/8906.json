@@ -1,0 +1,16 @@
+{
+ "title": "1989年 台風第6号 (Ellis) : TY8906",
+ "weatherText": "沖縄の南海上で発生後北へ進み、鹿児島県に上陸。",
+ "prefectures": [],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

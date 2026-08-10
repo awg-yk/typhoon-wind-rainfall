@@ -1,0 +1,89 @@
+{
+ "title": "2003年 台風第4号 (Linfa) : TY0304",
+ "weatherText": "5月26日に南シナ海のルソン島西海上で発生し、30日には那覇市の東南東の海上に達した後、30日には種子島の南東を通過した。31日に愛媛県宇和島市付近に上陸し、香川県で温帯低気圧となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "長野県「平成１５年災害別被害状況」",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 64,
+   "non_residential": null,
+   "source": "三重県地域振興部防災チーム",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "京都市消防局",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": 1,
+   "source": "徳島県消防防災安全課防災担当",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "宮崎県消防防災課",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "鹿児島県「平成15年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 6,
+  "flooded_above_floor": 11,
+  "flooded_below_floor": 71,
+  "non_residential": 2,
+  "source": ""
+ }
+}

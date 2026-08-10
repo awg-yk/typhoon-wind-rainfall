@@ -1,0 +1,113 @@
+{
+ "title": "1996年 台風第12号 (Kirk) : TY9612",
+ "weatherText": "8月4日に南大東島の南海上で発生し、12日に沖縄本島の南東の海上において大型で強い勢力となり、沖縄県中部を通過した。14日に大型で強い勢力を維持し熊本市付近に上陸した後、北東に進み、山口県徳山市付近に再上陸した。日本海に進み、佐渡島を通過した後、大型でなみの強さの勢力で新潟県村上市付近に再上陸した。東北南部を通過した後、三陸沖に進み、北海道の東海上で温帯低気圧に変わった。死者4人、負傷者77人、全壊10棟、半壊2979棟、床上浸水35棟、床下浸水1640棟（情報元：気象要覧第1164号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "新潟県消防防災年報",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "石川県「平成２１年版消防防災年報」",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 11,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 162,
+   "flooded_above_floor": 9,
+   "flooded_below_floor": 525,
+   "non_residential": 183,
+   "source": "兵庫県",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 194,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 321,
+   "non_residential": null,
+   "source": "香川県",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": 1,
+   "source": "福岡市",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 28,
+   "destroyed": 9,
+   "half_destroyed": 45,
+   "partial_damage": 5623,
+   "flooded_above_floor": 37,
+   "flooded_below_floor": 268,
+   "non_residential": 1523,
+   "source": "鹿児島県｢平成8年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 43,
+  "destroyed": 9,
+  "half_destroyed": 46,
+  "partial_damage": 5793,
+  "flooded_above_floor": 50,
+  "flooded_below_floor": 1312,
+  "non_residential": 1707,
+  "source": ""
+ }
+}

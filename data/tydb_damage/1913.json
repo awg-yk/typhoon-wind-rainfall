@@ -1,0 +1,29 @@
+{
+ "title": "2019年 台風第13号 (Lingling) : TY1913",
+ "weatherText": "9月2日に発生した台風第13号は、発達しながら宮古島付近を北上し、6日に沖縄本島に最も接近した。台風の接近に伴い、沖縄地方では非常に強い風を伴った激しい雨となった。負傷者7人、半壊1棟、一部破損1棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 7,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

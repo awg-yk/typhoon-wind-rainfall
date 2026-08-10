@@ -1,0 +1,125 @@
+{
+ "title": "1971年 台風第13号 (Ivy) : TY7113",
+ "weatherText": "7月4日9時，沖ノ鳥島の北250kmの海上で発生した熱帯低気圧は5日沖ノ鳥島付近で台風となり北北西に進み，7日9時室戸岬の南100kmに接近した。台風はその後北東に進み，19時半頃浜名湖付近に上陸した。7日夜半に富士山付近に達し8日未明茨城県鹿島町付近で熱帯低気圧となり，鹿島灘に抜けた。7月7日19時半頃浜名湖付近上陸時の中心気圧992hPa，中心付近の最大風速20m/sであった。 死者・行方不明2人、負傷者12人、全壊5棟、半壊1棟、一部破損113棟、床上浸水596棟、床下浸水10484棟（気象要覧第863号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 45,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 11,
+   "destroyed": 5,
+   "half_destroyed": 1,
+   "partial_damage": 112,
+   "flooded_above_floor": 16,
+   "flooded_below_floor": 126,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 211,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 256,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 69,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 389,
+   "flooded_below_floor": 5934,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 112,
+   "flooded_below_floor": 3888,
+   "non_residential": null,
+   "source": "気象要覧第863号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "紀州災異誌",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 12,
+  "destroyed": 5,
+  "half_destroyed": 1,
+  "partial_damage": 113,
+  "flooded_above_floor": 596,
+  "flooded_below_floor": 10494,
+  "non_residential": 0,
+  "source": ""
+ }
+}

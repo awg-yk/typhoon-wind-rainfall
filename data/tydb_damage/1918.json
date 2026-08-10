@@ -1,0 +1,53 @@
+{
+ "title": "2019年 台風第18号 (Mitag) : TY1918",
+ "weatherText": "9月28日9時に発生した台風第18号は、発達しながら北上し、30日夜にかけて暴風域を伴い強い勢力で先島諸島に最も接近した。九州北部地方や四国地方では、３日明け方にかけて非常に強い風が吹き、雷を伴った非常に激しい雨が降った。その後、日本海に進んで温帯低気圧に変わり、勢力を維持して東北地方を通過し、５日は三陸沖を東へ進んだ。北陸地方や東北地方、北海道地方では、非常に強い風が吹き、激しい雨が降った。負傷者10人、一部破損7棟、床上浸水15棟、床下浸水79棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 9,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 5,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和2年2月4日17時00分現在",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 14,
+   "flooded_below_floor": 67,
+   "non_residential": 2,
+   "source": "消防庁調べ：令和2年2月4日17時00分現在",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年2月4日17時00分現在",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 10,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 7,
+  "flooded_above_floor": 17,
+  "flooded_below_floor": 77,
+  "non_residential": 3,
+  "source": ""
+ }
+}

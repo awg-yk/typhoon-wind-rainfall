@@ -1,0 +1,101 @@
+{
+ "title": "1961年 台風第4号 (Betty) : TY6104",
+ "weatherText": "5月21日9時カロリン諸島パラオ島北方約200kmの洋上に発生した熱帯低気圧は，北西に進み，22日15時には台風となった。台風は発達しながら引き続き北西に進み，25日21時にはルソン島北部の東沖に到達し，26日夜半頃台湾に上陸した。 上陸した台風は分裂して著しく衰弱して，その後北上し，28日9時上海付近に達した。このころ，北方からかなり顕著な寒冷前線が南下し，同日15時には温帯低気圧に変わり，北東に進んだ。この低気圧は29日3時には日本海中部，同日15時には渡島半島西海岸に達した。5月22日15時，中心気圧990hPa，中心付近の最大風速35m/s以上。25日21時，中心気圧945hPa，最大風速50m/s，風速25m/s以上の暴風半径200km（最盛期）。台風分裂後の中心気圧980hPa，28日9時の中心気圧996hPa，最大風速20m/s以下。 死者7人、負傷者106人、全壊84棟、半壊353棟、一部破損5092棟、床上浸水30棟、床下浸水230棟（気象要覧第741号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": 3,
+   "half_destroyed": 16,
+   "partial_damage": 779,
+   "flooded_above_floor": 8,
+   "flooded_below_floor": 75,
+   "non_residential": 196,
+   "source": "気象要覧第741号",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": 6,
+   "injured": 91,
+   "destroyed": 46,
+   "half_destroyed": 201,
+   "partial_damage": 2980,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 78,
+   "non_residential": 1320,
+   "source": "気象要覧第741号",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 2,
+   "destroyed": 32,
+   "half_destroyed": 123,
+   "partial_damage": 1009,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 504,
+   "source": "岩手県",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 11,
+   "partial_damage": 20,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 6,
+   "source": "気象要覧第741号",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 1,
+   "half_destroyed": 2,
+   "partial_damage": 304,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 11,
+   "source": "気象要覧第741号",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 57,
+   "non_residential": null,
+   "source": "気象要覧第741号",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 20,
+   "non_residential": null,
+   "source": "気象要覧第741号",
+   "pref": "兵庫県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 106,
+  "destroyed": 84,
+  "half_destroyed": 353,
+  "partial_damage": 5092,
+  "flooded_above_floor": 30,
+  "flooded_below_floor": 230,
+  "non_residential": 2037,
+  "source": ""
+ }
+}

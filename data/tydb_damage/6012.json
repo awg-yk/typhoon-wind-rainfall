@@ -1,0 +1,173 @@
+{
+ "title": "1960年 台風第12号 (Wendy) : TY6012",
+ "weatherText": "8月10日15時に硫黄島の南西洋上に発生した熱帯低気圧は，同日21時に台風となった。台風は北西から北に進み，12日15時に室戸岬の南約50kmに達した。台風は12日17時に室戸岬付近に上陸し，若狭湾，富山湾と経て13日15時仙台付近に達して，温帯低気圧になった。8月10日21時，中心気圧996hPa，最大風速25m/s。12日15時，中心気圧990hPa，最大風速40m/s，風速25m/s以上の暴風半径は50kmであった。 死者・行方不明47人、負傷者9人、全壊54棟、半壊167棟、流失100棟、一部破損126棟、床上浸水5618棟、床下浸水15526棟（気象要覧第732号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "福井県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 3,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": 18,
+   "injured": null,
+   "destroyed": 85,
+   "half_destroyed": 94,
+   "partial_damage": 11,
+   "flooded_above_floor": 4012,
+   "flooded_below_floor": 6108,
+   "non_residential": 144,
+   "source": "気象要覧第732号",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": 23,
+   "injured": 6,
+   "destroyed": 52,
+   "half_destroyed": 66,
+   "partial_damage": 97,
+   "flooded_above_floor": 1500,
+   "flooded_below_floor": 4582,
+   "non_residential": 277,
+   "source": "気象要覧第732号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 9,
+   "half_destroyed": 1,
+   "partial_damage": 16,
+   "flooded_above_floor": 26,
+   "flooded_below_floor": 1262,
+   "non_residential": 9,
+   "source": "気象要覧第732号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 7,
+   "flooded_below_floor": 85,
+   "non_residential": 4,
+   "source": "気象要覧第732号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 288,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "滋賀県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": null,
+   "flooded_above_floor": 66,
+   "flooded_below_floor": 2818,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 9,
+   "non_residential": 1,
+   "source": "気象要覧第732号",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 185,
+   "non_residential": 2,
+   "source": "気象要覧第732号",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 61,
+   "non_residential": 3,
+   "source": "気象要覧第732号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 119,
+   "non_residential": 1,
+   "source": "気象要覧第732号",
+   "pref": "徳島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 47,
+  "injured": 9,
+  "destroyed": 154,
+  "half_destroyed": 169,
+  "partial_damage": 126,
+  "flooded_above_floor": 5618,
+  "flooded_below_floor": 15526,
+  "non_residential": 441,
+  "source": ""
+ }
+}

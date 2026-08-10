@@ -1,0 +1,77 @@
+{
+ "title": "1999年 台風第7号 (Olga) : TY9907",
+ "weatherText": "7月29日にフィリピンの東海上で発生し、31日には大型で並の強さで南大東島の南海上へ進んだ。その後、1日夜に中型で強い勢力で沖縄本島を通過し、東シナ海を北上した。3日には朝鮮半島の西岸に上陸し、次第に勢力を弱め温帯低気圧に変わった。死者・行方不明1人、床上浸水8棟、床下浸水116棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月3日10時00分現在",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月3日10時00分現在",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 7,
+   "flooded_below_floor": 109,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月3日10時00分現在",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月3日10時00分現在",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成11年8月3日10時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 8,
+  "flooded_below_floor": 116,
+  "non_residential": 0,
+  "source": ""
+ }
+}

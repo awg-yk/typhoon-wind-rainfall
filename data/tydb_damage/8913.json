@@ -1,0 +1,137 @@
+{
+ "title": "1989年 台風第13号 (Mac) : TY8913",
+ "weatherText": "7月30日に南鳥島の南海上で発生し、8月3〜4日にかけて父島の東方海上でほとんど停滞した。その後、伊豆諸島の東海上を北上して銚子市付近に上陸し、日本海へ抜けた。死者・行方不明15人、負傷者26人、全壊・流失13棟、半壊・一部破損146棟、床上浸水1688棟、床下浸水3375棟（情報元：気象要覧第1080号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "標津町",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 13,
+   "flooded_above_floor": 83,
+   "flooded_below_floor": 424,
+   "non_residential": null,
+   "source": "気象要覧第1080号",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 8,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 15,
+   "non_residential": null,
+   "source": "気象要覧第1080号",
+   "pref": "山形県"
+  },
+  {
+   "dead_missing": 14,
+   "injured": 23,
+   "destroyed": 13,
+   "half_destroyed": 58,
+   "partial_damage": 98,
+   "flooded_above_floor": 1612,
+   "flooded_below_floor": 2931,
+   "non_residential": null,
+   "source": "福島県",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 52,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "栃木県「過去における主な災害一覧」",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 41,
+   "non_residential": null,
+   "source": "気象要覧第1080号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 76,
+   "non_residential": null,
+   "source": "気象要覧第1080号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第1080号",
+   "pref": "長野県"
+  }
+ ],
+ "total": {
+  "dead_missing": 15,
+  "injured": 27,
+  "destroyed": 13,
+  "half_destroyed": 58,
+  "partial_damage": 120,
+  "flooded_above_floor": 1733,
+  "flooded_below_floor": 3550,
+  "non_residential": 0,
+  "source": ""
+ }
+}

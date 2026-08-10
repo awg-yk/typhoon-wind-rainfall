@@ -1,0 +1,41 @@
+{
+ "title": "1962年 台風第13号 (Sarah) : TY6213",
+ "weatherText": "8月14日9時，ルソン島のはるか北東洋上，北緯21.1度，東経127.9度付近に発生した熱帯低気圧は，北西進して15日15時には沖縄の南南西約300kmの洋上に達して台風となった。台風は15日から18日にかけて石垣島の南東海上でループ上運動をしながら発達し，19日3時には宮古島の東80kmに達して，北上を始めた。台風は20日朝になって進路を北東に転じ，21日9時には鹿児島の南西200kmの海上に達し，23時頃川内市と阿久根市の間に上陸した。九州を斜めに横切って22日12時には伊予灘に抜けて衰弱し熱帯低気圧となった。その後岡山県及び近畿北部を北東進し，若狭湾を通って23日3時には佐渡島を通過，同日9時には一関付近に達して温帯低気圧となって北海道南方海上に抜けた。8月15日15時頃の中心気圧1004hPa。19日3時の中心気圧975hPa，最大風速35m/sを示した。鹿児島県上陸時の中心気圧980hPa，最大風速30m/s。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 11,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": 33,
+   "half_destroyed": 54,
+   "partial_damage": null,
+   "flooded_above_floor": 138,
+   "flooded_below_floor": 663,
+   "non_residential": 141,
+   "source": "鹿児島県災異誌",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 8,
+  "destroyed": 33,
+  "half_destroyed": 54,
+  "partial_damage": 11,
+  "flooded_above_floor": 138,
+  "flooded_below_floor": 663,
+  "non_residential": 141,
+  "source": ""
+ }
+}

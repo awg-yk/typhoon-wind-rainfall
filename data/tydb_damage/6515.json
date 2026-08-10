@@ -1,0 +1,151 @@
+{
+ "title": "1965年 台風第15号 (Jean) : TY6515",
+ "weatherText": "7月24日9時にマーシャル諸島の北緯7度，東経136度付近に発生した熱帯低気圧は初め西，のち西北西進して，31日15時フィリピン東方の北緯17.7度，東経132.9度で台風となった。台風は8月1日になってから進路を北北西に向けて，4日には久米島付近に達した。台風はその後，進路を北北東に向けて九州西部に接近し，6日3時には長崎の南約90kmの海上に達した。そして，同日4時に熊本県に上陸し，熊本市では6時25分に台風眼を観測した。9時頃には周防灘を通り，10時頃山口県に上陸，12時には萩市の北方海上50kmに達した。その後，日本海中部を北上して7日9時には沿海州に接近して温帯低気圧となった。8月4日12時の飛行機観測によれば，中心気圧951hPa，中心付近の最大風速72m/sとなり，最盛期にはいった。6日3時には，中心気圧940hPa，風速25m/s以上の暴風圏は東側で250km，西側で150kmとなった。同日12時には，中心気圧972hPa，最大風速35m/s。 死者・行方不明28人、負傷者368人、全壊3202棟、半壊5192棟、流失3棟、一部破損50554棟、床上浸水788棟、床下浸水4928棟（気象要覧第792号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 4,
+   "source": "気象要覧第792号",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 9,
+   "source": "気象要覧第792号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 4,
+   "destroyed": 14,
+   "half_destroyed": 24,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 64,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 1,
+   "source": "気象要覧第792号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第792号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 35,
+   "flooded_below_floor": 295,
+   "non_residential": 4,
+   "source": "気象要覧第792号",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": 3,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 15,
+   "source": "気象要覧第792号",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": 7,
+   "injured": 170,
+   "destroyed": 947,
+   "half_destroyed": 5021,
+   "partial_damage": 87797,
+   "flooded_above_floor": 599,
+   "flooded_below_floor": 1347,
+   "non_residential": 6546,
+   "source": "熊本県",
+   "pref": "熊本県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": 10,
+   "half_destroyed": 11,
+   "partial_damage": 26,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 121,
+   "source": "気象要覧第792号",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 6,
+   "half_destroyed": 9,
+   "partial_damage": 39,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 75,
+   "non_residential": 76,
+   "source": "気象要覧第792号",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 21,
+   "injured": 675,
+   "destroyed": 2577,
+   "half_destroyed": 4149,
+   "partial_damage": 53868,
+   "flooded_above_floor": 336,
+   "flooded_below_floor": 3777,
+   "non_residential": 12262,
+   "source": "鹿児島県「昭和40年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 4,
+   "partial_damage": null,
+   "flooded_above_floor": 1758,
+   "flooded_below_floor": 1229,
+   "non_residential": 1,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": null
+}

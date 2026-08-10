@@ -1,0 +1,77 @@
+{
+ "title": "1997年 台風第9号 (Rosie) : TY9709",
+ "weatherText": "7月18日にフィリピンの東海上で発生し、22日には大型で強い勢力となった。25日にこの勢力を保ったまま南大東島の東海上、更に日本の南海上を北上し、26日に中型で強い勢力で徳島県阿南市付近に上陸した。その後、播磨灘を通り、岡山県備前市付近に再上陸し、向きを北西に変えて中国地方を横断、27日には山陰沖にほぼ停滞した。28日に同海域で弱い熱帯低気圧となって東に進み、28日から29日にかけて北陸地方西部から東海地方へ南下して、東海沖へ進んだ。その後西寄りに進み、31日に紀伊半島の南海上で消滅した。死者3人、負傷者47人、全壊8棟、一部破損70棟、床上浸水395棟、床下浸水1662棟（情報元：気象要覧第1175号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 20,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 41,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 354,
+   "non_residential": 22,
+   "source": "兵庫県",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 28,
+   "flooded_above_floor": 139,
+   "flooded_below_floor": 872,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 5,
+   "half_destroyed": 2,
+   "partial_damage": 8,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 69,
+   "non_residential": 42,
+   "source": "島根県「平成９年災害年報」",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 4,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 48,
+   "flooded_below_floor": 122,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": 3,
+   "source": "香川県",
+   "pref": "香川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 24,
+  "destroyed": 9,
+  "half_destroyed": 3,
+  "partial_damage": 83,
+  "flooded_above_floor": 210,
+  "flooded_below_floor": 1422,
+  "non_residential": 67,
+  "source": ""
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "title": "1991年 台風第14号 (Harry) : TY9114",
+ "weatherText": "8月29日に南大東島の南東海上で発生し、小型で弱い勢力で31日に静岡県浜松市付近に上陸した。その後、関東地方を通って本州東方海上に進み、釧路沖で温帯低気圧となった。死者2人、負傷者1人、半壊1棟、床上浸水76棟、床下浸水279棟（情報元：気象要覧第1105号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 14,
+   "flooded_below_floor": 36,
+   "non_residential": 6,
+   "source": "青森県「平成３年災害による被害」",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 184,
+   "non_residential": null,
+   "source": "岩手日報「いわて災異録」",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 75,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 3,
+  "flooded_above_floor": 20,
+  "flooded_below_floor": 295,
+  "non_residential": 6,
+  "source": ""
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "title": "2019年 台風第6号 (Nari) : TY1906",
+ "weatherText": "7月26日に発生した台風第6号は、27日7時頃に三重県南部に上陸し、中心気圧1000ヘクトパスカル、最大風速18メートル、最大瞬間風速25メートルで東海地方を北北東へ進んだ後、進路を東寄りに変え、東日本の太平洋側を北東に進み、岐阜県付近で熱帯低気圧に変わった。一部破損1棟、床下浸水1棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年7月29日18時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和元年7月29日18時00分現在",
+   "pref": "奈良県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 1,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 1,
+  "non_residential": 0,
+  "source": ""
+ }
+}

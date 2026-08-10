@@ -1,0 +1,125 @@
+{
+ "title": "1960年 台風第11号 (Virginia) : TY6011",
+ "weatherText": "8月8日3時に硫黄島の南西洋上に発生した熱帯低気圧は，9日9時に台風となった。台風はその後北進し，硫黄島付近を通過した9日夜から向きを北西に変えた。10日15時には潮岬の南約300kmの洋上に達した。台風は北西に進み，11日4時過ぎに室戸岬の西方に上陸した。上陸後，四国，中国地方を横切り，11日夕刻過ぎ日本海に抜け，さらに日本海を北東から東に進んだ。12日9時に秋田の北に上陸，東北地方北部を縦断して，12日15時には浦河の東方洋上で温帯低気圧となった。8月8日9時，中心気圧985hPa，最大風速40m/s。10日15時，中心気圧980hPa，中心付近の最大風速50m/s，風速25m/s以上の暴風半径は100kmであった。 死者・行方不明3人、半壊1棟、一部破損93棟、床上浸水17棟、床下浸水674棟（気象要覧第732号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 20,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 26,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 163,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 44,
+   "non_residential": 5,
+   "source": "気象要覧第732号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 170,
+   "non_residential": null,
+   "source": "気象要覧第732号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 135,
+   "non_residential": 19,
+   "source": "気象要覧第732号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 8,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 17,
+   "source": "気象要覧第732号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 8,
+   "flooded_below_floor": 126,
+   "non_residential": 32,
+   "source": "気象要覧第732号",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 82,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 8,
+   "source": "気象要覧第732号",
+   "pref": "高知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 93,
+  "flooded_above_floor": 17,
+  "flooded_below_floor": 684,
+  "non_residential": 81,
+  "source": ""
+ }
+}

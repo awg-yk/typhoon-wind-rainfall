@@ -1,0 +1,101 @@
+{
+ "title": "1991年 台風第12号 (Gladys) : TY9112",
+ "weatherText": "8月15日に南鳥島の南西海上で発生し、21日から22日にかけて九州の南海上で最も発達し、大型で並の強さとなった。23日に大型で並の強さで福江市付近を通過した後、朝鮮半島南部に上陸した。死者・行方不明16人、負傷者11人、全壊・流失9棟、半壊・一部破損44棟、床上浸水512棟、床下浸水3650棟（情報元：気象要覧第1104号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 50,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 16,
+   "flooded_below_floor": 114,
+   "non_residential": null,
+   "source": "足利市",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 26,
+   "flooded_below_floor": 640,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 37,
+   "flooded_below_floor": 122,
+   "non_residential": 13,
+   "source": "狭山市",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": 2,
+   "destroyed": 3,
+   "half_destroyed": 3,
+   "partial_damage": 1,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 21,
+   "non_residential": 9,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 13,
+   "flooded_below_floor": 148,
+   "non_residential": 7,
+   "source": "静岡県消防防災課",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 15,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 244,
+   "non_residential": 32,
+   "source": "鹿児島県「平成3年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 5,
+  "injured": 5,
+  "destroyed": 3,
+  "half_destroyed": 5,
+  "partial_damage": 17,
+  "flooded_above_floor": 113,
+  "flooded_below_floor": 1339,
+  "non_residential": 61,
+  "source": ""
+ }
+}

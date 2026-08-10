@@ -1,0 +1,29 @@
+{
+ "title": "1995年 台風第3号 (Faye) : TY9503",
+ "weatherText": "7月16日にマリアナ諸島の西の海上で発生し、22日には中型で強い勢力となった。23日には九州の西の海上を北上し、夕方ごろ朝鮮半島に上陸した。その後、進路を次第に北東に変え、24日に日本海で弱い熱帯低気圧に変わり、北海道を通過した。行方不明1人、負傷者2人、全壊・流失2棟、半壊・一部破損4棟、床上浸水108棟、床下浸水1195棟（情報元：気象要覧第1151号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 8,
+   "flooded_below_floor": 104,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 8,
+  "flooded_below_floor": 104,
+  "non_residential": 0,
+  "source": ""
+ }
+}

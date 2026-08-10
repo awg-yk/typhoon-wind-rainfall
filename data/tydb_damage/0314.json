@@ -1,0 +1,125 @@
+{
+ "title": "2003年 台風第14号 (Maemi) : TY0314",
+ "weatherText": "9月6日にマリアナ諸島の西海上で発生し、発達しながら北西に進み、11日に宮古島付近を通過した。北北東に進路を変え、12日にはチェジュ島の東海上を通過し、朝鮮半島に上陸した。死者・行方不明3人、負傷者95人、全壊13棟、半壊46棟、一部損壊312棟、床上浸水71棟、床下浸水292棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 13,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 9,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 156,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 45,
+   "flooded_above_floor": 69,
+   "flooded_below_floor": 282,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 97,
+   "destroyed": 18,
+   "half_destroyed": 86,
+   "partial_damage": 1206,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 15,
+   "non_residential": null,
+   "source": "消防庁調べ：平成15年12月15日12時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 110,
+  "destroyed": 18,
+  "half_destroyed": 87,
+  "partial_damage": 1437,
+  "flooded_above_floor": 72,
+  "flooded_below_floor": 303,
+  "non_residential": null,
+  "source": ""
+ }
+}

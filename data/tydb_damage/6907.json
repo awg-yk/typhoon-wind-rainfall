@@ -1,0 +1,113 @@
+{
+ "title": "1969年 台風第7号 (Alice) : TY6907",
+ "weatherText": "8月1日9時沖ノ鳥島の東約400kmの北緯21.9度，東経140.0度の海上に発生した熱帯低気圧は，ほぼ北北西進して，2日21時には南大東島の東およそ580kmの北緯25.5度，東経137.0度に達して台風となった。3日18時には室戸岬の南およそ450kmの北緯28.8度，東経134.9度の海上に達した。台風は日本へ近づくにつれて進路を北北西から北へ，つづいて北東に変えて，4日19時30分頃潮岬の西方に上陸，紀伊半島の東岸沿いに北東進し，伊勢湾を通り，知多半島，長野県南部，栃木県北部を経て5日9時には福島県白河市の南西方，北緯36.9度，東経139.9度において熱帯低気圧となった。台風発生時の中心気圧990hPa。3日18時に最盛期をむかえ，中心気圧985hPa，中心付近の最大風速30m/s，25m/s以上の暴風半径は60kmであった。 死者・行方不明14人、負傷者18人、全壊17棟、半壊23棟、流失4棟、一部破損57棟、床上浸水1398棟、床下浸水4136棟（気象要覧第840号）",
+ "prefectures": [
+  {
+   "dead_missing": 2,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "気象要覧第840号",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 15,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 34,
+   "non_residential": 7,
+   "source": "気象要覧第840号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": 12,
+   "injured": 13,
+   "destroyed": 12,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 20,
+   "flooded_below_floor": 159,
+   "non_residential": 6,
+   "source": "気象要覧第840号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 5,
+   "destroyed": 4,
+   "half_destroyed": 9,
+   "partial_damage": 16,
+   "flooded_above_floor": 496,
+   "flooded_below_floor": 332,
+   "non_residential": 16,
+   "source": "気象要覧第840号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 1,
+   "destroyed": 5,
+   "half_destroyed": 8,
+   "partial_damage": 23,
+   "flooded_above_floor": 611,
+   "flooded_below_floor": 2550,
+   "non_residential": 72,
+   "source": "気象要覧第840号",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "気象要覧第840号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "気象要覧第840号",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 20,
+  "injured": 21,
+  "destroyed": 21,
+  "half_destroyed": 22,
+  "partial_damage": 56,
+  "flooded_above_floor": 1135,
+  "flooded_below_floor": 3100,
+  "non_residential": 103,
+  "source": ""
+ }
+}

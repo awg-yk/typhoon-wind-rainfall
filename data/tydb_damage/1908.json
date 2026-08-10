@@ -1,0 +1,77 @@
+{
+ "title": "2019年 台風第8号 (Francisco) : TY1908",
+ "weatherText": "8月2日に発生した台風第8号は、発達しながら北西へ進んだ後、強い勢力となって5日夜から6日にかけて九州に接近した。九州地方では猛烈な風や非常に強い風が吹き、6日5時頃に宮崎市付近に上陸した後北上し、やや勢力を弱めて同日午後には対馬海峡に進んだ。7日未明に朝鮮半島に上陸した後、熱帯低気圧に変わり、その後温帯低気圧に変わった。死者・行方不明者1人、負傷者5人、全壊1棟、一部破損10棟、床上浸水7棟、床下浸水8棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 8,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 4,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 1,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 5,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 11,
+  "flooded_above_floor": 7,
+  "flooded_below_floor": 9,
+  "non_residential": 4,
+  "source": ""
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "title": "1990年 台風第20号 (Gene) : TY9020",
+ "weatherText": "9月22日にフィリピンの東の海上で発生し、26日から27日にかけて宮古島の東を通過した後、東寄りに進路を変えて、30日に小型・並みの強さで和歌山県白浜町付近に上陸した。その後勢力を弱めながら本州の太平洋側を進み、東京湾で温帯低気圧に変わり、犬吠崎付近から東の海上に出た後北北東に進んだ。死者・行方不明6人、負傷者20人、全壊・流失20棟、半壊・一部破損190棟、床上浸水3081棟、床下浸水10237棟（情報元：気象要覧第1094号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 18,
+   "flooded_below_floor": 117,
+   "non_residential": 9,
+   "source": "狭山市",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "富津市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 51,
+   "non_residential": 10,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 13,
+   "flooded_above_floor": 601,
+   "flooded_below_floor": 734,
+   "non_residential": null,
+   "source": "横浜市",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": 192,
+   "flooded_below_floor": 1943,
+   "non_residential": 325,
+   "source": "静岡県消防防災課",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 4,
+   "partial_damage": 351,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 68,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 11,
+   "destroyed": 22,
+   "half_destroyed": 22,
+   "partial_damage": 136,
+   "flooded_above_floor": 2085,
+   "flooded_below_floor": 4691,
+   "non_residential": 327,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": 6,
+   "half_destroyed": 8,
+   "partial_damage": 176,
+   "flooded_above_floor": 103,
+   "flooded_below_floor": 747,
+   "non_residential": 156,
+   "source": "鹿児島県「平成2年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県北谷町過去の災害履歴",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 20,
+  "destroyed": 29,
+  "half_destroyed": 35,
+  "partial_damage": 686,
+  "flooded_above_floor": 3014,
+  "flooded_below_floor": 8394,
+  "non_residential": 827,
+  "source": ""
+ }
+}

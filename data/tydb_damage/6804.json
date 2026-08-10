@@ -1,0 +1,173 @@
+{
+ "title": "1968年 台風第4号 (Mary) : TY6804",
+ "weatherText": "7月19日9時グアム島の東南東750kmの海上，北緯13.0度，東経152.0度に発生した熱帯低気圧は，西北に進み，21日9時にグアム島の北東およそ350kmの北緯15.9度，東経147.0度の海上で台風となった。台風は，その後北西進して24日9時硫黄島の南450kmの海上，北緯20.8度，東経140.8度に達した。台風は，その後小さな蛇行運動をしながら北西進して，28日19時30分頃高知県須崎市付近に上陸した。台風は，上陸後四国を横断して28日21時頃安芸灘付近で中心が2つに分裂し，その一つは中国地方を斜走し，29日1時頃島根県浜田市付近から日本海へ出て，29日3時山陰沖で消滅した。本体であるもう一つの中心は，29日3時頃から進路を南西に変え，29日15時には長崎市の北西およそ40kmの北緯32.9度，東経129.5度で熱帯低気圧となり，進路を東に変えて九州を横断し四国の南沖から鳥島の北方海上を経て北東に進路を変えアリューシャン方面に去った。台風発生時の中心気圧は994hPa。最盛期となった24日9時の中心気圧は925hPa，中心付近の最大風速55m/s，25m/s以上の暴風半径は300km。 死者・行方不明8人、負傷者2人、全壊3棟、半壊2棟、流失1棟、一部破損47棟、床上浸水330棟、床下浸水9028棟（気象要覧第827号）",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "気象要覧第827号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 3,
+   "flooded_above_floor": 109,
+   "flooded_below_floor": 433,
+   "non_residential": null,
+   "source": "気象要覧第827号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 38,
+   "flooded_below_floor": 46,
+   "non_residential": 30,
+   "source": "気象要覧第827号",
+   "pref": "三重県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 1087,
+   "non_residential": null,
+   "source": "気象要覧第827号",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 5,
+   "source": "気象要覧第827号",
+   "pref": "奈良県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 5,
+   "destroyed": 2,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": 164,
+   "flooded_below_floor": 602,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 23,
+   "flooded_below_floor": 743,
+   "non_residential": 1,
+   "source": "気象要覧第827号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": 21,
+   "flooded_below_floor": 3287,
+   "non_residential": 8,
+   "source": "気象要覧第827号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 44,
+   "flooded_below_floor": 1591,
+   "non_residential": 5,
+   "source": "気象要覧第827号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 29,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 589,
+   "non_residential": 2,
+   "source": "気象要覧第827号",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 333,
+   "non_residential": null,
+   "source": "気象要覧第827号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 15,
+   "flooded_below_floor": 555,
+   "non_residential": 2,
+   "source": "気象要覧第827号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": 5,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第827号",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 6,
+  "destroyed": 4,
+  "half_destroyed": 4,
+  "partial_damage": 46,
+  "flooded_above_floor": 418,
+  "flooded_below_floor": 9267,
+  "non_residential": 53,
+  "source": ""
+ }
+}

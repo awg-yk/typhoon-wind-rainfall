@@ -1,0 +1,65 @@
+{
+ "title": "2006年 台風第10号 (Wukong) : TY0610",
+ "weatherText": "8月13日に小笠原諸島の西南沖で発生し、ゆっくりとした速度で北西に進み、18日に宮崎市付近に上陸した。ゆっくりとした速度で九州を北上し、19日に北九州沖から日本海に抜け、20日には熱帯低気圧に変わった。風速25m以上の暴風域は無いが、速度が遅く九州、四国にかけて長時間の大雨となった。また日本海側の前線の影響で北海道、東北北部でも大雨となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "福岡県「平成１８年災害年報」",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 1,
+   "source": "長崎県",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": 3,
+   "source": "大分県",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": 1,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": 4,
+   "source": "宮崎県「平成１８年災害の記録」（災異誌第42号）",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 1,
+  "half_destroyed": 2,
+  "partial_damage": 2,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 10,
+  "non_residential": 10,
+  "source": ""
+ }
+}

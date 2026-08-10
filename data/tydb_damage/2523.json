@@ -1,0 +1,29 @@
+{
+ "title": "2025年 (Nakri) : TY2523",
+ "weatherText": "マリアナ諸島で発生した熱帯低気圧が北西に進み、フィリピンの東で台風へと発達後、北東へと向きを変え、伊豆諸島周辺を通過した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 9,
+   "half_destroyed": 33,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和７年台風第22 号及び台風第23 号による被害並びに消防機関等の対応状況（第８報） 令和7年11月13日15時00分現在",
+   "pref": "東京都"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 9,
+  "half_destroyed": 33,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

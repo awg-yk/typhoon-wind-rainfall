@@ -1,0 +1,89 @@
+{
+ "title": "1990年 台風第28号 (Page) : TY9028",
+ "weatherText": "11月21日にグアム島の南の海上で発生し、29日に沖縄の南東海上を通過、30日に大型・並みの強さで和歌山県白浜町の南に上陸した。上陸後に温帯低気圧に変わり日本海へ出た。死者・行方不明4人、負傷者12人、全壊・流失1棟、半壊・一部破損161棟、床上浸水156棟、床下浸水1388棟（情報元：気象要覧第1096号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 85,
+   "non_residential": 7,
+   "source": "大槌町",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": 57,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 23,
+   "source": "角館町",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 27,
+   "flooded_above_floor": 17,
+   "flooded_below_floor": 126,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 16,
+   "flooded_below_floor": 85,
+   "non_residential": 11,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 0,
+  "half_destroyed": 2,
+  "partial_damage": 87,
+  "flooded_above_floor": 36,
+  "flooded_below_floor": 297,
+  "non_residential": 41,
+  "source": ""
+ }
+}

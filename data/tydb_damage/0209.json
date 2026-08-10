@@ -1,0 +1,65 @@
+{
+ "title": "2002年 台風第9号 (Fengshen) : TY0209",
+ "weatherText": "7月14日にマーシャル諸島近海で発生し、16日にはウェーク島で非常に強い台風なった。21日には南鳥島の南海上において大型で非常に強い勢力に発達し、同島の西海上を通過した。その後は西へ進みながらやや勢力を弱めたが、屋久島付近を通過して九州の西海上を北西へ進み、26日にはチェジュ島付近を通過、27日に黄海で熱帯低気圧になった。死者・行方不明1人、負傷者2人、一部損壊20棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 14,
+   "source": "宮崎県「災害の記録」",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 43,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 8,
+   "source": "鹿児島県「平成14年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 50,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 22,
+  "source": ""
+ }
+}

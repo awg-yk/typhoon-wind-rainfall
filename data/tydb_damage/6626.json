@@ -1,0 +1,125 @@
+{
+ "title": "1966年 台風第26号 (Ida) : TY6626",
+ "weatherText": "9月22日9時，サイパン島の東方600kmの海上，北緯16.0度，東経152,0度に発生した熱帯低気圧は西北西に進み，同日21時にサイパン島の北東350kmの北緯18.2度，東経147.6度の海上で台風となった。その後も西北西に進んだ台風は次第に北へと進み，24日15時には鳥島の西南西250kmの海上に達した。24日夜半過ぎに静岡県御前崎の西方に上陸し，25日2時には山梨県甲府市付近，4時には福島県会津若松市付近を通過し，9時には三陸沖に抜けて温帯低気圧となった。台風発生時の中心気圧990hPa。24日11時07分の飛行機観測によれば，中心気圧961hPa，中心付近の最大風速41m/s，風速25m/s以上の暴風半径は200kmで，このころが台風の最盛期であった。御前崎西方上陸時の中心付近の最大風速は30m/sで，風速25m/s以上の暴風半径は東半円で150kmであった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": 5,
+   "flooded_above_floor": 385,
+   "flooded_below_floor": 671,
+   "non_residential": 11,
+   "source": "岩手県",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": 9,
+   "injured": 3,
+   "destroyed": 12,
+   "half_destroyed": 21,
+   "partial_damage": 296,
+   "flooded_above_floor": 2393,
+   "flooded_below_floor": 8133,
+   "non_residential": 2579,
+   "source": "福島県",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 84,
+   "flooded_below_floor": 87,
+   "non_residential": null,
+   "source": "水戸市、日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": 12,
+   "injured": 51,
+   "destroyed": 167,
+   "half_destroyed": 588,
+   "partial_damage": 11632,
+   "flooded_above_floor": 363,
+   "flooded_below_floor": 6499,
+   "non_residential": 17369,
+   "source": "栃木県「過去における主な災害一覧」",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": 15,
+   "injured": 92,
+   "destroyed": 447,
+   "half_destroyed": 1436,
+   "partial_damage": null,
+   "flooded_above_floor": 519,
+   "flooded_below_floor": 3143,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 17,
+   "half_destroyed": 323,
+   "partial_damage": 10127,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 18,
+   "non_residential": 7811,
+   "source": "狭山市",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 5,
+   "injured": 313,
+   "destroyed": 377,
+   "half_destroyed": 2934,
+   "partial_damage": 51088,
+   "flooded_above_floor": 439,
+   "flooded_below_floor": 7868,
+   "non_residential": 10235,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": 10,
+   "injured": 71,
+   "destroyed": 158,
+   "half_destroyed": 1792,
+   "partial_damage": 8620,
+   "flooded_above_floor": 98,
+   "flooded_below_floor": 793,
+   "non_residential": 3490,
+   "source": "神奈川県企画調整部防災消防課",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": 94,
+   "injured": 93,
+   "destroyed": 79,
+   "half_destroyed": 11,
+   "partial_damage": 100,
+   "flooded_above_floor": 28,
+   "flooded_below_floor": 40,
+   "non_residential": 101,
+   "source": "山梨県足和田村",
+   "pref": "山梨県"
+  }
+ ],
+ "total": {
+  "dead_missing": 145,
+  "injured": 623,
+  "destroyed": 1257,
+  "half_destroyed": 7108,
+  "partial_damage": 81868,
+  "flooded_above_floor": 4309,
+  "flooded_below_floor": 27252,
+  "non_residential": 41596,
+  "source": ""
+ }
+}

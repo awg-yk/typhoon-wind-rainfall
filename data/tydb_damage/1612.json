@@ -1,0 +1,29 @@
+{
+ "title": "2016年 台風第12号 (Namtheun) : TY1612",
+ "weatherText": "9月1日に沖縄の南海上で発生し、南大東島の南海上で強い台風となり、 3日には奄美大島の東約100kmの海上で中心気圧955hPa、中心付近の最大風速40m/sまで発達した。 強い勢力のまま4日に枕崎市の南西約60kmの海上まで北上した後、勢力を弱めながらゆっくりと北上を続け、長崎市付近に上陸し、対馬海峡で熱帯低気圧となった。強い台風第12号の接近により、鹿児島県の中之島では、9月3日14 時09分に最大瞬間風速47.6m/sを観測した。2日から5日にかけて、熊本県、宮崎県、鹿児島県では総降水量200mmを超える大雨となった。この期間、中之島で349.0mm、志布志で271.0mm、宮崎県の野尻で218.5mm、熊本県の湯前横谷で221.5mmの降水量を観測した。また、台風が接近した9月3日14時38分に中之島で、観測史上1位となる1時間に129.5mmの猛烈な雨を観測した。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年2月21日15時00分現在",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 1,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

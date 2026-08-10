@@ -1,0 +1,41 @@
+{
+ "title": "1995年 台風第14号 (Ryan) : TY9514",
+ "weatherText": "9月15日に南シナ海で発生し、21日に台湾の南西海上で大型で非常に強い勢力となった。23日に中型で強い勢力で石垣島付近を通過後、東シナ海に進み、24日に中型で強い勢力で中心が鹿児島県川内市付近に上陸した。台風は九州を横断し、小型でなみの強さとなって山口県下松市付近に再上陸した。その後、日本海を北東に進み、青森県の西海上で温帯低気圧に変わった。死者1人、負傷者13人、全壊・流失3棟、半壊・一部破損118棟、床上浸水105棟、床下浸水1643棟（情報元：気象要覧第1153号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 188,
+   "flooded_below_floor": 1195,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": 1,
+   "half_destroyed": 2,
+   "partial_damage": 86,
+   "flooded_above_floor": 9,
+   "flooded_below_floor": 61,
+   "non_residential": null,
+   "source": "鹿児島県｢平成7年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 3,
+  "destroyed": 2,
+  "half_destroyed": 2,
+  "partial_damage": 86,
+  "flooded_above_floor": 197,
+  "flooded_below_floor": 1256,
+  "non_residential": 0,
+  "source": ""
+ }
+}

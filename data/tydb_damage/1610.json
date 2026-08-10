@@ -1,0 +1,125 @@
+{
+ "title": "2016年 台風第10号 (Lionrock) : TY1610",
+ "weatherText": "8月19日に八丈島の東の海上で発生し、発達しながら西から南南西に進んだ後、南大東島の北東の海上で動きがゆっくりとなった。その後、台風は速度を速めて東から北東に進んだ。24日には強い台風、25日には非常に強い台風となり、26日には強い台風となったが、27日には再び非常に強い台風となった。29日には強い台風となり、30日には千葉県銚子市の東、福島県いわき市の東南東の海上に進んだ。その後、三陸沖を北北西に進み、30日18時前に岩手県大船渡市付近に上陸した後、東北地方を通過、速度を速めて北西に進み、日本海で温帯低気圧に変わった。岩手県宮古市、久慈市で1時間に80ミリの猛烈な雨となったほか、北海道上士幌町で平年の8月一ヶ月に降る雨量を超える329ミリを観測し記録的な大雨となった。 また、最大瞬間風速が岩手県宮古市で37.7メートル、北海道せたな町で36.5メートルなど東日本から北日本では暴風となった。死者・行方不明者29人、負傷者14人、全壊118棟、半壊2281棟、一部破損1174棟、床上浸水279棟、床下浸水1752棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": 4,
+   "injured": 1,
+   "destroyed": 24,
+   "half_destroyed": 62,
+   "partial_damage": 934,
+   "flooded_above_floor": 173,
+   "flooded_below_floor": 310,
+   "non_residential": 22,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 130,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 24,
+   "non_residential": 46,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": 25,
+   "injured": 4,
+   "destroyed": 94,
+   "half_destroyed": 2219,
+   "partial_damage": 90,
+   "flooded_above_floor": 104,
+   "flooded_below_floor": 1342,
+   "non_residential": 2444,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 12,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": 1,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 2,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 70,
+   "non_residential": null,
+   "source": "消防庁調べ：平成29年11月8日17時00分現在",
+   "pref": "京都府"
+  }
+ ],
+ "total": {
+  "dead_missing": 29,
+  "injured": 14,
+  "destroyed": 118,
+  "half_destroyed": 2281,
+  "partial_damage": 1174,
+  "flooded_above_floor": 279,
+  "flooded_below_floor": 1752,
+  "non_residential": 2517,
+  "source": ""
+ }
+}

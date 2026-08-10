@@ -1,0 +1,89 @@
+{
+ "title": "2024年 台風第7号 (Ampil) : TY2407",
+ "weatherText": "関東へ最接近した時点でも最低気圧950hPaを維持し、最大風速も45m/sと非常に強いものとなった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和7年3月24日11時00分現在",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 7,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 1,
+  "non_residential": 0,
+  "source": ""
+ }
+}

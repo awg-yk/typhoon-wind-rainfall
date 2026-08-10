@@ -1,0 +1,137 @@
+{
+ "title": "2022年 台風第15号 (Talas) : TY2215",
+ "weatherText": "最低気圧が1000hPaと勢力は弱い台風であったが、接近した静岡県に観測史上１位の24時間積算雨量をもたらした。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 16,
+   "destroyed": 7,
+   "half_destroyed": 1825,
+   "partial_damage": 1867,
+   "flooded_above_floor": 5019,
+   "flooded_below_floor": 3863,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 2,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 26,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "愛知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 11,
+   "flooded_below_floor": 19,
+   "non_residential": null,
+   "source": "消防庁調べ：令和5年3月24日17時00分現在",
+   "pref": "三重県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 16,
+  "destroyed": 7,
+  "half_destroyed": 1826,
+  "partial_damage": 1878,
+  "flooded_above_floor": 5037,
+  "flooded_below_floor": 3913,
+  "non_residential": 0,
+  "source": ""
+ }
+}

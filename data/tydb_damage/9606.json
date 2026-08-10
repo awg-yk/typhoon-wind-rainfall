@@ -1,0 +1,53 @@
+{
+ "title": "1996年 台風第6号 (Eve) : TY9606",
+ "weatherText": "7月13日にマリアナ諸島の北の海上で発生し、16日には南大東島の南東の海上にて中型で非常に強い勢力となった。18日に中型で強い勢力で中心が屋久島付近を通過し、勢力を維持したまま鹿児島県薩摩半島南部に上陸した。その後、九州を縦断し、19日に瀬戸内海に進み、瀬戸内海西部で弱い熱帯低気圧に変わった。この弱い熱帯低気圧は、20日に近畿地方、東海地方を通過し、21日には関東南岸から関東の東海上に進み、24日に日本の東海上で温帯低気圧に変わった。死者1人、負傷者27人、全壊1棟、半壊2360棟、床上浸水12棟、床下浸水921棟（情報元：気象要覧第1163号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 10,
+   "non_residential": null,
+   "source": "静岡県総務部消防防災課",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "宮崎市",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 20,
+   "destroyed": 2,
+   "half_destroyed": 16,
+   "partial_damage": 3294,
+   "flooded_above_floor": 78,
+   "flooded_below_floor": 170,
+   "non_residential": 1685,
+   "source": "鹿児島県｢平成8年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 21,
+  "destroyed": 2,
+  "half_destroyed": 16,
+  "partial_damage": 3301,
+  "flooded_above_floor": 78,
+  "flooded_below_floor": 180,
+  "non_residential": 1685,
+  "source": ""
+ }
+}

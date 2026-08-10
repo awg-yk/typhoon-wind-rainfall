@@ -1,0 +1,173 @@
+{
+ "title": "1970年 台風第10号 (Anita) : TY7010",
+ "weatherText": "8月15日9時サイパン島の北東およそ300kmの海上に発生した熱帯低気圧は，16日12時北緯19.6度，東経143.5度の海上で台風となって西北西後北西に進み，21日8時過ぎ高知県南西部に上陸した。その後，四国西部を毎時40kmの速度で北北西に進み，10時過ぎ松山市付近から瀬戸内海に入り，12時頃広島県呉市付近に上陸，中国地方西部を通って15時頃松江市付近から日本海に抜け，日本海中部を通って23日3時，樺太の南端で温帯低気圧となってオホーツク海に入った。台風は，20日3時日本の南海上にあって中心気圧960hPa，中心付近の最大風速55m/s，風速25m/s以上の暴風域は中心から半径300km以内に及んだ。台風は，ほとんどそのままの勢力で北上，上陸直前の中心気圧955hPa，中心付近の最大風速50m/s，風速25m/s以上の暴風域は中心から200km以内であった。 死者・行方不明27人、負傷者556人、全壊1074棟、半壊4212棟、流失48棟、半焼1棟、一部破損43317棟、床上浸水29233棟、床下浸水30728棟（気象要覧第852号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 46,
+   "non_residential": null,
+   "source": "気象要覧第852号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 2,
+   "non_residential": 2,
+   "source": "気象要覧第852号",
+   "pref": "山梨県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": 2,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 26,
+   "non_residential": null,
+   "source": "気象要覧第852号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 2,
+   "half_destroyed": 2,
+   "partial_damage": 34,
+   "flooded_above_floor": 151,
+   "flooded_below_floor": 1348,
+   "non_residential": 25,
+   "source": "気象要覧第852号",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 2,
+   "half_destroyed": 3,
+   "partial_damage": 2,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 309,
+   "non_residential": 23,
+   "source": "気象要覧第852号",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": 13,
+   "partial_damage": 23,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 43,
+   "non_residential": 17,
+   "source": "気象要覧第852号",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 40,
+   "destroyed": 34,
+   "half_destroyed": 86,
+   "partial_damage": 368,
+   "flooded_above_floor": 227,
+   "flooded_below_floor": 1108,
+   "non_residential": 198,
+   "source": "気象要覧第852号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": 4,
+   "injured": 54,
+   "destroyed": 106,
+   "half_destroyed": 250,
+   "partial_damage": 2394,
+   "flooded_above_floor": 360,
+   "flooded_below_floor": 4010,
+   "non_residential": 404,
+   "source": "気象要覧第852号",
+   "pref": "広島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 9,
+   "half_destroyed": 21,
+   "partial_damage": 3,
+   "flooded_above_floor": 17,
+   "flooded_below_floor": 186,
+   "non_residential": 49,
+   "source": "気象要覧第852号",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": 8,
+   "injured": 6,
+   "destroyed": 21,
+   "half_destroyed": 45,
+   "partial_damage": 36,
+   "flooded_above_floor": 406,
+   "flooded_below_floor": 4767,
+   "non_residential": 72,
+   "source": "気象要覧第852号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 18,
+   "destroyed": 4,
+   "half_destroyed": 8,
+   "partial_damage": 8,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 223,
+   "non_residential": 56,
+   "source": "気象要覧第852号",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 77,
+   "destroyed": 90,
+   "half_destroyed": 152,
+   "partial_damage": 683,
+   "flooded_above_floor": 2058,
+   "flooded_below_floor": 4368,
+   "non_residential": 228,
+   "source": "気象要覧第852号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": 13,
+   "injured": 352,
+   "destroyed": 851,
+   "half_destroyed": 3628,
+   "partial_damage": 39766,
+   "flooded_above_floor": 26001,
+   "flooded_below_floor": 14292,
+   "non_residential": 6549,
+   "source": "気象要覧第852号",
+   "pref": "高知県"
+  }
+ ],
+ "total": {
+  "dead_missing": 27,
+  "injured": 556,
+  "destroyed": 1122,
+  "half_destroyed": 4213,
+  "partial_damage": 43317,
+  "flooded_above_floor": 29233,
+  "flooded_below_floor": 30728,
+  "non_residential": 7623,
+  "source": ""
+ }
+}

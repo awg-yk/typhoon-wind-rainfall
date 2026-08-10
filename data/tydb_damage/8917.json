@@ -1,0 +1,137 @@
+{
+ "title": "1989年 台風第17号 (Roger) : TY8917",
+ "weatherText": "8月24日に沖縄の西海上で発生し、27日に室戸市付近に上陸した後、四国、近畿、北陸、東北地方、北海道を通過したのち、オホーツク海に抜けた。死者6人、負傷者13人、全壊1棟、半壊・一部破損39棟、床上浸水398棟、床下浸水2075棟（情報元：気象要覧第1080号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "岩手日報「いわて災異録」",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 19,
+   "flooded_below_floor": 308,
+   "non_residential": null,
+   "source": "福島県災害対策グループ",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "水戸市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 41,
+   "non_residential": null,
+   "source": "栃木県「過去における主な災害一覧」",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 71,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 296,
+   "flooded_below_floor": 247,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 16,
+   "non_residential": null,
+   "source": "鳥取県消防課",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 36,
+   "non_residential": null,
+   "source": "香川県",
+   "pref": "香川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 2,
+  "flooded_above_floor": 317,
+  "flooded_below_floor": 728,
+  "non_residential": 0,
+  "source": ""
+ }
+}

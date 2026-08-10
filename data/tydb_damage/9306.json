@@ -1,0 +1,77 @@
+{
+ "title": "1993年 台風第6号 (Percy) : TY9306",
+ "weatherText": "7月27日に沖縄の南方海上で発生し、29日に中型で並の強さで沖永良部島付近を通過した後、30日に長崎市付近に上陸した。その後対馬海峡を経て日本海に進み、日本海中部で温帯低気圧に変わった。低気圧は、その後北東に進み、更に南東に向きを変えて三陸沖に進んだ。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 10,
+   "non_residential": 3,
+   "source": "静岡県防災局",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "香川県",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "福岡市",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 11,
+   "non_residential": 4,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "鹿児島県「平成5年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 2,
+  "destroyed": 1,
+  "half_destroyed": 0,
+  "partial_damage": 11,
+  "flooded_above_floor": 7,
+  "flooded_below_floor": 22,
+  "non_residential": 7,
+  "source": ""
+ }
+}

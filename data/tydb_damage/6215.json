@@ -1,0 +1,29 @@
+{
+ "title": "1962年 台風第15号 (Vera) : TY6215",
+ "weatherText": "8月24日21時，ラサ島南方で発生した熱帯低気圧は北東に進み，25日18時には南大東島の南約300kmの洋上で台風となった。台風はその後向きを変えて北北西進し，27日午後名瀬の東海上を通過した。28日3時鹿児島県佐多岬付近に上陸，進路を北東に変えて6時には宮崎県南部に達して熱帯低気圧に，9時には温帯低気圧となった。8月25日18時，中心気圧1004hPa，最大風速20m/s。27日午後，中心気圧995hPa，最大風速35m/s，風速25m/s以上の暴風半径は75km。",
+ "prefectures": [
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第756号",
+   "pref": "宮崎県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 0,
+  "source": ""
+ }
+}

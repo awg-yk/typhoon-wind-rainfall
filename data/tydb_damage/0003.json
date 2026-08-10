@@ -1,0 +1,137 @@
+{
+ "title": "2000年 台風第3号 (Kirogi) : TY0003",
+ "weatherText": "7月2日にフィリピンの東海上で発生し、5日に沖の鳥島の西の海上で大型で非常に強い勢力となった。8日に八丈島と三宅島の間を通り、房総半島の東の海上を通過した。台風はさらに北北東に進み、9日に北海道の東海上で温帯低気圧に変った。死者・行方不明1人、負傷者7人、全壊・流失3棟、半壊・一部破損33棟、床上浸水570棟、床下浸水2124棟（情報元：気象要覧第1211号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 6,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "北海道"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 19,
+   "non_residential": null,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 8,
+   "flooded_below_floor": 75,
+   "non_residential": 7,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 34,
+   "non_residential": null,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "宮城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 71,
+   "non_residential": null,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 9,
+   "flooded_below_floor": 113,
+   "non_residential": 10,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 372,
+   "flooded_below_floor": 483,
+   "non_residential": null,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 30,
+   "flooded_below_floor": 361,
+   "non_residential": 7,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": 3,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 7,
+   "non_residential": 14,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：平成12年7月9日9時00分現在",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 8,
+  "destroyed": 3,
+  "half_destroyed": 0,
+  "partial_damage": 7,
+  "flooded_above_floor": 425,
+  "flooded_below_floor": 1163,
+  "non_residential": 44,
+  "source": ""
+ }
+}

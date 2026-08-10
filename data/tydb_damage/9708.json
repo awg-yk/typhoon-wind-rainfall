@@ -1,0 +1,137 @@
+{
+ "title": "1997年 台風第8号 (Peter) : TY9708",
+ "weatherText": "6月22日にフィリピンの東海上で発生し、27日に宮古島と沖縄本島の間を通過後、大型で強い勢力で東シナ海を北上し、九州の西海上で向きを北東に変えた。28日に大型でなみの強さの勢力で九州北部西岸に上陸し、九州北部を横切り、瀬戸内海を通って、岡山県に再上陸し、近畿地方北部から関東地方北部を通って29日に三陸沖へ抜け温帯低気圧となった。死者3人、負傷者41人、全壊2棟、一部破損56棟、床上浸水43棟、床下浸水742棟（情報元：気象要覧第1174号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "岩手日報「いわて災異録」",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "埼玉県狭山市",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 58,
+   "non_residential": null,
+   "source": "新潟県消防防災年報",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "石川県「平成２１年版消防防災年報」",
+   "pref": "石川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 19,
+   "non_residential": 44,
+   "source": "兵庫県",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 7,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "鳥取県消防課",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 17,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": 13,
+   "source": "島根県「平成９年災害年報」",
+   "pref": "島根県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": 4,
+   "source": "大分県",
+   "pref": "大分県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 6,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "鹿児島県「平成9年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 4,
+  "destroyed": 0,
+  "half_destroyed": 1,
+  "partial_damage": 38,
+  "flooded_above_floor": 4,
+  "flooded_below_floor": 120,
+  "non_residential": 62,
+  "source": ""
+ }
+}

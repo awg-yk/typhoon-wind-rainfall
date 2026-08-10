@@ -1,0 +1,89 @@
+{
+ "title": "2021年 台風第16号 (Mindulle) : TY2116",
+ "weatherText": "大型で非常に強い台風と強い勢力を維持したまま八丈島に接近後，関東の沿岸を通過。千葉県銚子市で41.8m/s、三宅島の坪田で41.7m/sなどの最大瞬間風速を観測。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和3年11月26日17時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 7,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和3年11月26日17時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和3年11月26日17時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "消防庁調べ：令和3年11月26日17時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 10,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和3年11月26日17時00分現在",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和3年11月26日17時00分現在",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 21,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 8,
+  "flooded_above_floor": 1,
+  "flooded_below_floor": 1,
+  "non_residential": 0,
+  "source": ""
+ }
+}

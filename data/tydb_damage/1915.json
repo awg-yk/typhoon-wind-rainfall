@@ -1,0 +1,113 @@
+{
+ "title": "2019年 台風第15号 (Faxai) : TY1915",
+ "weatherText": "9月5日に発生した台風第15号は、発達しながら北西に進み、強い台風の勢力で9日3時頃に三浦半島付近を通過した後、勢力を維持したまま同日5時前に千葉市付近に上陸した。その後、関東の東の海上に抜けて温帯低気圧となった。死者・行方不明者3人、負傷者150人、全壊391棟、半壊4204棟、一部破損72279棟、床上浸水121棟、床下浸水109棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 21,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 25,
+   "destroyed": 4,
+   "half_destroyed": 94,
+   "partial_damage": 5740,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 115,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 3,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 11,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 88,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 2,
+   "non_residential": 1,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 8,
+   "injured": 91,
+   "destroyed": 426,
+   "half_destroyed": 4486,
+   "partial_damage": 76319,
+   "flooded_above_floor": 34,
+   "flooded_below_floor": 81,
+   "non_residential": 1031,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 6,
+   "destroyed": 14,
+   "half_destroyed": 73,
+   "partial_damage": 1624,
+   "flooded_above_floor": 24,
+   "flooded_below_floor": 13,
+   "non_residential": 240,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": 13,
+   "destroyed": 11,
+   "half_destroyed": 98,
+   "partial_damage": 3475,
+   "flooded_above_floor": 58,
+   "flooded_below_floor": 29,
+   "non_residential": 56,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 13,
+   "destroyed": 1,
+   "half_destroyed": 55,
+   "partial_damage": 580,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 4,
+   "non_residential": 4,
+   "source": "消防庁調べ：令和2年9月30日12時00分現在",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 9,
+  "injured": 160,
+  "destroyed": 457,
+  "half_destroyed": 4806,
+  "partial_damage": 87831,
+  "flooded_above_floor": 125,
+  "flooded_below_floor": 151,
+  "non_residential": 1448,
+  "source": ""
+ }
+}

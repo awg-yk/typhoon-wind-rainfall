@@ -1,0 +1,125 @@
+{
+ "title": "1998年 台風第9号 (Yanni) : TY9809",
+ "weatherText": "9月26日に沖縄の南海上で発生し、29日には中型で強い勢力となり九州の南西の海上へ進んだ。30日には次第に勢力を弱めながら九州の西海上を北上し、朝鮮半島の南岸へ進み、温帯低気圧に変わった。死者・行方不明7人、負傷者13人、全壊30棟、半壊24棟、一部破損102棟、床上浸水13860棟、床下浸水12116棟（情報元：気象要覧第1189号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 75,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 5,
+   "half_destroyed": 3,
+   "partial_damage": 33,
+   "flooded_above_floor": 238,
+   "flooded_below_floor": 1531,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 81,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "兵庫県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 18,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 123,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "岡山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 6,
+   "flooded_below_floor": 8,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "徳島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 45,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "愛媛県"
+  },
+  {
+   "dead_missing": 6,
+   "injured": 13,
+   "destroyed": 24,
+   "half_destroyed": 21,
+   "partial_damage": 68,
+   "flooded_above_floor": 13598,
+   "flooded_below_floor": 10235,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "気象要覧第1189号",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 7,
+  "injured": 13,
+  "destroyed": 30,
+  "half_destroyed": 24,
+  "partial_damage": 102,
+  "flooded_above_floor": 13861,
+  "flooded_below_floor": 12120,
+  "non_residential": 0,
+  "source": ""
+ }
+}

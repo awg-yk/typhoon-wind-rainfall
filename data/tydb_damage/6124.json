@@ -1,0 +1,137 @@
+{
+ "title": "1961年 台風第24号 (Violet) : TY6124",
+ "weatherText": "10月3日3時南鳥島の南西海上に発生した熱帯低気圧は，はじめ南西に進み，5日3時サイパンの北方に達して台風となった。その後もしばらく南西に進み，夜に進路を北西に変えた。7日15時には硫黄島の南約500kmの海上に達した。8日夜になって進路を次第に北北西から北に変え，9日9時には鳥島の南西480kmに位置した。台風はこのころから進路を北北東に変え，10日3時には三宅島の西南西110kmに達した。台風は6時には三宅島と新島の中間を通り，北東進を続けて，8時勝浦付近，9時銚子の西を通って鹿島灘に抜けた。台風は10日21時には根室の南南西360kmに達して温帯低気圧となった。10月7日15時，中心気圧895hPa，最大風速75m/s，風速25m/sの暴風半径280km。9日9時，中心気圧930hPa，最大風速65m/s，風速25m/s以上の暴風半径280km。10日3時，中心気圧945hPa，最大風速60m/s，風速25m/sの暴風半径150km。 死者・行方不明2人、負傷者22人、全壊25棟、半壊60棟、流失3棟、一部破損255棟、床上浸水3870棟、床下浸水59632棟（気象要覧第746号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 8,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 79,
+   "non_residential": 27,
+   "source": "気象要覧第746号",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 16,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 87,
+   "non_residential": 5,
+   "source": "気象要覧第746号",
+   "pref": "栃木県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": null,
+   "source": "気象要覧第746号",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 67,
+   "flooded_below_floor": 1276,
+   "non_residential": null,
+   "source": "気象要覧第746号",
+   "pref": "埼玉県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 4,
+   "destroyed": 8,
+   "half_destroyed": 14,
+   "partial_damage": null,
+   "flooded_above_floor": 147,
+   "flooded_below_floor": 2481,
+   "non_residential": 29,
+   "source": "気象要覧第746号",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 3,
+   "destroyed": 3,
+   "half_destroyed": 7,
+   "partial_damage": 53,
+   "flooded_above_floor": 3504,
+   "flooded_below_floor": 53250,
+   "non_residential": null,
+   "source": "気象要覧第746号",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 3,
+   "half_destroyed": 5,
+   "partial_damage": 83,
+   "flooded_above_floor": 148,
+   "flooded_below_floor": 1530,
+   "non_residential": 41,
+   "source": "気象要覧第746号",
+   "pref": "神奈川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 38,
+   "non_residential": null,
+   "source": "気象要覧第746号",
+   "pref": "新潟県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 12,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 13,
+   "source": "気象要覧第746号",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 13,
+   "destroyed": 6,
+   "half_destroyed": 33,
+   "partial_damage": 91,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 888,
+   "non_residential": 70,
+   "source": "気象要覧第746号",
+   "pref": "静岡県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 21,
+  "destroyed": 28,
+  "half_destroyed": 60,
+  "partial_damage": 255,
+  "flooded_above_floor": 3870,
+  "flooded_below_floor": 59632,
+  "non_residential": 185,
+  "source": ""
+ }
+}

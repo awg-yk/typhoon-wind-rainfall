@@ -1,0 +1,41 @@
+{
+ "title": "1993年 台風第4号 (Nathan) : TY9304",
+ "weatherText": "7月19日にマリアナ諸島の東の海上で発生し、24日に父島の西海上にて中型で並の強さまで発達した。25日に中型の弱い勢力で徳島県日和佐町付近に上陸した後、勢力を弱めながら北西ないし北北西に進み、岡山県備前市付近に再上陸して日本海に抜け、隠岐諸島近海で温帯低気圧となった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 15,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 5,
+   "non_residential": null,
+   "source": "川崎市の災害概要",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 15,
+  "flooded_below_floor": 10,
+  "non_residential": 0,
+  "source": ""
+ }
+}

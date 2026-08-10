@@ -1,0 +1,161 @@
+{
+ "title": "1969年 台風第9号 (Cora) : TY6909",
+ "weatherText": "8月13日3時トラック島の北西，北緯9.6度，東経150.5度付近の海上に発生した熱帯低気圧は，西ないし西北西に進んで，16日3時に北緯13.4度，東経139.1度に達して台風となった。台風は北西のち北北西に進み，19日21時頃には沖縄付近の北緯25.5度，東経127.5度に達した。その後台風はゆっくりと沖縄の西約40kmの海上を北に進み，次第に向きを北から北東に転じた。22日10時頃薩摩半島の西岸に上陸して北東に進み，九州を斜断して13時30分頃宮崎市付近から日向灘に出た。19時には足摺岬付近，23時頃室戸岬付近と四国南岸をかすめ，23日3時頃和歌山県御坊付近に上陸した。台風は伊勢湾，長野県南部を通り，15時には関東北部に達し，その後進路を北に転じて仙台市付近に達した。台風の特性を次第に失い，23日21時には盛岡市付近で温帯低気圧となり，青森，岩手の県境付近から海上に出て，24日0時頃襟裳岬付近から北海道に上陸，衰えながら北上した。台風発生時の中心気圧992hPa。19日21時頃最低気圧を示した。中心揮発は935hPa，中心付近の最大風速45m/s，25m/s以上の暴風半径は140kmとなった。21日9時には中心気圧960hPa，中心付近の最大風速45m/s，25m/s以上の暴風半径は140kmであり，このままの勢力で薩摩半島西岸に上陸した。 死傷者227人、家屋損壊2100棟、浸水15000棟（気象要覧第840号）",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 8,
+   "half_destroyed": 7,
+   "partial_damage": null,
+   "flooded_above_floor": 6263,
+   "flooded_below_floor": 6896,
+   "non_residential": 6,
+   "source": "青森市",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 2,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 9,
+   "non_residential": 3,
+   "source": "岩手県",
+   "pref": "岩手県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 329,
+   "non_residential": null,
+   "source": "秋田市",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 14,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第840号（被害状況より）",
+   "pref": "福島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 133,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 674,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "気象要覧第840号（被害状況より）",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 4,
+   "flooded_below_floor": 203,
+   "non_residential": null,
+   "source": "群馬県「平成２３年度消防防災年報」",
+   "pref": "群馬県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 160,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 4,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 164,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": 3,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "香川県",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": 2,
+   "injured": 71,
+   "destroyed": 0,
+   "half_destroyed": 255,
+   "partial_damage": 2119,
+   "flooded_above_floor": 0,
+   "flooded_below_floor": 481,
+   "non_residential": null,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 70,
+   "destroyed": 117,
+   "half_destroyed": 482,
+   "partial_damage": 9723,
+   "flooded_above_floor": 9,
+   "flooded_below_floor": 453,
+   "non_residential": null,
+   "source": "鹿児島県「昭和44年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 8,
+   "half_destroyed": 7,
+   "partial_damage": null,
+   "flooded_above_floor": 54,
+   "flooded_below_floor": 228,
+   "non_residential": 41,
+   "source": "那覇市",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 2,
+  "injured": 280,
+  "destroyed": 133,
+  "half_destroyed": 769,
+  "partial_damage": 12522,
+  "flooded_above_floor": 6332,
+  "flooded_below_floor": 8923,
+  "non_residential": 50,
+  "source": ""
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "title": "2018年 台風第7号 (Prapiroon) : TY1807",
+ "weatherText": "6月29日に日本の南で発生し、ゆっくりとした速度で西へ進んだ後、沖縄の南で発達しながら北よりに向きを変え、北上を続けた。2日には久米島にかなり接近し、九州の西海上を北上後、4日には対馬海峡を抜けて日本海を北東に進んだ。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": 3,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "山口県",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": 3,
+   "injured": 1,
+   "destroyed": 15,
+   "half_destroyed": 54,
+   "partial_damage": 24,
+   "flooded_above_floor": 166,
+   "flooded_below_floor": 650,
+   "non_residential": 54,
+   "source": "高知県",
+   "pref": "高知県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 7,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 9,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "福岡県",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "佐賀県",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 10,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": 1,
+   "source": "長崎県",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": 1,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "大分県",
+   "pref": "大分県"
+  }
+ ],
+ "total": {
+  "dead_missing": 4,
+  "injured": 25,
+  "destroyed": 16,
+  "half_destroyed": 54,
+  "partial_damage": 33,
+  "flooded_above_floor": 166,
+  "flooded_below_floor": 651,
+  "non_residential": 56,
+  "source": ""
+ }
+}

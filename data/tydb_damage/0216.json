@@ -1,0 +1,41 @@
+{
+ "title": "2002年 台風第16号 (Sinlaku) : TY0216",
+ "weatherText": "8月27日に南鳥島の南海上で発生し、31日に同島の西南西海上で強い勢力になった。5日に沖縄本島南部を通過し、久米島付近を通過後、同島の西海上において大型で強い勢力となった。台風は東シナ海を西へ進み、7日から急速に勢力が弱まり、華中に上陸後に熱帯低気圧になり消滅した。負傷者31人、全壊11棟、半壊35棟、一部損壊196棟、床上浸水6棟、床下浸水39棟（情報元：消防庁）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 16,
+   "partial_damage": 158,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 3,
+   "non_residential": 46,
+   "source": "鹿児島県「平成14年災害の記録」",
+   "pref": "鹿児島県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 58,
+   "destroyed": 19,
+   "half_destroyed": 93,
+   "partial_damage": 324,
+   "flooded_above_floor": 12,
+   "flooded_below_floor": 57,
+   "non_residential": 92,
+   "source": "沖縄県「平成１５年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 1,
+  "injured": 58,
+  "destroyed": 19,
+  "half_destroyed": 109,
+  "partial_damage": 482,
+  "flooded_above_floor": 12,
+  "flooded_below_floor": 60,
+  "non_residential": 138,
+  "source": ""
+ }
+}

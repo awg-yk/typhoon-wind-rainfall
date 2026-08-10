@@ -1,0 +1,29 @@
+{
+ "title": "2003年 台風第15号 (Choi-wan) : TY0315",
+ "weatherText": "9月18日に沖縄の南海上で発生し、北北西に進み、19日には那覇市の南東30kmに達した。20日には奄美大島付近を通過し、東よりに進んだ。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 17,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": 1,
+   "source": "鹿児島県「平成15年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 17,
+  "flooded_above_floor": 0,
+  "flooded_below_floor": 0,
+  "non_residential": 1,
+  "source": ""
+ }
+}

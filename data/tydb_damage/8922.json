@@ -1,0 +1,137 @@
+{
+ "title": "1989年 台風第22号 (Wayne) : TY8922",
+ "weatherText": "9月16日にフィリピンの東海上に発生し、東シナ海を北東に進み、19日に大隈半島南部に上陸した後、やや加速しながら東北東に進み、20日に伊豆半島南部、房総半島南部に再上陸した。死者・行方不明8人、負傷者8人、全壊9棟、半壊・一部破損238棟、床上浸水507棟、床下浸水5317棟（情報元：気象要覧第1081号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 1,
+   "flooded_above_floor": 5,
+   "flooded_below_floor": 32,
+   "non_residential": 45,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 4,
+   "half_destroyed": 12,
+   "partial_damage": 11,
+   "flooded_above_floor": 393,
+   "flooded_below_floor": 794,
+   "non_residential": 285,
+   "source": "岐阜県",
+   "pref": "岐阜県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "静岡県消防防災課",
+   "pref": "静岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": null,
+   "flooded_above_floor": 125,
+   "flooded_below_floor": 4098,
+   "non_residential": null,
+   "source": "大阪府",
+   "pref": "大阪府"
+  },
+  {
+   "dead_missing": 1,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 55,
+   "flooded_below_floor": 2551,
+   "non_residential": null,
+   "source": "和歌山県",
+   "pref": "和歌山県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 23,
+   "non_residential": null,
+   "source": "鳥取県消防課",
+   "pref": "鳥取県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "香川県",
+   "pref": "香川県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": 7,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 9,
+   "non_residential": 2,
+   "source": "都城市地域防災計画書",
+   "pref": "宮崎県"
+  },
+  {
+   "dead_missing": 1,
+   "injured": 4,
+   "destroyed": null,
+   "half_destroyed": 1,
+   "partial_damage": 194,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": 135,
+   "source": "鹿児島県「平成元年災害の記録」",
+   "pref": "鹿児島県"
+  }
+ ],
+ "total": {
+  "dead_missing": 3,
+  "injured": 7,
+  "destroyed": 4,
+  "half_destroyed": 14,
+  "partial_damage": 213,
+  "flooded_above_floor": 579,
+  "flooded_below_floor": 7516,
+  "non_residential": 467,
+  "source": ""
+ }
+}

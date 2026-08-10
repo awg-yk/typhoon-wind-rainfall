@@ -1,0 +1,137 @@
+{
+ "title": "2010年 台風第4号 (Dianmu) : TY1004",
+ "weatherText": "8月8日に沖縄県の南海上で台風となり、11日には九州北部の海上を進み日本海を北東に進んだ。12日に秋田市付近に上陸し、岩手県宮古市付近から太平洋側に抜け、北海道沖で温帯低気圧に変わった。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 3,
+   "flooded_below_floor": 13,
+   "non_residential": null,
+   "source": "青森県「平成２２年災害による被害」",
+   "pref": "青森県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "秋田県「平成２３年版消防防災年報」",
+   "pref": "秋田県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 13,
+   "non_residential": null,
+   "source": "長野県「平成２２年災害別被害状況」",
+   "pref": "長野県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 7,
+   "non_residential": null,
+   "source": "滋賀県「平成２３年版消防防災年報」",
+   "pref": "滋賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 21,
+   "flooded_below_floor": 123,
+   "non_residential": 6,
+   "source": "京都府「平成２２年災害の記録」",
+   "pref": "京都府"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 4,
+   "non_residential": null,
+   "source": "山口県「平成２３年度消防防災年報」",
+   "pref": "山口県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "福岡県「平成２２年被害総括表」",
+   "pref": "福岡県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 1,
+   "non_residential": null,
+   "source": "佐賀県「平成２３年度版消防防災年報」",
+   "pref": "佐賀県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 2,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "長崎県「平成２３年版消防防災年報」",
+   "pref": "長崎県"
+  },
+  {
+   "dead_missing": null,
+   "injured": 1,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": null,
+   "non_residential": null,
+   "source": "沖縄県「平成２３年版消防防災年報」",
+   "pref": "沖縄県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 4,
+  "destroyed": 0,
+  "half_destroyed": 0,
+  "partial_damage": 0,
+  "flooded_above_floor": 25,
+  "flooded_below_floor": 169,
+  "non_residential": 6,
+  "source": ""
+ }
+}

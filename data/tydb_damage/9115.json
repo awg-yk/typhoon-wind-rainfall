@@ -1,0 +1,65 @@
+{
+ "title": "1991年 台風第15号 (Ivy) : TY9115",
+ "weatherText": "9月2日にトラック島の東で発生し、7日には大型で非常に強い勢力まで発達して、父島の南西海上を通過した。9日には徐々に勢力を弱めながら八丈島の南海上に達した後、速度を速めながら日本から遠ざかった。死者6人、負傷者4人、全壊・流失4棟、半壊・一部破損73棟、床上浸水187棟、床下浸水1318棟（情報元：気象要覧第1105号）。",
+ "prefectures": [
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 1,
+   "flooded_below_floor": 16,
+   "non_residential": null,
+   "source": "日立市",
+   "pref": "茨城県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": 10,
+   "flooded_below_floor": 109,
+   "non_residential": null,
+   "source": "船橋市",
+   "pref": "千葉県"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": 2,
+   "half_destroyed": 2,
+   "partial_damage": 46,
+   "flooded_above_floor": 2,
+   "flooded_below_floor": 16,
+   "non_residential": 17,
+   "source": "東京都",
+   "pref": "東京都"
+  },
+  {
+   "dead_missing": null,
+   "injured": null,
+   "destroyed": null,
+   "half_destroyed": null,
+   "partial_damage": null,
+   "flooded_above_floor": null,
+   "flooded_below_floor": 6,
+   "non_residential": null,
+   "source": "横浜市",
+   "pref": "神奈川県"
+  }
+ ],
+ "total": {
+  "dead_missing": 0,
+  "injured": 0,
+  "destroyed": 2,
+  "half_destroyed": 2,
+  "partial_damage": 46,
+  "flooded_above_floor": 13,
+  "flooded_below_floor": 147,
+  "non_residential": 17,
+  "source": ""
+ }
+}
