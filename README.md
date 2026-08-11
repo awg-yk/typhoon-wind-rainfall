@@ -228,11 +228,18 @@ python3 -m http.server 8000
   [デジタル台風](https://agora.ex.nii.ac.jp/digital-typhoon/disaster/landfall-full/)
   のベストトラック解析に基づく判定。
 - **`damaging: true`** — 上陸・通過はしていないものの日本国内で大きな
-  被害を出した台風（70台風、`landfallJP=true`のものを除く）。
-  [デジタル台風 災害データベース](https://agora.ex.nii.ac.jp/cgi-bin/dt/disaster.pl?lang=ja&basin=wnp&sort=dead_or_missing&order=dec&stype=number)
-  の死者・行方不明者数ランキング（上位204台風）のうち、`landfallJP`で
-  拾えていなかったものを追加。元データと選定方法は
-  `data/damage_storm_codes.json` に記録してあります。
+  被害を出した台風（257台風、`landfallJP=true`のものを除く）。内訳は
+  2つ:
+  - 70台風: [デジタル台風 災害データベース](https://agora.ex.nii.ac.jp/cgi-bin/dt/disaster.pl?lang=ja&basin=wnp&sort=dead_or_missing&order=dec&stype=number)
+    の死者・行方不明者数ランキング（上位204台風）のうち、`landfallJP`で
+    拾えていなかったもの。元データと選定方法は
+    `data/damage_storm_codes.json` に記録。
+  - 187台風: `fetch_tydb_damage.py --all`（TYDBの全台風試行）で見つかった、
+    実際に何らかの被害件数（死者・行方不明者/負傷者/全壊/...のいずれか
+    非ゼロ）があるTYDB被害テーブルを持つ台風のうち、上記2つでまだ
+    拾えていなかったもの。`scripts/mark_damaging_from_tydb.py`で機械的に
+    付与（`scripts/list_damage_gaps.py`の`has_real_damage_table()`と同じ
+    判定基準）。
 
 `scripts/fetch_amedas_obsdl.py --landfall-only`・
 `scripts/download_jra3q_pressure.py`・`scripts/build_pressure_json.py`
