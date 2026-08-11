@@ -152,12 +152,11 @@ python3 -m http.server 8000
   `notebooks/jra3q_colab_download.ipynb`（Google Colab上で実行し、ブラウザ経由で
   PCにダウンロードする版）を使ってください。
 
-  **既知の欠損**: `198310`（1983年10月）のみ、静的ファイルサーバー・OPeNDAP
-  どちらの経路でも `500 Internal Server Error` / `DAP server error`（GDEX側で
-  元データの取得自体がタイムアウトしている）となり取得できていません。何度
-  リトライしても同じ理由で失敗するため、一時的な混雑ではなくGDEX側のこの
-  ファイル固有の問題とみられます。そのため台風8310（1983年10号）の気圧配置
-  データのみ欠けています。将来GDEX側で直っていれば再取得できます。
+  以前は`198310`（1983年10月）が静的ファイルサーバー・OPeNDAPどちらの
+  経路でも`500 Internal Server Error`/`DAP server error`となり恒久的な
+  欠損として扱っていましたが、2026-08-11の再取得では正常に取得できました
+  （GDEX側の一時的な問題だった模様）。台風8310（1983年10号）の気圧配置
+  データは`data/pressure/8310.json`として揃っています。
 - `scripts/build_pressure_json.py` … 上記でダウンロードした月別netCDF
   ファイル（`data/raw_jra3q/` などローカルの保存先）を、台風ごとの経路期間に
   合わせて `data/pressure/<台風コード>.json`（`{lat:[...], lon:[...],
@@ -165,9 +164,9 @@ python3 -m http.server 8000
   格子は既定で間引き（`--stride 2`、緯度経度とも半分の解像度）、値は整数hPaに
   丸めてファイルサイズを抑えています（等圧線の描画には十分な精度）。生の
   netCDFファイルは大きすぎるためリポジトリには含めず、この変換後のJSONだけを
-  コミットします。上記の欠損月をまたぐ台風（8310）は変換時にスキップされ
-  `data/pressure/8310.json` は存在しません（フロントエンドはその場合、気圧
-  モードで等圧線を表示しないだけで、経路・風・雨の表示には影響しません）。
+  コミットします。該当月のnetCDFファイルが無い台風は変換時にスキップされ
+  `data/pressure/<コード>.json` が存在しません（フロントエンドはその場合、
+  気圧モードで等圧線を表示しないだけで、経路・風・雨の表示には影響しません）。
   ```bash
   pip install xarray netCDF4
   python3 scripts/build_pressure_json.py --raw-dir /path/to/185個のncファイル
@@ -273,9 +272,9 @@ python3 scripts/list_damage_gaps.py            # 人が読む形式のレポー�
 python3 scripts/list_damage_gaps.py --kind obs # --codes にそのまま渡せるカンマ区切り
 ```
 
-2026-08-10時点: 実質被害455台風中、気圧配置が無いもの188台風、風データ
-が無いもの207台風、雨データが無いもの174台風。「風データが無い」の
-判定は、AMeDAS観測網ファイルに実際の値が1つも無く、かつ旧156地点網
+2026-08-10時点（初回計測）: 実質被害455台風中、気圧配置が無いもの188台風、
+風データが無いもの207台風、雨データが無いもの174台風。「風データが無い」
+の判定は、AMeDAS観測網ファイルに実際の値が1つも無く、かつ旧156地点網
 （`data/storms/<コード>.json`の`wind`/`rain`）にも値が無い場合のみを
 指します（フロントエンドの`dataHasAnyValue()`/`currentObsSource()`の
 フォールバックと同じ判定）。1961年より前の台風は気象庁が風速をまだ
@@ -283,37 +282,53 @@ python3 scripts/list_damage_gaps.py --kind obs # --codes にそのまま渡せ�
 できるデータが存在しない場合があります（後述の1./2.の取得手順を試した
 上で、それでも埋まらなければ元データ不在と判断してください）。
 
-### 1. AMeDAS観測網データ（`data/storms_obs/`） — 未着手（207台風分）
+### 1. AMeDAS観測網データ（`data/storms_obs/`） — 完了（2026-08-11）
 
-`scripts/list_damage_gaps.py --kind obs`が挙げる台風分のAMeDAS風・雨
-データがまだありません。次のコマンドで`--codes`に直接渡せます:
+`scripts/list_damage_gaps.py --kind obs`が挙げていた台風分のAMeDAS
+風・雨データをColabで取得・push済みです。次のコマンドで`--codes`に
+直接渡す形で実行しました:
 
 ```bash
-python3 scripts/fetch_amedas_obsdl.py --codes $(python3 scripts/list_damage_gaps.py --kind obs) --kind wind,rain
+python3 scripts/fetch_amedas_obsdl.py --codes $(python3 scripts/list_damage_gaps.py --kind obs) --kind wind,rain --sleep 1.0
 ```
 
-対応方法（Colabだけで完結）: `notebooks/fetch_and_convert_amedas_colab.ipynb`
-をColabで上から実行してください（④のセルが上記コマンドを実行する
-形に更新済みです。取得→変換→pushまで自動）。既に取得済みの台風は
-自動スキップされるので、再実行すれば追加分だけが処理されます。手順の
-詳細はノートブック内の説明を参照。GitHubへのpushで`getpass`のトークン
-入力がうまくいかない場合は、`google.colab.userdata`（Colabの
+（`--sleep`はデフォルト3秒のリクエスト間隔を短縮するオプション。obsdl側に
+明記されたレート制限が無いため1秒に縮めて実行した。`fetch_amedas_obsdl.py`
+参照。）
+
+2026-08-11時点: 雨データの欠落は0台風。風データの欠落は51台風のみで、
+いずれも1951〜1960年の台風（気象庁が風速をまだ電子化していない時代）
+のため、これ以上取得できるデータはありません。
+
+対応方法（Colabだけで完結、まだ欠落が残っている場合の再実行用）:
+`notebooks/fetch_and_convert_amedas_colab.ipynb`をColabで上から実行して
+ください（④のセルが上記コマンドを実行する形に更新済みです。取得→
+変換→pushまで自動）。既に取得済みの台風は自動スキップされるので、
+再実行すれば追加分だけが処理されます。GitHubへのpushで`getpass`の
+トークン入力がうまくいかない場合は、`google.colab.userdata`（Colabの
 「シークレット」機能）でトークンを渡す方式に切り替えてください。
 
-### 2. JRA-3Q気圧データ（`data/pressure/`） — 未着手（188台風・186ヶ月分）
+### 2. JRA-3Q気圧データ（`data/pressure/`） — ほぼ完了（2026-08-11、残り1台風）
 
-`scripts/list_damage_gaps.py --kind pressure`が挙げる188台風分の気圧
-配置データがまだありません（track期間で新たに必要な月は186ヶ月、
-2026-08-10時点。うち`8310`＝1983年台風10号はGDEX側のサーバーエラーが
-恒久的に再現するため元々欠損として運用 — 詳細は上記「フォルダの中身」の
-`download_jra3q_pressure.py`の項を参照）。
+`scripts/list_damage_gaps.py --kind pressure`が挙げていた188台風分の
+気圧配置データをColabで取得・push済みです（`8310`＝1983年台風10号は
+以前GDEX側のサーバーエラーが恒久的と見られていましたが、今回の再取得で
+正常に取得できました）。**残り1台風`8422`（1984年台風22号 VANESSA）の
+みが未取得**です。
+
+```bash
+python3 scripts/list_damage_gaps.py --kind pressure
+```
 
 対応方法: `notebooks/jra3q_colab_download.ipynb`→
-`notebooks/build_pressure_json_colab.ipynb`の順にColabで実行してください
-（どちらも`list_damage_gaps.py --kind pressure`の出力を`--codes`に渡す
-形に更新済みです）。前者は前回ダウンロード済みのZIPがあれば任意セルで
-アップロードすることで、新規分だけの取得に短縮できます（無い場合は
-186ヶ月分を取得）。
+`notebooks/build_pressure_json_colab.ipynb`の順にColabで再実行してく
+ださい（どちらも`list_damage_gaps.py --kind pressure`の出力を`--codes`
+に渡す形なので、今は`8422`の月だけが対象になります）。8310の例からも、
+一度失敗した月がGDEX側の一時的な問題で、再実行すれば取得できることが
+あります。何度か再実行しても取得できない場合は、8310の旧記述と同様に
+「元データ不在」として運用してください（フロントエンドは気圧配置
+データが無い台風でも、等圧線を表示しないだけで経路・風・雨の表示には
+影響しません）。
 
 ### 3. フロントエンドの実ブラウザでの見た目確認 — 完了（2026-08-07）
 
