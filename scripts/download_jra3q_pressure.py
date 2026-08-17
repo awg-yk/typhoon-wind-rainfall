@@ -59,7 +59,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -116,8 +116,15 @@ def needed_year_months(codes=None):
         track = storm.get("track", [])
         if not track:
             continue
-        start = datetime.fromisoformat(track[0]["time"])
-        end = datetime.fromisoformat(track[-1]["time"])
+        # Track times are UTC; build_pressure_json.py converts to JST
+        # (+9h) before figuring out which months it needs, so a track
+        # ending late on the last day of a month in UTC can need the
+        # *next* month's file once shifted into JST (e.g. 8422/VANESSA:
+        # ends 1984-10-31T18:00 UTC = 1984-11-01T03:00 JST). Match that
+        # here too, or a month build_pressure_json.py needs can be
+        # missing from what this script downloaded.
+        start = datetime.fromisoformat(track[0]["time"]) + timedelta(hours=9)
+        end = datetime.fromisoformat(track[-1]["time"]) + timedelta(hours=9)
         y, m = start.year, start.month
         while (y, m) <= (end.year, end.month):
             months.add((y, m))
