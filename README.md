@@ -321,34 +321,19 @@ python3 scripts/fetch_amedas_obsdl.py --codes $(python3 scripts/list_damage_gaps
 トークン入力がうまくいかない場合は、`google.colab.userdata`（Colabの
 「シークレット」機能）でトークンを渡す方式に切り替えてください。
 
-### 2. JRA-3Q気圧データ（`data/pressure/`） — 対応中（残り1台風、原因判明・修正済み）
+### 2. JRA-3Q気圧データ（`data/pressure/`） — 完了（2026-08-12）
 
-`scripts/list_damage_gaps.py --kind pressure`が挙げていた188台風分の
-うち187台風分はColabで取得・push済みです。**残り1台風`8422`
-（1984年台風22号 VANESSA）**は、`build_pressure_json.py`実行時に
-`FAILED (missing raw file(s) for 198411)`で失敗していました。
-
-原因はGDEX側の問題ではなく、`download_jra3q_pressure.py`の必要月計算が
-UTCのままだったこと（track時刻の末尾がJSTに変換すると翌月にまたがる
-場合、その月をダウンロード対象から取り漏らしていた）でした。
-`build_pressure_json.py`と同じ+9h JST変換をしてから月を計算するよう
-2026-08-12に修正済みです（詳細は上記「フォルダの中身」の
-`download_jra3q_pressure.py`の項を参照）。8310（1983年台風10号、以前
-「GDEX側の恒久的エラー」と誤認していたもの）もこの同じバグが原因で、
-たまたま別台風の分と月が重なっていたため取得できていただけでした。
-
-```bash
-python3 scripts/list_damage_gaps.py --kind pressure   # -> 8422
-```
-
-対応方法: `notebooks/jra3q_colab_download.ipynb`→
-`notebooks/build_pressure_json_colab.ipynb`の順にColabで**リポジトリを
-最新化してから**再実行してください（①のセルで修正後の
-`download_jra3q_pressure.py`を取得しないと、同じ理由で198411がまた
-スキップされます）。修正後は198411（1984年11月）も対象月に含まれる
-ので、ダウンロード→変換で8422分が揃うはずです。フロントエンドは気圧
-配置データが無い台風でも、等圧線を表示しないだけで経路・風・雨の表示
-には影響しません。
+`scripts/list_damage_gaps.py --kind pressure`が挙げていた188台風分は
+全てColabで取得・push済みです。最後まで残った1台風`8422`
+（1984年台風22号 VANESSA）は、`download_jra3q_pressure.py`の必要月
+計算がUTCのままだったバグ（track時刻の末尾がJSTに変換すると翌月に
+またがる場合、その月をダウンロード対象から取り漏らしていた）が原因
+でした。`build_pressure_json.py`と同じ+9h JST変換をしてから月を計算
+するよう修正し（詳細は上記「フォルダの中身」の
+`download_jra3q_pressure.py`の項を参照）、再ダウンロード・変換して
+解決しました。8310（1983年台風10号、以前「GDEX側の恒久的エラー」と
+誤認していたもの）もこの同じバグが原因で、たまたま別台風の分と月が
+重なっていたため取得できていただけでした。
 
 ### 3. フロントエンドの実ブラウザでの見た目確認 — 完了（2026-08-07）
 
